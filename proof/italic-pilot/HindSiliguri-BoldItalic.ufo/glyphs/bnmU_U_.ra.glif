@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmUU.ra" format="2">
+  <advance width="235"/>
+  <outline>
+    <contour>
+      <point x="-75.375" y="252.0" type="line"/>
+      <point x="17.432021687617876" y="307.924834850265"/>
+      <point x="79.16180564544632" y="334.07418680175107"/>
+      <point x="124.50296418990447" y="350.53423235523746" type="curve"/>
+      <point x="95.99703581009553" y="462.46576764476254" type="line"/>
+      <point x="52.290496910941755" y="446.9873223672364"/>
+      <point x="-30.09889640025797" y="395.915233419316"/>
+      <point x="-116.875" y="342.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="12.125" y="122.0" type="line"/>
+      <point x="147.125" y="122.0" type="line"/>
+      <point x="231.625" y="460.0" type="line"/>
+      <point x="96.625" y="460.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="56.375" y="559.0" type="line"/>
+      <point x="331.375" y="559.0" type="line"/>
+      <point x="359.375" y="671.0" type="line"/>
+      <point x="84.375" y="671.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:34</string>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
+</glyph>

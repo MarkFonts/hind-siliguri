@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="semicolon" format="2">
+  <advance width="294"/>
+  <unicode hex="003B"/>
+  <outline>
+    <contour>
+      <point x="-104.53773638279162" y="-127.0" type="line"/>
+      <point x="26.287736382791607" y="-127.0" type="line"/>
+      <point x="229.82811817937068" y="134.0" type="line"/>
+      <point x="69.69091616535306" y="142.73806988966706" type="line"/>
+    </contour>
+    <contour>
+      <point x="185.35197205301176" y="331.0" type="curve" smooth="yes"/>
+      <point x="234.35197205301176" y="331.0"/>
+      <point x="280.8962685295179" y="370.0"/>
+      <point x="290.375" y="419.0" type="curve" smooth="yes"/>
+      <point x="299.8537314704821" y="468.0"/>
+      <point x="268.39802794698824" y="507.0"/>
+      <point x="219.39802794698824" y="507.0" type="curve" smooth="yes"/>
+      <point x="170.39802794698826" y="507.0"/>
+      <point x="123.8537314704821" y="468.0"/>
+      <point x="114.375" y="419.0" type="curve" smooth="yes"/>
+      <point x="104.89626852951793" y="370.0"/>
+      <point x="136.35197205301176" y="331.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

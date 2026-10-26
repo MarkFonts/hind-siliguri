@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnRAc2" format="2">
+  <anchor x="-157.125" y="149" name="_blwm.ra"/>
+  <outline>
+    <contour>
+      <point x="-533.625" y="-121.0" type="curve"/>
+      <point x="-432.71563565690894" y="-121.0"/>
+      <point x="-358.8689737399717" y="-62.0"/>
+      <point x="-298.875" y="-62.0" type="curve" smooth="yes"/>
+      <point x="-256.87807330669796" y="-62.0"/>
+      <point x="-245.374089992875" y="-83.99635997150008"/>
+      <point x="-251.875" y="-110.0" type="curve"/>
+      <point x="-232.875" y="-34.0" type="line"/>
+      <point x="-236.85788306886832" y="-23.099477916781467"/>
+      <point x="-257.4507679932338" y="-8.0"/>
+      <point x="-290.375" y="-8.0" type="curve" smooth="yes"/>
+      <point x="-362.5832843992732" y="-8.0"/>
+      <point x="-434.63515375282833" y="-66.0"/>
+      <point x="-519.875" y="-66.0" type="curve"/>
+      <point x="-593.8750921358704" y="-66.0"/>
+      <point x="-606.8751404445533" y="-22.000561778213182"/>
+      <point x="-590.875" y="42.0" type="curve" smooth="yes"/>
+      <point x="-588.375" y="52.0"/>
+      <point x="-585.375" y="64.0"/>
+      <point x="-581.625" y="75.0" type="curve"/>
+      <point x="-639.625" y="75.0" type="line"/>
+      <point x="-643.125" y="65.0"/>
+      <point x="-647.125" y="53.0"/>
+      <point x="-649.875" y="42.0" type="curve" smooth="yes"/>
+      <point x="-673.7844491371882" y="-53.63779654875272"/>
+      <point x="-631.970025008645" y="-121.0"/>
+    </contour>
+    <contour>
+      <point x="-254.625" y="-121.0" type="line"/>
+      <point x="-193.625" y="-121.0" type="line"/>
+      <point x="-126.125" y="149.0" type="line"/>
+      <point x="-187.125" y="149.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:31</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="onequarter" format="2">
+  <advance width="829"/>
+  <unicode hex="00BC"/>
+  <outline>
+    <contour>
+      <point x="57.64403244125721" y="0.0" type="line"/>
+      <point x="170.6059675587428" y="0.0" type="line"/>
+      <point x="776.3382634873765" y="711.0" type="line"/>
+      <point x="664.4117365126235" y="711.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="132.125" y="278.0" type="line"/>
+      <point x="235.125" y="278.0" type="line"/>
+      <point x="343.375" y="711.0" type="line"/>
+      <point x="258.375" y="711.0" type="line"/>
+      <point x="105.7722254936836" y="636.5889019747344" type="line"/>
+      <point x="80.49660575445733" y="535.4864230178293" type="line"/>
+      <point x="211.01926838084626" y="593.5770735233851" type="line"/>
+    </contour>
+    <contour>
+      <point x="431.125" y="86.0" type="line"/>
+      <point x="779.125" y="86.0" type="line"/>
+      <point x="800.375" y="171.0" type="line"/>
+      <point x="452.375" y="171.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="450.3970650763514" y="171.0" type="line"/>
+      <point x="559.3529349236486" y="171.0" type="line"/>
+      <point x="750.9980603253639" y="430.0" type="line"/>
+      <point x="648.2519396746361" y="430.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="603.625" y="0.0" type="line"/>
+      <point x="705.625" y="0.0" type="line"/>
+      <point x="813.125" y="430.0" type="line"/>
+      <point x="711.125" y="430.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

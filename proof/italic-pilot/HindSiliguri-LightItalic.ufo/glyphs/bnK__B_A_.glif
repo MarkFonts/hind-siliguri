@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnK_BA" format="2">
+  <advance width="720"/>
+  <anchor x="470.125" y="634" name="abvm.chandrabindu"/>
+  <anchor x="470.125" y="634" name="abvm.reph"/>
+  <anchor x="294.375" y="-69" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="484.625" y="200.0" type="curve" smooth="yes"/>
+      <point x="572.625" y="200.0"/>
+      <point x="649.875" y="253.0"/>
+      <point x="673.125" y="346.0" type="curve"/>
+      <point x="702.375" y="463.0"/>
+      <point x="606.875" y="533.0"/>
+      <point x="472.875" y="533.0" type="curve"/>
+      <point x="459.125" y="478.0" type="line"/>
+      <point x="554.125" y="478.0"/>
+      <point x="634.625" y="436.0"/>
+      <point x="612.125" y="346.0" type="curve"/>
+      <point x="597.875" y="289.0"/>
+      <point x="554.375" y="259.0"/>
+      <point x="493.375" y="259.0" type="curve" smooth="yes"/>
+      <point x="489.375" y="259.0"/>
+      <point x="485.375" y="259.0"/>
+      <point x="480.375" y="259.0" type="curve"/>
+      <point x="465.875" y="201.0" type="line"/>
+      <point x="471.625" y="200.0"/>
+      <point x="478.625" y="200.0"/>
+    </contour>
+    <contour>
+      <point x="265.83682306565714" y="-66.10373756981514" type="line"/>
+      <point x="305.000614453943" y="-20.028688877714146" type="line"/>
+      <point x="69.84998382781549" y="76.60698288370658" type="line"/>
+      <point x="33.625" y="24.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="33.625" y="24.0" type="line"/>
+      <point x="66.625" y="40.0" type="line"/>
+      <point x="178.1466352929521" y="116.22155247720926"/>
+      <point x="298.79165522298695" y="173.41962336154413"/>
+      <point x="368.0525645170625" y="193.9787859193411" type="curve"/>
+      <point x="356.1689311818" y="250.15596168603614" type="line"/>
+      <point x="256.96760303287823" y="216.47868843808797"/>
+      <point x="155.13140810834696" y="163.75368589375432"/>
+      <point x="52.125" y="98.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="327.99354410828147" y="184.1354789808931" type="line"/>
+      <point x="366.21304332083383" y="227.8149066523815" type="line"/>
+      <point x="111.35460878120438" y="359.4871866571933" type="line"/>
+      <point x="76.14354400949847" y="309.51019149735265" type="line"/>
+    </contour>
+    <contour>
+      <point x="74.375" y="307.0" type="line"/>
+      <point x="104.375" y="323.0" type="line"/>
+      <point x="214.67217235626492" y="410.3555340428363"/>
+      <point x="329.31718885273017" y="467.72538125082895"/>
+      <point x="426.74805358941984" y="477.23647394092444" type="curve"/>
+      <point x="415.375" y="531.0" type="line"/>
+      <point x="298.875" y="513.0"/>
+      <point x="189.375" y="455.0"/>
+      <point x="92.875" y="381.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="263.375" y="-69.0" type="line"/>
+      <point x="324.375" y="-69.0" type="line"/>
+      <point x="493.375" y="607.0" type="line"/>
+      <point x="432.375" y="607.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="821.375" y="579.0" type="line"/>
+      <point x="835.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+    </dict>
+  </lib>
+</glyph>

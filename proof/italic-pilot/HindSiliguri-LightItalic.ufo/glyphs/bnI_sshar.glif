@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnIsshar" format="2">
+  <advance width="483"/>
+  <unicode hex="09FA"/>
+  <outline>
+    <contour>
+      <point x="162.875" y="149.0" type="curve" smooth="yes"/>
+      <point x="305.1894259670331" y="149.0"/>
+      <point x="436.26627479632975" y="286.5650991853191"/>
+      <point x="475.125" y="442.0" type="curve"/>
+      <point x="417.125" y="442.0" type="line"/>
+      <point x="386.6326683939305" y="320.03067357572195"/>
+      <point x="297.69802245153954" y="204.0"/>
+      <point x="176.625" y="204.0" type="curve"/>
+      <point x="115.6268823447169" y="204.0"/>
+      <point x="83.37446890535384" y="234.99787562141526"/>
+      <point x="94.125" y="278.0" type="curve"/>
+      <point x="36.125" y="278.0" type="line"/>
+      <point x="19.650110219440506" y="212.10044087776205"/>
+      <point x="74.9520045521204" y="149.0"/>
+    </contour>
+    <contour>
+      <point x="190.43931227198783" y="255.0" type="curve" smooth="yes"/>
+      <point x="212.43931227198777" y="255.0"/>
+      <point x="231.34096476295167" y="270.0"/>
+      <point x="235.40327825030124" y="291.0" type="curve" smooth="yes"/>
+      <point x="239.4655917376507" y="312.0"/>
+      <point x="226.5606877280121" y="328.0"/>
+      <point x="204.56068772801217" y="328.0" type="curve" smooth="yes"/>
+      <point x="183.56068772801217" y="328.0"/>
+      <point x="165.46559173765067" y="312.0"/>
+      <point x="161.4032782503012" y="291.0" type="curve" smooth="yes"/>
+      <point x="157.34096476295173" y="270.0"/>
+      <point x="169.43931227198783" y="255.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:15</string>
+    </dict>
+  </lib>
+</glyph>

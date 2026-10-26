@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="numbersign" format="2">
+  <advance width="697"/>
+  <unicode hex="0023"/>
+  <outline>
+    <contour>
+      <point x="313.625" y="0.0" type="line"/>
+      <point x="372.625" y="0.0" type="line"/>
+      <point x="682.125" y="674.0" type="line"/>
+      <point x="625.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="35.125" y="174.0" type="line"/>
+      <point x="565.125" y="174.0" type="line"/>
+      <point x="577.875" y="225.0" type="line"/>
+      <point x="47.875" y="225.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="66.625" y="0.0" type="line"/>
+      <point x="123.625" y="0.0" type="line"/>
+      <point x="435.125" y="674.0" type="line"/>
+      <point x="376.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="162.875" y="449.0" type="line"/>
+      <point x="690.875" y="449.0" type="line"/>
+      <point x="703.625" y="500.0" type="line"/>
+      <point x="175.625" y="500.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

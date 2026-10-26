@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnS_LA_mU" format="2">
+  <advance width="871"/>
+  <anchor x="512.375" y="671" name="abvm.chandrabindu"/>
+  <anchor x="592.375" y="671" name="abvm.reph"/>
+  <anchor x="431.625" y="0" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="628.5968313284466" y="105.09910545654427" type="curve"/>
+      <point x="730.656544454805" y="100.65927859452918"/>
+      <point x="814.972222483166" y="177.38888993266374"/>
+      <point x="839.375" y="275.0" type="curve" smooth="yes"/>
+      <point x="863.875" y="373.0"/>
+      <point x="825.375" y="443.0"/>
+      <point x="723.375" y="443.0" type="curve" smooth="yes"/>
+      <point x="706.375" y="443.0"/>
+      <point x="694.125" y="442.0"/>
+      <point x="682.375" y="439.0" type="curve"/>
+      <point x="655.875" y="333.0" type="line"/>
+      <point x="663.125" y="334.0"/>
+      <point x="671.375" y="335.0"/>
+      <point x="681.375" y="335.0" type="curve"/>
+      <point x="715.375" y="335.0"/>
+      <point x="726.375" y="311.0"/>
+      <point x="719.125" y="282.0" type="curve" smooth="yes"/>
+      <point x="709.875" y="245.0"/>
+      <point x="683.125" y="222.0"/>
+      <point x="646.125" y="222.0" type="curve"/>
+      <point x="596.125" y="222.0"/>
+      <point x="559.625" y="252.0"/>
+      <point x="581.375" y="339.0" type="curve"/>
+      <point x="518.7935386421512" y="207.14898217735674" type="line"/>
+      <point x="517.5828136564166" y="144.37938499402478"/>
+      <point x="567.1600482711881" y="107.77174357571768"/>
+    </contour>
+    <contour>
+      <point x="673.375" y="559.0" type="line"/>
+      <point x="967.375" y="559.0" type="line"/>
+      <point x="995.375" y="671.0" type="line"/>
+      <point x="701.375" y="671.0" type="line"/>
+    </contour>
+    <component base="bnS_LA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 17:38:28</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+    </dict>
+  </lib>
+</glyph>

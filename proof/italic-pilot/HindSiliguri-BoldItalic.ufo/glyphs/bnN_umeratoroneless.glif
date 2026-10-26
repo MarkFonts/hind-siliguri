@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnNumeratoroneless" format="2">
+  <advance width="540"/>
+  <unicode hex="09F8"/>
+  <outline>
+    <contour>
+      <point x="164.82109779224365" y="175.73853627700848" type="line"/>
+      <point x="243.634691976995" y="256.97929032400657"/>
+      <point x="379.04411107463045" y="359.4568565010536"/>
+      <point x="439.1647544666212" y="387.89894576409273" type="curve"/>
+      <point x="410.48994133728985" y="500.4936248407334" type="line"/>
+      <point x="352.2226717306607" y="475.21337189745833"/>
+      <point x="203.15257487086888" y="377.2309203832541"/>
+      <point x="102.65827880429939" y="258.6222949276008" type="curve"/>
+    </contour>
+    <contour>
+      <point x="28.125" y="178.0" type="line"/>
+      <point x="163.125" y="178.0" type="line"/>
+      <point x="247.125" y="514.0" type="line"/>
+      <point x="259.4749188457489" y="563.3996753829957"/>
+      <point x="263.19765354021325" y="622.6516822115717"/>
+      <point x="251.70728424686996" y="671.0" type="curve"/>
+      <point x="126.04271575313004" y="671.0" type="line"/>
+      <point x="133.6839336072723" y="635.7090691494199"/>
+      <point x="130.34504568975575" y="586.880182759023"/>
+      <point x="119.81719642343947" y="544.7687856937579" type="curve"/>
+    </contour>
+    <contour>
+      <point x="286.625" y="0.0" type="line"/>
+      <point x="421.625" y="0.0" type="line"/>
+      <point x="546.125" y="498.0" type="line"/>
+      <point x="411.125" y="498.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:15</string>
+    </dict>
+  </lib>
+</glyph>

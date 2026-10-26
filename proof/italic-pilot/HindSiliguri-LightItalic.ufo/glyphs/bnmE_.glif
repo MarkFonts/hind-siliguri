@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmE" format="2">
+  <advance width="281"/>
+  <unicode hex="09C7"/>
+  <outline>
+    <contour>
+      <point x="184.625" y="-8.0" type="curve" smooth="yes"/>
+      <point x="191.625" y="-8.0"/>
+      <point x="202.625" y="-8.0"/>
+      <point x="209.875" y="-7.0" type="curve"/>
+      <point x="223.375" y="47.0" type="line"/>
+      <point x="218.375" y="47.0"/>
+      <point x="209.375" y="47.0"/>
+      <point x="205.375" y="47.0" type="curve" smooth="yes"/>
+      <point x="115.36477927376237" y="47.0"/>
+      <point x="98.37750006173826" y="123.01000024695298"/>
+      <point x="132.875" y="261.0" type="curve"/>
+      <point x="169.14623114708888" y="406.0849245883555"/>
+      <point x="252.93651496337696" y="579.0"/>
+      <point x="372.375" y="579.0" type="curve"/>
+      <point x="382.875" y="621.0" type="line"/>
+      <point x="201.24973507967195" y="621.0"/>
+      <point x="109.89310406066457" y="413.0724162426583"/>
+      <point x="71.875" y="261.0" type="curve"/>
+      <point x="33.7815518814343" y="108.62620752573716"/>
+      <point x="55.75224334214636" y="-8.0"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="382.375" y="579.0" type="line"/>
+      <point x="396.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

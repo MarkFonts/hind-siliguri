@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnNukta" format="2">
+  <unicode hex="09BC"/>
+  <outline>
+    <contour>
+      <point x="-374.9951227219881" y="-173.0" type="curve" smooth="yes"/>
+      <point x="-347.9951227219881" y="-173.0"/>
+      <point x="-323.31969623343383" y="-154.0"/>
+      <point x="-318.09672174969876" y="-127.0" type="curve" smooth="yes"/>
+      <point x="-313.0671907653614" y="-101.0"/>
+      <point x="-330.00487727801186" y="-80.0"/>
+      <point x="-357.00487727801186" y="-80.0" type="curve" smooth="yes"/>
+      <point x="-384.00487727801186" y="-80.0"/>
+      <point x="-407.0671907653614" y="-101.0"/>
+      <point x="-412.0967217496988" y="-127.0" type="curve" smooth="yes"/>
+      <point x="-417.31969623343383" y="-154.0"/>
+      <point x="-401.9951227219881" y="-173.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:15</string>
+    </dict>
+  </lib>
+</glyph>

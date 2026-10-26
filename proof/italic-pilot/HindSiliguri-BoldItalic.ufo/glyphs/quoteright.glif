@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="quoteright" format="2">
+  <advance width="267"/>
+  <unicode hex="2019"/>
+  <outline>
+    <contour>
+      <point x="70.46226361720835" y="433.0" type="line"/>
+      <point x="208.70708949107018" y="433.0" type="line"/>
+      <point x="404.8281181793706" y="694.0" type="line"/>
+      <point x="234.70911169129528" y="694.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

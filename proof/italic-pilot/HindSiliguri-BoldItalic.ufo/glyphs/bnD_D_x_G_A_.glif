@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnDDx_GA" format="2">
+  <advance width="1168"/>
+  <anchor x="1154.375" y="751" name="abvm.chandrabindu"/>
+  <anchor x="1143.875" y="709" name="abvm.reph"/>
+  <outline>
+    <component base="bnDD_GA"/>
+    <component base="bnNukta" xOffset="643.5" yOffset="50"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 13:20:15</string>
+    </dict>
+  </lib>
+</glyph>

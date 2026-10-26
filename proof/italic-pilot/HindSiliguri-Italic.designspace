@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="5.0">
+  <axes>
+    <axis tag="wght" name="Weight" minimum="300" maximum="700" default="300">
+      <map input="300" output="0"/>
+      <map input="700" output="100"/>
+    </axis>
+  </axes>
+  <sources>
+    <source filename="HindSiliguri-LightItalic.ufo" familyname="Hind Siliguri" stylename="Light Italic">
+      <location>
+        <dimension name="Weight" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="HindSiliguri-BoldItalic.ufo" familyname="Hind Siliguri" stylename="Bold Italic">
+      <location>
+        <dimension name="Weight" xvalue="100"/>
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance familyname="Hind Siliguri" stylename="Light Italic">
+      <location>
+        <dimension name="Weight" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Hind Siliguri" stylename="Regular Italic">
+      <location>
+        <dimension name="Weight" xvalue="25"/>
+      </location>
+    </instance>
+    <instance familyname="Hind Siliguri" stylename="Medium Italic">
+      <location>
+        <dimension name="Weight" xvalue="50"/>
+      </location>
+    </instance>
+    <instance familyname="Hind Siliguri" stylename="SemiBold Italic">
+      <location>
+        <dimension name="Weight" xvalue="75"/>
+      </location>
+    </instance>
+    <instance familyname="Hind Siliguri" stylename="Bold Italic">
+      <location>
+        <dimension name="Weight" xvalue="100"/>
+      </location>
+    </instance>
+  </instances>
+</designspace>

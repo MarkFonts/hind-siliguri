@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tilde" format="2">
+  <advance width="400"/>
+  <unicode hex="02DC"/>
+  <outline>
+    <contour>
+      <point x="190.62250169375952" y="663.1605245328848" type="line"/>
+      <point x="211.97558044813297" y="692.5920692781212"/>
+      <point x="236.3032359757172" y="713.1470438137814"/>
+      <point x="267.9994293588311" y="713.9966341823442" type="curve" smooth="yes"/>
+      <point x="303.1143464747154" y="714.9378606259723"/>
+      <point x="339.7436149893146" y="668.9543927458496"/>
+      <point x="386.625" y="668.0" type="curve" smooth="yes"/>
+      <point x="421.9678666933073" y="667.2805038592196"/>
+      <point x="461.85926318236125" y="687.6337426780799"/>
+      <point x="493.7204212273565" y="730.3236630181148" type="curve"/>
+      <point x="456.625" y="760.0" type="line"/>
+      <point x="441.375" y="739.0"/>
+      <point x="423.875" y="717.0"/>
+      <point x="395.875" y="717.0" type="curve" smooth="yes"/>
+      <point x="356.875" y="717.0"/>
+      <point x="327.375" y="763.0"/>
+      <point x="274.375" y="763.0" type="curve" smooth="yes"/>
+      <point x="231.375" y="763.0"/>
+      <point x="186.625" y="732.0"/>
+      <point x="160.375" y="695.0" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

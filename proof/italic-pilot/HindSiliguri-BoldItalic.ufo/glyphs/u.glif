@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="u" format="2">
+  <advance width="580"/>
+  <unicode hex="0075"/>
+  <anchor x="224.625" y="0" name="bottom"/>
+  <anchor x="342.125" y="-14" name="ogonek"/>
+  <anchor x="351.375" y="507" name="top"/>
+  <outline>
+    <contour>
+      <point x="155.625" y="-4.0" type="curve" smooth="yes"/>
+      <point x="267.5465657656826" y="-4.0"/>
+      <point x="349.625" y="68.0"/>
+      <point x="371.875" y="177.0" type="curve"/>
+      <point x="370.375" y="239.0" type="line"/>
+      <point x="346.375" y="143.0"/>
+      <point x="299.625" y="112.0"/>
+      <point x="243.625" y="112.0" type="curve" smooth="yes"/>
+      <point x="194.62211069755244" y="112.0"/>
+      <point x="173.12529923398094" y="142.00119693592376"/>
+      <point x="187.875" y="201.0" type="curve" smooth="yes"/>
+      <point x="264.375" y="507.0" type="line"/>
+      <point x="118.375" y="507.0" type="line"/>
+      <point x="33.625" y="168.0" type="line" smooth="yes"/>
+      <point x="5.917935099669307" y="57.171740398677215"/>
+      <point x="54.869717922552425" y="-4.0"/>
+    </contour>
+    <contour>
+      <point x="310.625" y="0.0" type="line"/>
+      <point x="456.625" y="0.0" type="line"/>
+      <point x="583.375" y="507.0" type="line"/>
+      <point x="437.375" y="507.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

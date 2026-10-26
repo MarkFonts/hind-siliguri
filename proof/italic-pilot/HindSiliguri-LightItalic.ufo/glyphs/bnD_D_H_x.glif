@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnDDHx" format="2">
+  <advance width="537"/>
+  <anchor x="226.125" y="634" name="abvm.chandrabindu"/>
+  <anchor x="226.125" y="634" name="abvm.reph"/>
+  <anchor x="159.625" y="-224" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="191.26970422245415" y="-341.0" type="line"/>
+      <point x="245.375" y="-341.0" type="line"/>
+      <point x="246.125" y="-338.0" type="line"/>
+      <point x="162.86137395802592" y="-211.0" type="line"/>
+      <point x="105.875" y="-211.0" type="line"/>
+      <point x="105.125" y="-214.0" type="line"/>
+    </contour>
+    <component base="bnDDHxA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 11:03:00</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+      <key>public.markColor</key>
+      <string>0.85,0.26,0.06,1</string>
+    </dict>
+  </lib>
+</glyph>

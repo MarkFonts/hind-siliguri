@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnvLL" format="2">
+  <advance width="689"/>
+  <unicode hex="09E1"/>
+  <outline>
+    <contour>
+      <point x="357.125" y="-310.0" type="curve" smooth="yes"/>
+      <point x="462.125" y="-310.0"/>
+      <point x="546.375" y="-237.0"/>
+      <point x="566.875" y="-155.0" type="curve" smooth="yes"/>
+      <point x="608.375" y="11.0"/>
+      <point x="410.375" y="-5.0"/>
+      <point x="432.625" y="84.0" type="curve" smooth="yes"/>
+      <point x="433.875" y="89.0"/>
+      <point x="435.125" y="94.0"/>
+      <point x="435.875" y="97.0" type="curve"/>
+      <point x="383.875" y="97.0" type="line"/>
+      <point x="381.125" y="94.0"/>
+      <point x="378.375" y="87.0"/>
+      <point x="376.375" y="79.0" type="curve" smooth="yes"/>
+      <point x="343.875" y="-51.0"/>
+      <point x="544.875" y="-23.0"/>
+      <point x="511.875" y="-155.0" type="curve" smooth="yes"/>
+      <point x="495.875" y="-219.0"/>
+      <point x="440.875" y="-259.0"/>
+      <point x="370.625" y="-260.0" type="curve"/>
+      <point x="334.625" y="-308.0" type="line"/>
+      <point x="342.375" y="-309.0"/>
+      <point x="350.125" y="-310.0"/>
+    </contour>
+    <contour>
+      <point x="334.625" y="-308.0" type="line"/>
+      <point x="398.875" y="-283.0"/>
+      <point x="447.625" y="-240.0"/>
+      <point x="461.625" y="-184.0" type="curve" smooth="yes"/>
+      <point x="475.125" y="-130.0"/>
+      <point x="452.125" y="-70.0"/>
+      <point x="378.125" y="-70.0" type="curve" smooth="yes"/>
+      <point x="305.125" y="-70.0"/>
+      <point x="253.125" y="-126.0"/>
+      <point x="240.125" y="-178.0" type="curve" smooth="yes"/>
+      <point x="234.875" y="-199.0"/>
+      <point x="234.875" y="-219.0"/>
+      <point x="235.125" y="-238.0" type="curve"/>
+      <point x="290.125" y="-238.0" type="line"/>
+      <point x="288.125" y="-218.0"/>
+      <point x="289.875" y="-199.0"/>
+      <point x="295.125" y="-178.0" type="curve" smooth="yes"/>
+      <point x="303.875" y="-143.0"/>
+      <point x="328.625" y="-120.0"/>
+      <point x="365.625" y="-120.0" type="curve" smooth="yes"/>
+      <point x="409.625" y="-120.0"/>
+      <point x="416.875" y="-147.0"/>
+      <point x="407.625" y="-184.0" type="curve" smooth="yes"/>
+      <point x="398.875" y="-219.0"/>
+      <point x="374.625" y="-248.0"/>
+      <point x="344.625" y="-268.0" type="curve"/>
+    </contour>
+    <component base="bnvL"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+    </dict>
+  </lib>
+</glyph>

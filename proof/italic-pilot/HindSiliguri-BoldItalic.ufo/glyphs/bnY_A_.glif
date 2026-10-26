@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnYA" format="2">
+  <advance width="588"/>
+  <unicode hex="09AF"/>
+  <outline>
+    <contour>
+      <point x="319.625" y="0.0" type="line"/>
+      <point x="421.0007275782645" y="89.19225011421003" type="line"/>
+      <point x="113.72563528401875" y="240.8350260911432" type="line"/>
+      <point x="9.748430500668974" y="144.4323196694944" type="line"/>
+    </contour>
+    <contour>
+      <point x="7.282183161055912" y="138.62873264422367" type="line"/>
+      <point x="100.125" y="174.62873264422367" type="line"/>
+      <point x="327.91515005930864" y="308.62873264422365" type="line"/>
+      <point x="316.8409187859032" y="437.3007531542674" type="line"/>
+      <point x="42.31544688028535" y="278.7617875211414" type="line"/>
+    </contour>
+    <contour>
+      <point x="329.42009627947886" y="319.1803851179155" type="line"/>
+      <point x="355.43018317320264" y="423.22073269281054" type="line"/>
+      <point x="128.375" y="611.0" type="line"/>
+      <point x="93.5776551161224" y="471.8106204644896" type="line"/>
+      <point x="253.42009627947886" y="351.1803851179155" type="line"/>
+    </contour>
+    <contour>
+      <point x="319.625" y="0.0" type="line"/>
+      <point x="459.625" y="0.0" type="line"/>
+      <point x="614.125" y="618.0" type="line"/>
+      <point x="474.125" y="618.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="56.375" y="559.0" type="line"/>
+      <point x="684.375" y="559.0" type="line"/>
+      <point x="712.375" y="671.0" type="line"/>
+      <point x="84.375" y="671.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

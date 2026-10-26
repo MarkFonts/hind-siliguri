@@ -1,0 +1,27 @@
+ERROR: ('cell [0][0] is NaN', 'HindSiliguri-LightItalic.ufo', 'HindSiliguri-BoldItalic.ufo')
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/fontTools/varLib/interpolatable.py", line 1222, in <module>
+    problems = main()
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/fontTools/varLib/interpolatable.py", line 998, in main
+    for glyphname, problem in problems_gen:
+                              ^^^^^^^^^^^^
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/fontTools/varLib/interpolatable.py", line 280, in test_gen
+    this_tolerance, matching = test_contour_order(glyph0, glyph1)
+                               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/fontTools/varLib/interpolatableTestContourOrder.py", line 28, in test_contour_order
+    ) = matching_for_vectors(m0Control, m1Control)
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/fontTools/varLib/interpolatableHelpers.py", line 217, in matching_for_vectors
+    ) = min_cost_perfect_bipartite_matching(costs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/fontTools/varLib/interpolatableHelpers.py", line 153, in min_cost_perfect_bipartite_matching_munkres
+    for row, col in Munkres().compute(G):
+                    ~~~~~~~~~~~~~~~~~^^^
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/munkres/_core.py", line 484, in compute
+    n_rows, n_cols, edges = _validated_edges(cost_matrix)
+                            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/lib/python3.13/site-packages/munkres/_core.py", line 227, in _validated_edges
+    raise ValueError(f"cell [{i}][{j}] is NaN")
+ValueError: ('cell [0][0] is NaN', 'HindSiliguri-LightItalic.ufo', 'HindSiliguri-BoldItalic.ufo')

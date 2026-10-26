@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnNN_TTA_mII" format="2">
+  <outline>
+    <contour>
+      <point x="695" y="628" type="curve"/>
+      <point x="752" y="628" type="line"/>
+      <point x="757" y="648"/>
+      <point x="760" y="678"/>
+      <point x="760" y="695" type="curve" smooth="yes"/>
+      <point x="760" y="755"/>
+      <point x="728" y="815"/>
+      <point x="635" y="815" type="curve"/>
+      <point x="576" y="815"/>
+      <point x="527" y="790"/>
+      <point x="468" y="790" type="curve" smooth="yes"/>
+      <point x="432" y="790"/>
+      <point x="396" y="796"/>
+      <point x="368" y="805" type="curve"/>
+      <point x="368" y="755" type="line"/>
+      <point x="392" y="742"/>
+      <point x="435" y="735"/>
+      <point x="469" y="735" type="curve" smooth="yes"/>
+      <point x="541" y="735"/>
+      <point x="577" y="760"/>
+      <point x="636" y="760" type="curve" smooth="yes"/>
+      <point x="682" y="760"/>
+      <point x="702" y="735"/>
+      <point x="702" y="690" type="curve" smooth="yes"/>
+      <point x="702" y="672"/>
+      <point x="699" y="643"/>
+    </contour>
+  </outline>
+</glyph>

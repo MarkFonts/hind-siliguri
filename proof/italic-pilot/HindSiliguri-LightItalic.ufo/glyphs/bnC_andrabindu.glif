@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnCandrabindu" format="2">
+  <unicode hex="0981"/>
+  <anchor x="-35.875" y="634" name="_abvm.chandrabindu"/>
+  <outline>
+    <contour>
+      <point x="-23.375" y="680.0" type="curve" smooth="yes"/>
+      <point x="53.625" y="680.0"/>
+      <point x="129.32211259608428" y="734.0"/>
+      <point x="143.19098258403613" y="794.0" type="curve"/>
+      <point x="85.19098258403613" y="794.0" type="line"/>
+      <point x="78.25654759006022" y="764.0"/>
+      <point x="50.942563790662405" y="730.0"/>
+      <point x="-7.057436209337595" y="730.0" type="curve"/>
+      <point x="-58.057436209337595" y="730.0"/>
+      <point x="-83.4368959093374" y="761.0"/>
+      <point x="-75.80901741596388" y="794.0" type="curve"/>
+      <point x="-133.80901741596387" y="794.0" type="line"/>
+      <point x="-147.67788740391575" y="734.0"/>
+      <point x="-99.375" y="680.0"/>
+    </contour>
+    <contour>
+      <point x="-1.0606877280121694" y="761.0" type="curve" smooth="yes"/>
+      <point x="20.93931227198783" y="761.0"/>
+      <point x="39.84096476295173" y="776.0"/>
+      <point x="43.903278250301184" y="797.0" type="curve" smooth="yes"/>
+      <point x="47.96559173765067" y="818.0"/>
+      <point x="35.06068772801217" y="834.0"/>
+      <point x="13.06068772801217" y="834.0" type="curve" smooth="yes"/>
+      <point x="-7.939312271987831" y="834.0"/>
+      <point x="-26.03440826234933" y="818.0"/>
+      <point x="-30.096721749698816" y="797.0" type="curve" smooth="yes"/>
+      <point x="-34.15903523704827" y="776.0"/>
+      <point x="-22.06068772801217" y="761.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 13:17:14</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
+    </dict>
+  </lib>
+</glyph>

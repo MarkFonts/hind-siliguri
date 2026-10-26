@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tcedilla" format="2">
+  <outline>
+    <contour>
+      <point x="85" y="-262" type="line"/>
+      <point x="191" y="-262" type="line"/>
+      <point x="307" y="-51" type="line"/>
+      <point x="156" y="-51" type="line"/>
+    </contour>
+  </outline>
+</glyph>

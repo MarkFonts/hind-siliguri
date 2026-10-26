@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dieresis" format="2">
+  <advance width="500"/>
+  <unicode hex="00A8"/>
+  <outline>
+    <contour>
+      <point x="482.2343547990961" y="628.0" type="curve" smooth="yes"/>
+      <point x="529.2343547990962" y="628.0"/>
+      <point x="572.1983207774095" y="664.0"/>
+      <point x="581.0967217496989" y="710.0" type="curve" smooth="yes"/>
+      <point x="589.8016792225906" y="755.0"/>
+      <point x="560.7656452009039" y="791.0"/>
+      <point x="513.7656452009039" y="791.0" type="curve" smooth="yes"/>
+      <point x="465.7656452009039" y="791.0"/>
+      <point x="423.80167922259056" y="755.0"/>
+      <point x="415.0967217496989" y="710.0" type="curve" smooth="yes"/>
+      <point x="406.19832077740955" y="664.0"/>
+      <point x="434.23435479909614" y="628.0"/>
+    </contour>
+    <contour>
+      <point x="214.23435479909608" y="628.0" type="curve" smooth="yes"/>
+      <point x="261.2343547990961" y="628.0"/>
+      <point x="303.19832077740955" y="664.0"/>
+      <point x="312.0967217496989" y="710.0" type="curve" smooth="yes"/>
+      <point x="320.80167922259056" y="755.0"/>
+      <point x="292.7656452009039" y="791.0"/>
+      <point x="245.76564520090392" y="791.0" type="curve" smooth="yes"/>
+      <point x="197.76564520090392" y="791.0"/>
+      <point x="155.80167922259054" y="755.0"/>
+      <point x="147.09672174969882" y="710.0" type="curve" smooth="yes"/>
+      <point x="138.1983207774095" y="664.0"/>
+      <point x="166.2343547990961" y="628.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

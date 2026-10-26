@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="exclamdown" format="2">
+  <advance width="241"/>
+  <unicode hex="00A1"/>
+  <outline>
+    <contour>
+      <point x="-14.625" y="-165.0" type="line"/>
+      <point x="46.375" y="-165.0" type="line"/>
+      <point x="165.875" y="313.0" type="line"/>
+      <point x="104.875" y="313.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="162.4811032804215" y="416.0" type="curve" smooth="yes"/>
+      <point x="191.4811032804215" y="416.0"/>
+      <point x="218.93030376656617" y="439.0"/>
+      <point x="224.34672174969876" y="467.0" type="curve" smooth="yes"/>
+      <point x="229.95658323222904" y="496.0"/>
+      <point x="211.0188967195785" y="517.0"/>
+      <point x="182.01889671957846" y="517.0" type="curve" smooth="yes"/>
+      <point x="153.01889671957846" y="517.0"/>
+      <point x="127.95658323222901" y="496.0"/>
+      <point x="122.34672174969879" y="467.0" type="curve" smooth="yes"/>
+      <point x="116.93030376656617" y="439.0"/>
+      <point x="133.4811032804215" y="416.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

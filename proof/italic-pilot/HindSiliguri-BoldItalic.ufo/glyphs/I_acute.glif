@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Iacute" format="2">
+  <advance width="304"/>
+  <unicode hex="00CD"/>
+  <anchor x="88.625" y="0" name="bottom"/>
+  <anchor x="51.125" y="-14" name="ogonek"/>
+  <anchor x="258.125" y="674" name="top"/>
+  <outline>
+    <component base="I"/>
+    <component base="acute" xOffset="-15.0" yOffset="100"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

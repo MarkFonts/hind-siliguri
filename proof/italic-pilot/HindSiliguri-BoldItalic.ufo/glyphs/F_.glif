@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="F" format="2">
+  <advance width="506"/>
+  <unicode hex="0046"/>
+  <anchor x="206.625" y="0" name="bottom"/>
+  <anchor x="375.125" y="674" name="top"/>
+  <outline>
+    <contour>
+      <point x="1.625" y="0.0" type="line"/>
+      <point x="156.625" y="0.0" type="line"/>
+      <point x="325.125" y="674.0" type="line"/>
+      <point x="170.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="123.125" y="254.0" type="line"/>
+      <point x="443.125" y="254.0" type="line"/>
+      <point x="473.875" y="377.0" type="line"/>
+      <point x="153.875" y="377.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="197.375" y="551.0" type="line"/>
+      <point x="550.375" y="551.0" type="line"/>
+      <point x="581.125" y="674.0" type="line"/>
+      <point x="228.125" y="674.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

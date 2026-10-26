@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnC_CHA" format="2">
+  <advance width="880"/>
+  <anchor x="520.125" y="634" name="abvm.chandrabindu"/>
+  <anchor x="517.125" y="634" name="abvm.reph"/>
+  <anchor x="452.625" y="16" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="178.625" y="120.0" type="curve" smooth="yes"/>
+      <point x="293.97357031479567" y="120.0"/>
+      <point x="398.30058663946784" y="228.2298645732014"/>
+      <point x="425.375" y="339.0" type="curve" smooth="yes"/>
+      <point x="447.4673803427687" y="429.38703553356436"/>
+      <point x="389.5304874516023" y="469.1342667332561"/>
+      <point x="303.05603930067826" y="493.7241572027131" type="curve" smooth="yes"/>
+      <point x="197.55603930067826" y="523.7241572027131" type="line"/>
+      <point x="182.29885063558436" y="462.69540254233743" type="line"/>
+      <point x="275.79885063558436" y="436.69540254233743" type="line" smooth="yes"/>
+      <point x="340.5164528004684" y="418.6990639724231"/>
+      <point x="376.724189267284" y="399.7745668127868"/>
+      <point x="360.375" y="339.0" type="curve"/>
+      <point x="336.49753736611586" y="250.24070897713193"/>
+      <point x="257.7494874797328" y="175.0"/>
+      <point x="192.375" y="175.0" type="curve" smooth="yes"/>
+      <point x="145.3732867197211" y="175.0"/>
+      <point x="127.12520545969346" y="198.0008218387738"/>
+      <point x="141.875" y="257.0" type="curve"/>
+      <point x="232.125" y="618.0" type="line"/>
+      <point x="171.125" y="618.0" type="line"/>
+      <point x="80.875" y="257.0" type="line"/>
+      <point x="56.75524445253235" y="160.5209778101294"/>
+      <point x="104.19363540577118" y="120.0"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="613.375" y="579.0" type="line"/>
+      <point x="627.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+    <component base="bnCHA" xOffset="320.0"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+    </dict>
+  </lib>
+</glyph>

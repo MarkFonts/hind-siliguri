@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnS_LA_mUU" format="2">
+  <advance width="837"/>
+  <anchor x="545.125" y="634" name="abvm.chandrabindu"/>
+  <anchor x="537.125" y="634" name="abvm.reph"/>
+  <anchor x="439.625" y="0" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="515.625" y="216.0" type="line"/>
+      <point x="597.5885752320486" y="282.49679665153127"/>
+      <point x="689.5960054138839" y="344.975774411931"/>
+      <point x="743.5222836031425" y="368.6227501757727" type="curve"/>
+      <point x="727.7277163968575" y="423.3772498242273" type="line"/>
+      <point x="677.4055705510548" y="402.0475856506192"/>
+      <point x="584.1600493674079" y="335.4883803968483"/>
+      <point x="505.375" y="271.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="635.125" y="50.0" type="line"/>
+      <point x="696.125" y="50.0" type="line"/>
+      <point x="789.125" y="422.0" type="line"/>
+      <point x="728.125" y="422.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="672.375" y="579.0" type="line"/>
+      <point x="938.375" y="579.0" type="line"/>
+      <point x="952.125" y="634.0" type="line"/>
+      <point x="686.125" y="634.0" type="line"/>
+    </contour>
+    <component base="bnS_LA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPPC</string>
+    </dict>
+  </lib>
+</glyph>

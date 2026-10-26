@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="quotedblbase" format="2">
+  <advance width="289"/>
+  <unicode hex="201E"/>
+  <outline>
+    <contour>
+      <point x="-90.75813611325556" y="-122.0" type="line"/>
+      <point x="-43.99186388674444" y="-122.0" type="line"/>
+      <point x="125.45945883311944" y="92.0" type="line"/>
+      <point x="40.79054116688056" y="92.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="41.24186388674444" y="-122.0" type="line"/>
+      <point x="88.00813611325555" y="-122.0" type="line"/>
+      <point x="257.45945883311947" y="92.0" type="line"/>
+      <point x="172.79054116688053" y="92.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 16:40:42</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

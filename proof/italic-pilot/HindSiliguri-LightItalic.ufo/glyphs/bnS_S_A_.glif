@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnSSA" format="2">
+  <advance width="560"/>
+  <unicode hex="09B7"/>
+  <outline>
+    <contour>
+      <point x="336.625" y="0.0" type="line"/>
+      <point x="374.86284409869614" y="44.985698939642546" type="line"/>
+      <point x="83.71553993321163" y="233.79476367445247" type="line"/>
+      <point x="48.03701074562693" y="180.83795305640223" type="line"/>
+    </contour>
+    <contour>
+      <point x="45.63335126773207" y="176.03340507092827" type="line"/>
+      <point x="79.625" y="194.03340507092827" type="line"/>
+      <point x="330.0857065995434" y="359.03340507092827" type="line"/>
+      <point x="323.7070849566861" y="418.5672070709294" type="line"/>
+      <point x="65.03559837847271" y="253.64239351389085" type="line"/>
+    </contour>
+    <contour>
+      <point x="331.12292400086005" y="365.99169600344027" type="line"/>
+      <point x="346.5052375701095" y="427.52095028043806" type="line"/>
+      <point x="154.875" y="613.0" type="line"/>
+      <point x="136.37292400086005" y="538.9916960034402" type="line"/>
+      <point x="306.62292400086005" y="383.99169600344027" type="line"/>
+    </contour>
+    <contour>
+      <point x="420.67950037828854" y="279.1251555050023" type="line"/>
+      <point x="452.12181262515503" y="326.9528980777005" type="line"/>
+      <point x="291.6327291934889" y="480.03091677395565" type="line"/>
+      <point x="274.7738164370396" y="412.59526574815845" type="line"/>
+    </contour>
+    <contour>
+      <point x="336.625" y="0.0" type="line"/>
+      <point x="397.625" y="0.0" type="line"/>
+      <point x="546.625" y="596.0" type="line"/>
+      <point x="485.625" y="596.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="662.375" y="579.0" type="line"/>
+      <point x="676.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

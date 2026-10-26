@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="partialdiff" format="2">
+  <advance width="552"/>
+  <unicode hex="2202"/>
+  <outline>
+    <contour>
+      <point x="202.125" y="-10.0" type="curve" smooth="yes"/>
+      <point x="350.36103677339474" y="-10.0"/>
+      <point x="462.25988368237313" y="94.53953472949252"/>
+      <point x="509.625" y="284.0" type="curve" smooth="yes"/>
+      <point x="541.1796473299701" y="410.21858931988015"/>
+      <point x="505.91084447705407" y="580.1045438633942"/>
+      <point x="407.125" y="674.0" type="curve"/>
+      <point x="206.125" y="674.0" type="line"/>
+      <point x="332.5022603930017" y="580.8523712217213"/>
+      <point x="419.2119191113227" y="454.34767644529074"/>
+      <point x="377.875" y="289.0" type="curve" smooth="yes"/>
+      <point x="346.78746353410435" y="164.64985413641745"/>
+      <point x="281.889316466308" y="120.0"/>
+      <point x="233.625" y="120.0" type="curve" smooth="yes"/>
+      <point x="187.44370256887657" y="120.0"/>
+      <point x="160.12950016897338" y="158.01800067589357"/>
+      <point x="173.875" y="213.0" type="curve" smooth="yes"/>
+      <point x="187.25699888764862" y="266.5279955505945"/>
+      <point x="231.36766617225481" y="309.0"/>
+      <point x="284.875" y="309.0" type="curve" smooth="yes"/>
+      <point x="349.875" y="309.0"/>
+      <point x="379.125" y="282.0"/>
+      <point x="399.125" y="226.0" type="curve"/>
+      <point x="427.375" y="315.0" type="line"/>
+      <point x="419.625" y="384.0"/>
+      <point x="376.875" y="433.0"/>
+      <point x="283.875" y="433.0" type="curve" smooth="yes"/>
+      <point x="167.7946942254229" y="433.0"/>
+      <point x="60.06382180016004" y="353.75528720064017"/>
+      <point x="26.625" y="220.0" type="curve" smooth="yes"/>
+      <point x="-5.120515914312705" y="93.01793634274918"/>
+      <point x="53.17333847099289" y="-10.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

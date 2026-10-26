@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ncommaaccent" format="2">
+  <advance width="697"/>
+  <unicode hex="0145"/>
+  <outline>
+    <contour>
+      <point x="1.625" y="0.0" type="line"/>
+      <point x="155.625" y="0.0" type="line"/>
+      <point x="225.375" y="279.0" type="line" smooth="yes"/>
+      <point x="256.118499963921" y="401.97399985568404"/>
+      <point x="263.8689621396994" y="494.9795459650249"/>
+      <point x="263.8689621396994" y="494.9795459650249" type="curve"/>
+      <point x="263.8689621396994" y="494.9795459650249"/>
+      <point x="273.7018411697256" y="405.76839069746825"/>
+      <point x="315.1628291666574" y="279.0" type="curve" smooth="yes"/>
+      <point x="406.4128291666574" y="0.0" type="line"/>
+      <point x="568.625" y="0.0" type="line"/>
+      <point x="737.125" y="674.0" type="line"/>
+      <point x="583.125" y="674.0" type="line"/>
+      <point x="513.375" y="395.0" type="line" smooth="yes"/>
+      <point x="479.51732625008185" y="259.5693050003274"/>
+      <point x="470.7298384065916" y="183.06646965700094"/>
+      <point x="470.7298384065916" y="183.06646965700094" type="curve"/>
+      <point x="470.7298384065916" y="183.06646965700094"/>
+      <point x="462.77305914209285" y="256.90415085224845"/>
+      <point x="419.5871708333426" y="395.0" type="curve" smooth="yes"/>
+      <point x="332.3371708333426" y="674.0" type="line"/>
+      <point x="170.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="78.08298886205995" y="-262.0" type="line"/>
+      <point x="188.16701113794005" y="-262.0" type="line"/>
+      <point x="359.2987331423398" y="-51.0" type="line"/>
+      <point x="208.35615616304284" y="-43.3594024209936" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

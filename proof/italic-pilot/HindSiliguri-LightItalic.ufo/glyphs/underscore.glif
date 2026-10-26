@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="underscore" format="2">
+  <advance width="565"/>
+  <unicode hex="005F"/>
+  <outline>
+    <contour>
+      <point x="-53.875" y="-82.0" type="line"/>
+      <point x="451.125" y="-82.0" type="line"/>
+      <point x="464.875" y="-27.0" type="line"/>
+      <point x="-40.125" y="-27.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

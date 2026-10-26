@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="rcommaaccent" format="2">
+  <advance width="370"/>
+  <unicode hex="0157"/>
+  <anchor x="148.625" y="0" name="bottom"/>
+  <anchor x="275.625" y="508" name="top"/>
+  <outline>
+    <contour>
+      <point x="-150.91701113794005" y="-262.0" type="line"/>
+      <point x="-40.83298886205994" y="-262.0" type="line"/>
+      <point x="130.29873314233973" y="-51.0" type="line"/>
+      <point x="-20.64384383695711" y="-43.35940242099355" type="line"/>
+    </contour>
+    <component base="r"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Z" format="2">
+  <advance width="621"/>
+  <unicode hex="005A"/>
+  <anchor x="246.625" y="0" name="bottom"/>
+  <anchor x="427.125" y="674" name="top"/>
+  <outline>
+    <contour>
+      <point x="-3.375" y="0.0" type="line"/>
+      <point x="497.625" y="0.0" type="line"/>
+      <point x="528.625" y="124.0" type="line"/>
+      <point x="218.37221104565822" y="124.0" type="line"/>
+      <point x="625.2564192909153" y="558.5256771636616" type="line"/>
+      <point x="654.125" y="674.0" type="line"/>
+      <point x="171.125" y="674.0" type="line"/>
+      <point x="140.125" y="550.0" type="line"/>
+      <point x="430.3974849389756" y="550.0" type="line"/>
+      <point x="26.50055209290828" y="119.50220837163312" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

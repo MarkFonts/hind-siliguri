@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnSS_TTHA_mI" format="2">
+  <outline>
+    <contour>
+      <point x="65" y="668" type="line"/>
+      <point x="206" y="668" type="line"/>
+      <point x="206" y="714" type="line" smooth="yes"/>
+      <point x="206" y="782"/>
+      <point x="248" y="811"/>
+      <point x="332" y="811" type="curve" smooth="yes"/>
+      <point x="424" y="811"/>
+      <point x="537" y="784"/>
+      <point x="586" y="766" type="curve"/>
+      <point x="586" y="872" type="line"/>
+      <point x="542" y="891"/>
+      <point x="426" y="923"/>
+      <point x="321" y="923" type="curve" smooth="yes"/>
+      <point x="169" y="923"/>
+      <point x="65" y="860"/>
+      <point x="65" y="713" type="curve" smooth="yes"/>
+    </contour>
+  </outline>
+</glyph>

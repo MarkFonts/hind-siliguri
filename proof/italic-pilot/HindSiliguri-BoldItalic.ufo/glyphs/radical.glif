@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="radical" format="2">
+  <advance width="825"/>
+  <unicode hex="221A"/>
+  <outline>
+    <contour>
+      <point x="241.125" y="-190.0" type="line"/>
+      <point x="411.125" y="-190.0" type="line"/>
+      <point x="1034.375" y="907.0" type="line"/>
+      <point x="880.375" y="907.0" type="line"/>
+      <point x="494.375" y="215.0" type="line" smooth="yes"/>
+      <point x="406.1548095556427" y="56.84359640545273"/>
+      <point x="365.375" y="-45.0"/>
+      <point x="363.125" y="-50.0" type="curve"/>
+      <point x="363.625" y="-40.0"/>
+      <point x="368.0439955511817" y="62.972053385819436"/>
+      <point x="355.375" y="215.0" type="curve" smooth="yes"/>
+      <point x="334.875" y="461.0" type="line"/>
+      <point x="108.875" y="461.0" type="line"/>
+      <point x="50.625" y="348.0" type="line"/>
+      <point x="181.625" y="348.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

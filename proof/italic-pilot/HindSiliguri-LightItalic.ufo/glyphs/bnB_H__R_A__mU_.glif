@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnBH_RA_mU" format="2">
+  <advance width="781"/>
+  <anchor x="445.125" y="634" name="abvm.chandrabindu"/>
+  <outline>
+    <contour>
+      <point x="536.875" y="137.0" type="curve" smooth="yes"/>
+      <point x="640.875" y="137.0"/>
+      <point x="709.875" y="209.0"/>
+      <point x="728.625" y="284.0" type="curve" smooth="yes"/>
+      <point x="751.625" y="376.0"/>
+      <point x="708.375" y="427.0"/>
+      <point x="617.375" y="427.0" type="curve" smooth="yes"/>
+      <point x="604.375" y="427.0"/>
+      <point x="591.125" y="426.0"/>
+      <point x="578.875" y="425.0" type="curve"/>
+      <point x="565.125" y="370.0" type="line"/>
+      <point x="576.625" y="372.0"/>
+      <point x="587.625" y="372.0"/>
+      <point x="599.625" y="372.0" type="curve" smooth="yes"/>
+      <point x="652.625" y="372.0"/>
+      <point x="681.875" y="345.0"/>
+      <point x="666.625" y="284.0" type="curve" smooth="yes"/>
+      <point x="652.875" y="229.0"/>
+      <point x="610.875" y="189.0"/>
+      <point x="548.875" y="189.0" type="curve" smooth="yes"/>
+      <point x="488.875" y="189.0"/>
+      <point x="459.875" y="233.0"/>
+      <point x="467.125" y="282.0" type="curve"/>
+      <point x="424.375" y="235.0" type="line"/>
+      <point x="426.875" y="169.0"/>
+      <point x="477.875" y="137.0"/>
+    </contour>
+    <contour>
+      <point x="576.375" y="579.0" type="line"/>
+      <point x="882.375" y="579.0" type="line"/>
+      <point x="896.125" y="634.0" type="line"/>
+      <point x="590.125" y="634.0" type="line"/>
+    </contour>
+    <component base="bnBH_RA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 17:38:28</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+    </dict>
+  </lib>
+</glyph>

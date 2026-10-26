@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="backslash" format="2">
+  <advance width="386"/>
+  <unicode hex="005C"/>
+  <outline>
+    <contour>
+      <point x="249.0121752167638" y="-103.0" type="line"/>
+      <point x="306.7378247832362" y="-103.0" type="line"/>
+      <point x="143.23782478323614" y="707.0" type="line"/>
+      <point x="85.51217521676386" y="707.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

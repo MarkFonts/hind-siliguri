@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Eth" format="2">
+  <advance width="725"/>
+  <unicode hex="00D0"/>
+  <outline>
+    <contour>
+      <point x="86.625" y="0.0" type="line"/>
+      <point x="283.625" y="0.0" type="line"/>
+      <point x="510.8237177565445" y="0.0"/>
+      <point x="658.4622954185992" y="167.3491816743965"/>
+      <point x="701.875" y="341.0" type="curve" smooth="yes"/>
+      <point x="752.2878821010348" y="542.651528404139"/>
+      <point x="635.5012410092482" y="674.0"/>
+      <point x="440.0" y="674.0" type="curve" smooth="yes"/>
+      <point x="248.0" y="674.0" type="line"/>
+      <point x="248.0" y="617.0" type="line"/>
+      <point x="440.0" y="617.0" type="line" smooth="yes"/>
+      <point x="605.5385942300871" y="617.0"/>
+      <point x="674.6931592055932" y="492.2726368223732"/>
+      <point x="636.875" y="341.0" type="curve" smooth="yes"/>
+      <point x="601.9749125178329" y="201.3996500713315"/>
+      <point x="483.9528336050446" y="57.0"/>
+      <point x="297.875" y="57.0" type="curve" smooth="yes"/>
+      <point x="100.875" y="57.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="86.625" y="0.0" type="line"/>
+      <point x="148.625" y="0.0" type="line"/>
+      <point x="317.125" y="674.0" type="line"/>
+      <point x="255.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="74.875" y="313.0" type="line"/>
+      <point x="410.875" y="313.0" type="line"/>
+      <point x="424.125" y="366.0" type="line"/>
+      <point x="88.125" y="366.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

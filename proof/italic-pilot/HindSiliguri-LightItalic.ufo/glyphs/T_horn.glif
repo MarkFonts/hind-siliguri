@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Thorn" format="2">
+  <advance width="529"/>
+  <unicode hex="00DE"/>
+  <outline>
+    <contour>
+      <point x="48.625" y="128.0" type="line"/>
+      <point x="211.625" y="128.0" type="line"/>
+      <point x="377.2807639091222" y="128.0"/>
+      <point x="476.9446916266272" y="221.27876650650904"/>
+      <point x="504.125" y="330.0" type="curve" smooth="yes"/>
+      <point x="535.4958931364092" y="455.4835725456371"/>
+      <point x="468.6808682188537" y="546.0"/>
+      <point x="298.25" y="546.0" type="curve" smooth="yes"/>
+      <point x="146.25" y="546.0" type="line"/>
+      <point x="146.25" y="491.0" type="line"/>
+      <point x="305.25" y="491.0" type="line" smooth="yes"/>
+      <point x="418.68591876106336" y="491.0"/>
+      <point x="466.82354373202975" y="432.79417492811905"/>
+      <point x="441.125" y="330.0" type="curve" smooth="yes"/>
+      <point x="420.77633115411044" y="248.60532461644175"/>
+      <point x="348.42824721633303" y="183.0"/>
+      <point x="232.375" y="183.0" type="curve" smooth="yes"/>
+      <point x="62.375" y="183.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="16.625" y="0.0" type="line"/>
+      <point x="78.625" y="0.0" type="line"/>
+      <point x="247.125" y="674.0" type="line"/>
+      <point x="185.125" y="674.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

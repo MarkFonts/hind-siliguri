@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmII" format="2">
+  <advance width="270"/>
+  <unicode hex="09C0"/>
+  <anchor x="51.875" y="721" name="abvm.reph.ii"/>
+  <outline>
+    <contour>
+      <point x="155.625" y="616.0" type="line"/>
+      <point x="295.625" y="616.0" type="line"/>
+      <point x="315.875" y="697.0" type="line"/>
+      <point x="354.125" y="850.0"/>
+      <point x="237.375" y="991.0"/>
+      <point x="5.375" y="991.0" type="curve" smooth="yes"/>
+      <point x="-129.625" y="991.0"/>
+      <point x="-238.875" y="934.0"/>
+      <point x="-261.375" y="844.0" type="curve" smooth="yes"/>
+      <point x="-284.875" y="750.0"/>
+      <point x="-212.375" y="708.0"/>
+      <point x="-78.375" y="708.0" type="curve" smooth="yes"/>
+      <point x="-50.375" y="708.0"/>
+      <point x="23.875" y="713.0"/>
+      <point x="51.875" y="721.0" type="curve"/>
+      <point x="73.625" y="808.0" type="line"/>
+      <point x="45.625" y="804.0"/>
+      <point x="1.875" y="801.0"/>
+      <point x="-23.125" y="801.0" type="curve" smooth="yes"/>
+      <point x="-95.125" y="801.0"/>
+      <point x="-140.125" y="809.0"/>
+      <point x="-131.375" y="844.0" type="curve" smooth="yes"/>
+      <point x="-123.375" y="876.0"/>
+      <point x="-77.625" y="887.0"/>
+      <point x="-20.625" y="887.0" type="curve" smooth="yes"/>
+      <point x="137.375" y="887.0"/>
+      <point x="204.125" y="810.0"/>
+      <point x="176.125" y="698.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="1.625" y="0.0" type="line"/>
+      <point x="141.625" y="0.0" type="line"/>
+      <point x="289.375" y="591.0" type="line"/>
+      <point x="149.375" y="591.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="57.375" y="559.0" type="line"/>
+      <point x="366.375" y="559.0" type="line"/>
+      <point x="394.375" y="671.0" type="line"/>
+      <point x="85.375" y="671.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 15:57:23</string>
+    </dict>
+  </lib>
+</glyph>

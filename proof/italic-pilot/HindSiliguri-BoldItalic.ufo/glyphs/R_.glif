@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="R" format="2">
+  <advance width="614"/>
+  <unicode hex="0052"/>
+  <anchor x="266.625" y="0" name="bottom"/>
+  <anchor x="421.125" y="674" name="top"/>
+  <outline>
+    <contour>
+      <point x="60.125" y="234.0" type="line"/>
+      <point x="293.125" y="234.0" type="line" smooth="yes"/>
+      <point x="430.58352574051673" y="234.0"/>
+      <point x="560.5220996573053" y="303.5883986292209"/>
+      <point x="599.125" y="458.0" type="curve" smooth="yes"/>
+      <point x="633.0723891715605" y="593.7895566862419"/>
+      <point x="537.9109891717617" y="674.0"/>
+      <point x="387.5" y="674.0" type="curve" smooth="yes"/>
+      <point x="154.5" y="674.0" type="line"/>
+      <point x="154.5" y="549.0" type="line"/>
+      <point x="384.5" y="549.0" type="line" smooth="yes"/>
+      <point x="416.2730785667029" y="549.0"/>
+      <point x="462.1399167455413" y="534.0596669821654"/>
+      <point x="442.875" y="457.0" type="curve" smooth="yes"/>
+      <point x="428.3903494395914" y="399.0613977583655"/>
+      <point x="382.6182467118244" y="359.0"/>
+      <point x="318.375" y="359.0" type="curve"/>
+      <point x="91.375" y="359.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1.625" y="0.0" type="line"/>
+      <point x="155.625" y="0.0" type="line"/>
+      <point x="324.125" y="674.0" type="line"/>
+      <point x="170.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="356.84567132727034" y="0.0" type="line"/>
+      <point x="524.4043286727297" y="0.0" type="line"/>
+      <point x="391.3628337214055" y="326.0" type="line"/>
+      <point x="233.88716627859452" y="326.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnvRR" format="2">
+  <advance width="791"/>
+  <unicode hex="09E0"/>
+  <outline>
+    <contour>
+      <point x="275.36984820818293" y="-153.02060716726822" type="line"/>
+      <point x="287.6276087024262" y="-103.98956519029517" type="line"/>
+      <point x="94.63745459118977" y="0.04193212800479729" type="line"/>
+      <point x="223.01769156833512" y="99.35496390519214" type="line"/>
+      <point x="172.73230843166485" y="122.64503609480786" type="line"/>
+      <point x="44.22714276434468" y="22.40857105737873" type="line"/>
+      <point x="31.55803078634071" y="-28.26787685463715" type="line"/>
+    </contour>
+    <component base="bnvR"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+    </dict>
+  </lib>
+</glyph>

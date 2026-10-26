@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="one.superior" format="2">
+  <advance width="242"/>
+  <unicode hex="00B9"/>
+  <outline>
+    <contour>
+      <point x="148.625" y="392.0" type="line"/>
+      <point x="200.625" y="392.0" type="line"/>
+      <point x="307.875" y="821.0" type="line"/>
+      <point x="264.875" y="821.0" type="line"/>
+      <point x="135.875" y="757.0" type="line"/>
+      <point x="121.1747176269019" y="698.1988705076076" type="line"/>
+      <point x="239.34165295776575" y="754.866611831063" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/10/16 10:29:56</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

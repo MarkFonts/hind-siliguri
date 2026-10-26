@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmAI" format="2">
+  <advance width="309"/>
+  <unicode hex="09C8"/>
+  <outline>
+    <contour>
+      <point x="281.875" y="661.0" type="curve"/>
+      <point x="406.125" y="662.0" type="line"/>
+      <point x="414.125" y="682.0"/>
+      <point x="420.875" y="701.0"/>
+      <point x="425.125" y="718.0" type="curve" smooth="yes"/>
+      <point x="448.82046608729695" y="812.7818643491878"/>
+      <point x="404.7190946940285" y="876.0"/>
+      <point x="301.625" y="876.0" type="curve"/>
+      <point x="243.625" y="876.0"/>
+      <point x="197.625" y="852.0"/>
+      <point x="152.625" y="852.0" type="curve" smooth="yes"/>
+      <point x="128.625" y="852.0"/>
+      <point x="112.375" y="855.0"/>
+      <point x="97.125" y="862.0" type="curve"/>
+      <point x="72.52776499641573" y="763.6110599856629" type="line"/>
+      <point x="86.68807815879808" y="753.775413205212"/>
+      <point x="106.94714609942977" y="744.4308586178868"/>
+      <point x="135.10279929176184" y="740.364286067088" type="curve" smooth="yes"/>
+      <point x="183.4613814760531" y="733.3797674852302"/>
+      <point x="228.33627413879321" y="759.0"/>
+      <point x="256.375" y="759.0" type="curve"/>
+      <point x="291.3763134164842" y="759.0"/>
+      <point x="304.6250211700197" y="744.0000846800788"/>
+      <point x="295.625" y="708.0" type="curve" smooth="yes"/>
+      <point x="293.625" y="700.0"/>
+      <point x="285.375" y="671.0"/>
+    </contour>
+    <component base="bnmE"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+    </dict>
+  </lib>
+</glyph>

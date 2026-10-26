@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnD_RA_mUU" format="2">
+  <advance width="843"/>
+  <anchor x="272.375" y="671" name="abvm.chandrabindu"/>
+  <outline>
+    <contour>
+      <point x="517.125" y="190.0" type="line"/>
+      <point x="609.9288252858429" y="245.92432721188433"/>
+      <point x="671.6692177113503" y="272.07900626982786"/>
+      <point x="717.0023338311062" y="288.53670752556474" type="curve"/>
+      <point x="688.4964054512973" y="400.46824281508975" type="line"/>
+      <point x="644.7978020996437" y="384.99211232464717"/>
+      <point x="562.3978820524055" y="333.91444370900876"/>
+      <point x="475.625" y="280.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="604.625" y="60.0" type="line"/>
+      <point x="739.625" y="60.0" type="line"/>
+      <point x="824.125" y="398.0" type="line"/>
+      <point x="689.125" y="398.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="679.375" y="559.0" type="line"/>
+      <point x="939.375" y="559.0" type="line"/>
+      <point x="967.375" y="671.0" type="line"/>
+      <point x="707.375" y="671.0" type="line"/>
+    </contour>
+    <component base="bnD_RA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 13:39:29</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPPC</string>
+    </dict>
+  </lib>
+</glyph>

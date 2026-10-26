@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnSS_K_RA" format="2">
+  <advance width="1120"/>
+  <anchor x="769.375" y="671" name="abvm.chandrabindu_1"/>
+  <anchor x="683.375" y="-41" name="blwm.u_1"/>
+  <anchor x="732.375" y="671" name="abvm.chandrabindu"/>
+  <outline>
+    <contour>
+      <point x="346.5494131216861" y="250.0" type="curve" smooth="yes"/>
+      <point x="485.54941312168603" y="250.0"/>
+      <point x="603.9147355324063" y="313.92213979393114"/>
+      <point x="630.625" y="452.0" type="curve" smooth="yes"/>
+      <point x="655.6322289194446" y="581.2740722604807"/>
+      <point x="559.8995772553241" y="654.0"/>
+      <point x="424.7005868783139" y="654.0" type="curve" smooth="yes"/>
+      <point x="287.9367234533462" y="654.0"/>
+      <point x="165.57921142228957" y="581.0"/>
+      <point x="140.625" y="452.0" type="curve" smooth="yes"/>
+      <point x="113.54291008433688" y="312.0"/>
+      <point x="207.5494131216861" y="250.0"/>
+    </contour>
+    <contour>
+      <point x="364.7331020650599" y="344.0" type="curve" smooth="yes"/>
+      <point x="299.7331020650599" y="344.0"/>
+      <point x="261.89051154277087" y="381.0"/>
+      <point x="275.625" y="452.0" type="curve" smooth="yes"/>
+      <point x="289.16604495783156" y="522.0"/>
+      <point x="341.3234544355425" y="559.0"/>
+      <point x="406.3234544355425" y="559.0" type="curve" smooth="yes"/>
+      <point x="471.32345443554254" y="559.0"/>
+      <point x="509.16604495783145" y="522.0"/>
+      <point x="495.625" y="452.0" type="curve" smooth="yes"/>
+      <point x="481.8905115427708" y="381.0"/>
+      <point x="429.7331020650599" y="344.0"/>
+    </contour>
+    <contour>
+      <point x="481.625" y="320.0" type="line"/>
+      <point x="537.625" y="372.0" type="line"/>
+      <point x="290.375" y="591.0" type="line"/>
+      <point x="231.875" y="529.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="56.375" y="559.0" type="line"/>
+      <point x="831.375" y="559.0" type="line"/>
+      <point x="859.375" y="671.0" type="line"/>
+      <point x="84.375" y="671.0" type="line"/>
+    </contour>
+    <component base="bnK_RA" xOffset="267.0"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 13:54:05</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPPPC</string>
+    </dict>
+  </lib>
+</glyph>

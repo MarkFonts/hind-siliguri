@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmI_Candrabindu" format="2">
+  <advance width="270"/>
+  <outline>
+    <contour>
+      <point x="842.625" y="868.0" type="curve" smooth="yes"/>
+      <point x="966.9363026348501" y="868.0"/>
+      <point x="1052.8223727773293" y="944.7894911093176"/>
+      <point x="1075.375" y="1035.0" type="curve"/>
+      <point x="975.375" y="1035.0" type="line"/>
+      <point x="966.7401421702095" y="1000.4605686808378"/>
+      <point x="942.3070878863108" y="953.0"/>
+      <point x="863.875" y="953.0" type="curve"/>
+      <point x="792.0128190085825" y="953.0"/>
+      <point x="782.415070926172" y="995.1602837046883"/>
+      <point x="792.375" y="1035.0" type="curve"/>
+      <point x="692.375" y="1035.0" type="line"/>
+      <point x="674.2337243043177" y="962.4348972172705"/>
+      <point x="707.9127156071488" y="868.0"/>
+    </contour>
+    <contour>
+      <point x="878.6552770349396" y="999.0" type="curve" smooth="yes"/>
+      <point x="914.5066093537176" y="999.0"/>
+      <point x="941.9256553494744" y="1025.6848033708955"/>
+      <point x="948.6815565006024" y="1056.0" type="curve" smooth="yes"/>
+      <point x="956.2586354801206" y="1090.0"/>
+      <point x="935.288166464458" y="1116.0"/>
+      <point x="900.4839917776644" y="1114.982138938788" type="curve" smooth="yes"/>
+      <point x="869.1083988622391" y="1114.0645480294086"/>
+      <point x="838.065191980723" y="1089.0"/>
+      <point x="831.6815565006024" y="1056.0" type="curve" smooth="yes"/>
+      <point x="825.2979210204818" y="1023.0"/>
+      <point x="846.6552770349396" y="999.0"/>
+    </contour>
+    <component base="bnmI"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:27</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+    </dict>
+  </lib>
+</glyph>

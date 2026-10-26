@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnNY_JHA" format="2">
+  <outline>
+    <contour>
+      <point x="318" y="321" type="curve"/>
+      <point x="318" y="268" type="line"/>
+      <point x="295" y="265"/>
+      <point x="278" y="264"/>
+      <point x="262" y="264" type="curve" smooth="yes"/>
+      <point x="163" y="264"/>
+      <point x="100" y="311"/>
+      <point x="100" y="412" type="curve" smooth="yes"/>
+      <point x="100" y="534"/>
+      <point x="197" y="644"/>
+      <point x="322" y="644" type="curve" smooth="yes"/>
+      <point x="415" y="644"/>
+      <point x="463" y="593"/>
+      <point x="463" y="484" type="curve"/>
+      <point x="463" y="0" type="line"/>
+      <point x="402" y="0" type="line"/>
+      <point x="402" y="484" type="line"/>
+      <point x="402" y="556"/>
+      <point x="378" y="589"/>
+      <point x="322" y="589" type="curve" smooth="yes"/>
+      <point x="243" y="589"/>
+      <point x="161" y="510"/>
+      <point x="161" y="412" type="curve"/>
+      <point x="161" y="336"/>
+      <point x="204" y="319"/>
+      <point x="268" y="319" type="curve" smooth="yes"/>
+      <point x="282" y="319"/>
+      <point x="295" y="319"/>
+    </contour>
+  </outline>
+</glyph>

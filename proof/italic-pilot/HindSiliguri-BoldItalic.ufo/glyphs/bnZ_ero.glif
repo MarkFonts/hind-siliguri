@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnZero" format="2">
+  <advance width="604"/>
+  <unicode hex="09E6"/>
+  <outline>
+    <contour>
+      <point x="66.125" y="338.0" type="curve" smooth="yes"/>
+      <point x="36.33470109277056" y="184.0"/>
+      <point x="126.53789914819194" y="92.0"/>
+      <point x="275.53789914819197" y="92.0" type="curve" smooth="yes"/>
+      <point x="424.53789914819197" y="92.0"/>
+      <point x="550.3347010927706" y="184.0"/>
+      <point x="580.125" y="338.0" type="curve" smooth="yes"/>
+      <point x="609.9152989072294" y="492.0"/>
+      <point x="519.712100851808" y="584.0"/>
+      <point x="370.71210085180803" y="584.0" type="curve" smooth="yes"/>
+      <point x="221.71210085180803" y="584.0"/>
+      <point x="95.91529890722944" y="492.0"/>
+    </contour>
+    <contour>
+      <point x="201.125" y="338.0" type="curve" smooth="yes"/>
+      <point x="216.0201494536147" y="415.0"/>
+      <point x="270.4988809240968" y="464.0"/>
+      <point x="347.4988809240968" y="464.0" type="curve" smooth="yes"/>
+      <point x="424.4988809240968" y="464.0"/>
+      <point x="460.02014945361475" y="415.0"/>
+      <point x="445.125" y="338.0" type="curve" smooth="yes"/>
+      <point x="430.22985054638525" y="261.0"/>
+      <point x="375.7511190759032" y="212.0"/>
+      <point x="298.7511190759032" y="212.0" type="curve" smooth="yes"/>
+      <point x="221.7511190759032" y="212.0"/>
+      <point x="186.22985054638528" y="261.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:15</string>
+    </dict>
+  </lib>
+</glyph>

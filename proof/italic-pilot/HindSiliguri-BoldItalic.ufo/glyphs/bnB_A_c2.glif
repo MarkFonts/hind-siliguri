@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnBAc2" format="2">
+  <anchor x="-149.875" y="178" name="_blwm.ra"/>
+  <outline>
+    <contour>
+      <point x="-555.375" y="-144.0" type="line"/>
+      <point x="-467.625" y="-105.0" type="line"/>
+      <point x="-387.1014544507998" y="-46.16545897953176"/>
+      <point x="-302.45361264188296" y="-14.103269447895123"/>
+      <point x="-206.625" y="3.0" type="curve"/>
+      <point x="-225.9829041105179" y="113.91555868729178" type="line"/>
+      <point x="-332.4683944420657" y="94.10020474404915"/>
+      <point x="-419.65965816761303" y="56.43513530920404"/>
+      <point x="-523.375" y="-16.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="-321.875" y="-250.0" type="line"/>
+      <point x="-234.67993706173223" y="-172.90120750721587" type="line"/>
+      <point x="-461.7753985972025" y="-56.13098643819012" type="line"/>
+      <point x="-551.6796377365002" y="-140.5308844056941" type="line"/>
+    </contour>
+    <contour>
+      <point x="-321.875" y="-250.0" type="line"/>
+      <point x="-191.875" y="-250.0" type="line"/>
+      <point x="-84.875" y="178.0" type="line"/>
+      <point x="-214.875" y="178.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:31</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
+    </dict>
+  </lib>
+</glyph>

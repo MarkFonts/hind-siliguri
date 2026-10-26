@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnP_T_RA_mII" format="2">
+  <advance width="930"/>
+  <anchor x="566.375" y="719" name="abvm.chandrabindu_1"/>
+  <anchor x="682.375" y="707" name="abvm.reph.ii"/>
+  <outline>
+    <component base="bnP_T_RA"/>
+    <component base="bnmII" xOffset="669.0"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 16:36:53</string>
+    </dict>
+  </lib>
+</glyph>

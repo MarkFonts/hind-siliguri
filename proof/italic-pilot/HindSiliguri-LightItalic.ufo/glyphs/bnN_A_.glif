@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnNA" format="2">
+  <advance width="560"/>
+  <unicode hex="09A8"/>
+  <outline>
+    <contour>
+      <point x="336.875" y="5.0" type="curve"/>
+      <point x="389.875" y="129.0" type="line"/>
+      <point x="411.99315748553147" y="253.25931171646891"/>
+      <point x="381.97484430324334" y="385.0"/>
+      <point x="245.875" y="385.0" type="curve"/>
+      <point x="138.6718861735325" y="385.0"/>
+      <point x="57.139933521855056" y="306.0597340874202"/>
+      <point x="32.875" y="209.0" type="curve" smooth="yes"/>
+      <point x="29.625" y="196.0"/>
+      <point x="26.875" y="181.0"/>
+      <point x="25.625" y="164.0" type="curve"/>
+      <point x="85.625" y="164.0" type="line"/>
+      <point x="86.625" y="176.0"/>
+      <point x="90.375" y="195.0"/>
+      <point x="93.375" y="207.0" type="curve" smooth="yes"/>
+      <point x="112.65219599439123" y="284.10878397756494"/>
+      <point x="166.02302092830803" y="328.0"/>
+      <point x="233.625" y="328.0" type="curve"/>
+      <point x="353.0964408108052" y="328.0"/>
+      <point x="364.25027964484354" y="178.79535334157535"/>
+    </contour>
+    <contour>
+      <point x="335.625" y="0.0" type="line"/>
+      <point x="396.625" y="0.0" type="line"/>
+      <point x="545.625" y="596.0" type="line"/>
+      <point x="484.625" y="596.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="661.375" y="579.0" type="line"/>
+      <point x="675.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

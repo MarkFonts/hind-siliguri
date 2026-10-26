@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="period" format="2">
+  <advance width="142"/>
+  <unicode hex="002E"/>
+  <outline>
+    <contour>
+      <point x="8.50938153072272" y="-8.0" type="curve" smooth="yes"/>
+      <point x="37.50938153072272" y="-8.0"/>
+      <point x="63.76513851746978" y="14.0"/>
+      <point x="69.375" y="43.0" type="curve" smooth="yes"/>
+      <point x="74.98486148253022" y="72.0"/>
+      <point x="57.24061846927728" y="94.0"/>
+      <point x="28.24061846927728" y="94.0" type="curve" smooth="yes"/>
+      <point x="-0.7593815307227203" y="94.0"/>
+      <point x="-27.01513851746978" y="72.0"/>
+      <point x="-32.625" y="43.0" type="curve" smooth="yes"/>
+      <point x="-38.23486148253022" y="14.0"/>
+      <point x="-20.49061846927728" y="-8.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

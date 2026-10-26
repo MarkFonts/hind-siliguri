@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnTAkhanda" format="2">
+  <advance width="521"/>
+  <unicode hex="09CE"/>
+  <outline>
+    <contour>
+      <point x="337.625" y="0.0" type="line"/>
+      <point x="397.625" y="0.0" type="line"/>
+      <point x="410.625" y="52.0" type="line"/>
+      <point x="470.1337013097386" y="290.03480523895445"/>
+      <point x="139.79546348400675" y="276.68185393602704"/>
+      <point x="191.875" y="485.0" type="curve"/>
+      <point x="204.54908169167146" y="535.6963267666858"/>
+      <point x="247.29709008452807" y="588.0"/>
+      <point x="320.625" y="588.0" type="curve" smooth="yes"/>
+      <point x="380.05672791538734" y="588.0"/>
+      <point x="411.4307094494886" y="555.2228377979542"/>
+      <point x="395.625" y="492.0" type="curve" smooth="yes"/>
+      <point x="389.7752168885925" y="468.60086755437004"/>
+      <point x="378.625" y="444.0"/>
+      <point x="368.625" y="428.0" type="curve"/>
+      <point x="428.625" y="428.0" type="line"/>
+      <point x="436.375" y="439.0"/>
+      <point x="448.0573642447722" y="465.7294569790888"/>
+      <point x="454.625" y="492.0" type="curve" smooth="yes"/>
+      <point x="478.4358125631055" y="587.2432502524221"/>
+      <point x="421.9013341259595" y="640.0"/>
+      <point x="333.625" y="640.0" type="curve" smooth="yes"/>
+      <point x="232.47174586284137" y="640.0"/>
+      <point x="153.13273232517975" y="570.030929300719"/>
+      <point x="131.875" y="485.0" type="curve"/>
+      <point x="71.54462148520318" y="243.6784859408127"/>
+      <point x="404.0973471267373" y="265.8893885069492"/>
+      <point x="350.625" y="52.0" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:15</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hind Siliguri Italic Pilot</title>
+<style>
+:root{--bg:#16161a;--ink:#ececf0;--dim:#96969e;--line:#2e2e36;--green:#5ade76;--amber:#fac846;--orange:#fa963c;--red:#f0483a;--violet:#c8a0ff;--blue:#78aaff}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 Menlo,monospace;margin:0;padding:24px 16px;max-width:1200px;margin:auto}
+h1{font-size:34px;margin:0 0 4px}h2{font-size:20px;margin:32px 0 8px;border-top:1px solid var(--line);padding-top:16px}
+p,li{color:var(--dim)}a{color:var(--ink)}img{max-width:100%;border:1px solid var(--line);margin:6px 0}
+.k span{display:inline-block;margin-right:18px}.k i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+</style></head><body>
+<h1>HIND SILIGURI · Italic pilot</h1>
+<p>Light Italic and Bold Italic at 14.04° (x' = x + (y − 253.5)/4), from the snapshot at commit c804a10. Round 5 pass 2c's structure with Hind's numbers: back-slant defaults (closed rounds lean back β 0.22θ, caps 0.36θ; everything else plain shear), no narrowing, spine ψ 1.25 (Latin only), thickness by direction (I13) with re-tension, harmonizer last, comb_p2 repair, comb gate on what the fill shows.</p>
+<p class="k">Levels: <span style="color:var(--green)"><i style="background:var(--green)"></i>A full ruleset</span><span style="color:var(--amber)"><i style="background:var(--amber)"></i>B re-tension off</span><span style="color:var(--orange)"><i style="background:var(--orange)"></i>C + terminals sheared, no spine</span><span style="color:var(--red)"><i style="background:var(--red)"></i>D plain slant (gate failed)</span><span style="color:var(--violet)"><i style="background:var(--violet)"></i>per-master level</span></p>
+<h2>Text</h2>
+<img src="sheets/text_bangla_Light.png"><img src="sheets/text_bangla_Bold.png"><img src="sheets/text_latin_Light.png"><img src="sheets/text_latin_Bold.png">
+<h2>Upright | raw slant | corrected</h2>
+<img src="sheets/side_latin_Light.png"><img src="sheets/side_latin_Bold.png"><img src="sheets/side_bangla_Light.png"><img src="sheets/side_bangla_Bold.png">
+<h2>Overlay: raw slant vs corrected</h2>
+<img src="sheets/overlay_latin_Light.png"><img src="sheets/overlay_latin_Bold.png"><img src="sheets/overlay_bangla_Light.png"><img src="sheets/overlay_bangla_Bold.png">
+<h2>Class map: the Bangla anchor choice</h2>
+<p>Full-height verticals and the headline are stems and straights, sheared at θ; loops and bowls are anchored rounds at plain shear; only closed free rounds (o O 0 ০) lean back.</p>
+<img src="sheets/classmap_Light.png"><img src="sheets/classmap_Bold.png">
+<h2>Evidence for two class decisions</h2>
+<p>The rigid spine (I16) on a Bangla inflected stroke (১, Light): on, then off. On, the top of the stroke thins to a needle and fails the gate; off, it passes.</p>
+<img src="sheets/bangla_one_spine_on.png"><img src="sheets/bangla_one_spine_off.png">
+<p>Entry cuts keep the roman angle (I15): on a sans the upright terminal cut leaves a wedge on a and 3, and a stem-end wedge at the B's top left (Bold).</p>
+<img src="sheets/latin_entry_cut_wedges_Bold.png">
+<h2>Files</h2>
+<ul><li><a href="HindSiliguri-LightItalic.ufo">HindSiliguri-LightItalic.ufo</a>, <a href="HindSiliguri-BoldItalic.ufo">HindSiliguri-BoldItalic.ufo</a>, <a href="HindSiliguri-Italic.designspace">HindSiliguri-Italic.designspace</a></li>
+<li>build/italic/*.ttf, build/italic_vf/HindSiliguri-Italic-VF.ttf (fontmake), work/levels.json (level per glyph), work/results*_*.json (per-glyph gate reports)</li></ul>
+</body></html>

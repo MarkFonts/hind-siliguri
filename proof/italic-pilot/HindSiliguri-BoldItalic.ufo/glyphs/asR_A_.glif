@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="asRA" format="2">
+  <advance width="540"/>
+  <unicode hex="09F0"/>
+  <outline>
+    <contour>
+      <point x="113.23291437476618" y="292.92110779035534" type="line"/>
+      <point x="21.370523143039023" y="213.73706111119103" type="line"/>
+      <point x="281.625" y="0.0" type="line"/>
+      <point x="371.6420286754544" y="70.58407211276325" type="line"/>
+    </contour>
+    <contour>
+      <point x="409.875" y="505.0" type="line"/>
+      <point x="276.56751089949125" y="471.04902899312884"/>
+      <point x="157.6611703813224" y="416.02439203544145"/>
+      <point x="49.375" y="343.0" type="curve"/>
+      <point x="15.875" y="209.0" type="line"/>
+      <point x="116.375" y="259.0" type="line"/>
+      <point x="206.96998579394477" y="318.1313609175744"/>
+      <point x="293.5909399094805" y="352.19008259191565"/>
+      <point x="418.70003847913927" y="390.5419251796483" type="curve"/>
+    </contour>
+    <contour>
+      <point x="191.29183164340307" y="411.5299150974457" type="line"/>
+      <point x="141.56728070069371" y="365.35711779350135" type="line"/>
+      <point x="389.62661913664726" y="154.3564112848446" type="line"/>
+      <point x="437.22619047938315" y="191.72429906792695" type="line"/>
+    </contour>
+    <contour>
+      <point x="558.125" y="586.0" type="line"/>
+      <point x="428.125" y="586.0" type="line"/>
+      <point x="281.625" y="0.0" type="line"/>
+      <point x="411.625" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="664.375" y="671.0" type="line"/>
+      <point x="84.375" y="671.0" type="line"/>
+      <point x="56.375" y="559.0" type="line"/>
+      <point x="636.375" y="559.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

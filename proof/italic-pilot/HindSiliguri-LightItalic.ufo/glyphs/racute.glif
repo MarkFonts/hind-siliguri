@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="racute" format="2">
+  <advance width="314"/>
+  <unicode hex="0155"/>
+  <anchor x="126.625" y="0" name="bottom"/>
+  <anchor x="263.125" y="506" name="top"/>
+  <outline>
+    <component base="r"/>
+    <component base="acute" xOffset="38.5" yOffset="-86"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kcommaaccent" format="2">
+  <advance width="548"/>
+  <unicode hex="0137"/>
+  <outline>
+    <contour>
+      <point x="-3.375" y="0.0" type="line"/>
+      <point x="142.625" y="0.0" type="line"/>
+      <point x="315.125" y="690.0" type="line"/>
+      <point x="169.125" y="690.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="193.79451306630648" y="264.0" type="line"/>
+      <point x="364.4554869336935" y="264.0" type="line"/>
+      <point x="601.3144743054117" y="507.0" type="line"/>
+      <point x="425.43552569458825" y="507.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="312.2929350087707" y="0.0" type="line"/>
+      <point x="465.95706499122934" y="0.0" type="line"/>
+      <point x="353.2475769619225" y="264.0" type="line"/>
+      <point x="206.0024230380775" y="264.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="17.08298886205995" y="-262.0" type="line"/>
+      <point x="127.16701113794005" y="-262.0" type="line"/>
+      <point x="298.2987331423397" y="-51.0" type="line"/>
+      <point x="147.35615616304287" y="-43.3594024209936" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:42:06</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

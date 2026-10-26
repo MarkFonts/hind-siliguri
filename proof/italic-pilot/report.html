@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hind Siliguri Italic Pilot Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --ink:#1b1a18; --dim:#5c5a55; --line:#d9d5cb; --panel:#ebe7dc;
+  --card:#16161a; --card-ink:#ececf0; --card-dim:#96969e;
+  --lA:#1f7a38; --lB:#8a6500; --lC:#b4520a; --lD:#c1271a; --lM:#7a45c4;
+  --accent:#1f7a38;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101012; --ink:#ececf0; --dim:#a0a0a8; --line:#2e2e36; --panel:#1b1b20;
+    --lA:#5ade76; --lB:#fac846; --lC:#fa963c; --lD:#f0483a; --lM:#c8a0ff; --accent:#5ade76;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101012; --ink:#ececf0; --dim:#a0a0a8; --line:#2e2e36; --panel:#1b1b20;
+  --lA:#5ade76; --lB:#fac846; --lC:#fa963c; --lD:#f0483a; --lM:#c8a0ff; --accent:#5ade76;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);margin:0;padding:0 16px 80px;
+  font-family:"Newsreader",Georgia,serif;font-optical-sizing:auto;font-size:19px;line-height:1.55;font-weight:400}
+main{max-width:860px;margin:0 auto;overflow-wrap:anywhere}
+header{padding:40px 0 8px}
+h1{font-size:clamp(34px,8vw,56px);line-height:1.05;margin:0 0 6px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--dim);margin:0}
+h2{font-size:clamp(26px,5vw,34px);line-height:1.15;font-weight:600;margin:56px 0 10px;padding-top:20px;border-top:1px solid var(--line)}
+h3{font-size:22px;margin:28px 0 6px;font-weight:600}
+p{margin:0 0 14px}
+.verdict{background:var(--panel);border-left:4px solid var(--accent);padding:16px 18px;margin:22px 0;font-size:21px;line-height:1.5}
+.verdict p{margin:0}
+a{color:inherit;text-decoration-color:var(--dim)}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.82em;background:var(--panel);padding:1px 5px;border-radius:3px}
+.key{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 18px;font-weight:600}
+.key span{display:inline-flex;align-items:center;gap:7px}
+.key i{width:14px;height:14px;border-radius:3px;display:inline-block}
+.cA{color:var(--lA)}.cB{color:var(--lB)}.cC{color:var(--lC)}.cD{color:var(--lD)}.cM{color:var(--lM)}
+.key .cA i{background:var(--lA)}.key .cB i{background:var(--lB)}.key .cC i{background:var(--lC)}.key .cD i{background:var(--lD)}.key .cM i{background:var(--lM)}
+figure{margin:18px 0 26px;background:var(--card);border-radius:8px;padding:14px 14px 12px;color:var(--card-ink)}
+figure .ft{font-size:clamp(22px,4.6vw,30px);font-weight:600;line-height:1.15;margin:0 0 2px;color:var(--card-ink)}
+figure .fs{margin:0 0 10px;color:var(--card-dim);font-size:16px}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:3px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:17px}
+th,td{text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:600;font-size:15px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;padding-right:14px}
+.ladder td:first-child{font-weight:600;white-space:nowrap}
+.q{background:var(--panel);border-radius:8px;padding:14px 18px 6px;margin:16px 0}
+.q h3{margin-top:0}
+.q .rule{color:var(--dim)}
+ul,ol{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:6px}
+.files li{font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.45}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:640px){.pair{grid-template-columns:1fr} body{font-size:18px}.verdict{font-size:19px}}
+.theme{position:fixed;top:10px;right:10px;font:600 13px/1 ui-monospace,Menlo,monospace;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:7px 9px;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Toggle light and dark">theme</button>
+<main>
+<header>
+  <h1>Hind Siliguri italic pilot</h1>
+  <p class="sub">Light Italic and Bold Italic, 14.04°, Bangla and Latin. Built by the stroke-pairing italic solver from the two upright masters, with no drawn reference italic.</p>
+</header>
+
+<div class="verdict">
+<p><strong>Verdict.</strong> The solver produced both italic masters, they interpolate cleanly, and fontmake builds static and variable fonts from them. On a nearly monolinear design it corrects the shear's worst error: backslash strokes that the shear thickens by 10 to 12 percent come back to 6 to 8 percent. It barely helps slash strokes (about 10 percent thin before, 9 percent thin after), it leaves verticals alone by design, and Bangla bowls get almost no correction. Closed rounds (o, O, ০) now lean back, which is the one change you can see at text size. Of 699 glyphs with outlines, 423 take the full ruleset and 5 are plain slant in both masters. A further 51 take a different level in each master; 48 of those are plain slant in one master, 38 of them in Bold. The weak spots are a few terminal wedges (a, 3, B), the ii-kar ligatures, and the Bangla digits.</p>
+</div>
+
+<h2>What it managed without a drawn o</h2>
+<p>You skipped the reference italic o to see how far a nearly monolinear design carries the solver. Plainly: it gets partway. It compensates the diagonal direction it can measure on the upright's own rungs. It does not invent the optical correction a drawn italic o would give for slash strokes, or for bowls.</p>
+
+<h3>Stroke width against the upright</h3>
+<p>Ratio of stroke width to the upright, measured on the upright's rungs. These ratios come from the pilot's report. I did not re-measure them.</p>
+<div class="scroll"><table>
+<thead><tr><th>Direction</th><th class="n">Plain slant</th><th class="n">Corrected</th><th>Reading</th></tr></thead>
+<tbody>
+<tr><td>Backslash strokes</td><td class="n">1.10 to 1.12</td><td class="n">1.06 to 1.08</td><td>Thickening roughly halved. Still heavy.</td></tr>
+<tr><td>Slash strokes</td><td class="n">0.89 to 0.90</td><td class="n">0.91</td><td>Barely moved. Latin Light goes 0.98 to 0.96, which is slightly worse.</td></tr>
+<tr><td>Verticals</td><td class="n">about 0.98</td><td class="n">about 0.98</td><td>Unchanged by design. Stems keep their horizontal measure, so they stay about cos 14° thin.</td></tr>
+</tbody></table></div>
+
+<h3>Mean width error, per glyph</h3>
+<p>From <code>work/evenness.json</code>: the mean absolute difference between italic width and upright width, in font units, on the 52 glyphs shown on the sheets (13 Latin, 39 Bangla). Lower is better.</p>
+<div class="scroll"><table>
+<thead><tr><th>Master and script</th><th class="n">Plain slant</th><th class="n">Corrected</th><th class="n">Glyphs improved</th></tr></thead>
+<tbody>
+<tr><td>Light, Latin</td><td class="n">5.98</td><td class="n">4.75</td><td class="n">12 of 13</td></tr>
+<tr><td>Bold, Latin</td><td class="n">8.72</td><td class="n">6.57</td><td class="n">12 of 13</td></tr>
+<tr><td>Light, Bangla</td><td class="n">3.51</td><td class="n">2.84</td><td class="n">31 of 39</td></tr>
+<tr><td>Bold, Bangla</td><td class="n">7.28</td><td class="n">6.11</td><td class="n">28 of 39</td></tr>
+</tbody></table></div>
+<p>That is a 16 to 25 percent cut in error. It is real, and it is modest. The sheets show the same thing: slivers, not reshaping.</p>
+
+<h3>Latin</h3>
+<p>The overlay shows plain slant against corrected. Red is ink the correction took away. Green is ink it added. On n, g, S, &amp; and 8 the change is a hairline. The visible changes are o and O: the bowls lean back and thin on the leaning side. In Bold, R and &amp; lose weight along the leg, which is the backslash correction at work. The side-by-side sheets show it is hard to tell raw from corrected at text size, apart from o and O.</p>
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">Latin overlay, plain slant against corrected. Red taken away, green added.</p>
+  <a href="sheets/overlay_latin_Light.png"><img src="sheets/overlay_latin_Light.png" alt="Hind Siliguri Light Italic, Latin overlay of raw slant and corrected" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Bold Italic</p>
+  <p class="fs">Latin overlay, plain slant against corrected. Red taken away, green added.</p>
+  <a href="sheets/overlay_latin_Bold.png"><img src="sheets/overlay_latin_Bold.png" alt="Hind Siliguri Bold Italic, Latin overlay of raw slant and corrected" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">Latin: upright, raw slant, corrected, with the shipped level under each name.</p>
+  <a href="sheets/side_latin_Light.png"><img src="sheets/side_latin_Light.png" alt="Hind Siliguri Light Italic, Latin side by side" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Bold Italic</p>
+  <p class="fs">Latin: upright, raw slant, corrected, with the shipped level under each name.</p>
+  <a href="sheets/side_latin_Bold.png"><img src="sheets/side_latin_Bold.png" alt="Hind Siliguri Bold Italic, Latin side by side" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">Running text, upright above, corrected italic below.</p>
+  <a href="sheets/text_latin_Light.png"><img src="sheets/text_latin_Light.png" alt="Hind Siliguri Light Italic Latin text sample" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Bold Italic</p>
+  <p class="fs">Running text, upright above, corrected italic below.</p>
+  <a href="sheets/text_latin_Bold.png"><img src="sheets/text_latin_Bold.png" alt="Hind Siliguri Bold Italic Latin text sample" loading="lazy"></a>
+</figure>
+
+<h3>Bangla</h3>
+<p>Diagonals thin cleanly where the glyph has a backslash stroke: ক খ ঘ ব য র show red slivers along the diagonal in both masters. The bowls and loops of most glyphs show nothing. Digits show nothing in Light.</p>
+<p><strong>The Bold sheet contradicts "almost none."</strong> In Bold, ঊ (bnU) and ড (bnDDA) show a large red-and-green crescent on the bowl. The whole bowl shifts, thicker on one side. These are the only two clear bowl corrections I found on the Bold sheet, and I cannot tell from the sheet whether the shift is wanted. The pilot's "almost none" holds for the rest.</p>
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">Bangla overlay, plain slant against corrected.</p>
+  <a href="sheets/overlay_bangla_Light.png"><img src="sheets/overlay_bangla_Light.png" alt="Hind Siliguri Light Italic, Bangla overlay of raw slant and corrected" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Bold Italic</p>
+  <p class="fs">Bangla overlay, plain slant against corrected. Look at ঊ and ড.</p>
+  <a href="sheets/overlay_bangla_Bold.png"><img src="sheets/overlay_bangla_Bold.png" alt="Hind Siliguri Bold Italic, Bangla overlay of raw slant and corrected" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">Bangla: upright, raw slant, corrected (long sheet).</p>
+  <a href="sheets/side_bangla_Light.png"><img src="sheets/side_bangla_Light.png" alt="Hind Siliguri Light Italic, Bangla side by side" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Bold Italic</p>
+  <p class="fs">Bangla: upright, raw slant, corrected (long sheet).</p>
+  <a href="sheets/side_bangla_Bold.png"><img src="sheets/side_bangla_Bold.png" alt="Hind Siliguri Bold Italic, Bangla side by side" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">Bangla running text, upright above, corrected italic below.</p>
+  <a href="sheets/text_bangla_Light.png"><img src="sheets/text_bangla_Light.png" alt="Hind Siliguri Light Italic Bangla text sample" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Bold Italic</p>
+  <p class="fs">Bangla running text, upright above, corrected italic below.</p>
+  <a href="sheets/text_bangla_Bold.png"><img src="sheets/text_bangla_Bold.png" alt="Hind Siliguri Bold Italic Bangla text sample" loading="lazy"></a>
+</figure>
+
+<h2>Where it fell back</h2>
+<p>Every glyph runs a gate for humps and non-finite coordinates. A glyph ships at the highest level that passes in both masters. If none does, each master takes its own best level, labeled "mixed."</p>
+<div class="key">
+  <span class="cA"><i></i>A full ruleset</span>
+  <span class="cB"><i></i>B re-tension off</span>
+  <span class="cC"><i></i>C terminals sheared, no spine</span>
+  <span class="cD"><i></i>D plain slant</span>
+  <span class="cM"><i></i>mixed, per master</span>
+</div>
+<div class="scroll"><table class="ladder">
+<thead><tr><th>Level</th><th>What it drops</th><th class="n">All</th><th class="n">Bangla</th><th class="n">Latin and other</th></tr></thead>
+<tbody>
+<tr><td class="cA">A</td><td>Nothing. Thickness by direction with re-tension, harmonizer, comb repair.</td><td class="n">423</td><td class="n">242</td><td class="n">181</td></tr>
+<tr><td class="cB">B</td><td>Re-tension. It caused most of the humps.</td><td class="n">133</td><td class="n">114</td><td class="n">19</td></tr>
+<tr><td class="cC">C</td><td>Also: terminals are sheared, spine is off.</td><td class="n">87</td><td class="n">66</td><td class="n">21</td></tr>
+<tr><td class="cD">D</td><td>Everything. Plain slant, in both masters.</td><td class="n">5</td><td class="n">4</td><td class="n">1</td></tr>
+<tr><td class="cM">mixed</td><td>Each master takes its own best level.</td><td class="n">51</td><td class="n">42</td><td class="n">9</td></tr>
+<tr><td>composite</td><td>Offsets sheared, not decomposed.</td><td class="n">150</td><td class="n">9</td><td class="n">141</td></tr>
+<tr><td>empty</td><td>No outline.</td><td class="n">3</td><td class="n">1</td><td class="n">2</td></tr>
+</tbody></table></div>
+<p>The total is 852 glyphs. 694 of the 699 with outlines are corrected in at least one master. These counts match <code>work/levels.json</code>.</p>
+
+<h3>Why glyphs fall back</h3>
+<ul>
+<li><strong>Re-tension humps.</strong> Level B exists because re-tension made most of the humps. s, bnPA, bnJA, e, and bnFour pass without it. B is mostly Bangla: 114 of 133.</li>
+<li><strong>The ii-kar ligatures.</strong> Of 30 glyphs with <code>mII</code> in the name, 6 reach A, 3 are plain slant in both masters, 20 are mixed, and 1 is a composite. In 19 of the 20 mixed ones the Bold is plain slant. The exception is bnG_DHA_mII: Light is D, Bold is B. The pilot said they fail in Bold at every level. The levels file agrees for 19 of 20, not all.</li>
+<li><strong>Digits.</strong> Per <code>levels.json</code>: ০ ২ ৩ reach A. ১ ৪ ৭ ৯ stop at B. ৫ ৮ stop at C. ৬ is mixed C and D. The humps are in curls and terminals.</li>
+<li><strong>Mixed means Bold loses.</strong> Reading the labels as Light then Bold, 38 of the 51 mixed glyphs have a plain-slant Bold, and 10 have a plain-slant Light. The pilot's report says 39 and 8. I trust the levels file, since the sheets use the same Light/Bold label order. The remaining 3 are A/C and C/B.</li>
+<li><strong>Solver exceptions.</strong> scipy least_squares failed on V (Light), and on asterisk, braceleft, and braceright (Bold).</li>
+</ul>
+
+<h3>The five plain-slant glyphs</h3>
+<p><code>bnN_DH_BA</code>, <code>bnTTHA_mII</code>, <code>bnTTH_RA_mII</code>, <code>bnN_TTHA_mII</code>, and <code>currency</code>. Four are Bangla conjuncts, three of them ii-kar ligatures. They get the same shear as the raw slant, so they are even with the rest of the italic in angle and off only in thickness.</p>
+
+<h2>Bangla</h2>
+<h3>The anchor and its cost</h3>
+<p>The anchor is the full-height verticals (the right stem of ক and ব) plus the headline, both sheared at the italic angle. The headline is a bar, so its shape and thickness stay. Join nodes are junctions, blended with the stroke. On the class map, blue dots are the sheared stems and headline, green dots are plain-shear rounds, and orange dots are terminals.</p>
+<figure>
+  <p class="ft">Hind Siliguri Bold</p>
+  <p class="fs">Class map: which rule carries each on-curve node, read on the upright. Blue sheared, green round, magenta closed round that leans back, yellow junction, orange terminal.</p>
+  <a href="sheets/classmap_Bold.png"><img src="sheets/classmap_Bold.png" alt="Hind Siliguri Bold class map" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Light</p>
+  <p class="fs">Class map, same legend.</p>
+  <a href="sheets/classmap_Light.png"><img src="sheets/classmap_Light.png" alt="Hind Siliguri Light class map" loading="lazy"></a>
+</figure>
+<p>One shear center, y 253.5, is used for both scripts. That keeps mixed Bangla and Latin lines registered. The cost: the headline sits high above the center, so the shear moves it right of the base. At y 634 (Light) the shift is (634 − 253.5) / 4, about 95 units. At y 671 (Bold) it is about 104. The pilot reports about 95 for both. The Bold figure is my arithmetic from the pilot's own Bold headline height.</p>
+
+<h3>Loops</h3>
+<p>Loops are anchored bowls with β 0, which means plain shear, and they are gated. None of the requested consonants fails on a loop. The cost is that loops get no lean-back and almost no thickness correction, because the group rules act only at nodes. ০ is the exception: as a closed free round it leans back, and the Light overlay shows it.</p>
+
+<h3>The spine</h3>
+<p>The rigid spine fit Latin and did not fit Bangla. On the inflected stroke of ১ it fired and failed the gate. The two zoom sheets show ১ Light, spine on (gate false, failing at nodes 2 and 27), then off (gate passes). On the "on" sheet the fan of rungs at the top of the stroke is visibly crowded. <strong>I cannot see a needle at this size.</strong> The pilot said the top thins to a needle. The sheet shows the failing rung fan, and the gate result is in the title. The spine is now off for Bangla. It also never fires on Latin s at level A, because s has nodes mid-spine.</p>
+<div class="pair">
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">bnOne, spine on. Gate fails.</p>
+  <a href="sheets/bangla_one_spine_on.png"><img src="sheets/bangla_one_spine_on.png" alt="bnOne Light Italic with the spine on" loading="lazy"></a>
+</figure>
+<figure>
+  <p class="ft">Hind Siliguri Light Italic</p>
+  <p class="fs">bnOne, spine off. Gate passes.</p>
+  <a href="sheets/bangla_one_spine_off.png"><img src="sheets/bangla_one_spine_off.png" alt="bnOne Light Italic with the spine off" loading="lazy"></a>
+</figure>
+</div>
+
+<h3>Self-crossing contours</h3>
+<p>The artefact scan finds 119 glyphs per master with self-crossing contours as drawn: 107 Bangla, mostly conjuncts, loops, and digits, and 12 Latin (a e six nine three ampersand eth oe aogonek ordfeminine partialdiff litre). The same glyphs appear in both masters. No segment is under 3 units. Skia path ops misfill these glyphs, so the overlay sheets use coverage compositing and are accurate.</p>
+
+<h2>Best and worst five</h2>
+<h3>Best</h3>
+<ul>
+<li><strong>O.</strong> The lean-back reads as drawn, in both masters. See the Latin overlay and side-by-side sheets.</li>
+<li><strong>o.</strong> Same rule, same result. The overlay shows the bowl thinning on the leaning side. The mean width error barely moves in Light (9.45 to 9.14), so the gain is the lean, not the weight.</li>
+<li><strong>য (bnYA).</strong> The backslash diagonal thins cleanly. Light width error 3.73 to 1.25, Bold 7.65 to 2.56, the largest drop of any sheet glyph. See the Bangla overlay sheets.</li>
+<li><strong>ব (bnBA).</strong> Same diagonal, same clean result. Light 3.40 to 1.43. See the Bangla overlay sheets.</li>
+<li><strong>R.</strong> The leg thins and the bowl holds. Light 3.06 to 1.38, Bold 7.37 to 3.73. See the Latin overlay sheets.</li>
+</ul>
+<h3>Worst</h3>
+<ul>
+<li><strong>e.</strong> Level C. A curvature knot where the bar meets the bowl under the full ruleset, so it ships near plain slant. Width error does not move (3.14 to 3.14 Light, 6.78 to 6.78 Bold). See the Latin sheets.</li>
+<li><strong>a and 3.</strong> The entry terminal keeps the roman vertical cut, so a wedge shows at the top terminal. See the wedge sheet below. a is level A and 3 is level B.</li>
+<li><strong>B.</strong> A wedge at the stem's top left, because the stem end is treated as a stroke end with the roman angle. The sheet shows it at the top left of the stem in Bold. R shows a hint of it too.</li>
+<li><strong>৬ (bnSix).</strong> Mixed C and D. The Bold is plain slant because of humps in the curl. It also carries self-crossing contours.</li>
+<li><strong>bnTTHA_mII</strong> and the other ii-kar ligatures. Plain slant in both masters for three of them, plain slant in Bold for most of the rest.</li>
+</ul>
+<figure>
+  <p class="ft">Hind Siliguri Bold Italic</p>
+  <p class="fs">Overlay zoom: B, a, and 3. Green wedge at the entry terminal, red where the cut was taken away.</p>
+  <a href="sheets/latin_entry_cut_wedges_Bold.png"><img src="sheets/latin_entry_cut_wedges_Bold.png" alt="Hind Siliguri Bold Italic entry cut wedges on B, a, and 3" loading="lazy"></a>
+</figure>
+
+<h2>Decisions for Mark</h2>
+<p>Each is a class question. Answer with a rule. A second run applies it to every glyph in the class.</p>
+
+<div class="q">
+<h3>1. Do sans entry and exit terminals take the slant?</h3>
+<p class="rule">Today the roman cut angle is kept (I15 class "a"). That makes the wedges on a, 3, and B.</p>
+<p>Rule to choose: terminals on a sans are sheared with the stroke, or they stay vertical or horizontal as in the roman. If sheared, the wedges go. The cost is that terminals on every stroke end lean, which is the level C behavior and the usual look for a sans italic. A second run would reclassify the terminal class for all glyphs, and a, 3, B, and R would be the first to re-check. Some glyphs now at level C might pass at A, since level C already shears terminals.</p>
+</div>
+
+<div class="q">
+<h3>2. Where is the headline's shear center?</h3>
+<p class="rule">Today: y 253.5 for both scripts, so mixed lines register. The headline shifts right of the base by about 95 units (Light) and 104 (Bold).</p>
+<p>Rule to choose: keep 253.5 for registration, or center Bangla on its own mid-height. A Bangla center puts the headline over the base, but Bangla would then sit offset from Latin on a mixed line by a fixed amount. A second run changes every Bangla glyph's x position and the composite offsets. It also changes the sidebearings. Check text sheets with mixed script lines first.</p>
+</div>
+
+<div class="q">
+<h3>3. Do Bangla bowls lean back?</h3>
+<p class="rule">Today: β 0, so loops get plain shear. Only ০ leans back, as a closed free round. The loop lean (ρ_loop) is tied to this one switch.</p>
+<p>Rule to choose: Bangla bowls and loops take the same lean-back as Latin closed rounds (β 0.22θ), or a smaller fraction, or none. Latin o and O show what the lean does. Bangla bowls are not closed free rounds, so the same β may open counters. A second run changes the bowls of most Bangla consonants, so the gate will fail more of them. Expect more glyphs at B and C.</p>
+</div>
+
+<div class="q">
+<h3>4. Do we fix the 107 self-crossing Bangla glyphs in the source?</h3>
+<p class="rule">They are drawn that way in the upright, mostly conjuncts, loops, and digits.</p>
+<p>Rule to choose: overlaps are intentional and stay, or they get merged in the upright source first. If merged, the solver reads clean outlines and the humps that come from crossings go away. Some glyphs now at B or C may then pass at A. A second run changes only glyphs where the crossing caused a gate failure, so it also needs the upright masters re-checked for interpolation. Not worth it if the overlaps are deliberate.</p>
+</div>
+
+<div class="q">
+<h3>5. How do we handle the ii-kar ligatures?</h3>
+<p class="rule">Today: the long hook above the headline fails in Bold at every level in most glyphs. Three are plain slant in both masters.</p>
+<p>Rule to choose: the hook is a class of its own, sheared as a rigid piece and excluded from correction, or the solver keeps trying and Bold ships as plain slant. A rigid hook would pass the gate in Bold and bring the 20 mixed glyphs to one level. The base of the ligature would still get corrected. A second run needs a new class in the kit, then a rerun of the 30 <code>mII</code> glyphs only.</p>
+</div>
+
+<h2>Files</h2>
+<ul class="files">
+<li>proof/italic-pilot/HindSiliguri-LightItalic.ufo</li>
+<li>proof/italic-pilot/HindSiliguri-BoldItalic.ufo</li>
+<li>proof/italic-pilot/HindSiliguri-Italic.designspace</li>
+<li>proof/italic-pilot/build/italic/HindSiliguri-LightItalic.ttf</li>
+<li>proof/italic-pilot/build/italic/HindSiliguri-BoldItalic.ttf</li>
+<li>proof/italic-pilot/build/italic_vf/HindSiliguri-Italic-VF.ttf</li>
+<li>proof/italic-pilot/work/levels.json (level per glyph)</li>
+<li>proof/italic-pilot/work/results_*.json (gate reports)</li>
+<li>proof/italic-pilot/work/evenness.json, work/artefact_scan.json</li>
+<li>proof/italic-pilot/work/interpolatable_*.txt (the italic, designspace, and upright files are empty, so clean)</li>
+<li>proof/italic-pilot/sheets/ (all the sheets above), sheets/dev/ (debug zooms)</li>
+<li>proof/italic-pilot/tools/ (the pilot's code), kit/ (copied unmodified)</li>
+<li>proof/italic-pilot/index.html (the pilot's own index)</li>
+</ul>
+</main>
+<script>
+(function(){
+  var b=document.getElementById('theme'),r=document.documentElement;
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')==='dark'||(r.getAttribute('data-theme')!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);
+    r.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ocircumflex" format="2">
+  <advance width="567"/>
+  <unicode hex="00F4"/>
+  <anchor x="220.625" y="0" name="bottom"/>
+  <anchor x="351.375" y="507" name="top"/>
+  <outline>
+    <component base="o"/>
+    <component base="circumflex" xOffset="20.0" yOffset="-68"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Delta.math" format="2">
+  <advance width="601"/>
+  <unicode hex="2206"/>
+  <outline>
+    <contour>
+      <point x="-33.375" y="0.0" type="line"/>
+      <point x="13.625" y="0.0" type="line"/>
+      <point x="171.625" y="260.0" type="line" smooth="yes"/>
+      <point x="352.82735039122406" y="558.1810829222674"/>
+      <point x="395.875" y="625.0"/>
+      <point x="395.875" y="625.0" type="curve"/>
+      <point x="395.875" y="625.0"/>
+      <point x="405.375" y="559.0"/>
+      <point x="434.875" y="261.0" type="curve" smooth="yes"/>
+      <point x="460.625" y="0.0" type="line"/>
+      <point x="507.625" y="0.0" type="line"/>
+      <point x="521.875" y="57.0" type="line"/>
+      <point x="453.125" y="674.0" type="line"/>
+      <point x="363.125" y="674.0" type="line"/>
+      <point x="-19.125" y="57.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="-11.375" y="0.0" type="line"/>
+      <point x="486.625" y="0.0" type="line"/>
+      <point x="500.375" y="55.0" type="line"/>
+      <point x="2.375" y="55.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

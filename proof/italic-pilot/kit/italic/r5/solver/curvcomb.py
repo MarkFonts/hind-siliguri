@@ -1,0 +1,621 @@
+"""Curvature comb (G2) evaluator for the move step.
+
+Glyphs' "Show Curvature" / Speed Punk look: a comb of normals along every cubic, height = curvature,
+yellow (gentle) -> orange -> hot red (spiking). Drawn, CNTR 50 and CNTR 100 share ONE scale per glyph
+(the drawn outline's 95th-percentile |k|), so a comb that grows between panels really grew.
+
+Judged only on TOUCHED segments (any of the 4 control points moved at CNTR 50 or 100), per state (50, 100):
+  KINK   a smooth node whose two handles now turn by > KINK_DEG (G1 break): always a SNAP
+  SNAP   a smooth node whose curvature jump |kL - kR| grew (> MINOR_RATIO x drawn, + MINOR_FLOOR x scale)
+         AND is visible: the curve crosses its own end tangent by >= BUMP_U units next to the node (an
+         extremum slid off its node), or the jump read over WIN units of arc is a radius <= VIS_R units
+  SPIKE  a segment whose peak |k| > SPIKE_RATIO x drawn (and > SPIKE_FLOOR x scale) or that gained an
+         inflection, AND whose tightest WIN-arc radius is <= VIS_R units and SPIKE_VIS x tighter than drawn
+  minor  nominated by the curvature numbers but not visible by the rules above
+The bare endpoint jump alone over-flags: a short handle blows endpoint curvature up over a sliver of arc
+the eye never sees (Italic n 24 reads 4.2x scale yet is a 2.7 u bump), so it only nominates.
+
+  python3.13 curvcomb.py SET.json OUTDIR [--mover move:Mover]... [--keys k1,k2|all]
+  python3.13 curvcomb.py --md OUTDIR        (re-write CURV.md from the results_*.json there)
+  python3.13 curvcomb.py SET.json OUTDIR --zoom KEY:x0,y0,x1,y1 [--mover ...]   (drawn | 50 | 100 close-up)
+"""
+import sys, os, json, math, importlib, argparse, glob, traceback
+import numpy as np
+from PIL import Image, ImageDraw
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from sheet import Panel, BG, SS, font, MENLO, CAL
+from rungs import Outline
+from readings import fname
+
+NS = 40                 # samples per cubic
+SNAP_RATIO, SNAP_FLOOR = 3.0, 0.75
+MINOR_RATIO, MINOR_FLOOR = 1.75, 0.35
+SPIKE_RATIO, SPIKE_FLOOR = 3.0, 1.5
+INFL_EPS = 0.08         # |k| below this x scale does not count as a sign (inflection noise)
+SMOOTH_DEG = 3.0        # handles within this of collinear = smooth
+TOUCH_TOL = 0.05        # font units
+# what the eye sees (the curvature thresholds above only nominate; these decide snap vs minor)
+WIN = 8.0               # curvature read over 8 units of arc, not at the bare endpoint
+BUMP_U = 3.0            # a node whose curve now crosses its own tangent by >= 3 units = visible bump
+VIS_R = 10.0            # ... or whose 8-unit curvature jump is a radius <= 10 units (and 1.5x drawn)
+KINK_DEG = 4.0          # a smooth node whose handles now turn by > 4 deg (and 4 deg more than drawn) = G1 kink, always a snap
+KINK_MINOR = 1.5        # 1.5..4 deg: a kink too small to see, listed as minor
+SEV_CAP = 30.0          # one flag adds at most this to a glyph's severity (a reversed handle reads 180)
+SPIKE_VIS = 2.5         # a spike is visible when its 8-unit peak radius is <= VIS_R and 2.5x tighter than drawn
+
+GREY = (88, 88, 88)
+SNAPC = (255, 45, 45)
+MINORC = (255, 160, 40)
+SPIKEC = (255, 70, 200)
+
+
+# --- geometry ------------------------------------------------------------------------
+def segments(contours):
+    """[(gi, gj, kind, pts, ctrl_global_indices)] in file order; mirrors rungs.Outline's segmenting."""
+    out = []; base = 0
+    for c in contours:
+        nodes = c["nodes"]; N = len(nodes)
+        ons = [i for i in range(N) if nodes[i][2] != "o"]
+        for a, i in enumerate(ons):
+            j = ons[(a + 1) % len(ons)]
+            offs = [k % N for k in range(i + 1, i + 1 + ((j - i - 1) % N))]
+            P0, P3 = tuple(nodes[i][:2]), tuple(nodes[j][:2])
+            if len(offs) == 2 and nodes[j][2] != "l":
+                pts = [P0, tuple(nodes[offs[0]][:2]), tuple(nodes[offs[1]][:2]), P3]
+                out.append((base + i, base + j, "curve", pts, [base + i, base + offs[0], base + offs[1], base + j]))
+            else:
+                out.append((base + i, base + j, "line", [P0, P3], [base + i] + [base + o for o in offs] + [base + j]))
+        base += N
+    return out
+
+
+def flat(contours):
+    return [(n[0], n[1]) for c in contours for n in c["nodes"]]
+
+
+def cubic(P, t):
+    P = np.asarray(P, float); t = np.asarray(t, float)[:, None]; u = 1 - t
+    B = u ** 3 * P[0] + 3 * u * u * t * P[1] + 3 * u * t * t * P[2] + t ** 3 * P[3]
+    d1 = 3 * u * u * (P[1] - P[0]) + 6 * u * t * (P[2] - P[1]) + 3 * t * t * (P[3] - P[2])
+    d2 = 6 * u * (P[2] - 2 * P[1] + P[0]) + 6 * t * (P[3] - 2 * P[2] + P[1])
+    return B, d1, d2
+
+
+def kappa(P, t):
+    """signed curvature, position, unit left normal at parameters t"""
+    B, d1, d2 = cubic(P, t)
+    sp = np.hypot(d1[:, 0], d1[:, 1])
+    k = (d1[:, 0] * d2[:, 1] - d1[:, 1] * d2[:, 0]) / np.maximum(sp, 1e-9) ** 3
+    k[sp < 1e-6] = np.nan
+    n = np.stack([-d1[:, 1], d1[:, 0]], 1) / np.maximum(sp, 1e-9)[:, None]
+    return k, B, n
+
+
+def tparams(P):
+    """sample params; a retracted handle (on its node) leaves that end's curvature undefined, so step in"""
+    t = np.linspace(0, 1, NS)
+    if math.dist(P[0], P[1]) < 0.5: t[0] = 0.02
+    if math.dist(P[3], P[2]) < 0.5: t[-1] = 0.98
+    return t
+
+
+def end_tan(seg, end):
+    gi, gj, kind, P, _ = seg
+    if kind == "line":
+        d = (P[1][0] - P[0][0], P[1][1] - P[0][1])
+    elif end == 0:
+        d = next(((q[0] - P[0][0], q[1] - P[0][1]) for q in P[1:] if math.dist(q, P[0]) > 0.5), (0, 0))
+    else:
+        d = next(((P[3][0] - q[0], P[3][1] - q[1]) for q in P[2::-1] if math.dist(q, P[3]) > 0.5), (0, 0))
+    L = math.hypot(*d)
+    return (d[0] / L, d[1] / L) if L > 1e-9 else None
+
+
+def end_kappa(seg, end):
+    """curvature at the segment's start (end=0) or finish (end=1); None if undefined (retracted handle)"""
+    gi, gj, kind, P, _ = seg
+    if kind == "line":
+        return 0.0
+    if end == 0 and math.dist(P[0], P[1]) < 0.5: return None
+    if end == 1 and math.dist(P[3], P[2]) < 0.5: return None
+    k, _, _ = kappa(P, [float(end)])
+    return None if np.isnan(k[0]) else float(k[0])
+
+
+def analyse(contours):
+    segs = segments(contours)
+    per = []
+    for s in segs:
+        if s[2] == "curve":
+            t = tparams(s[3]); k, B, n = kappa(s[3], t)
+            per.append(dict(t=t, k=k, B=B, n=n))
+        else:
+            per.append(None)
+    into = {s[1]: i for i, s in enumerate(segs)}
+    outof = {s[0]: i for i, s in enumerate(segs)}
+    return segs, per, into, outof
+
+
+def sign_changes(k, eps):
+    s = [1 if v > eps else -1 for v in k if not np.isnan(v) and abs(v) > eps]
+    return sum(1 for a, b in zip(s, s[1:]) if a != b)
+
+
+# --- evaluation ---------------------------------------------------------------------------
+def arc(P, n=400):
+    """arc length and unwrapped tangent angle along a cubic"""
+    t = np.linspace(0, 1, n); B, d1, _ = cubic(P, t)
+    s = np.concatenate([[0], np.cumsum(np.hypot(*np.diff(B, axis=0).T))])
+    return s, np.unwrap(np.arctan2(d1[:, 1], d1[:, 0]))
+
+
+def win_side(seg, end):
+    """curvature seen over WIN units of arc next to a node (turning angle / length): what the eye sees,
+    immune to the endpoint blow-up of a very short handle"""
+    if seg[2] == "line":
+        return 0.0
+    s, th = arc(seg[3]); L = s[-1]; w = min(WIN, L)
+    if w < 1e-6: return 0.0
+    if end == 1:
+        return float((th[-1] - np.interp(L - w, s, th)) / w)
+    return float((np.interp(w, s, th) - th[0]) / w)
+
+
+def win_peak(seg):
+    s, th = arc(seg[3]); L = s[-1]; w = min(WIN, L)
+    if w < 1e-6: return 0.0
+    ss = np.linspace(0, L - w, 120)
+    return float(np.max(np.abs(np.interp(ss + w, s, th) - np.interp(ss, s, th)) / w))
+
+
+def overshoot(S, K0, a, b, node):
+    """how far (font units) the curve next to this node crosses to the wrong side of its OWN end tangent
+    there: the bump you see when an extremum slides off its node. Only the half of each segment next to
+    the node is measured, against the side the DRAWN curve bends to in that half."""
+    best = 0.0
+    for i, end in ((a, 1), (b, 0)):
+        if S[i][2] != "curve" or K0[i] is None: continue
+        T = end_tan(S[i], end)
+        if T is None: continue
+        P = np.array(S[i][3][3 if end else 0]); N = np.array([-T[1], T[0]])
+        half = slice(NS // 2, NS) if end else slice(0, NS // 2)
+        sg = np.sign(np.nanmedian(K0[i]["k"][half]))
+        if sg == 0: continue
+        tt = np.linspace(0.5, 1, 100) if end else np.linspace(0, 0.5, 100)
+        B, _, _ = cubic(S[i][3], tt)
+        best = max(best, float(np.max(-sg * ((B - P) @ N))))
+    return best
+
+
+def turn_deg(S, a, b):
+    ta, tb = end_tan(S[a], 1), end_tan(S[b], 0)
+    if not (ta and tb): return 0.0
+    return math.degrees(math.acos(max(-1.0, min(1.0, ta[0] * tb[0] + ta[1] * tb[1]))))
+
+
+def judge(drawn, moved, scale, touched, S0, K0, IN0, OUT0, smooth_nodes):
+    """flags for one moved state against the drawn outline"""
+    S1, K1, _, _ = analyse(moved)
+    snaps, minors, spikes, mspikes = [], [], [], []
+    for gi in smooth_nodes:
+        a, b = IN0[gi], OUT0[gi]
+        if not (touched[a] or touched[b]):
+            continue
+        kl0, kr0 = end_kappa(S0[a], 1), end_kappa(S0[b], 0)
+        kl1, kr1 = end_kappa(S1[a], 1), end_kappa(S1[b], 0)
+        if None in (kl0, kr0, kl1, kr1):
+            continue
+        j0, j1 = abs(kl0 - kr0) / scale, abs(kl1 - kr1) / scale
+        grew = j1 - j0
+        g0, g1 = turn_deg(S0, a, b), turn_deg(S1, a, b)
+        kink = g1 > max(KINK_DEG, g0 + KINK_DEG)        # the node is no longer smooth at all (G1 break)
+        kink_small = not kink and g1 > max(KINK_MINOR, g0 + KINK_MINOR)
+        if not kink and not kink_small and not (j1 > MINOR_RATIO * max(j0, 0.05) and grew > MINOR_FLOOR):
+            continue
+        w0 = abs(win_side(S0[a], 1) - win_side(S0[b], 0)); w1 = abs(win_side(S1[a], 1) - win_side(S1[b], 0))
+        ov0, ov1 = overshoot(S0, K0, a, b, gi), overshoot(S1, K0, a, b, gi)
+        R1 = 1 / max(w1, 1e-4)
+        row = dict(node=gi, j0=round(j0, 2), j1=round(j1, 2), R0=round(1 / max(w0, 1e-4)), R1=round(R1, 1),
+                   bump=round(ov1 - ov0, 1), kink=round(g1, 1) if (kink or kink_small) else 0.0,
+                   sev=round(min(SEV_CAP, max(ov1 - ov0, VIS_R / R1, g1 if kink else 0.0)), 2))
+        strong = j1 > SNAP_RATIO * max(j0, 0.05) and grew > SNAP_FLOOR
+        visible = kink or (ov1 - ov0) >= BUMP_U or (R1 <= VIS_R and w1 > 1.5 * w0)
+        (snaps if visible else minors).append(dict(row, strong=strong))
+    for si, s in enumerate(S0):
+        if s[2] != "curve" or not touched[si]:
+            continue
+        k0, k1 = K0[si]["k"], K1[si]["k"]
+        m0 = float(np.nanmax(np.abs(k0))) / scale; m1 = float(np.nanmax(np.abs(k1))) / scale
+        n0 = sign_changes(k0, INFL_EPS * scale); n1 = sign_changes(k1, INFL_EPS * scale)
+        why = []
+        if m1 > SPIKE_RATIO * max(m0, 0.05) and m1 > SPIKE_FLOOR:
+            why.append("peak x%.1f" % (m1 / max(m0, 0.05)))
+        if n1 > n0:
+            why.append("+%d inflection" % (n1 - n0))
+        if not why:
+            continue
+        p0, p1 = win_peak(s), win_peak(S1[si])
+        r1 = 1 / max(p1, 1e-4)
+        row = dict(seg=[s[0], s[1]], m0=round(m0, 2), m1=round(m1, 2), n0=n0, n1=n1, why=", ".join(why),
+                   r0=round(1 / max(p0, 1e-4), 1), r1=round(r1, 1), sev=round(min(SEV_CAP, VIS_R / r1), 2))
+        visible = r1 <= VIS_R and p1 > SPIKE_VIS * p0
+        (spikes if visible else mspikes).append(row)
+    if snaps or spikes:
+        verdict = "snapped"
+    elif minors or mspikes:
+        verdict = "minor"
+    else:
+        verdict = "clean"
+    sev = sum(x["sev"] for x in snaps + spikes)
+    return dict(snaps=snaps, minors=minors, spikes=spikes, minor_spikes=mspikes, verdict=verdict, sev=round(sev, 2))
+
+
+def evaluate(g, M):
+    drawn = g["contours"]
+    c50, c100 = M.contours_at(0.5), M.contours_at(1.0)
+    S0, K0, IN0, OUT0 = analyse(drawn)
+    allk = np.concatenate([np.abs(p["k"][~np.isnan(p["k"])]) for p in K0 if p is not None] or [np.array([1e-3])])
+    scale = max(float(np.percentile(allk, 95)) if len(allk) else 1e-3, 1e-4)
+    f0, f1, f5 = flat(drawn), flat(c100), flat(c50)
+    moved = {i for i, (a, b, c) in enumerate(zip(f0, f1, f5)) if math.dist(a, b) > TOUCH_TOL or math.dist(a, c) > TOUCH_TOL}
+    touched = [any(ix in moved for ix in s[4]) for s in S0]
+    smooth_nodes = []
+    for gi, n in enumerate([n for c in drawn for n in c["nodes"]]):
+        if n[2] == "o" or gi not in IN0 or gi not in OUT0:
+            continue
+        a, b = IN0[gi], OUT0[gi]
+        if S0[a][2] == "line" and S0[b][2] == "line":
+            continue
+        ta, tb = end_tan(S0[a], 1), end_tan(S0[b], 0)
+        smooth = bool(n[3] if len(n) > 3 else False)
+        if ta and tb:
+            ang = math.degrees(math.acos(max(-1.0, min(1.0, ta[0] * tb[0] + ta[1] * tb[1]))))
+            smooth = smooth or ang < SMOOTH_DEG
+        if smooth:
+            smooth_nodes.append(gi)
+    J = {t: judge(drawn, c, scale, touched, S0, K0, IN0, OUT0, smooth_nodes) for t, c in ((50, c50), (100, c100))}
+    res = dict(key=None, glyph=g["glyph"], master=g["master"], scale=scale, touched=sum(touched),
+               ncurves=sum(1 for s in S0 if s[2] == "curve"), touched_segs=[[s[0], s[1]] for s, tt in zip(S0, touched) if tt],
+               at50={k: v for k, v in J[50].items()},
+               _contours={0: drawn, 50: c50, 100: c100}, _touched=touched, _J=J)
+    res.update(J[100])
+    return res
+
+
+# --- drawing --------------------------------------------------------------------------------
+def kcol(a, scale):
+    u = min(1.0, a / (2.5 * scale))
+    stops = [(0.0, (242, 214, 64)), (0.45, (247, 150, 40)), (1.0, (255, 30, 30))]
+    for (p, ca), (q, cb) in zip(stops, stops[1:]):
+        if u <= q:
+            f = (u - p) / (q - p)
+            return tuple(int(ca[i] + (cb[i] - ca[i]) * f) for i in range(3))
+    return stops[-1][1]
+
+
+def comb(A, contours, touched, scale, kgain, Lmax, width=1.0, teeth=True):
+    segs, per, _, _ = analyse(contours)
+    for si, (s, p) in enumerate(zip(segs, per)):
+        if p is None:
+            continue
+        on = touched[si]
+        tips = []
+        for k, B, n in zip(p["k"], p["B"], p["n"]):
+            if np.isnan(k):
+                continue
+            L = min(Lmax, kgain * abs(k))
+            tip = (B[0] - np.sign(k) * n[0] * L, B[1] - np.sign(k) * n[1] * L)
+            col = kcol(abs(k), scale) if on else GREY
+            if teeth:
+                A.d.line([A.pt(B), A.pt(tip)], fill=col, width=max(1, int(0.7 * width * SS)))
+            tips.append((tip, col))
+        for (a, ca), (b, cb) in zip(tips, tips[1:]):
+            A.d.line([A.pt(a), A.pt(b)], fill=cb, width=max(1, int(1.4 * width * SS)))
+
+
+def curve_poly(P, n=48):
+    t = np.linspace(0, 1, n); B, _, _ = cubic(P, t)
+    return [tuple(b) for b in B]
+
+
+def node_marks(A, contours, J, labels=True, size=9):
+    snapn = {r["node"]: r for r in J["snaps"]}; minn = {r["node"]: r for r in J["minors"]}
+    f = font(MENLO, size); fb = font(MENLO, size + 3)
+    gi = 0
+    for c in contours:
+        for n in c["nodes"]:
+            if n[2] != "o":
+                X, Y = A.pt((n[0], n[1])); r = 2.3 * SS
+                A.d.rectangle([X - r, Y - r, X + r, Y + r], fill=(235, 235, 235))
+                if gi in snapn or gi in minn:
+                    row = snapn.get(gi) or minn[gi]
+                    col = SNAPC if gi in snapn else MINORC
+                    R = (11 if gi in snapn else 8) * SS
+                    A.d.ellipse([X - R, Y - R, X + R, Y + R], outline=col, width=int(2.2 * SS))
+                    if labels:
+                        A.d.text((X + R + 2 * SS, Y - 9 * SS), "%d" % gi, fill=col, font=fb)
+                        if size >= 9:
+                            A.d.text((X + R + 2 * SS, Y + 5 * SS), ("kink %.1f°  " % row["kink"] if row.get("kink") else "") + "bump %.1fu  r%.0f" % (max(0, row["bump"]), row["R1"]), fill=col, font=f)
+                elif labels:
+                    A.d.text((X + 4 * SS, Y + 1 * SS), str(gi), fill=(232, 184, 74), font=f)
+            gi += 1
+
+
+def spike_marks(A, contours, J, labels=True):
+    segs = {(s[0], s[1]): s for s in segments(contours)}
+    for lst, col, w in ((J["minor_spikes"], MINORC, 1.6), (J["spikes"], SPIKEC, 3.2)):
+        for sp in lst:
+            s = segs.get(tuple(sp["seg"]))
+            if not s:
+                continue
+            A.d.line([A.pt(p) for p in curve_poly(s[3])], fill=col, width=int(w * SS))
+            if lst is J["spikes"]:
+                for a, b in ((s[3][0], s[3][1]), (s[3][3], s[3][2])):
+                    A.d.line([A.pt(a), A.pt(b)], fill=(200, 120, 230), width=SS)
+                    X, Y = A.pt(b); r = 2.4 * SS
+                    A.d.ellipse([X - r, Y - r, X + r, Y + r], outline=(200, 120, 230), width=SS)
+                if labels:
+                    m = curve_poly(s[3], 3)[1]
+                    A.text(m, "%d-%d r%.0f->%.1f" % (s[0], s[1], sp["r0"], sp["r1"]), SPIKEC, size=10, dx=6, dy=4)
+
+
+def handles(A, contours, which, col=(110, 150, 220)):
+    """draw handles of the curves adjacent to flagged nodes"""
+    for s in segments(contours):
+        if s[2] == "curve" and (s[0] in which or s[1] in which):
+            for a, b in ((s[3][0], s[3][1]), (s[3][3], s[3][2])):
+                A.d.line([A.pt(a), A.pt(b)], fill=col, width=SS)
+                X, Y = A.pt(b); r = 2.2 * SS
+                A.d.ellipse([X - r, Y - r, X + r, Y + r], outline=col, width=SS)
+
+
+def glyph_bbox(res, pad):
+    pts = [p for t in (0, 50, 100) for p in flat(res["_contours"][t])]
+    xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+    return (min(xs) - pad, min(ys) - pad, max(xs) + pad, max(ys) + pad)
+
+
+def gains(res):
+    # 95th-pct curvature -> 40 units of comb; clamp at 130
+    return 40.0 / res["scale"], 130.0
+
+
+NONE = dict(snaps=[], minors=[], spikes=[], minor_spikes=[])
+
+
+def subline(J, t):
+    return ("CNTR %d: %d snap%s (red ring) · %d spike%s (pink) · %d minor (orange) · %s"
+            % (t, len(J["snaps"]), "" if len(J["snaps"]) == 1 else "s", len(J["spikes"]), "" if len(J["spikes"]) == 1 else "s",
+               len(J["minors"]) + len(J["minor_spikes"]), J["verdict"].upper()))
+
+
+def render(res, out_path, mover_name):
+    bb = glyph_bbox(res, 110)
+    bw, bh = bb[2] - bb[0], bb[3] - bb[1]
+    PH = 900 if bw / bh < 1.6 else 760
+    PW = max(560, min(2400, int((PH - 150) * bw / bh) + 120))
+    kgain, Lmax = gains(res)
+    flagged = {r["node"] for t in (50, 100) for r in res["_J"][t]["snaps"] + res["_J"][t]["minors"]}
+    ims = []
+    for t in (0, 50, 100):
+        A = Panel(PW, PH, bb, margin=40)
+        c = res["_contours"][t]
+        J = res["_J"].get(t, NONE)
+        name = "drawn (CNTR 0)" if t == 0 else "CNTR %d" % t
+        ttl = ("/%s %s · %s · %s" % (res["glyph"], res["master"], name, mover_name),
+               ("curvature comb, one scale for all three (drawn 95th pct |k| = 1/%.0f u) · colour = touched by the move, grey = untouched"
+                % (1 / res["scale"])) if t == 0 else subline(J, t))
+        A.fill_outline(Outline(c), color=(40, 48, 34), edge=(120, 120, 120))
+        if t > 0:
+            from partsheet import draw_poly
+            for poly in Outline(res["_contours"][0]).polys:
+                draw_poly(A, poly + [poly[0]], (150, 150, 150), 0.7, dash=6)
+        comb(A, c, res["_touched"], res["scale"], kgain, Lmax)
+        handles(A, c, flagged)
+        if t > 0:
+            spike_marks(A, c, J)
+        node_marks(A, c, J)
+        if t == 0 and flagged:
+            for gi, n in enumerate([n for cc in c for n in cc["nodes"]]):
+                if gi in flagged:
+                    X, Y = A.pt((n[0], n[1])); R = 9 * SS
+                    A.d.ellipse([X - R, Y - R, X + R, Y + R], outline=(150, 150, 150), width=SS)
+        A.d.rectangle([0, 0, A.im.width, 46 * SS], fill=BG)
+        A.title(*ttl)
+        ims.append(A.out())
+    sheet = Image.new("RGB", (PW * 3 + 20, PH), BG)
+    for i, im in enumerate(ims):
+        sheet.paste(im, (i * (PW + 10), 0))
+    d = ImageDraw.Draw(sheet)
+    x0, y0 = 16, PH - 26
+    for i in range(200):
+        d.line([(x0 + i, y0), (x0 + i, y0 + 8)], fill=kcol(i / 200 * 2.5 * res["scale"], res["scale"]))
+    d.text((x0 + 208, y0 - 3), LEGEND, fill=(170, 170, 170), font=font(MENLO, 9).font_variant(size=11))
+    sheet.save(out_path)
+
+
+LEGEND = ("|k| 0 -> 2.5x drawn 95th pct   red ring = SNAP: G1 kink > %g deg, or G2 jump grew (>%gx, +%g) and is visible (bump >= %gu past the node's tangent, or %gu-arc radius <= %gu)"
+          " · orange = same jump, not visible · pink = SPIKE: peak > %gx or new inflection, and %gu-arc radius <= %gu and %gx tighter · r = radius in units"
+          % (KINK_DEG, MINOR_RATIO, MINOR_FLOOR, BUMP_U, WIN, VIS_R, SPIKE_RATIO, WIN, VIS_R, SPIKE_VIS))
+
+
+def zoom(res, bb, out_path, mover_name, W=820, H=760):
+    """drawn | CNTR 50 | CNTR 100 of one region, comb + every handle, to judge a flag by eye"""
+    kgain, Lmax = gains(res)
+    ims = []
+    for t in (0, 50, 100):
+        A = Panel(W, H, bb, margin=20)
+        c = res["_contours"][t]; J = res["_J"].get(t, NONE)
+        ttl = ("/%s %s · %s · %s · zoom" % (res["glyph"], res["master"], "drawn" if t == 0 else "CNTR %d" % t, mover_name),
+               "comb on the drawn scale · all handles shown · dashed = drawn outline" if t == 0 else subline(J, t))
+        A.fill_outline(Outline(c), color=(40, 48, 34), edge=(170, 170, 170))
+        if t:
+            from partsheet import draw_poly
+            for poly in Outline(res["_contours"][0]).polys:
+                draw_poly(A, poly + [poly[0]], (150, 150, 150), 0.7, dash=6)
+        comb(A, c, res["_touched"], res["scale"], kgain * 0.6, Lmax)
+        handles(A, c, {n for s in segments(c) for n in (s[0], s[1])})
+        if t:
+            spike_marks(A, c, J)
+        node_marks(A, c, J, size=11)
+        A.d.rectangle([0, 0, A.im.width, 46 * SS], fill=BG)
+        A.title(*ttl)
+        ims.append(A.out())
+    sh = Image.new("RGB", (W * 3 + 20, H), BG)
+    for i, im in enumerate(ims):
+        sh.paste(im, (i * (W + 10), 0))
+    sh.save(out_path)
+
+
+def thumb(res, W=300, H=330):
+    bb = glyph_bbox(res, 90)
+    A = Panel(W, H, bb, margin=10)
+    ns, nsp = len(res["snaps"]), len(res["spikes"])
+    col = SNAPC if res["verdict"] == "snapped" else (MINORC if res["verdict"] == "minor" else (150, 210, 120))
+    A.d.text((10 * SS, 8 * SS), "/%s" % res["glyph"], fill=(235, 235, 235), font=font(CAL, 15))
+    A.d.text((10 * SS, 28 * SS), "%d snap%s · %d spike%s · %d minor%s" % (
+        ns, "" if ns == 1 else "s", nsp, "" if nsp == 1 else "s", len(res["minors"]) + len(res["minor_spikes"]),
+        "  (worse at 50)" if res["at50"]["sev"] > res["sev"] + 0.5 else ""), fill=col, font=font(CAL, 12))
+    c = res["_contours"][100]
+    A.fill_outline(Outline(c), color=(40, 48, 34), edge=(110, 110, 110))
+    kgain, Lmax = gains(res)
+    comb(A, c, res["_touched"], res["scale"], kgain, Lmax, width=0.8, teeth=True)
+    spike_marks(A, c, res, labels=False)
+    node_marks(A, c, res, labels=True, size=6)
+    return A.out()
+
+
+ORDER = {"snapped": 2, "minor": 1, "clean": 0}
+
+
+def worst_first(rs):
+    return sorted(rs, key=lambda r: (-ORDER[r["verdict"]], -r["sev"], -(len(r["minors"]) + len(r["minor_spikes"]))))
+
+
+def index_sheet(results, master, out_path, mover_name):
+    """letters worst first in a grid; a wide glyph (the Harvey ligature) gets its own full-width row at the end"""
+    rs = worst_first(results)
+    wide = [r for r in rs if r["glyph"] == "H_a_r_v_e_y"]
+    rs = [r for r in rs if r not in wide]
+    cols = 5; W, H = 300, 330; WH = 400
+    rows = math.ceil(len(rs) / cols)
+    SW = cols * (W + 8) + 8
+    sheet = Image.new("RGB", (SW, rows * (H + 8) + 60 + len(wide) * (WH + 8)), BG)
+    d = ImageDraw.Draw(sheet)
+    allr = rs + wide
+    tot = sum(len(r["snaps"]) for r in allr); tsp = sum(len(r["spikes"]) for r in allr)
+    d.text((12, 12), "%s · CNTR 100 curvature combs · %s · %d snaps, %d spikes · worst first" % (master, mover_name, tot, tsp),
+           fill=(232, 184, 74), font=font(CAL, 16).font_variant(size=18))
+    d.text((12, 36), "red ring = snap node, pink = spiking segment, orange = curvature jump too small to see, grey comb = untouched",
+           fill=(160, 160, 160), font=font(CAL, 12).font_variant(size=13))
+    for i, r in enumerate(rs):
+        sheet.paste(thumb(r, W, H), (8 + (i % cols) * (W + 8), 60 + (i // cols) * (H + 8)))
+    for j, r in enumerate(wide):
+        sheet.paste(thumb(r, SW - 16, WH), (8, 60 + rows * (H + 8) + j * (WH + 8)))
+    sheet.save(out_path)
+
+
+# --- report -------------------------------------------------------------------------------------
+def write_md(outdir):
+    files = sorted(glob.glob(os.path.join(outdir, "results_*.json")), key=lambda f: (not f.endswith("results_move.json"), f))
+    L = ["# Curvature (G2) check of the move step, CNTR 100", "",
+         "Judged on touched segments only (a control point moved). A smooth node whose two handles now turn by more than %g deg "
+         "(and %g deg more than drawn) is a **kink** (G1 break) and always a snap (1.5-4 deg: minor). Otherwise it is nominated when its curvature jump "
+         "|kL - kR| grew > %gx drawn and by > %g x the glyph's drawn 95th-pct |k|; it is a **snap** when that is visible: the curve now "
+         "crosses the node's own tangent by >= %g u (a bump: the extremum slid off its node), or the jump read over %g u of arc is a radius "
+         "<= %g u. A segment is nominated when its peak |k| > %gx drawn or it gained an inflection; it is a **spike** when its tightest %g u-arc "
+         "radius is <= %g u and %gx tighter than drawn. Nominated but not visible = minor. Snaps are listed `node (bump u, radius u)`, spikes "
+         "`a-b (drawn radius -> 100 radius)`." % (KINK_DEG, KINK_DEG, MINOR_RATIO, MINOR_FLOOR, BUMP_U, WIN, VIS_R, SPIKE_RATIO, WIN, VIS_R, SPIKE_VIS), "",
+         "Renders: `<glyph>_curv[_<mover>].png` (drawn | 50 | 100), `curv_index_<Master>[_<mover>].png` (worst first).", ""]
+    allR = {}
+    for f in files:
+        R = json.load(open(f)); allR[R["mover"]] = {r["key"]: r for r in R["results"]}
+    if len(allR) > 1:
+        L += ["## movers compared", "", "| mover | snapped | minor | clean | FAIL | snaps | spikes | total severity |", "|---|---|---|---|---|---|---|---|"]
+        for mv, D in allR.items():
+            rs = list(D.values()); v = lambda k: sum(1 for r in rs if r["verdict"] == k)
+            L.append("| `%s` | %d | %d | %d | %d | %d | %d | %.1f |" % (mv, v("snapped"), v("minor"), v("clean"), v("FAIL"),
+                     sum(len(r["snaps"]) for r in rs), sum(len(r["spikes"]) for r in rs), sum(r.get("sev", 0) for r in rs)))
+        L.append("")
+    for mv, D in allR.items():
+        rs_all = list(D.values())
+        cnt = {}
+        for r in rs_all:
+            cnt[r["verdict"]] = cnt.get(r["verdict"], 0) + 1
+        L += ["## mover `%s`" % mv, "",
+              "%d layers: %s · %d snaps, %d spikes" % (len(rs_all), ", ".join("%d %s" % (v, k) for k, v in sorted(cnt.items())),
+                                                       sum(len(r["snaps"]) for r in rs_all), sum(len(r["spikes"]) for r in rs_all)), ""]
+        good = [r for r in rs_all if not r.get("error")]
+        L += ["Worst ten: " + ", ".join("%s %s (%s)" % (r["master"], r["glyph"], ", ".join(str(x["node"]) for x in r["snaps"]) or
+                                                     "spikes " + ", ".join("%d-%d" % tuple(x["seg"]) for x in r["spikes"]))
+                                      for r in worst_first(good)[:10]), ""]
+        for master in ("Regular", "Black", "Italic", "Black Italic"):
+            rs = [r for r in rs_all if r["master"] == master]
+            if not rs: continue
+            L += ["### %s" % master, "", "| glyph | touched / all segments | snaps | spikes | minor | at CNTR 50 | verdict |", "|---|---|---|---|---|---|---|"]
+            for r in sorted(rs, key=lambda r: r["glyph"]):
+                if r.get("error"):
+                    L.append("| %s | - | - | - | - | - | FAIL: %s |" % (r["glyph"], r["error"][:60])); continue
+                sn = ", ".join("%d (%s%.1f, r%.0f)" % (x["node"], "kink %.1f deg, " % x["kink"] if x.get("kink") else "", max(0, x["bump"]), x["R1"]) for x in r["snaps"]) or "-"
+                sp = ", ".join("%d-%d (r%.0f->%.1f)" % (x["seg"][0], x["seg"][1], x["r0"], x["r1"]) for x in r["spikes"]) or "-"
+                mi = ", ".join([str(x["node"]) for x in r["minors"]] + ["%d-%d" % tuple(x["seg"]) for x in r["minor_spikes"]]) or "-"
+                a5 = r["at50"]
+                extra = sorted({x["node"] for x in a5["snaps"]} - {x["node"] for x in r["snaps"]})
+                extras = sorted({tuple(x["seg"]) for x in a5["spikes"]} - {tuple(x["seg"]) for x in r["spikes"]})
+                at50 = a5["verdict"] + ("; worse: " + ", ".join([str(n) for n in extra] + ["%d-%d" % e for e in extras]) if extra or extras else "")
+                L.append("| %s | %d / %d | %s | %s | %s | %s | %s |" % (r["glyph"], r["touched"], r["ncurves_total"], sn, sp, mi, at50, r["verdict"]))
+            L.append("")
+    open(os.path.join(outdir, "CURV.md"), "w").write("\n".join(L) + "\n")
+
+
+def run(G, keys, outdir, spec):
+    modname, clsname = spec.split(":")
+    Cls = getattr(importlib.import_module(modname), clsname)
+    suffix = "" if spec == "move:Mover" else "_" + modname
+    results = []
+    for key in keys:
+        g = G[key]
+        try:
+            M = Cls(g)
+            res = evaluate(g, M)
+            res["key"] = key
+            res["ncurves_total"] = len(segments(g["contours"]))
+            render(res, os.path.join(outdir, fname(key) + "_curv%s.png" % suffix), modname)
+            print("%-28s %-8s sev %5.1f snaps %s spikes %s minor %s" % (key, res["verdict"], res["sev"], [(x["node"], x["bump"], x["R1"]) for x in res["snaps"]],
+                  [(tuple(x["seg"]), x["r0"], x["r1"]) for x in res["spikes"]], [x["node"] for x in res["minors"]] + [tuple(x["seg"]) for x in res["minor_spikes"]]), flush=True)
+        except Exception as e:
+            traceback.print_exc()
+            res = dict(key=key, glyph=g["glyph"], master=g["master"], error=repr(e), verdict="FAIL", snaps=[], spikes=[], minors=[], minor_spikes=[], sev=0)
+        results.append(res)
+    good = [r for r in results if not r.get("error")]
+    for master in sorted({r["master"] for r in good}):
+        index_sheet([r for r in good if r["master"] == master], master,
+                    os.path.join(outdir, "curv_index_%s%s.png" % (master.replace(" ", ""), suffix)), modname)
+    clean = [{k: v for k, v in r.items() if not k.startswith("_")} for r in results]
+    json.dump({"mover": spec, "results": clean}, open(os.path.join(outdir, "results_%s.json" % modname), "w"), indent=1)
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("src", nargs="?"); ap.add_argument("outdir")
+    ap.add_argument("--mover", action="append"); ap.add_argument("--keys", default="all")
+    ap.add_argument("--md", action="store_true")
+    ap.add_argument("--zoom", action="append", help="key:x0,y0,x1,y1 (writes <glyph>_curvzoom_x0-y0.png)")
+    a = ap.parse_args()
+    if a.md:
+        write_md(a.outdir if a.src is None else a.src); sys.exit()
+    G = json.load(open(a.src))
+    os.makedirs(a.outdir, exist_ok=True)
+    keys = sorted(G) if a.keys == "all" else a.keys.split(",")
+    if a.zoom:
+        for spec in (a.mover or ["move:Mover"]):
+            modname, clsname = spec.split(":")
+            Cls = getattr(importlib.import_module(modname), clsname)
+            for z in a.zoom:
+                key, bbs = z.split(":"); bb = tuple(float(v) for v in bbs.split(","))
+                res = evaluate(G[key], Cls(G[key])); res["key"] = key
+                zoom(res, bb, os.path.join(a.outdir, "%s_curvzoom_%d-%d%s.png" % (fname(key), bb[0], bb[1], "" if spec == "move:Mover" else "_" + modname)), modname)
+        sys.exit()
+    for spec in (a.mover or ["move:Mover"]):
+        run(G, keys, a.outdir, spec)
+    write_md(a.outdir)

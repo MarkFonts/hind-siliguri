@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnK_KA" format="2">
+  <advance width="736"/>
+  <anchor x="486.125" y="634" name="abvm.chandrabindu"/>
+  <anchor x="487.125" y="634" name="abvm.reph"/>
+  <anchor x="294.875" y="-127" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="50.375" y="275.0" type="line"/>
+      <point x="83.375" y="291.0" type="line"/>
+      <point x="198.88815018058062" y="383.43849556994087"/>
+      <point x="341.0229344093512" y="450.79316498369724"/>
+      <point x="438.46627669467324" y="460.38669198881735" type="curve"/>
+      <point x="427.125" y="514.0" type="line"/>
+      <point x="310.625" y="496.0"/>
+      <point x="170.625" y="428.0"/>
+      <point x="68.875" y="349.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="267.1141320144667" y="-123.72670626918094" type="line"/>
+      <point x="304.8834401281995" y="-80.56178271062919" type="line"/>
+      <point x="59.27980013903982" y="68.5422969715404" type="line"/>
+      <point x="24.375" y="19.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="24.375" y="19.0" type="line"/>
+      <point x="54.375" y="35.0" type="line"/>
+      <point x="164.53949573317198" y="122.6361865193887"/>
+      <point x="273.12265848720045" y="180.29753804232638"/>
+      <point x="370.58172158680173" y="190.02277068057367" type="curve"/>
+      <point x="359.1549415366304" y="244.04027637229257" type="line"/>
+      <point x="242.62605018927366" y="225.68357039147767"/>
+      <point x="139.22443585877994" y="167.33708361712445"/>
+      <point x="42.875" y="93.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="230.7994890073291" y="167.58965611680605" type="line"/>
+      <point x="287.3657673426231" y="201.21137978597676" type="line"/>
+      <point x="87.13859957801606" y="327.18059294944214" type="line"/>
+      <point x="52.34844399764671" y="277.8010172869824" type="line"/>
+    </contour>
+    <contour>
+      <point x="265.125" y="-126.0" type="line"/>
+      <point x="326.125" y="-126.0" type="line"/>
+      <point x="514.375" y="627.0" type="line"/>
+      <point x="453.375" y="627.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="426.875" y="-95.0" type="curve" smooth="yes"/>
+      <point x="517.875" y="-95.0"/>
+      <point x="588.125" y="-38.0"/>
+      <point x="612.125" y="58.0" type="curve"/>
+      <point x="641.375" y="175.0"/>
+      <point x="548.875" y="245.0"/>
+      <point x="416.875" y="245.0" type="curve"/>
+      <point x="403.125" y="190.0" type="line"/>
+      <point x="496.125" y="190.0"/>
+      <point x="573.625" y="148.0"/>
+      <point x="551.125" y="58.0" type="curve"/>
+      <point x="536.375" y="-1.0"/>
+      <point x="499.625" y="-36.0"/>
+      <point x="435.625" y="-36.0" type="curve" smooth="yes"/>
+      <point x="431.625" y="-36.0"/>
+      <point x="427.625" y="-36.0"/>
+      <point x="422.625" y="-36.0" type="curve"/>
+      <point x="408.125" y="-94.0" type="line"/>
+      <point x="413.875" y="-95.0"/>
+      <point x="420.875" y="-95.0"/>
+    </contour>
+    <contour>
+      <point x="661.875" y="217.0" type="line"/>
+      <point x="680.375" y="239.0"/>
+      <point x="697.625" y="276.0"/>
+      <point x="705.875" y="309.0" type="curve"/>
+      <point x="738.625" y="440.0"/>
+      <point x="647.625" y="516.0"/>
+      <point x="484.625" y="516.0" type="curve"/>
+      <point x="470.875" y="461.0" type="line"/>
+      <point x="591.875" y="461.0"/>
+      <point x="670.875" y="413.0"/>
+      <point x="644.875" y="309.0" type="curve"/>
+      <point x="639.625" y="288.0"/>
+      <point x="628.625" y="264.0"/>
+      <point x="616.125" y="246.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="837.375" y="579.0" type="line"/>
+      <point x="851.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+    </dict>
+  </lib>
+</glyph>

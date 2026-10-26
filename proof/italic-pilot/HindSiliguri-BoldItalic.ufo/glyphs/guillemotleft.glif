@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="guillemotleft" format="2">
+  <advance width="592"/>
+  <unicode hex="00AB"/>
+  <outline>
+    <contour>
+      <point x="243.66574375286478" y="253.0" type="line"/>
+      <point x="408.0325235323247" y="253.0" type="line"/>
+      <point x="595.3715714782508" y="415.0" type="line"/>
+      <point x="433.28618719628366" y="415.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="146.12451052972295" y="91.0" type="line"/>
+      <point x="280.7740222954272" y="91.0" type="line"/>
+      <point x="172.06436314597119" y="253.0" type="line"/>
+      <point x="33.34969705699612" y="253.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="23.665743752864813" y="253.0" type="line"/>
+      <point x="188.0325235323247" y="253.0" type="line"/>
+      <point x="375.37157147825076" y="415.0" type="line"/>
+      <point x="213.28618719628366" y="415.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="366.12451052972295" y="91.0" type="line"/>
+      <point x="500.77402229542724" y="91.0" type="line"/>
+      <point x="392.0643631459712" y="253.0" type="line"/>
+      <point x="253.34969705699598" y="253.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

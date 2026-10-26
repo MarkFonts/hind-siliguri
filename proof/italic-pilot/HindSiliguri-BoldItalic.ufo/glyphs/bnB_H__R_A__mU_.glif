@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnBH_RA_mU" format="2">
+  <advance width="807"/>
+  <anchor x="412.375" y="671" name="abvm.chandrabindu"/>
+  <outline>
+    <contour>
+      <point x="564.8224567543899" y="105.08281765115159" type="curve"/>
+      <point x="666.6215094801503" y="100.97534831805164"/>
+      <point x="750.9508664393632" y="177.30346575745244"/>
+      <point x="775.375" y="275.0" type="curve" smooth="yes"/>
+      <point x="799.875" y="373.0"/>
+      <point x="761.375" y="443.0"/>
+      <point x="659.375" y="443.0" type="curve" smooth="yes"/>
+      <point x="642.375" y="443.0"/>
+      <point x="630.125" y="442.0"/>
+      <point x="618.375" y="439.0" type="curve"/>
+      <point x="591.875" y="333.0" type="line"/>
+      <point x="599.125" y="334.0"/>
+      <point x="607.375" y="335.0"/>
+      <point x="617.375" y="335.0" type="curve"/>
+      <point x="651.375" y="335.0"/>
+      <point x="662.375" y="311.0"/>
+      <point x="655.125" y="282.0" type="curve" smooth="yes"/>
+      <point x="645.455532638713" y="243.3221305548516"/>
+      <point x="614.4213317828385" y="224.08952592049212"/>
+      <point x="581.0343576488086" y="222.11303305746392" type="curve"/>
+      <point x="539.8225633491011" y="219.67331459184427"/>
+      <point x="513.3453053627544" y="233.88194373690263"/>
+      <point x="507.7026823241116" y="291.72216174276986" type="curve"/>
+      <point x="457.5473176758884" y="208.27783825723017" type="line"/>
+      <point x="456.5384774594995" y="145.7702880111246"/>
+      <point x="503.4212058210361" y="107.56028427259595"/>
+    </contour>
+    <contour>
+      <point x="609.375" y="559.0" type="line"/>
+      <point x="903.375" y="559.0" type="line"/>
+      <point x="931.375" y="671.0" type="line"/>
+      <point x="637.375" y="671.0" type="line"/>
+    </contour>
+    <component base="bnBH_RA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 17:38:28</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+    </dict>
+  </lib>
+</glyph>
