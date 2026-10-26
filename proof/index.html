@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hind Siliguri Proof</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: "GF Light";    src: url(fonts/gf/HindSiliguri-Light.ttf); }
+  @font-face { font-family: "GF Regular";  src: url(fonts/gf/HindSiliguri-Regular.ttf); }
+  @font-face { font-family: "GF Medium";   src: url(fonts/gf/HindSiliguri-Medium.ttf); }
+  @font-face { font-family: "GF SemiBold"; src: url(fonts/gf/HindSiliguri-SemiBold.ttf); }
+  @font-face { font-family: "GF Bold";     src: url(fonts/gf/HindSiliguri-Bold.ttf); }
+  @font-face { font-family: "New Light";    src: url(fonts/new/HindSiliguri-Light.otf); }
+  @font-face { font-family: "New Regular";  src: url(fonts/new/HindSiliguri-Regular.otf); }
+  @font-face { font-family: "New Medium";   src: url(fonts/new/HindSiliguri-Medium.otf); }
+  @font-face { font-family: "New SemiBold"; src: url(fonts/new/HindSiliguri-SemiBold.otf); }
+  @font-face { font-family: "New Bold";     src: url(fonts/new/HindSiliguri-Bold.otf); }
+
+  :root {
+    --bg: #fbfaf7; --ink: #1b1a17; --muted: #6f6b63; --rule: #dedad2; --gf: #b4321f; --new: #1f6f43; --mark: #fde9b0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151412; --ink: #ece8df; --muted: #9a958b; --rule: #34312c; --gf: #ff7a62; --new: #6fd39b; --mark: #4a3d12;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #151412; --ink: #ece8df; --muted: #9a958b; --rule: #34312c; --gf: #ff7a62; --new: #6fd39b; --mark: #4a3d12;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.5 "Newsreader", "New Regular", Georgia, serif; font-variation-settings: "opsz" 14; }
+  main { max-width: 1240px; margin: 0 auto; padding: 40px 16px 80px; }
+  h1 { font-weight: 600; font-size: 40px; line-height: 1.1; margin: 0 0 12px; font-variation-settings: "opsz" 48; }
+  h2 { font-weight: 600; font-size: 24px; margin: 56px 0 6px; font-variation-settings: "opsz" 24; }
+  p { max-width: 70ch; margin: 0 0 12px; }
+  .lede { font-size: 20px; }
+  .gf { color: var(--gf); } .new { color: var(--new); }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  code { font: 14px/1 ui-monospace, Menlo, monospace; }
+
+  .controls { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 10px 0; margin-top: 24px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .controls button { font: 600 14px/1 system-ui, sans-serif; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; }
+  .controls button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .controls .hint { font: 13px/1.3 system-ui, sans-serif; color: var(--muted); }
+
+  .weight { display: grid; grid-template-columns: 96px 1fr 1fr; gap: 0 24px; border-top: 1px solid var(--rule); padding: 14px 0; align-items: center; }
+  .weight > .label { font: 600 13px/1.2 system-ui, sans-serif; color: var(--muted); }
+  .cell { min-width: 0; }
+  .cell .who { display: none; font: 600 12px/1 system-ui, sans-serif; letter-spacing: .02em; margin-bottom: 4px; }
+  .digits { font-size: clamp(36px, 6.4vw, 84px); line-height: 1.25; white-space: nowrap; overflow: hidden; }
+  .conj { font-size: clamp(22px, 3.6vw, 46px); line-height: 1.35; white-space: nowrap; overflow: hidden; }
+  .bad { background: var(--mark); border-radius: 6px; }
+  .text { font-size: 22px; line-height: 1.7; }
+  .sheet { display: block; width: 100%; height: auto; background: #fff; border-radius: 8px; margin: 8px 0 24px; }
+  .head { display: grid; grid-template-columns: 96px 1fr 1fr; gap: 0 24px; font: 600 13px/1.2 system-ui, sans-serif; padding-bottom: 6px; }
+
+  body.flip .weight { grid-template-columns: 96px 1fr; }
+  body.flip .head { display: none; }
+  body.flip .cell.b { display: none; }
+  body.flip .cell .who { display: block; }
+
+  @media (max-width: 720px) {
+    .weight, .head { grid-template-columns: 1fr; }
+    .weight > .label { margin-bottom: 6px; }
+    .cell + .cell { margin-top: 8px; }
+    body.flip .weight { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hind Siliguri: the ১ digit</h1>
+  <p class="lede"><span class="gf">Google Fonts 1.001</span> (the 2015 OTFs converted to TrueType) next to <span class="new">this build, 1.002</span> from <code>masters/HindiSiliguri.glyphs</code> with hindkit and AFDKO 5.</p>
+  <p>The digit ১ (<code>bnOne</code>) is malformed in Regular, Medium, and SemiBold (<a href="https://github.com/google/fonts/issues/6037">google/fonts#6037</a>, <a href="https://github.com/itfoundry/hind-siliguri/issues/9">itfoundry/hind-siliguri#9</a>). Contour direction is not the cause. The Light and Bold masters start that contour at different nodes: Light at the top of the stem, Bold at the tip of the curl. Interpolation pairs the wrong nodes, and halfway between the masters the tail swings through the stem. Four conjuncts have the same fault: হ্র, ন্জ, ন্ঠ, and গ্দ্র. This build rotates the Bold contours to match Light. The masters draw exactly as before.</p>
+  <p>Contour direction is fixed after overlap removal, as the 2014 tools did. Done before it, the step reversed the ষ diagonal in 18 ষ conjuncts.</p>
+
+  <div class="controls" role="group" aria-label="View">
+    <button type="button" id="side" aria-pressed="true">Side by side</button>
+    <button type="button" id="flip" aria-pressed="false">Flip in place</button>
+    <span class="hint" id="hint"></span>
+  </div>
+
+  <h2>Digits ০–৯</h2>
+  <div class="head"><span></span><span class="gf">Google Fonts 1.001</span><span class="new">This build 1.002</span></div>
+  <div data-sample="digits" data-class="digits"></div>
+
+  <h2>The four conjuncts with the same fault, and the ষ conjuncts</h2>
+  <div class="head"><span></span><span class="gf">Google Fonts 1.001</span><span class="new">This build 1.002</span></div>
+  <div data-sample="conj" data-class="conj"></div>
+
+  <h2>Text</h2>
+  <div class="head"><span></span><span class="gf">Google Fonts 1.001</span><span class="new">This build 1.002</span></div>
+  <div data-sample="text" data-class="text"></div>
+
+  <h2>Outlines</h2>
+  <p>The five glyphs whose masters started at different nodes: Light master, 2015 and this build in Regular and Medium, Bold master. The 2015 columns are what Google Fonts serves.</p>
+  <img class="sheet" src="outlines-start-points.svg" alt="bnOne, bnH_RA, bnN_JA, bnN_TTHA, and bnG_D_RA outlines across masters and builds">
+  <p>The ষ conjuncts and ল্দ্র stay as they were in 2015. They broke only when contour direction was corrected before overlap removal.</p>
+  <img class="sheet" src="outlines-ssa-conjuncts.svg" alt="bnSS_BA, bnSS_KA, and bnL_D_RA outlines, 2015 and this build">
+</main>
+<script>
+  const WEIGHTS = ["Light", "Regular", "Medium", "SemiBold", "Bold"];
+  const BROKEN = new Set(["Regular", "Medium", "SemiBold"]);
+  const SAMPLES = {
+    digits: '০<span class="m">১</span>২৩৪৫৬৭৮৯',
+    conj: '<span class="m">১ হ্র ন্জ ন্ঠ গ্দ্র</span> ষ্ক ষ্ট ষ্ঠ ষ্ব ষ্ম ষ্প',
+    text: 'হ্রদের ধারে ১৯৭১ সালের ১১ই মার্চ, ১০১ জন কৃষ্ণ ও ইষ্টদেবের পূজা করল। সমস্ত মানুষ স্বাধীনভাবে সমান মর্যাদা এবং অধিকার নিয়ে জন্মগ্রহণ করে। The quick brown fox, 1,234.',
+  };
+  for (const host of document.querySelectorAll("[data-sample]")) {
+    const html = SAMPLES[host.dataset.sample];
+    for (const w of WEIGHTS) {
+      const mark = (s) => BROKEN.has(w) ? s.replaceAll('class="m"', 'class="bad"') : s;
+      host.insertAdjacentHTML("beforeend", `
+        <div class="weight">
+          <div class="label">${w}</div>
+          <div class="cell a"><div class="who gf">Google Fonts</div><div class="${host.dataset.class}" style="font-family:'GF ${w}'">${mark(html)}</div></div>
+          <div class="cell b"><div class="who new">This build</div><div class="${host.dataset.class}" style="font-family:'New ${w}'">${html}</div></div>
+        </div>`);
+    }
+  }
+
+  // Flip in place: one column, alternating fonts, so the eye sees only what moves.
+  let timer = null, showingNew = false;
+  const hint = document.getElementById("hint");
+  function setFlip(on) {
+    document.body.classList.toggle("flip", on);
+    document.getElementById("flip").setAttribute("aria-pressed", on);
+    document.getElementById("side").setAttribute("aria-pressed", !on);
+    clearInterval(timer);
+    if (on) { tick(); timer = setInterval(tick, 900); } else { show(false); hint.textContent = ""; }
+  }
+  function show(isNew) {
+    for (const cell of document.querySelectorAll(".cell.a")) {
+      const w = cell.parentElement.querySelector(".label").textContent;
+      const box = cell.lastElementChild;
+      box.style.fontFamily = `'${isNew ? "New" : "GF"} ${w}'`;
+      const who = cell.querySelector(".who");
+      who.textContent = isNew ? "This build" : "Google Fonts";
+      who.className = "who " + (isNew ? "new" : "gf");
+      box.querySelectorAll(".bad, .m").forEach(el => el.className = (!isNew && BROKEN.has(w)) ? "bad" : "m");
+    }
+  }
+  function tick() { showingNew = !showingNew; show(showingNew); hint.textContent = showingNew ? "Showing this build" : "Showing Google Fonts"; }
+  document.getElementById("flip").onclick = () => setFlip(true);
+  document.getElementById("side").onclick = () => setFlip(false);
+</script>
+</body>
+</html>
