@@ -1,6 +1,7 @@
 # One-time, 2026-10-26: merged the Hind Latin (resources/hindkit-0.3.0/Hind.glyphs, removed afterward;
 # see git history) and the 2015 GSUB (features/*.fea, likewise) into masters/HindiSiliguri.glyphs,
 # so the .glyphs file builds on its own with fontmake and gftools builder. Kept as a record.
+# The source has since been renamed masters/HindSiliguri.glyphs; SRC below is the name at the time.
 
 # One-time: make masters/HindiSiliguri.glyphs self-contained (Latin glyphs, GSUB, mark categories).
 import re

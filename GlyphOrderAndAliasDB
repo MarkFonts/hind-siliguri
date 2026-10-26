@@ -734,7 +734,7 @@ braceleft braceleft uni007B # LEFT CURLY BRACKET
 bar bar uni007C # VERTICAL LINE
 braceright braceright uni007D # RIGHT CURLY BRACKET
 asciitilde asciitilde uni007E # TILDE
-uni00A0 nonbreakingspace uni00A0 # NO-BREAK SPACE
+uni00A0 nbspace uni00A0 # NO-BREAK SPACE
 exclamdown exclamdown uni00A1 # INVERTED EXCLAMATION MARK
 cent cent uni00A2 # CENT SIGN
 sterling sterling uni00A3 # POUND SIGN

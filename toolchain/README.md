@@ -24,4 +24,4 @@ Run before overlap removal (where the Hind fork first had it), the step breaks g
 
 ## Latin
 
-The Hind Latin that hindkit 0.3.0 merged in at build time is now in `../masters/HindiSiliguri.glyphs`. `merge_latin_into_glyphs.py` did the one-time merge, along with the 2015 GSUB and the mark categories. `../resources/hindkit-0.3.0/README.md` has the provenance.
+The Hind Latin that hindkit 0.3.0 merged in at build time is now in `../masters/HindSiliguri.glyphs`. `merge_latin_into_glyphs.py` did the one-time merge, along with the 2015 GSUB and the mark categories. `../resources/hindkit-0.3.0/README.md` has the provenance.

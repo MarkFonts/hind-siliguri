@@ -6,6 +6,8 @@
 
 ## Results, Google Fonts 1.001 against 1.002
 
+These are the numbers for the first port (2026-10-25). Since then, the fontbakery fixes in the top-level README have added `nbspace` and redrawn nothing except ল্ফ and ল্দ্র in the middle weights. The fonts in `fonts/new/` are the current build.
+
 | | Light | Regular | Medium | SemiBold | Bold |
 |---|---|---|---|---|---|
 | Glyphs | 821 / 819 | 821 / 819 | 821 / 819 | 821 / 819 | 821 / 819 |
@@ -21,9 +23,9 @@ Differences, grouped by cause:
 3. **TrueType conversion.** Google Fonts converted the 2015 OTFs to quadratic outlines. Small round glyphs (period, parentheses, tilde, ellipsis, `bnIsshar`) differ by up to 0.92% of their area. Against the 2015 OTFs themselves, every glyph except the five fixes matches to within 0.5%, with a median difference of 0.004%, from current overlap removal.
 4. **Glyphs only in Google Fonts.** `.null` and `nonmarkingreturn`, added by the TrueType conversion.
 5. **Font-wide metadata.**
-   - Vertical metrics: Google Fonts' 2017 hotfix uses 1116/−501/0, with win 1116/501. This build keeps the 2015 1200/−800/0, with win 1200/800.
+   - Vertical metrics: Google Fonts' 2017 hotfix uses 1116/−501/0, with win 1116/501. The first port kept the 2015 1200/−800/0; the current build uses Google Fonts' values.
    - `fsSelection`: Google Fonts clears the WWS bit. This build sets it, as in 2015.
    - Hinting: Google Fonts is TrueType with ttfautohint. This build is unhinted CFF, as in 2015.
-   - Name table: hindkit's Google Fonts profile writes the version as `1.002` (not `Version 1.002`), the URL as indiantypefoundry.com, and a Bangla sample text, and drops the trademark line. The copyright reads 2015–2026.
+   - Name table: hindkit's Google Fonts profile writes the version as `1.002` (not `Version 1.002`), the URL as indiantypefoundry.com, and a Bangla sample text, and drops the trademark line. The copyright now uses Google Fonts' "Project Authors" form.
 
 The Google Fonts TTFs are the 2015 OTFs: against the OTFs in `legacy/build-2015/`, only the eight small round glyphs from item 3 differ.

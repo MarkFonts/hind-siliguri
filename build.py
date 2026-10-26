@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# Hind Siliguri, built with hindkit (toolchain/hindkit) and current AFDKO from masters/HindiSiliguri.glyphs.
+# Hind Siliguri, built with hindkit (toolchain/hindkit) and current AFDKO from masters/HindSiliguri.glyphs.
 # Follows the Hind fork's build.py (MarkFonts/hind). The 2015 hindkit 0.3 build is in legacy/.
 
 import os, sys
@@ -11,12 +11,12 @@ from glyphsLib.classes import WEIGHT_CODES
 from fontTools.designspaceLib import DesignSpaceDocument
 import hindkit
 
-SOURCE = "masters/HindiSiliguri.glyphs"
+SOURCE = "masters/HindSiliguri.glyphs"
 EXPORT_DIR = "build/masters"
 FEATURES_DIR = "build/features"
 
 def export_masters(font):
-    """HindiSiliguri.glyphs -> UFO masters for hindkit. Anchors are not propagated, as in the 2015 build."""
+    """HindSiliguri.glyphs -> UFO masters for hindkit. Anchors are not propagated, as in the 2015 build."""
     hindkit.remove(EXPORT_DIR)
     hindkit.makedirs(os.path.dirname(EXPORT_DIR))
     # The 2015 backup layers never reach the fonts.
@@ -69,6 +69,7 @@ def main():
 
     i = family.info
     i.openTypeNameDesigner = source.designer
+    i.copyright = source.copyright
     p = source.customParameters
     i.openTypeHheaAscender, i.openTypeHheaDescender, i.openTypeHheaLineGap = p["hheaAscender"], p["hheaDescender"], p["hheaLineGap"]
     i.openTypeOS2TypoAscender, i.openTypeOS2TypoDescender, i.openTypeOS2TypoLineGap = p["typoAscender"], p["typoDescender"], p["typoLineGap"]

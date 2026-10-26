@@ -6,7 +6,7 @@ This is a fork of [itfoundry/hind-siliguri](https://github.com/itfoundry/hind-si
 
 ## Sources
 
-`masters/HindiSiliguri.glyphs` is the only source: two masters (Light, Bold) on a Weight axis and five instances. It holds all 819 glyphs, the 485 Bangla and Hind's 334 Latin, and the hand-written OpenType code.
+`masters/HindSiliguri.glyphs` is the only source: two masters (Light, Bold) on a Weight axis and five instances. It holds all 820 glyphs, the 485 Bangla, Hind's 334 Latin, and a no-break space, along with the hand-written OpenType code. Until 2026-10-26 it was named `HindiSiliguri.glyphs`; Google Fonts' override config for this family still points at that name.
 
 The Latin came from hindkit 0.3.0's bundled copy of Hind, which the 2015 build merged in at build time ([itfoundry/hind-siliguri#8](https://github.com/itfoundry/hind-siliguri/issues/8)). `resources/hindkit-0.3.0/README.md` has the provenance.
 
@@ -30,7 +30,7 @@ source .venv/bin/activate && python build.py
 
 The venv's `bin` has to be on `PATH`, because hindkit calls `makeotf` and `makeinstancesufo` by name.
 
-The build exports UFO masters from `HindiSiliguri.glyphs` into `build/masters`, and the `GSUB_lookups` and `GSUB` prefixes into `build/features`. It then interpolates the five instances with AFDKO's `makeinstancesufo` and compiles OTFs with `makeotf`. Working files go to `intermediates/`, and the OTFs to `intermediates/products/HindSiliguri-<version>-OTF/`. `products/` gets a zip of the OTFs and TTX dumps, as ITF's Google Fonts builds did. `build.py --test` builds only the two master styles, skipping interpolation and overlap removal.
+The build exports UFO masters from `HindSiliguri.glyphs` into `build/masters`, and the `GSUB_lookups` and `GSUB` prefixes into `build/features`. It then interpolates the five instances with AFDKO's `makeinstancesufo` and compiles OTFs with `makeotf`. Working files go to `intermediates/`, and the OTFs to `intermediates/products/HindSiliguri-<version>-OTF/`. `products/` gets a zip of the OTFs and TTX dumps, as ITF's Google Fonts builds did. `build.py --test` builds only the two master styles, skipping interpolation and overlap removal.
 
 The build system is ITF's [hindkit](https://github.com/itfoundry/hindkit), vendored as a git subtree in `toolchain/hindkit` and patched for current AFDKO. See `toolchain/README.md`.
 
@@ -53,13 +53,45 @@ That writes a variable font (`wght` 300–700), plus static TTF, OTF, and WOFF2 
 
   `proof/marks-hindkit-vs-gftools.svg` draws these cases from both builds.
 - **Variable font:** shapes like the statics at each named weight.
-- **File name:** gftools names the variable font after the source file, `HindiSiliguri[wght].ttf`.
+- **File name:** gftools names the variable font after the source file: `HindSiliguri[wght].ttf`.
+
+### Fontbakery
+
+fontbakery 1.1.0's Google Fonts profile, run on the gftools build, gives these results:
+
+| | Before | After |
+|---|---|---|
+| Variable font | 9 FAIL, 13 WARN | 2 FAIL, 9 WARN |
+| Five statics | 39 FAIL, 72 WARN | 10 FAIL, 62 WARN |
+
+The fixes are in the source. `toolchain/fontbakery_fixes_2026-10-26.py` applied them:
+
+- **Contour order in ল্ফ (`bnL_PHA`) and ল্দ্র (`bnL_D_RA`).** The Bold master listed two small rectangles in the opposite order from Light, so in the middle weights each rectangle travelled to the other's place. SemiBold ল্দ্র came out as a filled block, here and on Google Fonts. `proof/fontbakery-fixes.svg` shows before and after.
+- **Contour direction in ১, ২, and ৯.** These ran clockwise in both masters. Both masters were reversed alike, so they stay compatible.
+- **Dotted circle anchors.** `dottedcircle` gets the headline and baseline anchors the consonants use, so candrabindu, ু, ূ, and ৃ attach to it.
+- **No-break space.** `nbspace` (U+00A0) is added.
+- **Font info:**
+  - the copyright in Google Fonts' "Project Authors" form;
+  - Indian Type Foundry as manufacturer;
+  - fsType 0, typo metrics on, and vendor ITFO;
+  - Bold style-linked to Regular;
+  - the source renamed to match the family.
+- **Vertical metrics:** Google Fonts' 1116/−501/0 (win 1116/501), which it has served since 2017, replace the 2015 values. The hindkit build uses them too.
+
+**Still failing:** GF Latin Core coverage. The Latin lacks about 35 letters (Ċ ċ Ġ ġ Ħ ħ Ŵ ŵ Ŷ ŷ Ẁ ẁ Ẃ ẃ Ẅ ẅ Ỳ ỳ ẞ and more) and the combining accents (U+0300–U+0308, U+030A–U+030C, U+0327, U+0328). That's new Latin drawing, which also belongs in Hind.
+
+**Remaining warnings:**
+- Outline polish: zero-length or colinear segments and near-vertical lines in a few dozen glyphs.
+- Math-sign widths.
+- An unencoded `ITF` logo glyph.
+- The soft hyphen.
+- Items Google Fonts sets on its side: article, meta table, and METADATA subsets.
 
 ### Matching the 2015 fonts
 
-This build is version 1.002. Google Fonts' 1.001 ([google/fonts#893](https://github.com/google/fonts/pull/893)) is the 2015 OTFs converted to TrueType, with ttfautohint and vertical metrics of 1116/−501/0. This build keeps the 2015 metrics (1200/−800/0, win 1200/800) for now. They are custom parameters in the `.glyphs` file.
+This build is version 1.002. Google Fonts' 1.001 ([google/fonts#893](https://github.com/google/fonts/pull/893)) is the 2015 OTFs converted to TrueType, with ttfautohint and vertical metrics of 1116/−501/0. This build uses those metrics (win 1116/501) rather than the 2015 1200/−800/0, so line spacing on Google Fonts doesn't change. They are custom parameters in the `.glyphs` file.
 
-Against the 2015 OTFs, all five weights have the same 819 glyphs and advance widths. They shape identically across 5,493 test strings: every consonant with every vowel sign, every consonant + hasanta + consonant pair, reph and ya-, ra-, and ba-phala forms, digits, and Latin. Outlines match to within 0.5% of area, apart from the fix below. The remaining differences come from overlap removal and are a few units at most. Getting there needed:
+Against the 2015 OTFs, all five weights have the same glyphs (plus the no-break space) and advance widths. They shape identically across 5,493 test strings: every consonant with every vowel sign, every consonant + hasanta + consonant pair, reph and ya-, ra-, and ba-phala forms, digits, and Latin. Outlines match to within 0.5% of area, apart from the fix below. The remaining differences come from overlap removal and are a few units at most. Getting there needed:
 
 - `round_like_python2`: instances are rounded half away from zero, as the Python 2 tools did, not half to even.
 - `correct_contour_direction`, run after overlap removal: a few glyphs are drawn clockwise in the masters, `bnOne` among them.
