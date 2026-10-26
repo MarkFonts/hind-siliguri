@@ -38,11 +38,17 @@ The build system is ITF's [hindkit](https://github.com/itfoundry/hindkit), vendo
 
 This build is version 1.002. Google Fonts' 1.001 ([google/fonts#893](https://github.com/google/fonts/pull/893)) is the 2015 OTFs converted to TrueType, with ttfautohint and vertical metrics of 1116/−501/0. This build keeps the 2015 metrics (1200/−800/0, win 1200/800) for now. They are custom parameters in the `.glyphs` file.
 
-Against the 2015 OTFs, all five weights have the same 819 glyphs and advance widths. They shape identically across 5,493 test strings: every consonant with every vowel sign, every consonant + hasanta + consonant pair, reph and ya-, ra-, and ba-phala forms, digits, and Latin. Outlines match to within 0.5% of area, apart from the fixes below. The remaining differences come from overlap removal and are a few units at most. Getting there needed:
+Against the 2015 OTFs, all five weights have the same 819 glyphs and advance widths. They shape identically across 5,493 test strings: every consonant with every vowel sign, every consonant + hasanta + consonant pair, reph and ya-, ra-, and ba-phala forms, digits, and Latin. Outlines match to within 0.5% of area, apart from the fix below. The remaining differences come from overlap removal and are a few units at most. Getting there needed:
 
 - `round_like_python2`: instances are rounded half away from zero, as the Python 2 tools did, not half to even.
 - `correct_contour_direction`, run after overlap removal: a few glyphs are drawn clockwise in the masters, `bnOne` among them.
 - hindkit's default mark-to-mark positioning. The 2015 writer appended it to `abvm` and `blwm`, which is where reph and candrabindu stack over ু and ূ.
 - Backup layers dropped at export (two in `bnCHA` share a name, which glyphsLib rejects), and the glyph order pruned of about 100 glyphs that were listed but never drawn.
+
+### Fixed: ১ and four conjuncts in Regular, Medium, and SemiBold
+
+The digit ১ (`bnOne`) is malformed in the middle weights on Google Fonts ([google/fonts#6037](https://github.com/google/fonts/issues/6037), [itfoundry/hind-siliguri#9](https://github.com/itfoundry/hind-siliguri/issues/9)), and so are হ্র (`bnH_RA`), ন্জ (`bnN_JA`), ন্ঠ (`bnN_TTHA`), and গ্দ্র (`bnG_D_RA`). In each, one contour starts at a different node in the Bold master than in Light. The point counts match, so the masters look compatible, but interpolation pairs the wrong nodes. In ১, the tail swings through the stem. Contour direction is not involved.
+
+The Bold contours are rotated to start where Light's do. Both masters draw exactly as before; only the instances change. `proof/index.html` shows Google Fonts and this build side by side.
 
 Name table records differ: hindkit's Google Fonts profile writes the version as `1.002`, the URL as indiantypefoundry.com, and a sample text, and drops the trademark line.
