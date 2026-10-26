@@ -13,14 +13,13 @@ import hindkit
 
 SOURCE = "masters/HindiSiliguri.glyphs"
 EXPORT_DIR = "build/masters"
-LATIN_DIR = "resources/hindkit-0.3.0"
+FEATURES_DIR = "build/features"
 
-def export_masters():
+def export_masters(font):
     """HindiSiliguri.glyphs -> UFO masters for hindkit. Anchors are not propagated, as in the 2015 build."""
     hindkit.remove(EXPORT_DIR)
     hindkit.makedirs(os.path.dirname(EXPORT_DIR))
-    font = glyphsLib.GSFont(SOURCE)
-    # Drop the 2015 backup layers: they never reach the fonts, and two in bnCHA share a name, which glyphsLib rejects.
+    # The 2015 backup layers never reach the fonts.
     for glyph in font.glyphs:
         for layer in [l for l in glyph.layers if l.layerId != l.associatedMasterId]:
             del glyph.layers[layer.layerId]
@@ -30,28 +29,30 @@ def export_masters():
         propagate_anchors = False,
         generate_GDEF = False,
     )
-    return DesignSpaceDocument.fromfile(exported.designspace_path)
-
-def import_latin(designspace):
-    """hindkit 0.3.0's import_glyphs(): add the Hind Latin glyphs the masters don't already have.
-
-    The Bangla master wins on a name clash (only `space`). Kerning, groups, and info stay Bangla.
-    """
+    designspace = DesignSpaceDocument.fromfile(exported.designspace_path)
+    # The glyphOrder parameter lists ~100 glyphs that were never drawn; WriteFeaturesMarkFDK trips on them.
     for ds_source in designspace.sources:
-        receiver = defcon.Font(ds_source.path)
-        source = defcon.Font(os.path.join(LATIN_DIR, "Hind-{}.ufo".format(ds_source.styleName)))
-        for name in source.keys():
-            if name not in receiver:
-                receiver.insertGlyph(source[name])
-        # The glyphOrder parameter lists ~100 glyphs that were never drawn; WriteFeaturesMarkFDK trips on them.
-        receiver.glyphOrder = [name for name in receiver.glyphOrder if name in receiver]
-        receiver.save()
+        ufo = defcon.Font(ds_source.path)
+        ufo.glyphOrder = [name for name in ufo.glyphOrder if name in ufo]
+        ufo.save()
+    return designspace
+
+def export_features(font):
+    """The hand-written GSUB lives in the .glyphs file's prefixes; hindkit reads it as GSUB_lookups.fea and GSUB.fea.
+
+    The `languagesystems` prefix is for builds straight from the .glyphs file; hindkit writes its own.
+    """
+    hindkit.remove(FEATURES_DIR)
+    hindkit.makedirs(FEATURES_DIR)
+    for name in ["GSUB_lookups", "GSUB"]:
+        with open(os.path.join(FEATURES_DIR, name + ".fea"), "w", encoding="utf-8") as f:
+            f.write(font.featurePrefixes[name].code)
 
 def main():
 
     source = glyphsLib.GSFont(SOURCE)
-    designspace = export_masters()
-    import_latin(designspace)
+    export_features(source)
+    designspace = export_masters(glyphsLib.GSFont(SOURCE))
 
     family = hindkit.Family(
         trademark = source.familyName,
@@ -75,7 +76,7 @@ def main():
 
     project = hindkit.Project(
         family,
-        fontrevision = "1.002",
+        fontrevision = "{}.{:03d}".format(source.versionMajor, source.versionMinor),
         options = {
             "prepare_mark_positioning": True,
             "round_like_python2": True,
@@ -92,6 +93,7 @@ def main():
 # --- Overriding ---
 
 hindkit.Project.directories["masters"] = EXPORT_DIR
+hindkit.Project.directories["features"] = FEATURES_DIR
 hindkit.Project.directories["output"] = ""
 
 # --- Executing ---

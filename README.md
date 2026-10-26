@@ -6,11 +6,11 @@ This is a fork of [itfoundry/hind-siliguri](https://github.com/itfoundry/hind-si
 
 ## Sources
 
-`masters/HindiSiliguri.glyphs` is the source: two masters (Light, Bold) on a Weight axis and five instances. It holds the 485 Bangla glyphs.
+`masters/HindiSiliguri.glyphs` is the only source: two masters (Light, Bold) on a Weight axis and five instances. It holds all 819 glyphs, the 485 Bangla and Hind's 334 Latin, and the hand-written OpenType code.
 
-The Latin glyphs live in `resources/hindkit-0.3.0/`. The 2015 build merged them in from hindkit 0.3.0's bundled copy of Hind ([itfoundry/hind-siliguri#8](https://github.com/itfoundry/hind-siliguri/issues/8)). That folder's README has the provenance.
+The Latin came from hindkit 0.3.0's bundled copy of Hind, which the 2015 build merged in at build time ([itfoundry/hind-siliguri#8](https://github.com/itfoundry/hind-siliguri/issues/8)). `resources/hindkit-0.3.0/README.md` has the provenance.
 
-OpenType features are written by hand in `features/` (`GSUB.fea`, `GSUB_lookups.fea`), unchanged from 2015 except for the file split. Mark positioning, and the OS/2, hhea, and name tables, are generated at build time by hindkit. The 2015 build, its feature files, and its OTFs are kept in `legacy/`.
+The GSUB is unchanged from 2015. It sits in three feature prefixes: `languagesystems`, `GSUB_lookups`, and `GSUB`. Mark positioning, GDEF, and the OS/2, hhea, and name tables are generated at build time. The nine combining marks carry the Glyphs category Mark, which gives GDEF the same mark class as 2015. The 2015 build, its feature files, and its OTFs are kept in `legacy/`.
 
 ## Building
 
@@ -30,9 +30,30 @@ source .venv/bin/activate && python build.py
 
 The venv's `bin` has to be on `PATH`, because hindkit calls `makeotf` and `makeinstancesufo` by name.
 
-The build exports UFO masters from `HindiSiliguri.glyphs` into `build/masters` and adds the Latin. It then interpolates the five instances with AFDKO's `makeinstancesufo` and compiles OTFs with `makeotf`. Working files go to `intermediates/`, and the OTFs to `intermediates/products/HindSiliguri-<version>-OTF/`. `products/` gets a zip of the OTFs and TTX dumps, as ITF's Google Fonts builds did. `build.py --test` builds only the two master styles, skipping interpolation and overlap removal.
+The build exports UFO masters from `HindiSiliguri.glyphs` into `build/masters`, and the `GSUB_lookups` and `GSUB` prefixes into `build/features`. It then interpolates the five instances with AFDKO's `makeinstancesufo` and compiles OTFs with `makeotf`. Working files go to `intermediates/`, and the OTFs to `intermediates/products/HindSiliguri-<version>-OTF/`. `products/` gets a zip of the OTFs and TTX dumps, as ITF's Google Fonts builds did. `build.py --test` builds only the two master styles, skipping interpolation and overlap removal.
 
 The build system is ITF's [hindkit](https://github.com/itfoundry/hindkit), vendored as a git subtree in `toolchain/hindkit` and patched for current AFDKO. See `toolchain/README.md`.
+
+### Building with gftools
+
+The `.glyphs` file also builds on its own with fontmake, which is what Google Fonts uses. `config.yaml` matches the override config Google Fonts keeps for this family:
+
+```bash
+gftools builder config.yaml
+```
+
+That writes a variable font (`wght` 300–700), plus static TTF, OTF, and WOFF2 files, to `fonts/`. Checked with gftools 0.10.4 and fontmake 3.12.2:
+
+- **Matches the hindkit build:** the same glyphs, advance widths, and GSUB. Across the 5,493-string test below, every glyph sequence is identical in all five weights.
+- **Outlines:** the same, apart from TrueType conversion and the overlaps fontmake leaves in place, for example in the ogonek letters.
+- **Mark positioning:** ufo2ft writes it, not the 2015 Indic writer. It places marks differently in about 63 strings per weight. Three cases are improvements:
+  - The reph lands over the consonant before ৢ and ৣ, where 2015 leaves it unattached, off to the right.
+  - The candrabindu centers over ঢ়, which has its anchors only through its components.
+  - The reph sits 34 units lower over ু for ten consonants.
+
+  `proof/marks-hindkit-vs-gftools.svg` draws these cases from both builds.
+- **Variable font:** shapes like the statics at each named weight.
+- **File name:** gftools names the variable font after the source file, `HindiSiliguri[wght].ttf`.
 
 ### Matching the 2015 fonts
 
@@ -43,7 +64,7 @@ Against the 2015 OTFs, all five weights have the same 819 glyphs and advance wid
 - `round_like_python2`: instances are rounded half away from zero, as the Python 2 tools did, not half to even.
 - `correct_contour_direction`, run after overlap removal: a few glyphs are drawn clockwise in the masters, `bnOne` among them.
 - hindkit's default mark-to-mark positioning. The 2015 writer appended it to `abvm` and `blwm`, which is where reph and candrabindu stack over ু and ূ.
-- Backup layers dropped at export (two in `bnCHA` share a name, which glyphsLib rejects), and the glyph order pruned of about 100 glyphs that were listed but never drawn.
+- Backup layers dropped at export, and the glyph order pruned of about 100 glyphs that were listed but never drawn.
 
 ### Fixed: ১ and four conjuncts in Regular, Medium, and SemiBold
 
