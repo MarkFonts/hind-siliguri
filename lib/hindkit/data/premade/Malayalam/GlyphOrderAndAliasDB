@@ -1,0 +1,209 @@
+.notdef .notdef
+NULL NULL uni0000
+CR CR uni000D
+space space uni0020
+
+mlA mlA uni0D05
+mlAA mlAA uni0D06
+mlI mlI uni0D07
+mlII mlII uni0D08
+mlU mlU uni0D09
+mlUU mlUU uni0D0A
+mlvR mlvR uni0D0B
+mlvRR mlvRR uni0D60
+mlvL mlvL uni0D0C
+mlvLL mlvLL uni0D61
+mlE mlE uni0D0E
+mlEE mlEE uni0D0F
+mlAI mlAI uni0D10
+mlO mlO uni0D12
+mlOO mlOO uni0D13
+mlAU mlAU uni0D14
+
+mlmAA mlmAA uni0D3E
+mlmI mlmI uni0D3F
+mlmII mlmII uni0D40
+mlmU mlmU uni0D41
+mlmUU mlmUU uni0D42
+mlmvR mlmvR uni0D43
+mlmvRR mlmvRR uni0D44
+mlmvL mlmvL uni0D62
+mlmvLL mlmvLL uni0D63
+mlmE mlmE uni0D46
+mlmEE mlmEE uni0D47
+mlmAI mlmAI uni0D48
+mlmO mlmO uni0D4A
+mlmOO mlmOO uni0D4B
+mlmAU mlmAU uni0D4C
+
+mlAUlengthmark mlAUlengthmark uni0D57
+
+mlKA mlKA uni0D15
+mlKHA mlKHA uni0D16
+mlGA mlGA uni0D17
+mlGHA mlGHA uni0D18
+mlNGA mlNGA uni0D19
+mlCA mlCA uni0D1A
+mlCHA mlCHA uni0D1B
+mlJA mlJA uni0D1C
+mlJHA mlJHA uni0D1D
+mlNYA mlNYA uni0D1E
+mlTTA mlTTA uni0D1F
+mlTTHA mlTTHA uni0D20
+mlDDA mlDDA uni0D21
+mlDDHA mlDDHA uni0D22
+mlNNA mlNNA uni0D23
+mlTA mlTA uni0D24
+mlTHA mlTHA uni0D25
+mlDA mlDA uni0D26
+mlDHA mlDHA uni0D27
+mlNA mlNA uni0D28
+mlPA mlPA uni0D2A
+mlPHA mlPHA uni0D2B
+mlBA mlBA uni0D2C
+mlBHA mlBHA uni0D2D
+mlMA mlMA uni0D2E
+mlYA mlYA uni0D2F
+mlRA mlRA uni0D30
+mlLA mlLA uni0D32
+mlVA mlVA uni0D35
+mlSHA mlSHA uni0D36
+mlSSA mlSSA uni0D37
+mlSA mlSA uni0D38
+mlHA mlHA uni0D39
+
+mlNNNA mlNNNA uni0D29
+mlTTTA mlTTTA uni0D3A
+mlRRA mlRRA uni0D31
+mlLLA mlLLA uni0D33
+mlLLLA mlLLLA uni0D34
+
+mlKchillu mlKchillu uni0D7F
+mlNNchillu mlNNchillu uni0D7A
+mlNchillu mlNchillu uni0D7B
+mlRRchillu mlRRchillu uni0D7C
+mlLchillu mlLchillu uni0D7D
+mlLLchillu mlLLchillu uni0D7E
+
+mlAnusvara mlAnusvara uni0D02
+mlCandrabindu mlCandrabindu uni0D01
+mlVisarga mlVisarga uni0D03
+mlVirama mlVirama uni0D4D
+mlAvagraha mlAvagraha uni0D3D
+
+mlDotreph mlDotreph uni0D4E
+
+mlZero mlZero uni0D66
+mlOne mlOne uni0D67
+mlTwo mlTwo uni0D68
+mlThree mlThree uni0D69
+mlFour mlFour uni0D6A
+mlFive mlFive uni0D6B
+mlSix mlSix uni0D6C
+mlSeven mlSeven uni0D6D
+mlEight mlEight uni0D6E
+mlNine mlNine uni0D6F
+
+mlTen mlTen uni0D70
+mlOnehundred mlOnehundred uni0D71
+mlOnethousand mlOnethousand uni0D72
+
+mlOnequarter mlOnequarter uni0D73
+mlOnehalf mlOnehalf uni0D74
+mlThreequarters mlThreequarters uni0D75
+
+mlDatemark mlDatemark uni0D79
+
+mlIIarchaic mlIIarchaic uni0D5F
+
+danda danda uni0964
+doubledanda doubledanda uni0965
+
+indianrupee indianrupee uni20B9
+
+zerowidthnonjoiner zerowidthnonjoiner uni200C
+zerowidthjoiner zerowidthjoiner uni200D
+dottedcircle dottedcircle uni25CC
+
+mlYAc2 mlYAc2
+mlRAc2 mlRAc2
+mlLAc2 mlLAc2
+mlVAc2 mlVAc2
+
+mlK_KA mlK_KA
+mlK_TA mlK_TA
+mlK_SSA mlK_SSA
+mlG_DA mlG_DA
+mlG_NA mlG_NA
+mlG_MA mlG_MA
+mlNG_KA mlNG_KA
+mlNG_NGA mlNG_NGA
+mlJ_JA mlJ_JA
+mlJ_NYA mlJ_NYA
+mlNY_CA mlNY_CA
+mlNY_CHA mlNY_CHA
+mlNY_JA mlNY_JA
+mlNY_NYA mlNY_NYA
+mlTT_TTA mlTT_TTA
+mlNN_TTA mlNN_TTA
+mlNN_DDA mlNN_DDA
+mlNN_DDHA mlNN_DDHA
+mlNN_MA mlNN_MA
+mlT_TA mlT_TA
+mlT_THA mlT_THA
+mlT_NA mlT_NA
+mlT_BHA mlT_BHA
+mlT_MA mlT_MA
+mlT_SA mlT_SA
+mlD_DA mlD_DA
+mlD_DHA mlD_DHA
+mlN_TA mlN_TA
+mlN_THA mlN_THA
+mlN_DA mlN_DA
+mlN_DHA mlN_DHA
+mlN_NA mlN_NA
+mlN_MA mlN_MA
+mlM_PA mlM_PA
+mlM_MA mlM_MA
+mlSH_CA mlSH_CA
+mlSH_CHA mlSH_CHA
+mlS_THA mlS_THA
+mlH_NA mlH_NA
+mlH_MA mlH_MA
+mlLL_LLA mlLL_LLA
+
+mlC_CA mlC_CA
+mlB_BA mlB_BA
+mlY_YA mlY_YA
+mlV_VA mlV_VA
+
+mlKA_TTAc2 mlKA_TTAc2
+mlGA_GAc2 mlGA_GAc2
+mlCA_CHAc2 mlCA_CHAc2
+mlDDA_DDAc2 mlDDA_DDAc2
+mlDDA_DDHAc2 mlDDA_DDHAc2
+mlNNA_NNAc2 mlNNA_NNAc2
+mlNchillu_RRAc2 mlNchillu_RRAc2
+mlPA_PAc2 mlPA_PAc2
+mlBA_DAc2 mlBA_DAc2
+mlBA_DHAc2 mlBA_DHAc2
+mlLA_PAc2 mlLA_PAc2
+mlSHA_SHAc2 mlSHA_SHAc2
+mlSSA_TTAc2 mlSSA_TTAc2
+mlSA_SAc2 mlSA_SAc2
+mlSA_RRAc2_RRAc2 mlSA_RRAc2_RRAc2
+mlRRA_RRAc2 mlRRA_RRAc2
+
+mlKA_LAc2 mlKA_LAc2
+mlGA_LAc2 mlGA_LAc2
+mlTA_LAc2 mlTA_LAc2
+mlPA_LAc2 mlPA_LAc2
+mlPHA_LAc2 mlPHA_LAc2
+mlBA_LAc2 mlBA_LAc2
+mlMA_LAc2 mlMA_LAc2
+mlM_PA_LAc2 mlM_PA_LAc2
+mlLA_LAc2 mlLA_LAc2
+mlVA_LAc2 mlVA_LAc2
+mlSHA_LAc2 mlSHA_LAc2
+mlSA_LAc2 mlSA_LAc2
+mlHA_LAc2 mlHA_LAc2

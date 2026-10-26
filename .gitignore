@@ -1,0 +1,10 @@
+.DS_Store
+
+*.pyc
+*.egg-info/
+/build/
+/dist/
+.vscode/
+
+/lab/input.txt
+/lab/output.txt
