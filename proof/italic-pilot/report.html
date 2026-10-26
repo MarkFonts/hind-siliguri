@@ -267,9 +267,9 @@ li{margin-bottom:6px}
 <p>Each is a class question. Answer with a rule. A second run applies it to every glyph in the class.</p>
 
 <div class="q">
-<h3>1. Do sans entry and exit terminals take the slant?</h3>
-<p class="rule">Today the roman cut angle is kept (I15 class "a"). That makes the wedges on a, 3, and B.</p>
-<p>Rule to choose: terminals on a sans are sheared with the stroke, or they stay vertical or horizontal as in the roman. If sheared, the wedges go. The cost is that terminals on every stroke end lean, which is the level C behavior and the usual look for a sans italic. A second run would reclassify the terminal class for all glyphs, and a, 3, B, and R would be the first to re-check. Some glyphs now at level C might pass at A, since level C already shears terminals.</p>
+<h3>1. Do sans entry and exit terminals take the slant? <span class="cA">Decided: no.</span></h3>
+<p class="rule">Mark's rule: terminal cuts never rotate.</p>
+<p>The roman cut angle is a constraint, not a fallback. The wedges on a, 3, and B have to be fixed in the stroke next to the cut, not by tilting the cut. Level C's sheared terminals go against this rule too, so a second run needs another fallback for glyphs that now stop at C.</p>
 </div>
 
 <div class="q">
