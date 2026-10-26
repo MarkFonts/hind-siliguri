@@ -100,6 +100,8 @@ class Project(object):
                 "position_marks_for_mI_variants": False,
 
             "run_makeinstances": True,
+                "round_like_python2": False,
+                "correct_contour_direction": False,
             "do_normalize": True,
             "run_checkoutlines": True,
             "run_autohint": False,

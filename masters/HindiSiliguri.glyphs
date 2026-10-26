@@ -589,6 +589,38 @@ value = (
     "bnY_RA.matrae",
     "bnTT_TTA.matrae"
 );
+},
+{
+name = hheaAscender;
+value = 1200;
+},
+{
+name = hheaDescender;
+value = -800;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = typoAscender;
+value = 1200;
+},
+{
+name = typoDescender;
+value = -800;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1200;
+},
+{
+name = winDescent;
+value = 800;
 }
 );
 date = "2015-03-15 13:48:13 +0000";

@@ -1,8 +1,8 @@
-*.designspace.temp
+.venv/
+intermediates/
+__pycache__/
 *.pyc
-*.ufo
-*(Autosaved).glyphs
-font.designspace
-FontMenuNameDB
-instances/
-mutatorMath.log
+.DS_Store
+build/
+products/
+build.log

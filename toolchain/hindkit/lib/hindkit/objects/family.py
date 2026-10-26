@@ -1,5 +1,6 @@
-import os, subprocess
-import defcon, mutatorMath.ufo.document
+import os, subprocess, math
+import defcon
+from fontTools.designspaceLib import DesignSpaceDocument, AxisDescriptor, SourceDescriptor, InstanceDescriptor
 import hindkit as kit
 
 class Family(object):
@@ -78,6 +79,8 @@ class Family(object):
 
         if p.options["run_makeinstances"]:
             self.generate_styles()
+            if p.options["round_like_python2"]:
+                self.round_styles_like_python2(styles)
         elif self.masters:
             for style in styles:
                 kit.copy(style.master.get_path(), style.get_path())
@@ -104,7 +107,44 @@ class Family(object):
             "-a",
             "-c",
             "-n",
-        ])
+        ] + (["-r"] if self.project.options["round_like_python2"] else []))
+
+    def round_styles_like_python2(self, styles):
+        """Round instances the way the 2014 FDK did (half away from zero), not Python 3's half to even.
+
+        makeInstancesUFO -r leaves outlines and anchors unrounded but still rounds widths
+        half to even, so widths are interpolated again from the masters here.
+        """
+        if len(self.masters) != 2 or len(self.masters[0].location) != 1:
+            raise NotImplementedError("round_like_python2 handles two masters on one axis.")
+        m0, m1 = self.masters
+        f0, f1 = (defcon.Font(m.get_path()) for m in self.masters)
+        for style in styles:
+            t = (style.location[0] - m0.location[0]) / (m1.location[0] - m0.location[0])
+            font = style.open()
+            for glyph in font:
+                w0, w1 = f0[glyph.name].width, f1[glyph.name].width
+                # defcon skips a set that compares equal (275 == 275.0), so step off the value first.
+                width = round_half_away_from_zero(w0 + (w1 - w0) * t)
+                glyph.width = width + 1
+                glyph.width = width
+                for contour in glyph:
+                    for point in contour:
+                        point.x, point.y = round_half_away_from_zero(point.x), round_half_away_from_zero(point.y)
+                for component in glyph.components:
+                    xx, xy, yx, yy, dx, dy = component.transformation
+                    component.transformation = (xx, xy, yx, yy, round_half_away_from_zero(dx), round_half_away_from_zero(dy))
+                for anchor in glyph.anchors:
+                    x, y = round_half_away_from_zero(anchor.x), round_half_away_from_zero(anchor.y)
+                    anchor.x, anchor.y = x + 1, y + 1
+                    anchor.x, anchor.y = x, y
+                glyph.dirty = True
+            style.dirty = True
+
+
+def round_half_away_from_zero(value):
+    """Python 2's round(), which the 2014 FDK scripts ran on."""
+    return int(math.copysign(math.floor(abs(value) + 0.5), value))
 
 
 class DesignSpace(kit.BaseFile):
@@ -115,56 +155,49 @@ class DesignSpace(kit.BaseFile):
             project = project,
             file_format = "DesignSpace",
         )
-        self.doc = mutatorMath.ufo.document.DesignSpaceDocumentWriter(
-            os.path.abspath(kit.relative_to_cwd(self.get_path()))
-        )
 
     def generate(self):
 
-        for i, master in enumerate(self.project.family.masters):
+        # AFDKO's makeinstancesufo reads designspace 4+, which needs real axes.
+        doc = DesignSpaceDocument()
+        masters = self.project.family.masters
+        for axis_number in range(len(masters[0].location)):
+            positions = [m.location[axis_number] for m in masters]
+            axis = AxisDescriptor()
+            if axis_number == 0:
+                axis.name, axis.tag = "weight", "wght"
+            else:
+                axis.name, axis.tag = "axis " + str(axis_number), "AX{:02d}".format(axis_number)
+            axis.minimum, axis.maximum = min(positions), max(positions)
+            axis.default = masters[0].location[axis_number]
+            doc.addAxis(axis)
 
-            self.doc.addSource(
+        def location(position):
+            return {a.name: v for a, v in zip(doc.axes, position)}
 
-                path = os.path.abspath(kit.relative_to_cwd(master.get_path())),
-                name = "master " + master.name,
-                location = {
-                    "axis " + str(axis_number): axis_position
-                    for axis_number, axis_position in enumerate(master.location)
-                },
-
-                copyLib    = i == 0,
-                copyGroups = i == 0,
-                copyInfo   = i == 0,
-
-                # muteInfo = False,
-                # muteKerning = False,
-                # mutedGlyphNames = None,
-
-            )
+        for i, master in enumerate(masters):
+            source = SourceDescriptor()
+            source.path = os.path.abspath(kit.relative_to_cwd(master.get_path()))
+            source.name = "master " + master.name
+            source.location = location(master.location)
+            source.copyLib = source.copyGroups = source.copyInfo = i == 0
+            doc.addSource(source)
 
         for product in self.project.products:
             if not product.subsidiary:
                 style = product.style
-                self.doc.startInstance(
-                    name = "instance " + style.name,
-                    location = {
-                        "axis " + str(axis_number): axis_position
-                        for axis_number, axis_position in enumerate(style.location)
-                    },
-                    familyName = self.project.family.name,
-                    styleName = style.name,
-                    fileName = os.path.abspath(
-                        kit.relative_to_cwd(style.get_path())
-                    ),
-                    postScriptFontName = style.full_name_postscript,
-                    # styleMapFamilyName = None,
-                    # styleMapStyleName = None,
-                )
-                self.doc.writeInfo()
+                instance = InstanceDescriptor()
+                instance.name = "instance " + style.name
+                instance.location = location(style.location)
+                instance.familyName = self.project.family.name
+                instance.styleName = style.name
+                instance.path = os.path.abspath(kit.relative_to_cwd(style.get_path()))
+                instance.postScriptFontName = style.full_name_postscript
                 if self.project.options["prepare_kerning"]:
-                    self.doc.writeKerning()
-                self.doc.endInstance()
-        self.doc.save()
+                    instance.kerning = True
+                doc.addInstance(instance)
+
+        doc.write(os.path.abspath(kit.relative_to_cwd(self.get_path())))
 
 
 class Fmndb(kit.BaseFile):

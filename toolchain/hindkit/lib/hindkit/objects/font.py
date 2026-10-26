@@ -471,13 +471,32 @@ class Product(BaseFont):
                                 writeModTimes=False)
             if options.doOverlapRemoval or options.doAutoHint:
                 logger.info("Applying post-processing...")
-                updateInstance(options, instancePath)
+                updateInstance(instancePath, options)
             if not options.doOverlapRemoval:
                 validateLayers(instancePath)
             if options.doOverlapRemoval or options.doAutoHint:
                 if options.doNormalize:
                     normalizeUFO(instancePath, outputPath=None, onlyModified=False,
                                 writeModTimes=False)
+            # After overlap removal, as the 2014 checkoutlines did: on overlapping contours defcon
+            # takes a stroke crossing a counter for a counter itself and reverses it.
+            # checkoutlinesufo leaves the default layer alone (makeotf checks it against stored hashes)
+            # and writes its results to the processed layer, which makeotf prefers. Correct there.
+            if self.project.options["correct_contour_direction"] and options.doOverlapRemoval:
+                font = defcon.Font(instancePath)
+                processed = font.layers["com.adobe.type.processedglyphs"]
+                for glyph in font:
+                    if not len(glyph):
+                        continue
+                    if glyph.name in processed:
+                        processed[glyph.name].correctContourDirection()
+                    else:
+                        copy = defcon.Glyph()
+                        copy.copyDataFromGlyph(glyph)
+                        copy.correctContourDirection()
+                        if [[(p.x, p.y) for p in c] for c in copy] != [[(p.x, p.y) for p in c] for c in glyph]:
+                            processed.insertGlyph(copy, name=glyph.name)
+                font.save()
 
         elif self.file_format == "TTF":
 
