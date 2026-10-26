@@ -1,0 +1,133 @@
+# -------------------
+# BASIC SHAPING FORMS
+# -------------------
+
+# Nukta Forms
+# -----------
+
+# feature nukt {
+#   lookup nukt;
+# } nukt;
+
+
+# Akhand Ligatures
+# ----------------
+
+# feature akhn {
+# } akhn;
+
+
+# Reph Forms
+# ----------
+
+feature rphf {
+  lookup rphf;
+} rphf;
+
+
+# Pre-base Forms
+# --------------
+
+# feature pref {
+# } pref;
+
+
+# Below-base Forms
+# ----------------
+
+feature blwf {
+
+  script DFLT;
+    lookup blwf_knd2;
+
+  script knd2;
+    lookup blwf_knd2;
+
+  script knda;
+    lookup blwf_knda;
+
+} blwf;
+
+
+# Half Forms
+# ----------
+
+# feature half {
+# } half;
+
+
+# Post-base Forms
+# ---------------
+
+# feature pstf {
+# } pstf;
+
+
+# Conjunct Forms
+# --------------
+
+# feature cjct {
+# } cjct;
+
+
+# ----------------------------
+# MANDATORY PRESENTATION FORMS
+# ----------------------------
+
+# Pre-base Substitution
+# ---------------------
+
+feature pres {
+  lookup pres_o;
+  lookup pres_matra;
+  # lookup pres_else;
+} pres;
+
+
+# Above-base Substitution
+# -----------------------
+
+# feature abvs {
+# } abvs;
+
+
+# Below-base Substitution
+# -----------------------
+
+# feature blws {
+# } blws;
+
+
+# Post-base Substitution
+# ----------------------
+
+# feature psts {
+# } psts;
+
+
+# Halant Forms
+# ------------
+
+feature haln {
+  # lookup haln_old;
+  lookup haln;
+} haln;
+
+
+# Required Contextual Alternates
+# ------------------------------
+# Newly proposed; not in the specification.
+
+# feature rclt {
+# } rclt;
+
+
+# --------------------------------
+# DISCRETIONARY PRESENTATION FORMS
+# --------------------------------
+
+# Contextual Alternates
+# ---------------------
+
+# feature calt {
+# } calt;

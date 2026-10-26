@@ -1,0 +1,194 @@
+# -------------------
+# BASIC SHAPING FORMS
+# -------------------
+
+# Akhand Ligatures
+# ----------------
+
+lookup akhn_nta {
+
+  # <Nchillu, RRAc2>
+
+  # recommended by SMC (Swathanthra Malayalam Computing):
+  sub mlNA mlVirama mlRRA by mlNchillu_RRAc2;
+
+  # Unicode:
+  sub mlNchillu mlVirama mlRRA by mlNchillu_RRAc2;
+
+  # Compatible to Nirmala UI (but breaks character sequence <Nchillu, RRA>):
+  # sub mlNA mlVirama zerowidthjoiner mlRRA by mlNchillu_RRAc2;
+
+} akhn_nta;
+
+lookup akhn_chillu {
+  sub mlKA  mlVirama zerowidthjoiner by mlKchillu;
+  sub mlNNA mlVirama zerowidthjoiner by mlNNchillu;
+  sub mlNA  mlVirama zerowidthjoiner by mlNchillu;
+  sub mlRA  mlVirama zerowidthjoiner by mlRRchillu;
+  sub mlLA  mlVirama zerowidthjoiner by mlLchillu;
+  sub mlLLA mlVirama zerowidthjoiner by mlLLchillu;
+} akhn_chillu;
+
+lookup akhn_akhand {
+  sub mlKA mlVirama mlSSA by mlK_SSA;
+} akhn_akhand;
+
+lookup akhn_conjuncts {
+
+  # True conjuncts
+
+  sub mlKA mlVirama mlKA by mlK_KA;
+  sub mlKA mlVirama mlTA by mlK_TA;
+  sub mlGA mlVirama mlDA by mlG_DA;
+  sub mlGA mlVirama mlNA by mlG_NA;
+  sub mlGA mlVirama mlMA by mlG_MA;
+  sub mlNGA mlVirama mlKA by mlNG_KA;
+  sub mlNGA mlVirama mlNGA by mlNG_NGA;
+  sub mlJA mlVirama mlJA by mlJ_JA;
+  sub mlJA mlVirama mlNYA by mlJ_NYA;
+  sub mlNYA mlVirama mlCA by mlNY_CA;
+  sub mlNYA mlVirama mlCHA by mlNY_CHA;
+  sub mlNYA mlVirama mlJA by mlNY_JA;
+  sub mlNYA mlVirama mlNYA by mlNY_NYA;
+  sub mlTTA mlVirama mlTTA by mlTT_TTA;
+  sub mlNNA mlVirama mlTTA by mlNN_TTA;
+  sub mlNNA mlVirama mlDDA by mlNN_DDA;
+  sub mlNNA mlVirama mlDDHA by mlNN_DDHA;
+  sub mlNNA mlVirama mlMA by mlNN_MA;
+  sub mlTA mlVirama mlTA by mlT_TA;
+  sub mlTA mlVirama mlTHA by mlT_THA;
+  sub mlTA mlVirama mlNA by mlT_NA;
+  sub mlTA mlVirama mlBHA by mlT_BHA;
+  sub mlTA mlVirama mlMA by mlT_MA;
+  sub mlTA mlVirama mlSA by mlT_SA;
+  sub mlDA mlVirama mlDA by mlD_DA;
+  sub mlDA mlVirama mlDHA by mlD_DHA;
+  sub mlNA mlVirama mlTA by mlN_TA;
+  sub mlNA mlVirama mlTHA by mlN_THA;
+  sub mlNA mlVirama mlDA by mlN_DA;
+  sub mlNA mlVirama mlDHA by mlN_DHA;
+  sub mlNA mlVirama mlNA by mlN_NA;
+  sub mlNA mlVirama mlMA by mlN_MA;
+  sub mlMA mlVirama mlPA by mlM_PA;
+  sub mlMA mlVirama mlMA by mlM_MA;
+  sub mlSHA mlVirama mlCA by mlSH_CA;
+  sub mlSHA mlVirama mlCHA by mlSH_CHA;
+  sub mlSA mlVirama mlTHA by mlS_THA;
+  sub mlHA mlVirama mlNA by mlH_NA;
+  sub mlHA mlVirama mlMA by mlH_MA;
+  sub mlLLA mlVirama mlLLA by mlLL_LLA;
+
+  # Double
+
+  sub mlCA mlVirama mlCA by mlC_CA;
+  sub mlBA mlVirama mlBA by mlB_BA;
+  sub mlYA mlVirama mlYA by mlY_YA;
+  sub mlVA mlVirama mlVA by mlV_VA;
+
+  # Stacked
+
+  sub mlKA mlVirama mlTTA by mlKA_TTAc2;
+  sub mlGA mlVirama mlGA by mlGA_GAc2;
+  sub mlCA mlVirama mlCHA by mlCA_CHAc2;
+  sub mlDDA mlVirama mlDDA by mlDDA_DDAc2;
+  sub mlDDA mlVirama mlDDHA by mlDDA_DDHAc2;
+  sub mlNNA mlVirama mlNNA by mlNNA_NNAc2;
+  sub mlPA mlVirama mlPA by mlPA_PAc2;
+  sub mlBA mlVirama mlDA by mlBA_DAc2;
+  sub mlBA mlVirama mlDHA by mlBA_DHAc2;
+  sub mlLA mlVirama mlPA by mlLA_PAc2;
+  sub mlSHA mlVirama mlSHA by mlSHA_SHAc2;
+  sub mlSSA mlVirama mlTTA by mlSSA_TTAc2;
+  sub mlSA mlVirama mlSA by mlSA_SAc2;
+  sub mlSA mlVirama mlRRA mlVirama mlRRA by mlSA_RRAc2_RRAc2;
+  sub mlRRA mlVirama mlRRA by mlRRA_RRAc2;
+
+} akhn_conjuncts;
+
+lookup akhn_la_c2_new {
+  sub mlKA mlVirama mlLA by mlKA_LAc2;
+  sub mlGA mlVirama mlLA by mlGA_LAc2;
+  sub mlTA mlVirama mlLA by mlTA_LAc2;
+  sub mlPA mlVirama mlLA by mlPA_LAc2;
+  sub mlPHA mlVirama mlLA by mlPHA_LAc2;
+  sub mlBA mlVirama mlLA by mlBA_LAc2;
+  sub mlMA mlVirama mlLA by mlMA_LAc2;
+  sub mlM_PA mlVirama mlLA by mlM_PA_LAc2;
+  sub mlLA mlVirama mlLA by mlLA_LAc2;
+  sub mlVA mlVirama mlLA by mlVA_LAc2;
+  sub mlSHA mlVirama mlLA by mlSHA_LAc2;
+  sub mlSA mlVirama mlLA by mlSA_LAc2;
+  sub mlHA mlVirama mlLA by mlHA_LAc2;
+} akhn_la_c2_new;
+
+lookup akhn_old {
+
+  # YA:
+  sub mlYA mlYA mlVirama by mlY_YA;
+
+  # LA:
+  sub mlKA mlLA mlVirama by mlKA_LAc2;
+  sub mlGA mlLA mlVirama by mlGA_LAc2;
+  sub mlTA mlLA mlVirama by mlTA_LAc2;
+  sub mlPA mlLA mlVirama by mlPA_LAc2;
+  sub mlPHA mlLA mlVirama by mlPHA_LAc2;
+  sub mlBA mlLA mlVirama by mlBA_LAc2;
+  sub mlMA mlLA mlVirama by mlMA_LAc2;
+  sub mlM_PA mlLA mlVirama by mlM_PA_LAc2;
+  sub mlLA mlLA mlVirama by mlLA_LAc2;
+  sub mlVA mlLA mlVirama by mlVA_LAc2;
+  sub mlSHA mlLA mlVirama by mlSHA_LAc2;
+  sub mlSA mlLA mlVirama by mlSA_LAc2;
+  sub mlHA mlLA mlVirama by mlHA_LAc2;
+
+  # VA:
+  sub mlVA mlVA mlVirama by mlV_VA;
+
+} akhn_old;
+
+
+# Pre-base Forms
+# --------------
+
+lookup pref_new {
+  sub mlVirama mlRA by mlRAc2;
+} pref_new;
+
+
+# Below-base Forms
+# ----------------
+
+# lookup blwf_new {
+#   sub mlVirama mlLA by mlLAc2;
+# } blwf_new;
+
+lookup blwf_old {
+  sub mlLA mlVirama by mlLAc2;
+} blwf_old;
+
+
+# Post-base Forms
+# ---------------
+
+lookup pstf_new {
+  sub mlVirama mlYA by mlYAc2;
+  sub mlVirama mlVA by mlVAc2;
+} pstf_new;
+
+lookup pstf_old {
+  sub mlYA mlVirama by mlYAc2;
+  sub mlRA mlVirama by mlRAc2; # in `pres` for `mlm2`
+  sub mlVA mlVirama by mlVAc2;
+} pstf_old;
+
+
+# ----------------------------
+# MANDATORY PRESENTATION FORMS
+# ----------------------------
+
+# Pre-, Above-, Below-, and Post-base Substitution
+# ------------------------------------------------
+
+lookup blws_old_disable_free_la_c2 {
+   sub mlLAc2 by mlVirama mlLA;
+} blws_old_disable_free_la_c2;

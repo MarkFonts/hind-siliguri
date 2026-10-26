@@ -1,0 +1,144 @@
+# -------------------
+# BASIC SHAPING FORMS
+# -------------------
+
+# Akhand Ligatures
+# ----------------
+
+feature akhn {
+
+  # In "mlym" (Indic 1), YA, RA, LA, and VA are defined as having C2 marks,
+  #   therefore their Virama get reordered before "akhn" starts.
+
+  script DFLT;
+
+    lookup akhn_nta;
+    lookup akhn_chillu;
+    lookup akhn_akhand;
+    lookup akhn_conjuncts;
+
+    lookup akhn_la_c2_new;
+
+  script mlm2;
+
+    lookup akhn_nta;
+    lookup akhn_chillu;
+    lookup akhn_akhand;
+    lookup akhn_conjuncts;
+
+    lookup akhn_la_c2_new;
+
+  script mlym;
+
+    lookup akhn_nta;
+    lookup akhn_chillu;
+    lookup akhn_akhand;
+    lookup akhn_conjuncts;
+
+    lookup akhn_la_c2_new;
+    lookup akhn_old; # for Adobe
+
+} akhn;
+
+
+# Pre-base Forms
+# ----------------
+
+feature pref {
+
+  script DFLT;
+    lookup pref_new;
+
+  script mlm2;
+    lookup pref_new;
+
+} pref;
+
+
+# Below-base Forms
+# ----------------
+
+feature blwf {
+
+  # script DFLT;
+  #   lookup blwf_new;
+
+  # script mlm2;
+  #   lookup blwf_new;
+
+  script mlym;
+    lookup blwf_old;
+
+} blwf;
+
+
+# Post-base Forms
+# ---------------
+
+feature pstf {
+
+  script DFLT;
+    lookup pstf_new;
+
+  script mlm2;
+    lookup pstf_new;
+
+  script mlym;
+    lookup pstf_old;
+
+} pstf;
+
+
+# Conjunct Forms
+# --------------
+# Adobe's engine doesn't support <cjct> properly: pre-base glyphs break conjuncts.
+
+# feature cjct {
+# } cjct;
+
+
+# ----------------------------
+# MANDATORY PRESENTATION FORMS
+# ----------------------------
+
+# Pre-, Above-, Below-, and Post-base Substitution
+# ------------------------------------------------
+
+# feature pres {
+# } pres;
+
+# feature abvs {
+# } abvs;
+
+feature blws {
+  script mlym;
+    lookup blws_old_disable_free_la_c2;
+} blws;
+
+# feature psts {
+# } psts;
+
+
+# Halant Forms
+# ------------
+
+# feature haln {
+# } haln;
+
+
+# Required Contextual Alternates
+# ------------------------------
+
+# feature rclt {
+# } rclt;
+
+
+# --------------------------------
+# DISCRETIONARY PRESENTATION FORMS
+# --------------------------------
+
+# Contextual Alternates
+# ---------------------
+
+# feature calt {
+# } calt;
