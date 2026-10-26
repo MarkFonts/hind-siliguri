@@ -20,7 +20,7 @@ These are needed for AFDKO 5 and to match the 2015 fonts:
   - `round_like_python2`: interpolate unrounded, then round half away from zero, as the Python 2 FDK did. Widths are re-interpolated from the masters, because `makeinstancesufo` rounds them half to even even with `-r`.
   - `correct_contour_direction`: run defcon's `correctContourDirection` on each instance after overlap removal, on the overlap-free outlines `checkoutlinesufo` writes to the `com.adobe.type.processedglyphs` layer. The default layer stays as it is, because `makeotf` checks it against the hashes `checkoutlinesufo` stored and silently writes nothing if they differ.
 
-The Hind fork runs `correct_contour_direction` before overlap removal. That works for Hind but not here. On overlapping contours, defcon takes the ষ diagonal for a counter, reverses it, and the overlap cancels out, leaving white slivers in 18 ষ conjuncts. The 2014 `checkoutlines` also fixed direction after removing overlaps.
+Run before overlap removal (where the Hind fork first had it), the step breaks glyphs. On overlapping contours, defcon takes the ষ diagonal for a counter, reverses it, and the overlap cancels out, leaving white slivers in 18 ষ conjuncts. The 2014 `checkoutlines` also fixed direction after removing overlaps. The Hind fork now has the same patch.
 
 ## Latin
 
