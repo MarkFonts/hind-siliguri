@@ -6,7 +6,7 @@ This is a fork of [itfoundry/hind-siliguri](https://github.com/itfoundry/hind-si
 
 ## Sources
 
-`masters/HindSiliguri.glyphs` is the only source: two masters (Light, Bold) on a Weight axis and five instances. It holds all 820 glyphs, the 485 Bangla, Hind's 334 Latin, and a no-break space, along with the hand-written OpenType code. Until 2026-10-26 it was named `HindiSiliguri.glyphs`; Google Fonts' override config for this family still points at that name.
+`masters/HindSiliguri.glyphs` is the only source: two masters (Light, Bold) on a Weight axis and five instances. It holds 852 glyphs: the 485 Bangla, Hind's 334 Latin, a no-break space, and 32 GF Latin Core additions. It also holds the hand-written OpenType code. Until 2026-10-26 it was named `HindiSiliguri.glyphs`; Google Fonts' override config for this family still points at that name.
 
 The Latin came from hindkit 0.3.0's bundled copy of Hind, which the 2015 build merged in at build time ([itfoundry/hind-siliguri#8](https://github.com/itfoundry/hind-siliguri/issues/8)). `resources/hindkit-0.3.0/README.md` has the provenance.
 
@@ -78,7 +78,19 @@ The fixes are in the source. `toolchain/fontbakery_fixes_2026-10-26.py` applied 
   - the source renamed to match the family.
 - **Vertical metrics:** Google Fonts' 1116/−501/0 (win 1116/501), which it has served since 2017, replace the 2015 values. The hindkit build uses them too.
 
-**Still failing:** GF Latin Core coverage. The Latin lacks about 35 letters (Ċ ċ Ġ ġ Ħ ħ Ŵ ŵ Ŷ ŷ Ẁ ẁ Ẃ ẃ Ẅ ẅ Ỳ ỳ ẞ and more) and the combining accents (U+0300–U+0308, U+030A–U+030C, U+0327, U+0328). That's new Latin drawing, which also belongs in Hind.
+**Still failing:** three GF Latin Core letters, Ħ ħ ẞ, which need drawing (`Hbar`, `hbar`, `Germandbls`). With the Latin Core work below, they're all fontbakery fails on: the variable font has 2 FAILs (coverage and German/Maltese shaping), and each static has the same two.
+
+### GF Latin Core
+
+`toolchain/latin_core_2026-10-26.py` added everything that didn't need drawing. It reads all its geometry from the font's own 98 accented letters:
+
+- **16 composites:** Ċ ċ Ġ ġ Ŵ ŵ Ŷ ŷ Ẁ ẁ Ẃ ẃ Ẅ ẅ Ỳ ỳ, placed where the existing accented letters put the same accents.
+- **Dotless ȷ:** `j` without its dot.
+- **14 combining marks**, U+0300 to U+0328: zero-width components of the spacing accents, with `_top`, `_bottom`, or `_ogonek` anchors. The combining comma below is cut from Ș.
+- **Anchors:** `top`, `bottom`, and (for A E I U) `ogonek` on A–Z, a–z, ı, and ȷ, plus the dotted circle. A base + combining mark renders the same as the precomposed letter, so e + U+0301 matches é.
+- **`ccmp`** (the `Latin` feature prefix): i, j, and į drop their dot before a mark above, as in Dutch íj́ or Lithuanian į́. `iogonek.dotless` is new for the last.
+
+Both builds have the additions. In the hindkit build no existing glyph changed, and shaping against 2015 is still identical. `proof/latin-plan/` holds the plan, the renders, and the drawing brief for Ħ ħ ẞ.
 
 **Remaining warnings:**
 - Outline polish: zero-length or colinear segments and near-vertical lines in a few dozen glyphs.

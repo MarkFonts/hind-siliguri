@@ -1,0 +1,242 @@
+{
+ "Light": {
+  "composites": {
+   "Cdotaccent": {
+    "base": "C",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 187,
+    "dy": 80
+   },
+   "cdotaccent": {
+    "base": "c",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 77,
+    "dy": -90
+   },
+   "Gdotaccent": {
+    "base": "G",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 170,
+    "dy": 80
+   },
+   "gdotaccent": {
+    "base": "g",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 87,
+    "dy": -90
+   },
+   "Wcircumflex": {
+    "base": "W",
+    "accent": "circumflex",
+    "base_center_from": "bounding box",
+    "dx": 266,
+    "dy": 81
+   },
+   "wcircumflex": {
+    "base": "w",
+    "accent": "circumflex",
+    "base_center_from": "bounding box",
+    "dx": 196,
+    "dy": -86
+   },
+   "Ycircumflex": {
+    "base": "Y",
+    "accent": "circumflex",
+    "base_center_from": "existing composites",
+    "dx": 90,
+    "dy": 81
+   },
+   "ycircumflex": {
+    "base": "y",
+    "accent": "circumflex",
+    "base_center_from": "existing composites",
+    "dx": 52,
+    "dy": -86
+   },
+   "Wgrave": {
+    "base": "W",
+    "accent": "grave",
+    "base_center_from": "bounding box",
+    "dx": 198,
+    "dy": 81
+   },
+   "wgrave": {
+    "base": "w",
+    "accent": "grave",
+    "base_center_from": "bounding box",
+    "dx": 131,
+    "dy": -86
+   },
+   "Wacute": {
+    "base": "W",
+    "accent": "acute",
+    "base_center_from": "bounding box",
+    "dx": 335,
+    "dy": 81
+   },
+   "wacute": {
+    "base": "w",
+    "accent": "acute",
+    "base_center_from": "bounding box",
+    "dx": 261,
+    "dy": -86
+   },
+   "Wdieresis": {
+    "base": "W",
+    "accent": "dieresis",
+    "base_center_from": "bounding box",
+    "dx": 264,
+    "dy": 78
+   },
+   "wdieresis": {
+    "base": "w",
+    "accent": "dieresis",
+    "base_center_from": "bounding box",
+    "dx": 194,
+    "dy": -91
+   },
+   "Ygrave": {
+    "base": "Y",
+    "accent": "grave",
+    "base_center_from": "existing composites",
+    "dx": 23,
+    "dy": 81
+   },
+   "ygrave": {
+    "base": "y",
+    "accent": "grave",
+    "base_center_from": "existing composites",
+    "dx": -13,
+    "dy": -86
+   }
+  },
+  "derived": {
+   "dotlessj": 1,
+   "commaaccentcomb": 1
+  }
+ },
+ "Bold": {
+  "composites": {
+   "Cdotaccent": {
+    "base": "C",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 115,
+    "dy": 99
+   },
+   "cdotaccent": {
+    "base": "c",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 27,
+    "dy": -68
+   },
+   "Gdotaccent": {
+    "base": "G",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 133,
+    "dy": 99
+   },
+   "gdotaccent": {
+    "base": "g",
+    "accent": "dotaccent",
+    "base_center_from": "existing composites",
+    "dx": 63,
+    "dy": -68
+   },
+   "Wcircumflex": {
+    "base": "W",
+    "accent": "circumflex",
+    "base_center_from": "bounding box",
+    "dx": 236,
+    "dy": 100
+   },
+   "wcircumflex": {
+    "base": "w",
+    "accent": "circumflex",
+    "base_center_from": "bounding box",
+    "dx": 152,
+    "dy": -67
+   },
+   "Ycircumflex": {
+    "base": "Y",
+    "accent": "circumflex",
+    "base_center_from": "existing composites",
+    "dx": 79,
+    "dy": 100
+   },
+   "ycircumflex": {
+    "base": "y",
+    "accent": "circumflex",
+    "base_center_from": "existing composites",
+    "dx": 25,
+    "dy": -67
+   },
+   "Wgrave": {
+    "base": "W",
+    "accent": "grave",
+    "base_center_from": "bounding box",
+    "dx": 184,
+    "dy": 100
+   },
+   "wgrave": {
+    "base": "w",
+    "accent": "grave",
+    "base_center_from": "bounding box",
+    "dx": 102,
+    "dy": -68
+   },
+   "Wacute": {
+    "base": "W",
+    "accent": "acute",
+    "base_center_from": "bounding box",
+    "dx": 298,
+    "dy": 100
+   },
+   "wacute": {
+    "base": "w",
+    "accent": "acute",
+    "base_center_from": "bounding box",
+    "dx": 217,
+    "dy": -67
+   },
+   "Wdieresis": {
+    "base": "W",
+    "accent": "dieresis",
+    "base_center_from": "bounding box",
+    "dx": 238,
+    "dy": 100
+   },
+   "wdieresis": {
+    "base": "w",
+    "accent": "dieresis",
+    "base_center_from": "bounding box",
+    "dx": 160,
+    "dy": -67
+   },
+   "Ygrave": {
+    "base": "Y",
+    "accent": "grave",
+    "base_center_from": "existing composites",
+    "dx": 28,
+    "dy": 100
+   },
+   "ygrave": {
+    "base": "y",
+    "accent": "grave",
+    "base_center_from": "existing composites",
+    "dx": -24,
+    "dy": -68
+   }
+  },
+  "derived": {
+   "dotlessj": 1,
+   "commaaccentcomb": 1
+  }
+ }
+}

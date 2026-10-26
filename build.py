@@ -40,13 +40,16 @@ def export_masters(font):
 def export_features(font):
     """The hand-written GSUB lives in the .glyphs file's prefixes; hindkit reads it as GSUB_lookups.fea and GSUB.fea.
 
+    The `Latin` prefix (the dotless i and j ccmp) goes after the 2015 GSUB.
+
     The `languagesystems` prefix is for builds straight from the .glyphs file; hindkit writes its own.
     """
     hindkit.remove(FEATURES_DIR)
     hindkit.makedirs(FEATURES_DIR)
-    for name in ["GSUB_lookups", "GSUB"]:
-        with open(os.path.join(FEATURES_DIR, name + ".fea"), "w", encoding="utf-8") as f:
-            f.write(font.featurePrefixes[name].code)
+    with open(os.path.join(FEATURES_DIR, "GSUB_lookups.fea"), "w", encoding="utf-8") as f:
+        f.write(font.featurePrefixes["GSUB_lookups"].code)
+    with open(os.path.join(FEATURES_DIR, "GSUB.fea"), "w", encoding="utf-8") as f:
+        f.write(font.featurePrefixes["GSUB"].code + "\n" + font.featurePrefixes["Latin"].code)
 
 def main():
 

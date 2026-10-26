@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latin Core Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7; --ink: #1b1a17; --muted: #6f6b63; --rule: #dedad2; --card: #ffffff;
+    --you: #b4321f; --me: #1f6f43; --derive: #6a35e0; --opt: #8a6d00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151412; --ink: #ece8df; --muted: #9a958b; --rule: #34312c; --card: #ffffff;
+      --you: #ff7a62; --me: #6fd39b; --derive: #b79bff; --opt: #e3c45a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #151412; --ink: #ece8df; --muted: #9a958b; --rule: #34312c; --card: #ffffff;
+    --you: #ff7a62; --me: #6fd39b; --derive: #b79bff; --opt: #e3c45a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.55 "Newsreader", Georgia, serif; font-variation-settings: "opsz" 14; }
+  main { max-width: 1120px; margin: 0 auto; padding: 40px 16px 96px; }
+  h1 { font-weight: 600; font-size: 40px; line-height: 1.1; margin: 0 0 12px; font-variation-settings: "opsz" 48; }
+  h2 { font-weight: 600; font-size: 25px; margin: 56px 0 8px; font-variation-settings: "opsz" 24; }
+  h3 { font-weight: 600; font-size: 19px; margin: 28px 0 6px; }
+  p, li { max-width: 72ch; }
+  p { margin: 0 0 12px; }
+  .lede { font-size: 20px; }
+  code { font: 14px/1 ui-monospace, Menlo, monospace; }
+  .you { color: var(--you); } .me { color: var(--me); } .derive { color: var(--derive); } .opt { color: var(--opt); }
+
+  .tally { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 24px 0 8px; }
+  .tally div { border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+  .tally b { display: block; font-size: 34px; line-height: 1; font-weight: 600; margin-bottom: 6px; }
+  .tally span { font: 13px/1.35 system-ui, sans-serif; color: var(--muted); }
+
+  table { border-collapse: collapse; width: 100%; font: 14px/1.4 system-ui, sans-serif; margin: 8px 0 16px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  td.glyphs, .g { font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans", sans-serif; }
+  td.glyphs { font-size: 22px; line-height: 1.3; white-space: nowrap; }
+  .tag { display: inline-block; font: 600 11px/1 system-ui, sans-serif; letter-spacing: .02em; padding: 4px 7px; border-radius: 999px; border: 1px solid currentColor; }
+
+  .sheet { display: block; width: 100%; height: auto; background: var(--card); border-radius: 10px; padding: 12px; margin: 8px 0 20px; }
+  .toggle { display: flex; gap: 8px; margin: 12px 0 4px; }
+  .toggle button { font: 600 14px/1 system-ui, sans-serif; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; }
+  .toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  ol.steps { padding-left: 22px; } ol.steps li { margin-bottom: 8px; }
+  .decide { border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; margin: 12px 0; }
+  .decide h3 { margin-top: 0; }
+
+  @media (max-width: 720px) {
+    .tally { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    table { display: block; overflow-x: auto; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hind Siliguri: GF Latin Core plan</h1>
+  <p class="lede">Fontbakery's last FAILs are 34 missing code points: 20 Latin letters and 14 combining marks. Most of them can be built from parts the Latin already has. Three need real drawing: <span class="you g">Ħ ħ ẞ</span>.</p>
+  <p>No sibling has these glyphs to borrow. Hind, Hind Madurai, Hind Vadodara, Hind Guntur, and Hind Mysuru on Google Fonts all lack the same 34.</p>
+
+  <div class="tally">
+    <div><b class="you">3</b><span>to draw, by you: <span class="g">Ħ ħ ẞ</span></span></div>
+    <div><b class="me">16</b><span>composites from existing letters and accents</span></div>
+    <div><b class="derive">2</b><span>derived outlines: dotless ȷ, combining comma below</span></div>
+    <div><b class="me">13</b><span>combining marks from the existing spacing accents</span></div>
+  </div>
+  <p>Legend: <span class="you">red is your drawing</span>, <span class="me">green I build mechanically</span>, <span class="derive">violet I cut from existing outlines</span>, and <span class="opt">ochre is optional</span>.</p>
+
+  <div class="decide">
+    <h3>Status, 2026-10-26: the <span class="me">31 are built</span>. <span class="you g">Ħ ħ ẞ</span> are yours.</h3>
+    <p>The 31 are in <code>masters/HindSiliguri.glyphs</code>, together with:</p>
+    <ul>
+      <li><code>top</code>, <code>bottom</code>, and <code>ogonek</code> anchors on the Latin base letters and the dotted circle;</li>
+      <li>the <code>ccmp</code> rule for dotless i, j, and į;</li>
+      <li><code>iogonek.dotless</code>.</li>
+    </ul>
+    <p>Fontbakery now fails only on your three glyphs.</p>
+    <p>Below, every pair is the precomposed letter and then the same letter typed as base + combining mark, from both builds.</p>
+    <img class="sheet" src="combining.svg" alt="Precomposed letters next to their decomposed forms, hindkit and gftools builds">
+    <img class="sheet" src="combining-2.svg" alt="Dotless i and j before accents, and combining marks on the dotted circle">
+    <img class="sheet" src="new-letters.svg" alt="The 17 new letters in Light, Regular, and Bold">
+  </div>
+
+  <h2>The 34, one by one</h2>
+  <table>
+    <thead><tr><th>Glyphs</th><th>How</th><th>From</th></tr></thead>
+    <tbody>
+      <tr><td class="glyphs you">Ħ ħ</td><td><span class="tag you">draw</span></td><td>H and h with a bar. Eth's and đ's bars show the stroke weight and the bar language already in the font.</td></tr>
+      <tr><td class="glyphs you">ẞ</td><td><span class="tag you">draw</span></td><td>Capital sharp s. The ß, S, and B below are the references.</td></tr>
+      <tr><td class="glyphs me">Ċ ċ Ġ ġ</td><td><span class="tag me">composite</span></td><td>C, c, G, g + <code>dotaccent</code></td></tr>
+      <tr><td class="glyphs me">Ŵ ŵ Ŷ ŷ</td><td><span class="tag me">composite</span></td><td>W, w, Y, y + <code>circumflex</code></td></tr>
+      <tr><td class="glyphs me">Ẁ ẁ Ẃ ẃ Ẅ ẅ</td><td><span class="tag me">composite</span></td><td>W, w + <code>grave</code>, <code>acute</code>, <code>dieresis</code></td></tr>
+      <tr><td class="glyphs me">Ỳ ỳ</td><td><span class="tag me">composite</span></td><td>Y, y + <code>grave</code></td></tr>
+      <tr><td class="glyphs derive">ȷ</td><td><span class="tag derive">derive</span></td><td><code>j</code> without its dot</td></tr>
+      <tr><td class="glyphs derive">s&#x326; t&#x326;</td><td><span class="tag derive">derive</span></td><td>The comma under Ș, which is already drawn into <code>Scommaaccent</code></td></tr>
+      <tr><td class="glyphs me">o&#x300; o&#x301; o&#x302; o&#x303; o&#x304; o&#x306; o&#x307; o&#x308; o&#x30A; o&#x30B; o&#x30C; c&#x327; e&#x328;</td><td><span class="tag me">combining</span></td><td>U+0300–U+0328, shown here on a base letter. Each is a zero-width component of a spacing accent (<code>grave</code> to <code>ogonek</code>) with a <code>_top</code> or <code>_bottom</code> anchor.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Auto-built, ready for your eye</h2>
+  <p>I placed the accents with the font's own rules. I measured each accent's height, and how far acute and grave lean off center, from the 98 accented letters already in the Latin. W has no accented forms yet, so it's centered on its bounding box. Violet glyphs are outlines cut from existing glyphs.</p>
+  <div class="toggle" role="group" aria-label="Master">
+    <button type="button" data-m="light" aria-pressed="true">Light master</button>
+    <button type="button" data-m="bold" aria-pressed="false">Bold master</button>
+  </div>
+  <img class="sheet" id="auto" src="auto-light.svg" alt="Auto-built composites and derived glyphs in the Light master">
+
+  <h2>What you'd draw: <span class="g">Ħ ħ ẞ</span></h2>
+  <p>These are the glyphs already in the font that set the rules.</p>
+  <img class="sheet" src="references.svg" alt="H, Eth, h, dcroat, germandbls, S, and B in the Light and Bold masters">
+  <ul>
+    <li><b class="g">Ħ:</b> a bar across both stems, between the crossbar and the cap height. Eth's bar sets the weight, and how far it overshoots the stem.</li>
+    <li><b class="g">ħ:</b> a bar across the ascender, matching <code>dcroat</code>'s.</li>
+    <li><b class="g">ẞ:</b> width and weight between ß and B.</li>
+    <li><b>Both masters, compatible.</b> Same contours, same order, and the same start node in Light and Bold. Mismatched start nodes and contour order are what broke ১, হ্র, and ল্দ্র here, so the build will scan for both.</li>
+    <li>Draw them in <code>masters/HindSiliguri.glyphs</code> as <code>Hbar</code>, <code>hbar</code>, and <code>Germandbls</code>. I'll wire up everything else around them.</li>
+  </ul>
+
+  <h2>Where: Siliguri first, then Hind</h2>
+  <p>You asked whether to start in Hind. I'd start here. The two forks don't carry quite the same Latin:</p>
+  <ul>
+    <li><b>Siliguri has the newer drawing.</b> Its Latin is the October 2015 revision, from hindkit 0.3.0's <code>Hind.glyphs</code>. The Hind fork's comes from the 2014 UFOs. In 2015, ITF corrected Ţ ţ from a comma below (the Romanian form, wrong for these code points) to a real cedilla.</li>
+    <li><b>Siliguri's masters are compatible.</b> About a dozen glyphs (e, g, n, æ, X, &lt;, ≤, the braces) have mismatched contours between Hind's masters and match here.</li>
+    <li><b>The checks run here.</b> This repo already builds with gftools and passes fontbakery apart from these 34.</li>
+  </ul>
+  <p>Then a variant of <code>toolchain/merge_latin_into_glyphs.py</code> carries the whole Latin into <code>Hind.glyphs</code>: the 2015 fixes plus the new glyphs. After that, the other four families take the same Latin unchanged.</p>
+  <img class="sheet" src="hind-vs-siliguri-latin.svg" alt="T and t with cedilla in the Hind fork and in Siliguri, Light and Bold">
+  <p>Ţ ţ, Light and Bold. The other differences are in contour order only and don't show.</p>
+
+  <h2>What I'd do around your drawing</h2>
+  <ol class="steps">
+    <li>Add the 16 composites as components, at the placements above, with your corrections. Add dotless ȷ and the combining comma as outlines.</li>
+    <li>Give the base letters <code>top</code> and <code>bottom</code> anchors in both masters. The anchor positions follow from the accented letters already in the font, so ufo2ft (and hindkit) generate <code>mark</code> positioning for decomposed text, such as e followed by U+0301.</li>
+    <li>Add the 13 combining marks as zero-width components of the spacing accents, with matching <code>_top</code> and <code>_bottom</code> anchors and the Mark category.</li>
+    <li>Add a small <code>ccmp</code> rule: i and j become dotless before a mark above (Lithuanian, Dutch íj́).</li>
+    <li>Update the GOADB, rebuild with hindkit and gftools, and rerun fontbakery. Check composed against decomposed text in a rendered proof.</li>
+    <li>Port the Latin to Hind and re-verify it against the 2014 OTFs.</li>
+  </ol>
+
+  <h2>Optional: fontbakery's WARN tier</h2>
+  <p>These are auxiliary characters for the same languages. They only warn, so they can wait:</p>
+  <table>
+    <tbody>
+      <tr><td class="glyphs opt">Ĕ ĕ Ĭ ĭ Ŏ ŏ Ŭ ŭ Ǔ ǔ Ĩ ĩ Ẽ ẽ Ŝ ŝ Ǧ ǧ Ǩ ǩ Ȟ ȟ Ǿ ǿ Ŀ ŀ</td><td><span class="tag opt">composite</span></td><td>Existing letters and accents. Ŀ ŀ use <code>periodcentered</code>.</td></tr>
+      <tr><td class="glyphs opt">Ŧ ŧ Ǥ ǥ</td><td><span class="tag opt">draw</span></td><td>The same bar job as Ħ ħ.</td></tr>
+      <tr><td class="glyphs opt">ſ Ŋ ŋ Ʒ ʒ ʻ</td><td><span class="tag opt">draw</span></td><td>New letterforms. Ǯ ǯ then follow as Ʒ ʒ + caron.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Your calls</h2>
+  <div class="decide"><h3>1. Siliguri first, then Hind?</h3><p>I recommend it, for the reasons above. Starting in Hind would mean first replacing Hind's 2014 Latin with the 2015 revision anyway.</p></div>
+  <div class="decide"><h3>2. Required 34 only, or the WARN tier too?</h3><p>The 34 clear fontbakery's FAILs. The WARN tier adds 26 composites and 10 glyphs you'd draw.</p></div>
+  <div class="decide"><h3>3. The auto placements</h3><p>Flag any accent position above that looks off. W's accents and Ċ's dot are the ones I'd check first.</p></div>
+</main>
+<script>
+  const img = document.getElementById("auto");
+  document.querySelectorAll(".toggle button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".toggle button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    img.src = `auto-${b.dataset.m}.svg`;
+    img.alt = `Auto-built composites and derived glyphs in the ${b.dataset.m === "bold" ? "Bold" : "Light"} master`;
+  }));
+</script>
+</body>
+</html>
