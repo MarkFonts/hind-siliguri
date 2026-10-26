@@ -267,9 +267,9 @@ li{margin-bottom:6px}
 <p>Each is a class question. Answer with a rule. A second run applies it to every glyph in the class.</p>
 
 <div class="q">
-<h3>1. Do sans entry and exit terminals take the slant? <span class="cA">Decided: no.</span></h3>
-<p class="rule">Mark's rule: terminal cuts never rotate.</p>
-<p>The roman cut angle is a constraint, not a fallback. The wedges on a, 3, and B have to be fixed in the stroke next to the cut, not by tilting the cut. Level C's sheared terminals go against this rule too, so a second run needs another fallback for glyphs that now stop at C.</p>
+<h3>1. Do sans entry and exit terminals take the slant? <span class="cA">Decided: yes, the shear and nothing more.</span></h3>
+<p class="rule">Mark's rule: terminal cuts never rotate beyond the shear, and the correction never rotates a stroke back toward its roman angle.</p>
+<p>Each cut is carried by the shear, so a vertical cut ends up parallel to the slanted stems. Frutiger does the same: all 54 of its vertical cuts follow the slant. Holding the roman cut angle is what made the wedges on a, 3, and B, so they go away. Level C's sheared terminals now follow the rule. The fixes stay in the stroke, such as weight and back-lean, never in the cut's angle.</p>
 </div>
 
 <div class="q">
@@ -279,9 +279,9 @@ li{margin-bottom:6px}
 </div>
 
 <div class="q">
-<h3>3. Do Bangla bowls lean back?</h3>
-<p class="rule">Today: β 0, so loops get plain shear. Only ০ leans back, as a closed free round. The loop lean (ρ_loop) is tied to this one switch.</p>
-<p>Rule to choose: Bangla bowls and loops take the same lean-back as Latin closed rounds (β 0.22θ), or a smaller fraction, or none. Latin o and O show what the lean does. Bangla bowls are not closed free rounds, so the same β may open counters. A second run changes the bowls of most Bangla consonants, so the gate will fail more of them. Expect more glyphs at B and C.</p>
+<h3>3. Do Bangla bowls lean back? <span class="cA">Decided: yes, Frutiger's amount.</span></h3>
+<p class="rule">Mark's rule: Bangla bowls and loops lean back 0.3–0.4θ, the same as Latin rounds (4–5.6° at 14.04°).</p>
+<p>The references disagree. Frutiger leans its rounds back 0.3–0.4θ; Tiro Bangla's Bangla is a plain shear plus a diagonal weight fix, with bowls at about 0. Mark chose Frutiger's, so Latin and Bangla rounds match on mixed lines. The Latin o and p also move up from the pilot's 0.22θ and 0 to Frutiger's values. Expect more Bangla glyphs to fall to B or C at the gate.</p>
 </div>
 
 <div class="q">
