@@ -7,3 +7,6 @@ build/
 products/
 build.log
 fonts/
+sources/build.ninja
+sources/.ninja_log
+sources/instance_ufos/
