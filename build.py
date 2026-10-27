@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# Hind Siliguri, built with hindkit (toolchain/hindkit) and current AFDKO from masters/HindSiliguri.glyphs.
+# Hind Siliguri, built with hindkit (toolchain/hindkit) and current AFDKO from sources/HindSiliguri.glyphs.
 # Follows the Hind fork's build.py (MarkFonts/hind). The 2015 hindkit 0.3 build is in legacy/.
 
 import os, sys
@@ -11,7 +11,7 @@ from glyphsLib.classes import WEIGHT_CODES
 from fontTools.designspaceLib import DesignSpaceDocument
 import hindkit
 
-SOURCE = "masters/HindSiliguri.glyphs"
+SOURCE = "sources/HindSiliguri.glyphs"
 EXPORT_DIR = "build/masters"
 FEATURES_DIR = "build/features"
 
