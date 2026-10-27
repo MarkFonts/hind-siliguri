@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnAnusvara" format="2">
+  <advance width="410"/>
+  <unicode hex="0982"/>
+  <outline>
+    <contour>
+      <point x="285.74102871229434" y="640.0" type="curve" smooth="yes"/>
+      <point x="196.74102871229434" y="640.0"/>
+      <point x="125.96939929440788" y="574.0"/>
+      <point x="114.125" y="494.0" type="curve" smooth="yes"/>
+      <point x="101.98449072323194" y="412.0"/>
+      <point x="153.50897128770566" y="348.0"/>
+      <point x="242.50897128770566" y="348.0" type="curve" smooth="yes"/>
+      <point x="330.50897128770566" y="348.0"/>
+      <point x="400.98449072323194" y="412.0"/>
+      <point x="413.125" y="494.0" type="curve" smooth="yes"/>
+      <point x="424.9693992944079" y="574.0"/>
+      <point x="373.74102871229434" y="640.0"/>
+    </contour>
+    <contour>
+      <point x="277.59800419738895" y="585.0" type="curve" smooth="yes"/>
+      <point x="331.59800419738895" y="585.0"/>
+      <point x="359.8238595413651" y="546.0"/>
+      <point x="352.125" y="494.0" type="curve" smooth="yes"/>
+      <point x="344.13003047627467" y="440.0"/>
+      <point x="304.50394081143094" y="402.0"/>
+      <point x="250.50394081143094" y="402.0" type="curve" smooth="yes"/>
+      <point x="195.503940811431" y="402.0"/>
+      <point x="167.1300304762747" y="440.0"/>
+      <point x="175.125" y="494.0" type="curve" smooth="yes"/>
+      <point x="182.82385954136512" y="546.0"/>
+      <point x="222.59800419738895" y="585.0"/>
+    </contour>
+    <contour>
+      <point x="64.20936925715623" y="310.3374770286249" type="line"/>
+      <point x="48.481557791692566" y="247.42623116677026" type="line"/>
+      <point x="316.125" y="-2.0" type="line"/>
+      <point x="331.65559437155423" y="60.12237748621685" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+    </dict>
+  </lib>
+</glyph>

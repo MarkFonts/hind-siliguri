@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Delta.math" format="2">
+  <advance width="601"/>
+  <unicode hex="2206"/>
+  <outline>
+    <contour>
+      <point x="-36.2644145941816" y="0.0" type="line"/>
+      <point x="16.956563850473245" y="0.0" type="line"/>
+      <point x="174.95656385047323" y="260.0" type="line" smooth="yes"/>
+      <point x="352.41139590064586" y="552.0142805888918"/>
+      <point x="396.8339651560357" y="616.0496585436667"/>
+      <point x="396.8339651560357" y="616.0496585436667" type="curve"/>
+      <point x="396.8339651560357" y="616.0496585436667"/>
+      <point x="409.49842635970776" y="551.9834518481468"/>
+      <point x="438.20656385047323" y="261.0" type="curve" smooth="yes"/>
+      <point x="463.95656385047323" y="0.0" type="line"/>
+      <point x="506.5452996055925" y="0.0" type="line"/>
+      <point x="520.7952996055925" y="57.0" type="line"/>
+      <point x="452.0452996055925" y="674.0" type="line"/>
+      <point x="360.23558540581837" y="674.0" type="line"/>
+      <point x="-22.014414594181602" y="57.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="-11.375" y="0.0" type="line"/>
+      <point x="486.625" y="0.0" type="line"/>
+      <point x="500.375" y="55.0" type="line"/>
+      <point x="2.375" y="55.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmAA" format="2">
+  <advance width="270"/>
+  <unicode hex="09BE"/>
+  <guideline x="282" y="944" angle="0"/>
+  <outline>
+    <contour>
+      <point x="1.625" y="0.0" type="line"/>
+      <point x="141.625" y="0.0" type="line"/>
+      <point x="329.375" y="751.0" type="line"/>
+      <point x="194.375" y="751.0" type="line"/>
+      <point x="189.875" y="733.0" type="line"/>
+      <point x="175.125" y="674.0"/>
+      <point x="176.625" y="628.0"/>
+      <point x="173.125" y="594.0" type="curve"/>
+      <point x="144.625" y="572.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="125.875" y="497.0" type="curve"/>
+      <point x="168.125" y="534.0" type="line"/>
+      <point x="182.6672933025372" y="592.1691732101488"/>
+      <point x="191.77067488379612" y="671.0"/>
+      <point x="134.375" y="671.0" type="curve"/>
+      <point x="84.375" y="671.0" type="line"/>
+      <point x="56.375" y="559.0" type="line"/>
+      <point x="88.375" y="559.0" type="line"/>
+      <point x="130.3804353801383" y="559.0"/>
+      <point x="139.37400864645866" y="550.9960345858346"/>
+    </contour>
+    <contour>
+      <point x="251.375" y="559.0" type="line"/>
+      <point x="366.375" y="559.0" type="line"/>
+      <point x="394.375" y="671.0" type="line"/>
+      <point x="279.375" y="671.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

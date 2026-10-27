@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmvRR" format="2">
+  <unicode hex="09C4"/>
+  <anchor x="-194.375" y="0" name="_blwm.u"/>
+  <outline>
+    <contour>
+      <point x="-192.375" y="-352.0" type="line"/>
+      <point x="-180.01018473645416" y="-302.54073894581666" type="line"/>
+      <point x="-317.1311353376076" y="-241.3674916956895" type="line"/>
+      <point x="-220.375198724481" y="-166.694644801293" type="line"/>
+      <point x="-270.6656579743351" y="-143.40222156978163" type="line"/>
+      <point x="-365.7768582515571" y="-217.60743300622835" type="line"/>
+      <point x="-379.125" y="-271.0" type="line"/>
+    </contour>
+    <component base="bnmvR"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
+    </dict>
+  </lib>
+</glyph>

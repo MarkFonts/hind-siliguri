@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="slash" format="2">
+  <advance width="464"/>
+  <unicode hex="002F"/>
+  <outline>
+    <contour>
+      <point x="-98.10276762580241" y="-103.0" type="line"/>
+      <point x="66.85276762580241" y="-103.0" type="line"/>
+      <point x="629.3978472842103" y="707.0" type="line"/>
+      <point x="463.35215271578966" y="707.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

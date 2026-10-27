@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnBangladeshitaka" format="2">
+  <advance width="613"/>
+  <unicode hex="09F3"/>
+  <outline>
+    <contour>
+      <point x="313.375" y="499.0" type="line"/>
+      <point x="343.02818068370567" y="619.0861727066839"/>
+      <point x="287.8075672662162" y="681.0"/>
+      <point x="190.875" y="681.0" type="curve" smooth="yes"/>
+      <point x="164.875" y="681.0"/>
+      <point x="145.375" y="679.0"/>
+      <point x="115.125" y="674.0" type="curve"/>
+      <point x="83.09819294229757" y="545.8927717691903" type="line"/>
+      <point x="92.69579910686411" y="548.710546900913"/>
+      <point x="118.02341250801223" y="554.0369964201427"/>
+      <point x="122.32384474222548" y="554.0369964201427" type="curve" smooth="yes"/>
+      <point x="163.83152763818177" y="554.0369964201427"/>
+      <point x="182.30809815017278" y="530.7323926006912"/>
+      <point x="168.9663429336154" y="477.3653717344617" type="curve"/>
+      <point x="92.875" y="173.0" type="line"/>
+      <point x="63.125" y="54.0"/>
+      <point x="147.125" y="-10.0"/>
+      <point x="260.125" y="-10.0" type="curve" smooth="yes"/>
+      <point x="430.125" y="-10.0"/>
+      <point x="555.625" y="116.0"/>
+      <point x="591.125" y="258.0" type="curve" smooth="yes"/>
+      <point x="621.625" y="380.0"/>
+      <point x="581.625" y="468.0"/>
+      <point x="449.625" y="468.0" type="curve" smooth="yes"/>
+      <point x="429.625" y="468.0"/>
+      <point x="408.125" y="466.0"/>
+      <point x="384.875" y="461.0" type="curve"/>
+      <point x="354.375" y="339.0" type="line"/>
+      <point x="370.125" y="342.0"/>
+      <point x="385.375" y="343.0"/>
+      <point x="397.375" y="343.0" type="curve" smooth="yes"/>
+      <point x="451.375" y="343.0"/>
+      <point x="464.625" y="312.0"/>
+      <point x="451.125" y="258.0" type="curve"/>
+      <point x="431.625" y="180.0"/>
+      <point x="374.125" y="110.0"/>
+      <point x="290.125" y="110.0" type="curve" smooth="yes"/>
+      <point x="251.1574416432265" y="110.0"/>
+      <point x="222.00216708264122" y="128.9684033408826"/>
+      <point x="232.875" y="173.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="86.125" y="462.0" type="line"/>
+      <point x="56.125" y="342.0" type="line"/>
+      <point x="309.125" y="342.0" type="line"/>
+      <point x="339.125" y="462.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:15</string>
+    </dict>
+  </lib>
+</glyph>

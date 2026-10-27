@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pi" format="2">
+  <advance width="576"/>
+  <unicode hex="03C0"/>
+  <outline>
+    <contour>
+      <point x="-22.375" y="0.0" type="line"/>
+      <point x="61.783565660014304" y="0.0"/>
+      <point x="130.130985590111" y="30.023942360444025"/>
+      <point x="160.625" y="152.0" type="curve" smooth="yes"/>
+      <point x="239.375" y="467.0" type="line"/>
+      <point x="178.375" y="467.0" type="line"/>
+      <point x="99.375" y="151.0" type="line"/>
+      <point x="81.77930247926398" y="80.61720991705594"/>
+      <point x="45.38374017717392" y="56.0"/>
+      <point x="-8.375" y="56.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="331.625" y="0.0" type="line"/>
+      <point x="392.625" y="0.0" type="line"/>
+      <point x="509.375" y="467.0" type="line"/>
+      <point x="448.375" y="467.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="75.375" y="455.0" type="line"/>
+      <point x="606.375" y="455.0" type="line"/>
+      <point x="619.375" y="507.0" type="line"/>
+      <point x="88.375" y="507.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

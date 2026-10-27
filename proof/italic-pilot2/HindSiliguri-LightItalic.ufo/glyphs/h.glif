@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="h" format="2">
+  <advance width="529"/>
+  <unicode hex="0068"/>
+  <anchor x="204.625" y="0" name="bottom"/>
+  <anchor x="219.375" y="707" name="top"/>
+  <outline>
+    <contour>
+      <point x="334.625" y="0.0" type="line"/>
+      <point x="395.625" y="0.0" type="line"/>
+      <point x="486.1241771611851" y="354.0" type="line" smooth="yes"/>
+      <point x="509.737635586755" y="446.3672959784323"/>
+      <point x="450.10549568079114" y="515.0"/>
+      <point x="352.5748475200343" y="515.0" type="curve" smooth="yes"/>
+      <point x="241.7949337825113" y="515.0"/>
+      <point x="154.90614437021398" y="441.7306920395357"/>
+      <point x="122.34059257845774" y="280.0" type="curve"/>
+      <point x="149.34059257845774" y="280.0" type="line"/>
+      <point x="171.78788526405216" y="391.48025998976664"/>
+      <point x="258.71536926501335" y="456.0"/>
+      <point x="336.4651908302865" y="456.0" type="curve" smooth="yes"/>
+      <point x="396.05796188878577" y="456.0"/>
+      <point x="441.69941306480615" y="419.8361012795089"/>
+      <point x="420.0629322487786" y="335.0" type="curve" smooth="yes"/>
+    </contour>
+    <contour>
+      <point x="12.625" y="0.0" type="line"/>
+      <point x="73.625" y="0.0" type="line"/>
+      <point x="250.375" y="707.0" type="line"/>
+      <point x="189.375" y="707.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

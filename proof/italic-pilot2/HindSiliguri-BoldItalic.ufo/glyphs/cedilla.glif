@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="cedilla" format="2">
+  <advance width="500"/>
+  <unicode hex="00B8"/>
+  <outline>
+    <contour>
+      <point x="26.638453523047275" y="-268.0" type="line"/>
+      <point x="150.63845352304727" y="-268.0"/>
+      <point x="229.60256038709645" y="-204.70514314856922"/>
+      <point x="246.48868083117742" y="-122.67708107647783" type="curve" smooth="yes"/>
+      <point x="251.4682495860584" y="-98.48772531117534"/>
+      <point x="252.58477216856386" y="-69.345169232611"/>
+      <point x="244.6427860456855" y="-51.0" type="curve"/>
+      <point x="144.69571506166076" y="-51.0" type="line"/>
+      <point x="149.37052038225272" y="-64.48266987119015"/>
+      <point x="155.97092247828976" y="-88.15703841462607"/>
+      <point x="144.4141078182472" y="-115.78574058107803" type="curve" smooth="yes"/>
+      <point x="129.87812321626058" y="-150.53669930787834"/>
+      <point x="98.38845352304727" y="-177.0"/>
+      <point x="49.388453523047275" y="-177.0" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

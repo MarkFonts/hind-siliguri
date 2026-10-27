@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="asWA" format="2">
+  <advance width="521"/>
+  <unicode hex="09F1"/>
+  <outline>
+    <contour>
+      <point x="146.53663648993785" y="-56.35345404024855" type="line"/>
+      <point x="163.40369393953512" y="11.114775758140448" type="line"/>
+      <point x="55.297431075430424" y="114.6897243017217" type="line"/>
+      <point x="37.28440360099354" y="42.63761440397414" type="line"/>
+    </contour>
+    <component base="bnBA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+    </dict>
+  </lib>
+</glyph>

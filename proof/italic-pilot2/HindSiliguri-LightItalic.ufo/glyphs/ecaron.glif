@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ecaron" format="2">
+  <advance width="519"/>
+  <unicode hex="011B"/>
+  <anchor x="194.625" y="0" name="bottom"/>
+  <anchor x="206.875" y="-11" name="ogonek"/>
+  <anchor x="344.375" y="507" name="top"/>
+  <outline>
+    <component base="e"/>
+    <component base="caron" xOffset="53.5" yOffset="-86"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

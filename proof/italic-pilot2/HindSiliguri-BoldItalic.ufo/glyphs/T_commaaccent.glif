@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Tcommaaccent" format="2">
+  <advance width="544"/>
+  <unicode hex="021A"/>
+  <outline>
+    <contour>
+      <point x="131.625" y="0.0" type="line"/>
+      <point x="286.625" y="0.0" type="line"/>
+      <point x="449.875" y="653.0" type="line"/>
+      <point x="294.875" y="653.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="-7.959022275880109" y="-262.0" type="line"/>
+      <point x="106.2090222758801" y="-262.0" type="line"/>
+      <point x="279.7224662846794" y="-51.0" type="line"/>
+      <point x="128.8373123260858" y="-35.71880484198706" type="line"/>
+    </contour>
+    <contour>
+      <point x="104.125" y="550.0" type="line"/>
+      <point x="588.125" y="550.0" type="line"/>
+      <point x="619.125" y="674.0" type="line"/>
+      <point x="135.125" y="674.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

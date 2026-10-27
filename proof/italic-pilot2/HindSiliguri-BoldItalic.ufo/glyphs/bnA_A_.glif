@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnAA" format="2">
+  <advance width="1180"/>
+  <unicode hex="0986"/>
+  <outline>
+    <component base="bnA"/>
+    <component base="bnmAA" xOffset="910.0"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

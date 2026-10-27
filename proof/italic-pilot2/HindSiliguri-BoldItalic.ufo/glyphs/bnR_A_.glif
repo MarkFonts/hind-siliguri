@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnRA" format="2">
+  <advance width="540"/>
+  <unicode hex="09B0"/>
+  <outline>
+    <component base="bnBA"/>
+    <component base="bnNukta" xOffset="415.0" yOffset="152"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmUU" format="2">
+  <unicode hex="09C2"/>
+  <anchor x="-199.375" y="0" name="_blwm.u"/>
+  <outline>
+    <contour>
+      <point x="-208.375" y="12.0" type="curve" smooth="yes"/>
+      <point x="-300.375" y="12.0"/>
+      <point x="-377.375" y="-44.0"/>
+      <point x="-399.625" y="-133.0" type="curve" smooth="yes"/>
+      <point x="-421.02672999565516" y="-218.60691998262058"/>
+      <point x="-360.8083346874523" y="-267.0701514434214"/>
+      <point x="-269.375" y="-268.0" type="curve" smooth="yes"/>
+      <point x="-194.8846110363159" y="-268.7575440717942"/>
+      <point x="-129.72982008027722" y="-230.07545681651166"/>
+      <point x="-98.60387119500685" y="-198.2950131021629" type="curve"/>
+      <point x="-132.875" y="-202.0" type="line"/>
+      <point x="-29.625" y="-273.0" type="line"/>
+      <point x="-3.625" y="-169.0" type="line"/>
+      <point x="-105.625" y="-97.0" type="line"/>
+      <point x="-139.375" y="-136.0"/>
+      <point x="-184.625" y="-181.0"/>
+      <point x="-242.625" y="-181.0" type="curve" smooth="yes"/>
+      <point x="-282.625" y="-181.0"/>
+      <point x="-303.125" y="-163.0"/>
+      <point x="-295.625" y="-133.0" type="curve" smooth="yes"/>
+      <point x="-285.375" y="-92.0"/>
+      <point x="-248.625" y="-81.0"/>
+      <point x="-212.625" y="-81.0" type="curve" smooth="yes"/>
+      <point x="-194.625" y="-81.0"/>
+      <point x="-170.875" y="-86.0"/>
+      <point x="-152.375" y="-92.0" type="curve"/>
+      <point x="-129.125" y="1.0" type="line"/>
+      <point x="-153.375" y="8.0"/>
+      <point x="-182.375" y="12.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
+    </dict>
+  </lib>
+</glyph>

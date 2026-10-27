@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnAnusvara" format="2">
+  <advance width="452"/>
+  <unicode hex="0982"/>
+  <outline>
+    <contour>
+      <point x="310.1622890092817" y="681.0" type="curve" smooth="yes"/>
+      <point x="205.16228900928172" y="681.0"/>
+      <point x="119.28089619556039" y="612.3952032918896"/>
+      <point x="102.58659301815493" y="516.0" type="curve" smooth="yes"/>
+      <point x="85.55134290034061" y="417.6361221678672"/>
+      <point x="151.92822936613112" y="350.0"/>
+      <point x="252.83771099071828" y="350.0" type="curve" smooth="yes"/>
+      <point x="355.23828889063844" y="350.0"/>
+      <point x="442.6143614597887" y="418.0"/>
+      <point x="459.5865930181549" y="516.0" type="curve" smooth="yes"/>
+      <point x="476.55882457652115" y="614.0"/>
+      <point x="415.1622890092817" y="681.0"/>
+    </contour>
+    <contour>
+      <point x="293.01687141460565" y="582.0" type="curve" smooth="yes"/>
+      <point x="331.01687141460565" y="582.0"/>
+      <point x="346.1676623979296" y="554.0"/>
+      <point x="339.58659301815493" y="516.0" type="curve" smooth="yes"/>
+      <point x="333.17870967469014" y="479.0"/>
+      <point x="308.32950065801407" y="451.0"/>
+      <point x="270.32950065801407" y="451.0" type="curve" smooth="yes"/>
+      <point x="232.32950065801407" y="451.0"/>
+      <point x="216.17870967469014" y="479.0"/>
+      <point x="222.58659301815493" y="516.0" type="curve" smooth="yes"/>
+      <point x="229.16766239792958" y="554.0"/>
+      <point x="255.01687141460565" y="582.0"/>
+    </contour>
+    <contour>
+      <point x="70.3913818635094" y="327.0655274540376" type="line"/>
+      <point x="39.490802092695176" y="203.46320837078068" type="line"/>
+      <point x="358.125" y="-2.0" type="line"/>
+      <point x="388.39699727079466" y="119.08798908317861" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnK_TT_RA_mII" format="2">
+  <outline>
+    <contour>
+      <point x="497" y="628" type="curve"/>
+      <point x="554" y="628" type="line"/>
+      <point x="559" y="648"/>
+      <point x="562" y="678"/>
+      <point x="562" y="695" type="curve" smooth="yes"/>
+      <point x="562" y="755"/>
+      <point x="530" y="815"/>
+      <point x="437" y="815" type="curve"/>
+      <point x="378" y="815"/>
+      <point x="309" y="790"/>
+      <point x="250" y="790" type="curve" smooth="yes"/>
+      <point x="214" y="790"/>
+      <point x="168" y="796"/>
+      <point x="140" y="805" type="curve"/>
+      <point x="140" y="755" type="line"/>
+      <point x="167" y="742"/>
+      <point x="207" y="735"/>
+      <point x="251" y="735" type="curve" smooth="yes"/>
+      <point x="323" y="735"/>
+      <point x="379" y="760"/>
+      <point x="438" y="760" type="curve" smooth="yes"/>
+      <point x="484" y="760"/>
+      <point x="504" y="735"/>
+      <point x="504" y="690" type="curve" smooth="yes"/>
+      <point x="504" y="672"/>
+      <point x="501" y="643"/>
+    </contour>
+  </outline>
+</glyph>

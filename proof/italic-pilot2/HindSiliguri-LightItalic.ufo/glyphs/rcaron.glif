@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="rcaron" format="2">
+  <advance width="314"/>
+  <unicode hex="0159"/>
+  <anchor x="126.625" y="0" name="bottom"/>
+  <anchor x="263.125" y="506" name="top"/>
+  <outline>
+    <component base="r"/>
+    <component base="caron" xOffset="-21.75" yOffset="-87"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

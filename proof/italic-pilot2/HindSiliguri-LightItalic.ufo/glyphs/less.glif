@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="less" format="2">
+  <advance width="510"/>
+  <unicode hex="003C"/>
+  <outline>
+    <contour>
+      <point x="427.1897018465363" y="122.25880738614521" type="line"/>
+      <point x="441.93486391898966" y="181.2394556759586" type="line"/>
+      <point x="145.50603887652358" y="340.49108547642544" type="line"/>
+      <point x="520.2256085630687" y="494.40243425227493" type="line"/>
+      <point x="537.7386314487106" y="564.4545257948424" type="line"/>
+      <point x="89.83619013575307" y="372.84476054301234" type="line"/>
+      <point x="75.09848495096108" y="313.89393980384426" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

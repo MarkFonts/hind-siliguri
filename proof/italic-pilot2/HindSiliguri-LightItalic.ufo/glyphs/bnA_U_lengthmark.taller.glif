@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnAUlengthmark.taller" format="2">
+  <advance width="261"/>
+  <outline>
+    <contour>
+      <point x="199.125" y="630.0" type="curve"/>
+      <point x="256.125" y="630.0" type="line"/>
+      <point x="266.125" y="650.0"/>
+      <point x="281.625" y="700.0"/>
+      <point x="285.875" y="717.0" type="curve" smooth="yes"/>
+      <point x="300.78726292525494" y="776.6490517010197"/>
+      <point x="283.2891115597969" y="837.0"/>
+      <point x="190.875" y="837.0" type="curve"/>
+      <point x="131.875" y="837.0"/>
+      <point x="81.875" y="817.0"/>
+      <point x="36.875" y="817.0" type="curve" smooth="yes"/>
+      <point x="9.875" y="817.0"/>
+      <point x="-11.625" y="823.0"/>
+      <point x="-37.375" y="832.0" type="curve"/>
+      <point x="-48.82123319895118" y="786.2150672041953" type="line"/>
+      <point x="-29.892517860432875" y="772.847760398598"/>
+      <point x="-6.638864825526959" y="763.8100103538743"/>
+      <point x="26.125" y="762.0" type="curve" smooth="yes"/>
+      <point x="78.93605242982241" y="759.0825007304235"/>
+      <point x="127.1152135001227" y="782.0"/>
+      <point x="178.125" y="782.0" type="curve" smooth="yes"/>
+      <point x="224.12591337273398" y="782.0"/>
+      <point x="237.87502849372737" y="757.0001139749095"/>
+      <point x="226.625" y="712.0" type="curve" smooth="yes"/>
+      <point x="222.125" y="694.0"/>
+      <point x="206.875" y="645.0"/>
+    </contour>
+    <contour>
+      <point x="36.625" y="0.0" type="line"/>
+      <point x="97.625" y="0.0" type="line"/>
+      <point x="246.375" y="595.0" type="line"/>
+      <point x="185.375" y="595.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="362.375" y="579.0" type="line"/>
+      <point x="376.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 16:02:29</string>
+    </dict>
+  </lib>
+</glyph>

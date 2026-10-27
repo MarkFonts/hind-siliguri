@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dotaccent" format="2">
+  <advance width="500"/>
+  <unicode hex="02D9"/>
+  <outline>
+    <contour>
+      <point x="350.54628466873646" y="629.0" type="curve" smooth="yes"/>
+      <point x="397.54628466873646" y="629.0"/>
+      <point x="438.59945953898784" y="665.0"/>
+      <point x="446.3340718731979" y="711.0" type="curve" smooth="yes"/>
+      <point x="453.90054046101216" y="756.0"/>
+      <point x="424.95371533126354" y="792.0"/>
+      <point x="377.95371533126354" y="792.0" type="curve" smooth="yes"/>
+      <point x="329.95371533126354" y="792.0"/>
+      <point x="288.90054046101216" y="756.0"/>
+      <point x="281.3340718731979" y="711.0" type="curve" smooth="yes"/>
+      <point x="273.59945953898784" y="665.0"/>
+      <point x="302.54628466873646" y="629.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

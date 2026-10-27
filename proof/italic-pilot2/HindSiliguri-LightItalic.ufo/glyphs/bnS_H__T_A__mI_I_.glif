@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnSH_TA_mII" format="2">
+  <advance width="984"/>
+  <anchor x="672.375" y="719" name="abvm.chandrabindu"/>
+  <anchor x="658.625" y="668" name="abvm.reph"/>
+  <anchor x="385.625" y="-140" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="917.375" y="631.0" type="line"/>
+      <point x="978.375" y="631.0" type="line"/>
+      <point x="980.125" y="638.0" type="line"/>
+      <point x="1020.1347102176003" y="798.0388408704015"/>
+      <point x="885.0296391478826" y="924.0"/>
+      <point x="658.625" y="924.0" type="curve" smooth="yes"/>
+      <point x="545.1246197215665" y="924.0"/>
+      <point x="460.0922457367491" y="885.8689829469963"/>
+      <point x="441.375" y="811.0" type="curve" smooth="yes"/>
+      <point x="422.3913776570681" y="735.0655106282725"/>
+      <point x="495.8769422088924" y="700.0"/>
+      <point x="599.625" y="700.0" type="curve" smooth="yes"/>
+      <point x="627.625" y="700.0"/>
+      <point x="672.375" y="703.0"/>
+      <point x="699.375" y="707.0" type="curve"/>
+      <point x="712.125" y="758.0" type="line"/>
+      <point x="684.625" y="756.0"/>
+      <point x="641.125" y="754.0"/>
+      <point x="616.125" y="754.0" type="curve" smooth="yes"/>
+      <point x="544.1368510456201" y="754.0"/>
+      <point x="491.9066346175248" y="769.1265384700991"/>
+      <point x="502.375" y="811.0" type="curve" smooth="yes"/>
+      <point x="512.7918639535113" y="852.6674558140455"/>
+      <point x="564.2157021349695" y="869.0"/>
+      <point x="644.875" y="869.0" type="curve" smooth="yes"/>
+      <point x="842.3095691264499" y="869.0"/>
+      <point x="957.0770399319836" y="789.8081597279344"/>
+      <point x="919.375" y="639.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="759.625" y="0.0" type="line"/>
+      <point x="820.625" y="0.0" type="line"/>
+      <point x="970.625" y="600.0" type="line"/>
+      <point x="909.625" y="600.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="784.375" y="579.0" type="line"/>
+      <point x="1085.375" y="579.0" type="line"/>
+      <point x="1099.125" y="634.0" type="line"/>
+      <point x="798.125" y="634.0" type="line"/>
+    </contour>
+    <component base="bnSH_TA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 16:36:53</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPPC</string>
+    </dict>
+  </lib>
+</glyph>

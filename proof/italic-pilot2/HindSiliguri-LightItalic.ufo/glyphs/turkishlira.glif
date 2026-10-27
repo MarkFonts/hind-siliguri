@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="turkishlira" format="2">
+  <advance width="578"/>
+  <unicode hex="20BA"/>
+  <outline>
+    <contour>
+      <point x="96.625" y="0.0" type="line"/>
+      <point x="130.625" y="0.0" type="line"/>
+      <point x="158.875" y="5.0" type="line"/>
+      <point x="321.375" y="655.0" type="line"/>
+      <point x="260.375" y="655.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="126.625" y="0.0" type="line"/>
+      <point x="140.625" y="0.0" type="line" smooth="yes"/>
+      <point x="322.625" y="0.0"/>
+      <point x="496.875" y="145.0"/>
+      <point x="551.375" y="363.0" type="curve"/>
+      <point x="492.375" y="363.0" type="line"/>
+      <point x="452.125" y="202.0"/>
+      <point x="312.625" y="56.0"/>
+      <point x="157.625" y="56.0" type="curve" smooth="yes"/>
+      <point x="140.625" y="56.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="98.43854824922022" y="387.2541929968809" type="line"/>
+      <point x="407.10394996524855" y="533.9157998609943" type="line"/>
+      <point x="423.59078144327214" y="599.8631257730884" type="line"/>
+      <point x="114.875" y="453.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="62.73527818946776" y="244.44111275787102" type="line"/>
+      <point x="369.93132032993555" y="385.2252813197422" type="line"/>
+      <point x="386.375" y="451.0" type="line"/>
+      <point x="79.22210966749131" y="310.3884386699652" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnB_DHA" format="2">
+  <outline>
+    <contour>
+      <point x="95" y="73" type="line"/>
+      <point x="124" y="92" type="line"/>
+      <point x="270" y="184"/>
+      <point x="433" y="243"/>
+      <point x="576" y="277" type="curve"/>
+      <point x="552" y="330" type="line"/>
+      <point x="381" y="292"/>
+      <point x="182" y="201"/>
+      <point x="95" y="144" type="curve"/>
+    </contour>
+    <contour>
+      <point x="350" y="-52" type="line"/>
+      <point x="380" y="-5" type="line"/>
+      <point x="120" y="127" type="line"/>
+      <point x="95" y="73" type="line"/>
+    </contour>
+    <contour>
+      <point x="350" y="208" type="line"/>
+      <point x="380" y="255" type="line"/>
+      <point x="100" y="387" type="line"/>
+      <point x="75" y="333" type="line"/>
+    </contour>
+    <contour>
+      <point x="350" y="-52" type="line"/>
+      <point x="411" y="-52" type="line"/>
+      <point x="411" y="594" type="line"/>
+      <point x="350" y="594" type="line"/>
+    </contour>
+    <contour>
+      <point x="75" y="333" type="line"/>
+      <point x="104" y="352" type="line"/>
+      <point x="188" y="405"/>
+      <point x="288" y="461"/>
+      <point x="373" y="485" type="curve"/>
+      <point x="358" y="540" type="line"/>
+      <point x="248" y="507"/>
+      <point x="134" y="443"/>
+      <point x="75" y="404" type="curve"/>
+    </contour>
+    <contour>
+      <point x="544" y="-5" type="curve"/>
+      <point x="605" y="-5" type="line"/>
+      <point x="596" y="45"/>
+      <point x="590" y="96"/>
+      <point x="590" y="153" type="curve" smooth="yes"/>
+      <point x="590" y="223"/>
+      <point x="595" y="263"/>
+      <point x="607" y="328" type="curve"/>
+      <point x="552" y="330" type="line"/>
+      <point x="535" y="277"/>
+      <point x="530" y="214"/>
+      <point x="530" y="153" type="curve" smooth="yes"/>
+      <point x="530" y="100"/>
+      <point x="535" y="47"/>
+    </contour>
+    <contour>
+      <point x="-20" y="579" type="line"/>
+      <point x="697" y="579" type="line"/>
+      <point x="697" y="634" type="line"/>
+      <point x="-20" y="634" type="line"/>
+    </contour>
+  </outline>
+</glyph>

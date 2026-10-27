@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmE.init" format="2">
+  <advance width="281"/>
+  <outline>
+    <contour>
+      <point x="184.625" y="-8.0" type="curve" smooth="yes"/>
+      <point x="191.625" y="-8.0"/>
+      <point x="202.625" y="-8.0"/>
+      <point x="209.875" y="-7.0" type="curve"/>
+      <point x="223.375" y="47.0" type="line"/>
+      <point x="218.375" y="47.0"/>
+      <point x="209.375" y="47.0"/>
+      <point x="205.375" y="47.0" type="curve" smooth="yes"/>
+      <point x="115.36477927376237" y="47.0"/>
+      <point x="98.37750006173826" y="123.01000024695298"/>
+      <point x="132.875" y="261.0" type="curve"/>
+      <point x="169.0656464304622" y="405.76258572184884"/>
+      <point x="253.68209501965418" y="579.0"/>
+      <point x="372.375" y="579.0" type="curve"/>
+      <point x="382.375" y="579.0" type="line"/>
+      <point x="396.125" y="634.0" type="line"/>
+      <point x="386.125" y="634.0" type="line"/>
+      <point x="210.37732077141197" y="634.0"/>
+      <point x="109.68149682119855" y="412.2259872847942"/>
+      <point x="71.875" y="261.0" type="curve"/>
+      <point x="33.57280788903114" y="107.79123155612456"/>
+      <point x="55.75224334214636" y="-8.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:31</string>
+    </dict>
+  </lib>
+</glyph>

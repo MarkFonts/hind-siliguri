@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Tcedilla" format="2">
+  <advance width="465"/>
+  <unicode hex="0162"/>
+  <outline>
+    <contour>
+      <point x="137.625" y="0.0" type="line"/>
+      <point x="199.625" y="0.0" type="line"/>
+      <point x="368.125" y="674.0" type="line"/>
+      <point x="306.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="105.875" y="617.0" type="line"/>
+      <point x="540.875" y="617.0" type="line"/>
+      <point x="555.125" y="674.0" type="line"/>
+      <point x="120.125" y="674.0" type="line"/>
+    </contour>
+    <component base="cedilla" xOffset="10.0"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:01:16</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

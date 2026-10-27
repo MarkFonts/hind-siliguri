@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="acute" format="2">
+  <advance width="400"/>
+  <unicode hex="00B4"/>
+  <outline>
+    <contour>
+      <point x="206.79217067962287" y="648.0" type="line"/>
+      <point x="265.45782932037713" y="648.0" type="line"/>
+      <point x="432.80198161970367" y="798.0" type="line"/>
+      <point x="344.44801838029633" y="798.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

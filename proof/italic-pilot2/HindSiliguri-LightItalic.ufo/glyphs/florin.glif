@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="florin" format="2">
+  <advance width="357"/>
+  <unicode hex="0192"/>
+  <outline>
+    <contour>
+      <point x="-146.5833592194532" y="-257.0" type="curve" smooth="yes"/>
+      <point x="-55.47452694277693" y="-257.56991719299754"/>
+      <point x="6.973783932226411" y="-200.91887227412286"/>
+      <point x="53.631374939488865" y="-90.0" type="curve" smooth="yes"/>
+      <point x="304.75709647131606" y="507.0" type="line" smooth="yes"/>
+      <point x="337.21018221950106" y="584.1505685418646"/>
+      <point x="379.4433049152406" y="622.5049900899126"/>
+      <point x="428.5838402406713" y="623.0" type="curve" smooth="yes"/>
+      <point x="452.19388235357985" y="623.2378322650756"/>
+      <point x="469.81638323115976" y="619.0"/>
+      <point x="484.0319502333548" y="613.0" type="curve"/>
+      <point x="499.0319502333548" y="673.0" type="line"/>
+      <point x="485.51897773152564" y="678.0"/>
+      <point x="458.56343029401285" y="680.8953476308805"/>
+      <point x="441.8333592194532" y="681.0" type="curve" smooth="yes"/>
+      <point x="350.7245269427757" y="681.5699171929977"/>
+      <point x="288.2762160677736" y="624.9188722741228"/>
+      <point x="241.61862506051114" y="514.0" type="curve" smooth="yes"/>
+      <point x="-9.50709647131606" y="-83.0" type="line" smooth="yes"/>
+      <point x="-41.96018221950106" y="-160.15056854186463"/>
+      <point x="-84.19330491524073" y="-198.5049900899125"/>
+      <point x="-133.33384024067135" y="-199.0" type="curve" smooth="yes"/>
+      <point x="-156.94388235358002" y="-199.23783226507558"/>
+      <point x="-174.56638323115976" y="-195.0"/>
+      <point x="-188.78195023335473" y="-189.0" type="curve"/>
+      <point x="-203.78195023335473" y="-249.0" type="line"/>
+      <point x="-190.26897773152558" y="-254.0"/>
+      <point x="-163.31343029401305" y="-256.89534763088056"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="315.0" type="line"/>
+      <point x="331.375" y="315.0" type="line"/>
+      <point x="344.375" y="367.0" type="line"/>
+      <point x="74.375" y="367.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

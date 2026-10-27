@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="divisionslash" format="2">
+  <advance width="324"/>
+  <unicode hex="2215"/>
+  <outline>
+    <contour>
+      <point x="-135.54458063115732" y="0.0" type="line"/>
+      <point x="-70.20541936884268" y="0.0" type="line"/>
+      <point x="565.5774893739084" y="712.0" type="line"/>
+      <point x="497.6725106260916" y="712.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

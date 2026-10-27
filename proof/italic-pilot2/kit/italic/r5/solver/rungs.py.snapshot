@@ -1,0 +1,729 @@
+"""Rung pairing on the bezier outline, no raster.
+
+Outline -> segments -> walls (split at corners) -> dense samples with inward
+normals -> per sample the largest circle tangent there inside its own shape
+(rule 1: the medial ball) -> its touch point is the partner across the stroke,
+its diameter the thickness, its centre a point on the centreline.
+Rule 4: each overlapping positive contour (with its counters) is its own shape.
+Rule 5: a touch on the next edge round a corner counts only if the two edges
+face each other (inward normals within 60 deg of opposite).
+Strokes = wall pairs; rungs ordered along the first wall; a rung whose partner
+runs backwards along the second wall is a crossing (junction) and is flagged.
+Node numbers: index in the .glyphs node list, counted across all paths."""
+import math
+import numpy as np
+
+CORNER_DEG = 25.0
+STEP = 3.0          # sample spacing, font units
+TINY_EDGE = 15.0    # rule 5: one tiny edge between two segments is the same corner
+
+
+def unit(v):
+    L = math.hypot(*v)
+    return (v[0] / L, v[1] / L) if L > 1e-12 else (0.0, 0.0)
+
+
+def bez(P, t):
+    u = 1 - t
+    return (u**3*P[0][0] + 3*u*u*t*P[1][0] + 3*u*t*t*P[2][0] + t**3*P[3][0],
+            u**3*P[0][1] + 3*u*u*t*P[1][1] + 3*u*t*t*P[2][1] + t**3*P[3][1])
+
+
+def bezd(P, t):
+    u = 1 - t
+    d = (3*u*u*(P[1][0]-P[0][0]) + 6*u*t*(P[2][0]-P[1][0]) + 3*t*t*(P[3][0]-P[2][0]),
+         3*u*u*(P[1][1]-P[0][1]) + 6*u*t*(P[2][1]-P[1][1]) + 3*t*t*(P[3][1]-P[2][1]))
+    if math.hypot(*d) < 1e-9:
+        e = 1e-3 if t < 0.5 else -1e-3
+        a, b = bez(P, t), bez(P, t + e)
+        d = (b[0]-a[0], b[1]-a[1]) if e > 0 else (a[0]-b[0], a[1]-b[1])
+    return unit(d)
+
+
+class Seg:
+    def __init__(self, pi, gi, gj, kind, pts):
+        self.pi, self.gi, self.gj, self.kind, self.pts = pi, gi, gj, kind, pts
+        self.wall = -1
+        n = 1 if kind == "line" else 32
+        self.poly = [self.point(k / n) for k in range(n + 1)]
+        self.length = sum(math.dist(a, b) for a, b in zip(self.poly, self.poly[1:]))
+
+    def point(self, t):
+        if self.kind == "line":
+            a, b = self.pts
+            return (a[0] + (b[0]-a[0])*t, a[1] + (b[1]-a[1])*t)
+        return bez(self.pts, t)
+
+    def tangent(self, t):
+        if self.kind == "line":
+            return unit((self.pts[1][0]-self.pts[0][0], self.pts[1][1]-self.pts[0][1]))
+        return bezd(self.pts, t)
+
+
+def signed_area(poly):
+    return sum(a[0]*b[1] - b[0]*a[1] for a, b in zip(poly, poly[1:] + poly[:1])) / 2
+
+
+def point_in(poly, x, y):
+    P = poly
+    inside = False
+    n = len(P)
+    for k in range(n):
+        x0, y0 = P[k]; x1, y1 = P[(k+1) % n]
+        if (y0 > y) != (y1 > y) and x < x0 + (y - y0) * (x1 - x0) / (y1 - y0):
+            inside = not inside
+    return inside
+
+
+class Outline:
+    def __init__(self, contours, slant=0.0, stem=None):
+        """contours: [{"nodes": [[x,y,t,smooth?], ...]}], Glyphs order. slant: italic angle in degrees.
+        stem: the master's (thinnest) vertical stem. The slab-serif and ball detectors measure against it;
+        without it they do not run (they have no scale)."""
+        self.contours = contours
+        self.slant = slant
+        self.stem = stem
+        self.slab_segs = set()      # segments of slab (bracketed) serifs: their own walls, kind flag
+        self.ball_segs = set()      # segments of ball / teardrop terminals: their own walls, kind ball
+        self.balls = []
+        self.segs = []
+        self.node_xy = {}     # global number -> (x, y, type, smooth)
+        base = 0
+        for pi, c in enumerate(contours):
+            nodes = c["nodes"]; N = len(nodes)
+            for i, n in enumerate(nodes):
+                self.node_xy[base + i] = (n[0], n[1], n[2], (n[3] if len(n) > 3 else False))
+            ons = [i for i in range(N) if nodes[i][2] != "o"]
+            for a, i in enumerate(ons):
+                j = ons[(a + 1) % len(ons)]
+                offs = [(nodes[k % N][0], nodes[k % N][1]) for k in range(i + 1, i + 1 + ((j - i - 1) % N))]
+                P0, P1 = tuple(nodes[i][:2]), tuple(nodes[j][:2])
+                if len(offs) == 2 and nodes[j][2] != "l":
+                    self.segs.append(Seg(pi, base + i, base + j, "curve", [P0, offs[0], offs[1], P1]))
+                else:
+                    self.segs.append(Seg(pi, base + i, base + j, "line", [P0, P1]))
+            base += N
+        self.npaths = len(contours)
+        # polygons per contour, area signs, shapes (rule 4)
+        self.polys = []
+        for pi in range(self.npaths):
+            pts = []
+            for s in self.segs:
+                if s.pi == pi:
+                    pts += s.poly[:-1]
+            self.polys.append(pts)
+        self.area = [signed_area(p) for p in self.polys]
+        outers = sorted([pi for pi in range(self.npaths) if self.area[pi] > 0], key=lambda pi: abs(self.area[pi]))
+        self.shape_of = {}
+        self.shapes = []
+        for pi in outers:
+            self.shape_of[pi] = len(self.shapes); self.shapes.append([pi])
+        for pi in range(self.npaths):
+            if self.area[pi] > 0:
+                continue
+            p0 = self.polys[pi][0]
+            host = next((o for o in outers if point_in(self.polys[o], *p0)), None)
+            if host is None:
+                self.shape_of[pi] = len(self.shapes); self.shapes.append([pi])
+            else:
+                self.shape_of[pi] = self.shape_of[host]; self.shapes[self.shape_of[host]].append(pi)
+        self._walls()
+        self._serifs()
+        self._split_walls(self.slab_segs)
+        self._sample()
+        if self.stem:
+            self._round_balls()
+            if self.balls:
+                self._split_walls(self.ball_segs, nodes={n for b in self.balls for n in (b["nodes"][0], b["nodes"][-1])})
+                self._sample()
+
+    # walls -----------------------------------------------------------------
+    def _walls(self):
+        """Chains of segments joined smoothly; a corner (turn > CORNER_DEG) starts a new wall."""
+        self.walls = []       # list of lists of seg indices, in travel order
+        cosc = math.cos(math.radians(CORNER_DEG))
+        for pi in range(self.npaths):
+            idx = [k for k, s in enumerate(self.segs) if s.pi == pi]
+            if not idx:
+                continue
+            # corner flags at the START node of each segment
+            corner = []
+            for a, k in enumerate(idx):
+                prev = self.segs[idx[a - 1]]; cur = self.segs[k]
+                ta, tb = prev.tangent(1.0), cur.tangent(0.0)
+                c = ta[0]*tb[0] + ta[1]*tb[1] < cosc
+                # a tiny straight segment between two long ones is a blunt (a stroke's start,
+                # a terminal face): it is its own wall whatever the angles
+                nxt = self.segs[idx[(a + 1) % len(idx)]]
+                for tiny, other in ((cur, prev), (prev, cur)):
+                    if tiny.kind == "line" and tiny.length <= 16.0 and other.length > 3.0 * tiny.length:
+                        c = True
+                # a long straight run joined smoothly to a substantial curve is another part
+                # (a stem's edge running into a bowl's): split there too
+                def turn(sg):
+                    if sg.kind == "line": return 0.0
+                    u0, u1 = sg.tangent(0.0), sg.tangent(1.0)
+                    return math.degrees(math.acos(max(-1.0, min(1.0, u0[0]*u1[0] + u0[1]*u1[1]))))
+                for st_, bd in ((cur, prev), (prev, cur)):
+                    if st_.length >= 60.0 and turn(st_) <= 10.0 and turn(bd) >= 20.0 and bd.length >= 20.0:
+                        c = True
+                corner.append(c)
+            if not any(corner):
+                for k in idx:
+                    self.segs[k].wall = len(self.walls)
+                self.walls.append(list(idx)); continue
+            start = corner.index(True)
+            order = idx[start:] + idx[:start]
+            cflags = corner[start:] + corner[:start]
+            cur = []
+            for k, c in zip(order, cflags):
+                if c and cur:
+                    for kk in cur:
+                        self.segs[kk].wall = len(self.walls)
+                    self.walls.append(cur); cur = []
+                cur.append(k)
+            for kk in cur:
+                self.segs[kk].wall = len(self.walls)
+            self.walls.append(cur)
+        self.wall_shape = [self.shape_of[self.segs[w[0]].pi] for w in self.walls]
+        self.wall_len = [sum(self.segs[k].length for k in w) for w in self.walls]
+
+
+    # serifs / flags (spec rule 8) ---------------------------------------------
+    def _serifs(self):
+        """Wedge serif: a short blunt tip (<= 25 u) between two straight sides, each longer than
+        2.5x the tip and shorter than 0.6x the glyph's height, opening 25-75 deg away from the tip,
+        neither side level. The tip and both sides are HELD: drawn, not strokes."""
+        self.serif_segs = set()
+        self.serifs = []
+        if self.stem:
+            self._slab_serifs()      # the stem-relative slab rule first; the older rules skip what it holds
+        ys = [v[1] for v in self.node_xy.values() if v[2] != "o"]
+        height = max(ys) - min(ys)
+        arriving = {(sg.pi, sg.gj): k for k, sg in enumerate(self.segs)}
+        leaving = {(sg.pi, sg.gi): k for k, sg in enumerate(self.segs)}
+        for k, sg in enumerate(self.segs):
+            if sg.kind != "line" or not 0 < sg.length <= 25.0 or k in self.slab_segs:
+                continue
+            if len(self.contours[sg.pi]["nodes"]) <= 5:
+                continue
+            ka, kb = arriving.get((sg.pi, sg.gi)), leaving.get((sg.pi, sg.gj))
+            if ka is None or kb is None:
+                continue
+            a, b = self.segs[ka], self.segs[kb]
+            if a.kind != "line" or b.kind != "line":
+                continue
+            La, Lb = a.length, b.length
+            if not (La > 2.5 * sg.length and Lb > 2.5 * sg.length and max(La, Lb) < 0.6 * height):
+                continue
+            da = unit((a.pts[0][0] - a.pts[1][0], a.pts[0][1] - a.pts[1][1]))   # from the tip back along each side
+            db = unit((b.pts[1][0] - b.pts[0][0], b.pts[1][1] - b.pts[0][1]))
+            ang = math.degrees(math.acos(max(-1.0, min(1.0, da[0]*db[0] + da[1]*db[1]))))
+            if not 25 <= ang <= 75:
+                continue
+            if min(abs(da[1]), abs(db[1])) < math.sin(math.radians(5)):
+                continue                                   # a level side is a bar's edge
+            self.serif_segs |= {ka, k, kb}
+            self.serifs.append(dict(tip=(sg.gi, sg.gj), sides=(ka, kb), opening=ang, kind="wedge"))
+        self._bracket_serifs()
+        self._beaks()
+        self._balls()
+
+    def _balls(self):
+        """A ball / teardrop terminal: a short cut (<= 20 u) whose neighbours on both sides are short
+        curves (each <= 90 u) that together turn more than 120 deg away from the cut -- a blob at a
+        stroke's end. Held like a serif: the stroke slides along it."""
+        bypi = {}
+        for k, sg in enumerate(self.segs):
+            bypi.setdefault(sg.pi, []).append(k)
+        for pi, ks in bypi.items():
+            n = len(ks)
+            if n < 4:
+                continue
+            for a in range(n):
+                sg = self.segs[ks[a]]
+                if sg.kind != "line" or not 0 < sg.length <= 20.0 or ks[a] in self.slab_segs:
+                    continue
+                prev, nxt = self.segs[ks[(a - 1) % n]], self.segs[ks[(a + 1) % n]]
+                held = set()
+                for cv, kk in ((prev, ks[(a - 1) % n]), (nxt, ks[(a + 1) % n])):
+                    if cv.kind != "curve" or cv.length > 90.0:
+                        continue
+                    t0, t1 = cv.tangent(0.0), cv.tangent(1.0)
+                    turn = math.degrees(math.acos(max(-1.0, min(1.0, t0[0]*t1[0] + t0[1]*t1[1]))))
+                    if turn >= 90.0:
+                        held.add(kk)
+                if not held:
+                    continue
+                held.add(ks[a])
+                self.serif_segs |= held
+                self.serifs.append(dict(tip=(sg.gi, sg.gj), sides=(ks[(a - 1) % n], ks[(a + 1) % n]), opening=None, kind="ball"))
+
+    def _beaks(self):
+        """hscontrast's beak: a short flat tip (<= 25 u, level within 0.5) between two edges whose far
+        ends both lie above it or both below it, not at the glyph's own top or bottom, not a notch
+        (it faces away from where its sides run), sides not crossing. Held: tip + straight neighbours."""
+        ys = [v[1] for v in self.node_xy.values() if v[2] != "o"]
+        y_lo, y_hi = min(ys), max(ys)
+        bypi = {}
+        for k, sg in enumerate(self.segs):
+            bypi.setdefault(sg.pi, []).append(k)
+        for pi, ks in bypi.items():
+            n = len(ks)
+            if n < 3:
+                continue
+            for a in range(n):
+                sg = self.segs[ks[a]]
+                if sg.kind != "line" or abs(sg.pts[0][1] - sg.pts[1][1]) > 0.5 or not 0 < sg.length <= 25.0 or ks[a] in self.slab_segs:
+                    continue
+                prev, nxt = self.segs[ks[(a - 1) % n]], self.segs[ks[(a + 1) % n]]
+                ya, yb, y = prev.pts[0][1], nxt.pts[-1][1], sg.pts[0][1]
+                if y <= y_lo + 2 or y >= y_hi - 2:
+                    continue
+                if not ((ya - y > 5 and yb - y > 5) or (y - ya > 5 and y - yb > 5)):
+                    continue
+                d = unit((sg.pts[1][0] - sg.pts[0][0], sg.pts[1][1] - sg.pts[0][1]))
+                outward = (d[1], -d[0])                   # ink on the left: outward is to the right of travel
+                if not self._ink_left(sg):
+                    outward = (-d[1], d[0])               # a contour drawn the other way round (its ink on the right)
+                if (ya - y) * outward[1] > 0:
+                    continue                               # faces the way its sides run: a notch
+                held = {ks[a]}
+                if prev.kind == "line": held.add(ks[(a - 1) % n])
+                if nxt.kind == "line": held.add(ks[(a + 1) % n])
+                self.serif_segs |= held
+                self.serifs.append(dict(tip=(sg.gi, sg.gj), sides=(ks[(a - 1) % n], ks[(a + 1) % n]), opening=None, kind="beak"))
+
+    def _bracket_serifs(self):
+        """The Ghost scripts' serif (hstweak.find_serifs, reimplemented): a junction J on a stem line
+        (>= 30 u), a straight bracket J->T1 (reach <= 200, height 1..120), a blunt tip T1->T2 (<= 12 u,
+        standing perpendicular to the metric lines, leaning up to the italic angle), with the tip on the
+        non-ink side of the stem. Held: bracket, tip and the foot edge beyond T2."""
+        STEM_MIN, TIP_MAX, REACH, RISE, PAR = 30.0, 12.0, 200.0, 120.0, 0.996
+        slant = self.slant
+        bypi = {}
+        for k, sg in enumerate(self.segs):
+            bypi.setdefault(sg.pi, []).append(k)
+        for pi, ks in bypi.items():
+            n = len(ks)
+            if n < 4:
+                continue
+            for a in range(n):
+                for step in (+1, -1):
+                    # step +1: stem = seg a, bracket = a+1, tip = a+2, foot = a+3 (travel direction)
+                    # step -1: foot = a-3, tip = a-2, bracket = a-1, stem = a (reversed roles)
+                    if step > 0:
+                        stem, br, tip, foot = (self.segs[ks[(a + j) % n]] for j in range(4))
+                        S, J, T1, T2 = stem.pts[0], stem.pts[-1], br.pts[-1], tip.pts[-1]
+                    else:
+                        foot, tip, br, stem = (self.segs[ks[(a - 3 + j) % n]] for j in range(4))
+                        S, J, T1, T2 = stem.pts[-1], stem.pts[0], br.pts[0], tip.pts[0]
+                    if not (stem.kind == "line" and br.kind == "line" and tip.kind == "line"):
+                        continue
+                    sv = (J[0] - S[0], J[1] - S[1])
+                    if math.hypot(*sv) < STEM_MIN:
+                        continue
+                    su = unit(sv)
+                    tv = (T2[0] - T1[0], T2[1] - T1[1]); tl = math.hypot(*tv)
+                    if not 0 < tl <= TIP_MAX or tip in [self.segs[kk] for kk in self.slab_segs]:
+                        continue
+                    lean = math.degrees(math.atan2(abs(tv[0]), abs(tv[1]))) * (1 if tv[0] * tv[1] >= 0 else -1)
+                    slack = math.degrees(math.atan2(1.0, tl))
+                    if not min(0.0, slant) - slack <= lean <= max(0.0, slant) + slack:
+                        continue
+                    rise = abs(su[1])
+                    if rise < 0.3:
+                        continue
+                    reach, height = abs(T1[0] - J[0]), abs(T1[1] - J[1])
+                    if reach > REACH or not 1 <= height <= RISE:
+                        continue
+                    dg = unit((T1[0] - J[0], T1[1] - J[1]))
+                    if abs(dg[0] * su[0] + dg[1] * su[1]) > PAR:
+                        continue
+                    travel = su if step > 0 else (-su[0], -su[1])
+                    ink = (-travel[1], travel[0])
+                    if (T1[0] - J[0]) * ink[0] + (T1[1] - J[1]) * ink[1] >= 0:
+                        continue
+                    kb, kt, kf = (ks[(a + 1) % n], ks[(a + 2) % n], ks[(a + 3) % n]) if step > 0 else \
+                                 (ks[(a - 1) % n], ks[(a - 2) % n], ks[(a - 3) % n])
+                    self.serif_segs |= {kb, kt, kf}
+                    sides = (kb, kf) if step > 0 else (kf, kb)
+                    self.serifs.append(dict(tip=(tip.gi, tip.gj), sides=sides, opening=None, kind="bracket"))
+
+    # slab serifs, balls (stem-relative rules, 2026-10-23) ----------------------
+    SLAB_T = 0.4          # a slab's end face is at most this x the stem: a hairline slab, far below stem weight
+    SLAB_T0 = 0.15        # ... and at least this: a shorter end is a point (Mark's 3-10 u stroke-start blunts, a beak tip)
+    SLAB_F = 2.5          # the slab's face runs at least this x the end face away from it
+    SLAB_BRACKET = 45.0   # a bracket turns at least this much
+    BALL_COVER = 240.0    # a ball: the outline wraps at least two thirds round its inscribed circle
+    BALL_SWELL = 1.25     # ... which is this much wider than the stroke on both sides of it (the neck)
+
+    def _ink_left(self, sg):
+        p = sg.point(0.5); t = sg.tangent(0.5)
+        g = self.shape_of[sg.pi]
+        return self.ink_shape(g, p[0] - t[1] * 1.5, p[1] + t[0] * 1.5)
+
+    def _slab_serifs(self):
+        """Slab serif (bracketed): a thin terminal slab joined to its stroke by a concave bracket.
+        In words: a short straight END FACE, not buried in another shape's ink, SLAB_T0-SLAB_T x the master's stem
+        (a hairline slab, far below stem weight, but a face and not a point) with, on one side, the slab's FACE (straight or curved, at least SLAB_F x the end face long,
+        leaving the end face at 50-130 deg, straight or hollow but never bulging more than 10 deg -- a
+        convex face is the outer side of a curving thin stroke: the foot, the head, the beak face) and, on the other side, a
+        BRACKET: one curve, concave (it turns away from the ink) by at least SLAB_BRACKET deg, that starts
+        parallel to the face (within 35 deg: the slab's two faces run together from its end) and flows
+        into the stroke's own side (tangent within 30 deg at its far node, the ROOT). End face, face and
+        bracket are one held part (spec rule 8, kind flag). Segments another serif rule already holds
+        are left to it (Harvey's wedge and straight-bracket serifs stay as they are)."""
+        cosF = math.cos(math.radians(50.0)); cosP = math.cos(math.radians(35.0)); cosR = math.cos(math.radians(30.0))
+        tmax = self.SLAB_T * self.stem
+        bypi = {}
+        for k, sg in enumerate(self.segs):
+            bypi.setdefault(sg.pi, []).append(k)
+        def turn(sg):
+            t0, t1 = sg.tangent(0.0), sg.tangent(1.0)
+            return math.degrees(math.atan2(t0[0] * t1[1] - t0[1] * t1[0], t0[0] * t1[0] + t0[1] * t1[1]))
+        for pi, ks in bypi.items():
+            n = len(ks)
+            if n < 4:
+                continue
+            for a in range(n):
+                E = self.segs[ks[a]]
+                if E.kind != "line" or not self.SLAB_T0 * self.stem <= E.length <= tmax or ks[a] in self.serif_segs - self.slab_segs:
+                    continue
+                dE = unit((E.pts[1][0] - E.pts[0][0], E.pts[1][1] - E.pts[0][1]))
+                # an end face lying inside another shape's ink is buried (an overlap join), not a slab's end
+                m = E.point(0.5); own = self.shape_of[pi]
+                outn = (dE[1], -dE[0]) if self._ink_left(E) else (-dE[1], dE[0])
+                q = (m[0] + outn[0] * 2.0, m[1] + outn[1] * 2.0)
+                if any(self.ink_shape(g2, *q) for g2 in range(len(self.shapes)) if g2 != own):
+                    continue
+                for bpos, fpos in ((a - 1, a + 1), (a + 1, a - 1)):
+                    kb, kf = ks[bpos % n], ks[fpos % n]
+                    B, F = self.segs[kb], self.segs[kf]
+                    if B.kind != "curve" or kb in self.serif_segs - self.slab_segs or kf in self.serif_segs - self.slab_segs:
+                        continue
+                    if F.length < self.SLAB_F * E.length:
+                        continue
+                    Fa = F.tangent(0.0) if fpos > a else tuple(-v for v in F.tangent(1.0))
+                    Ba = B.tangent(0.0) if bpos > a else tuple(-v for v in B.tangent(1.0))
+                    if abs(dE[0] * Fa[0] + dE[1] * Fa[1]) > cosF:
+                        continue
+                    if Fa[0] * Ba[0] + Fa[1] * Ba[1] < cosP:
+                        continue
+                    tb = turn(B)
+                    if abs(tb) < self.SLAB_BRACKET:
+                        continue
+                    concave = (tb < 0) if self._ink_left(B) else (tb > 0)
+                    if not concave:
+                        continue
+                    # the face is straight or hollow, never bulging: a convex face is the outer side of a
+                    # curving thin stroke (an italic exit or entry hook), not a slab
+                    if F.kind == "curve":
+                        tf = turn(F)
+                        if ((tf > 0) if self._ink_left(F) else (tf < 0)) and abs(tf) > 10.0:
+                            continue
+                    # the root: the bracket flows into the stroke's side
+                    if bpos > a:
+                        S = self.segs[ks[(bpos + 1) % n]]; tB, tS = B.tangent(1.0), S.tangent(0.0); root = B.gj
+                    else:
+                        S = self.segs[ks[(bpos - 1) % n]]; tB, tS = B.tangent(0.0), S.tangent(1.0); root = B.gi
+                    if tB[0] * tS[0] + tB[1] * tS[1] < cosR:
+                        continue
+                    held = {ks[a], kb, kf}
+                    self.serif_segs |= held
+                    self.slab_segs |= held
+                    self.serifs.append(dict(tip=(E.gi, E.gj), sides=(kb, kf), opening=None, kind="slab", root=root,
+                                            bracket=kb, face=kf))
+
+    def _circles(self, idx):
+        """inscribed circle at every sample idx of one shape (vectorised medial ball): diameter, centre"""
+        P = self.P[idx]; N = self.N[idx]
+        d = P[None, :, :] - P[:, None, :]
+        dn = (d * N[:, None, :]).sum(-1)
+        dd = (d * d).sum(-1)
+        ok = (dn > 1e-6) & (dd > 9.0)
+        r = np.where(ok, dd / (2 * np.where(ok, dn, 1.0)), np.inf)
+        rr = r.min(1)
+        C = P + N * np.where(np.isfinite(rr), rr, 0.0)[:, None]
+        return 2 * rr, C
+
+    def _round_balls(self):
+        """Ball / teardrop terminal: a blob at a stroke's end that swells beyond the stroke.
+        In words: an inscribed circle (0.3-2.5 x the stem across) round which the outline wraps at least
+        BALL_COVER deg without leaving 1.25 x its radius, and which is at least BALL_SWELL x wider than the
+        stroke on BOTH sides of it (the narrowest reading within 1.5 diameters of arc beyond the wrap: the
+        neck). A contour that lies wholly on its circle is a dot and stays a dot. The ball's nodes are the
+        on-curve nodes inside the wrap; its segments become their own wall (kind ball) and the strokes on
+        either side end at its first and last node (the neck)."""
+        held = self.held if hasattr(self, "held") else np.zeros(len(self.P), bool)
+        for g in range(len(self.shapes)):
+            sidx = np.where(self.G == g)[0]
+            if len(sidx) < 12:
+                continue
+            Dall, Call = self._circles(sidx)
+            pos = {int(k): i for i, k in enumerate(sidx)}
+            for pi in self.shapes[g]:
+                idx = np.array([int(k) for k in sidx if self.segs[int(self.S[k])].pi == pi])
+                if len(idx) < 12:
+                    continue
+                P = self.P[idx]; L = len(idx)
+                D = np.array([Dall[pos[k]] for k in idx]); C = np.array([Call[pos[k]] for k in idx])
+                D = np.where(held[idx], np.inf, D)
+                found = []
+                for a in range(L):
+                    Da = D[a]
+                    if not np.isfinite(Da) or not 0.3 * self.stem <= Da <= 2.5 * self.stem:
+                        continue
+                    if not (Da >= D[(a - 1) % L] and Da >= D[(a + 1) % L]):
+                        continue
+                    c = C[a]; r = Da / 2
+                    on = np.hypot(P[:, 0] - c[0], P[:, 1] - c[1]) <= 1.25 * r + 1.0
+                    if on.sum() >= 0.85 * L:
+                        continue                               # a dot
+                    lo = a
+                    while on[(lo - 1) % L] and a - lo < L: lo -= 1
+                    hi = a
+                    while on[(hi + 1) % L] and hi - a < L: hi += 1
+                    run = [i % L for i in range(lo, hi + 1)]
+                    ang = np.sort(np.arctan2(P[run, 1] - c[1], P[run, 0] - c[0]))
+                    gaps = np.r_[np.diff(ang), ang[0] + 2 * math.pi - ang[-1]]
+                    cover = 360.0 - math.degrees(float(gaps.max()))
+                    if cover < self.BALL_COVER:
+                        continue
+                    def beyond(start, step):
+                        ws, acc, i = [], 0.0, start
+                        for _ in range(L):
+                            i2 = (i + step) % L; acc += math.dist(P[i], P[i2]); i = i2
+                            if acc > 1.5 * Da: break
+                            if np.isfinite(D[i]): ws.append(D[i])
+                        return min(ws) if ws else None
+                    n1, n2 = beyond(lo % L, -1), beyond(hi % L, +1)
+                    if n1 is None or n2 is None or Da < self.BALL_SWELL * max(n1, n2):
+                        continue
+                    found.append(dict(D=float(Da), c=(float(c[0]), float(c[1])), cover=cover, neck=(float(n1), float(n2)),
+                                      run=[int(idx[i]) for i in run], pi=pi))
+                found.sort(key=lambda f: -f["D"])
+                keep = []
+                for f in found:
+                    if any(math.dist(f["c"], q["c"]) < 0.5 * q["D"] for q in keep):
+                        continue
+                    keep.append(f)
+                for f in keep:
+                    runset = set(f["run"])
+                    # on-curve nodes inside the wrap, in contour order along the run
+                    nodes = []
+                    for k in f["run"]:
+                        sg = self.segs[int(self.S[k])]
+                        if self.T[k] == 0.0 and sg.gi not in nodes:
+                            nodes.append(sg.gi)
+                    if not nodes:
+                        continue
+                    f["nodes"] = nodes
+                    segs = set()
+                    for k, sg in enumerate(self.segs):
+                        if sg.pi == pi and sg.gi in nodes and sg.gj in nodes and nodes.index(sg.gj) == nodes.index(sg.gi) + 1:
+                            segs.add(k)
+                    f["segs"] = sorted(segs)
+                    self.ball_segs |= segs
+                    self.balls.append(f)
+
+    def _split_walls(self, segset, nodes=()):
+        """A wall never mixes a held part's segments with a stroke side's: split it where membership in
+        segset changes, and at the given nodes."""
+        if not segset and not nodes:
+            return
+        new = []
+        for w in self.walls:
+            pi = self.segs[w[0]].pi
+            loop = len(w) == sum(1 for sg in self.segs if sg.pi == pi)
+            cut = [i for i in range(1, len(w) + (1 if loop else 0))
+                   if ((w[i % len(w)] in segset) != (w[i - 1] in segset)) or self.segs[w[i % len(w)]].gi in nodes]
+            if loop and (((w[0] in segset) != (w[-1] in segset)) or self.segs[w[0]].gi in nodes):
+                cut = sorted(set(cut) | {0})
+            if not cut:
+                new.append(w); continue
+            if loop:
+                s0 = cut[0] % len(w)
+                w2 = w[s0:] + w[:s0]
+                cut = sorted({(c - s0) % len(w) for c in cut} - {0})
+                w = w2
+            prev = 0
+            for c in cut + [len(w)]:
+                if c > prev:
+                    new.append(w[prev:c])
+                prev = c
+        self.walls = new
+        for wi, w in enumerate(self.walls):
+            for k in w:
+                self.segs[k].wall = wi
+        self.wall_shape = [self.shape_of[self.segs[w[0]].pi] for w in self.walls]
+        self.wall_len = [sum(self.segs[k].length for k in w) for w in self.walls]
+
+    def adjacent(self, ka, kb):
+        """Segments share a node, or meet across one tiny edge (rule 5)."""
+        A, B = self.segs[ka], self.segs[kb]
+        if ka == kb or A.pi != B.pi:
+            return False
+        if A.gi in (B.gi, B.gj) or A.gj in (B.gi, B.gj):
+            return True
+        for m, M in enumerate(self.segs):
+            if M.pi == A.pi and m not in (ka, kb) and M.kind == "line" and M.length < TINY_EDGE:
+                if (M.gi in (A.gi, A.gj) and M.gj in (B.gi, B.gj)) or (M.gj in (A.gi, A.gj) and M.gi in (B.gi, B.gj)):
+                    return True
+        return False
+
+    # samples ---------------------------------------------------------------
+    def _sample(self):
+        P, N, S, T, W, AL, G = [], [], [], [], [], [], []
+        wall_pos = {}  # running arc length per wall
+        for wi, w in enumerate(self.walls):
+            acc = 0.0
+            for k in w:
+                s = self.segs[k]
+                n = max(2, int(math.ceil(s.length / STEP)))
+                for j in range(n):            # t in [0,1): the end node belongs to the next segment
+                    t = j / n
+                    p = s.point(t); tg = s.tangent(t)
+                    P.append(p); T.append(t); S.append(k); W.append(wi); G.append(self.wall_shape[wi])
+                    N.append((-tg[1], tg[0]))  # ink on the left of travel
+                    AL.append(acc + t * s.length)
+                acc += s.length
+        self.P = np.array(P, float); self.N = np.array(N, float)
+        self.S = np.array(S); self.T = np.array(T); self.Wl = np.array(W); self.G = np.array(G); self.AL = np.array(AL)
+        self.held = np.array([int(k) in self.serif_segs for k in self.S])
+        # first/last sample index of each wall, and whether the wall is a closed loop (no corner at all)
+        self.wall_first = {}; self.wall_last = {}
+        for i, wi in enumerate(self.Wl):
+            wi = int(wi)
+            self.wall_first.setdefault(wi, i); self.wall_last[wi] = i
+        self.wall_loop = {wi: len(self.walls[wi]) == sum(1 for sg in self.segs if sg.pi == self.segs[self.walls[wi][0]].pi) for wi in range(len(self.walls))}
+        # confirm the inward side with an ink test per contour group (a reversed contour would flip it)
+        for g in range(len(self.shapes)):
+            idx = np.where(self.G == g)[0]
+            if not len(idx):
+                continue
+            k = idx[len(idx) // 2]
+            p, n = self.P[k], self.N[k]
+            if not self.ink_shape(g, p[0] + n[0]*2.0, p[1] + n[1]*2.0) and self.ink_shape(g, p[0] - n[0]*2.0, p[1] - n[1]*2.0):
+                self.N[idx] *= -1
+
+    def ink_shape(self, g, x, y):
+        w = 0
+        for pi in self.shapes[g]:
+            if point_in(self.polys[pi], x, y):
+                w += 1 if self.area[pi] > 0 else -1
+        return w > 0
+
+    # the ball ----------------------------------------------------------------
+    def ball(self, k):
+        """Largest circle tangent at sample k inside its shape: (diameter, centre, touch sample) or None."""
+        if self.held[k]:
+            return None
+        g = self.G[k]
+        idx = np.where((self.G == g) & (~self.held))[0]
+        p, n = self.P[k], self.N[k]
+        d = self.P[idx] - p
+        dn = d @ n
+        dd = (d*d).sum(1)
+        ok = (dn > 1e-6) & (dd > 9.0)
+        if not ok.any():
+            return None
+        r = np.full(len(idx), np.inf); r[ok] = dd[ok] / (2*dn[ok])
+        j = int(np.argmin(r))
+        if not np.isfinite(r[j]):
+            return None
+        return 2*r[j], (p[0] + n[0]*r[j], p[1] + n[1]*r[j]), int(idx[j])
+
+    def pair_all(self):
+        """Every sample's reading. Returns a list of dicts (one per sample)."""
+        out = []
+        for k in range(len(self.P)):
+            if self.held[k]:
+                out.append(dict(k=k, j=-1, w=None, c=None, facing=0.0, status="serif", wall=int(self.Wl[k]), pwall=-1)); continue
+            b = self.ball(k)
+            if b is None:
+                out.append(None); continue
+            w, c, j = b
+            nq = self.N[j]
+            facing = -(self.N[k] @ nq)                     # 1 = squarely opposite
+            adj = self.adjacent(int(self.S[k]), int(self.S[j]))
+            status = "ok"
+            if adj and facing < 0.5:
+                status = "corner"                           # rule 5
+            elif facing < 0.5:
+                status = "oblique"                          # meets the far wall side-on: a cap, a merge
+            else:
+                pw = int(self.Wl[j])
+                if not self.wall_loop[pw] and (j <= self.wall_first[pw] + 1 or j >= self.wall_last[pw] - 1):
+                    status = "end"                          # the circle rests on the far wall's end corner: the stroke has ended
+            out.append(dict(k=k, j=j, w=w, c=c, facing=facing, status=status,
+                            wall=int(self.Wl[k]), pwall=int(self.Wl[j])))
+        self.readings = out
+        return out
+
+    def strokes(self):
+        """Group accepted readings by wall pair; order along the first wall; flag crossings."""
+        groups = {}
+        for r in self.readings:
+            if r is None or r["status"] != "ok":
+                continue
+            key = (min(r["wall"], r["pwall"]), max(r["wall"], r["pwall"]))
+            groups.setdefault(key, []).append(r)
+        strokes = []
+        for key, rs in groups.items():
+            wa = key[0]
+            rs = [r for r in rs]
+            # orient every rung from wall a to wall b
+            def along_a(r): return self.AL[r["k"]] if r["wall"] == wa else self.AL[r["j"]]
+            def along_b(r): return self.AL[r["j"]] if r["wall"] == wa else self.AL[r["k"]]
+            rs.sort(key=along_a)
+            # monotone check: along wall b should DEcrease (the two walls run opposite ways)
+            bs = [along_b(r) for r in rs]
+            for i, r in enumerate(rs):
+                r["cross"] = False
+            for i in range(1, len(rs) - 1):
+                if bs[i] > bs[i-1] + 2.0 and bs[i] > bs[i+1] + 2.0:
+                    rs[i]["cross"] = True
+            # a run of increasing b inside a stroke = rungs crossing each other
+            for i in range(1, len(rs)):
+                if bs[i] > bs[i-1] + 6.0:
+                    rs[i]["cross"] = True
+            strokes.append(dict(walls=key, rungs=rs, n=len(rs),
+                                same_contour=self.segs[self.walls[key[0]][0]].pi == self.segs[self.walls[key[1]][0]].pi))
+        strokes.sort(key=lambda s: -s["n"])
+        self.stroke_list = strokes
+        return strokes
+
+    def node_readings(self):
+        """One reading per on-curve node: the sample at the node's own position on its outgoing
+        segment; at a corner also the incoming side (end of the previous segment)."""
+        out = {}
+        for gi, (x, y, t, sm) in self.node_xy.items():
+            if t == "o":
+                continue
+            ks = np.where((self.T == 0.0) & np.array([self.segs[s].gi == gi for s in self.S]))[0]
+            cands = []
+            for k in ks:
+                r = self.readings[int(k)]
+                if r is not None:
+                    cands.append(("out", r))
+            # the incoming side: last sample of the previous segment
+            prev = [k for k, s in enumerate(self.segs) if s.gj == gi]
+            for pk in prev:
+                ks2 = np.where(self.S == pk)[0]
+                if len(ks2):
+                    r = self.readings[int(ks2[-1])]
+                    if r is not None:
+                        cands.append(("in", r))
+            out[gi] = cands
+        return out
+
+    def nearest_node(self, p, tol=6.0):
+        best = None
+        for gi, (x, y, t, sm) in self.node_xy.items():
+            if t == "o":
+                continue
+            d = math.dist((x, y), p)
+            if best is None or d < best[0]:
+                best = (d, gi)
+        return best[1] if best and best[0] <= tol else None

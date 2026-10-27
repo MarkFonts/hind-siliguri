@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnDD_MA" format="2">
+  <advance width="912"/>
+  <anchor x="419.375" y="671" name="abvm.chandrabindu"/>
+  <anchor x="419.375" y="671" name="abvm.reph"/>
+  <anchor x="710.625" y="-28" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="316.5555522341399" y="107.72220893655955" type="curve" smooth="yes"/>
+      <point x="478.1007371773951" y="100.25524333925952"/>
+      <point x="610.042250715617" y="193.74259647671227"/>
+      <point x="652.375" y="335.0" type="curve" smooth="yes"/>
+      <point x="668.945748190303" y="390.2938541287689"/>
+      <point x="666.375" y="427.0"/>
+      <point x="658.625" y="476.0" type="curve"/>
+      <point x="593.875" y="445.0"/>
+      <point x="522.875" y="417.0"/>
+      <point x="479.875" y="417.0" type="curve" smooth="yes"/>
+      <point x="439.875" y="417.0"/>
+      <point x="430.875" y="437.0"/>
+      <point x="439.125" y="470.0" type="curve"/>
+      <point x="478.625" y="628.0" type="line"/>
+      <point x="338.625" y="628.0" type="line"/>
+      <point x="298.625" y="468.0" type="line"/>
+      <point x="271.125" y="358.0"/>
+      <point x="314.875" y="297.0"/>
+      <point x="423.875" y="297.0" type="curve" smooth="yes"/>
+      <point x="490.875" y="297.0"/>
+      <point x="535.125" y="322.0"/>
+      <point x="593.125" y="354.0" type="curve"/>
+      <point x="537.375" y="411.0" type="line"/>
+      <point x="534.125" y="390.0"/>
+      <point x="526.875" y="353.0"/>
+      <point x="522.875" y="337.0" type="curve" smooth="yes"/>
+      <point x="503.875" y="261.0"/>
+      <point x="440.375" y="199.0"/>
+      <point x="339.375" y="199.0" type="curve" smooth="yes"/>
+      <point x="211.375" y="199.0"/>
+      <point x="184.875" y="297.0"/>
+      <point x="212.875" y="409.0" type="curve" smooth="yes"/>
+      <point x="217.375" y="427.0"/>
+      <point x="223.125" y="446.0"/>
+      <point x="229.875" y="465.0" type="curve"/>
+      <point x="90.9346397109212" y="465.0" type="line"/>
+      <point x="87.124970107259" y="454.3761202014387"/>
+      <point x="84.63306453641354" y="445.23770623255535"/>
+      <point x="81.59089819214151" y="431.30386546000767" type="curve" smooth="yes"/>
+      <point x="38.800673655705054" y="235.31452502341725"/>
+      <point x="115.87318584510697" y="116.99817916332943"/>
+    </contour>
+    <contour>
+      <point x="645.1256977498648" y="-21.887155531653914" type="curve"/>
+      <point x="708.7474717485493" y="65.31471652248716" type="line"/>
+      <point x="643.2937635254431" y="126.16703348577677"/>
+      <point x="484.9835232413409" y="190.73885983494756"/>
+      <point x="310.125" y="194.0" type="curve"/>
+      <point x="182.1472552263241" y="196.38680595019227"/>
+      <point x="89.53458178125555" y="119.63832712502217"/>
+      <point x="66.375" y="27.0" type="curve" smooth="yes"/>
+      <point x="63.625" y="15.999999999999995"/>
+      <point x="60.625" y="0.0"/>
+      <point x="58.375" y="-13.0" type="curve"/>
+      <point x="196.375" y="-13.0" type="line"/>
+      <point x="196.875" y="-7.0"/>
+      <point x="199.625" y="4.0"/>
+      <point x="201.125" y="10.0" type="curve" smooth="yes"/>
+      <point x="210.6836056849682" y="48.2344227398728"/>
+      <point x="236.82174924332577" y="77.1525286339263"/>
+      <point x="300.125" y="78.0" type="curve"/>
+      <point x="443.4867656765484" y="79.91925359200978"/>
+      <point x="566.8279103353552" y="28.3126937635343"/>
+    </contour>
+    <contour>
+      <point x="642.125" y="-26.0" type="line"/>
+      <point x="777.125" y="-26.0" type="line"/>
+      <point x="928.125" y="578.0" type="line"/>
+      <point x="793.125" y="578.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="56.375" y="559.0" type="line"/>
+      <point x="1008.375" y="559.0" type="line"/>
+      <point x="1036.375" y="671.0" type="line"/>
+      <point x="84.375" y="671.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+    </dict>
+  </lib>
+</glyph>

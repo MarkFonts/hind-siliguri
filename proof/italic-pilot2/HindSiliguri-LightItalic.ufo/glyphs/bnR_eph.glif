@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnReph" format="2">
+  <anchor x="-32.875" y="634" name="_abvm.reph"/>
+  <outline>
+    <contour>
+      <point x="119.25711128328876" y="834.0" type="line" smooth="yes"/>
+      <point x="-49.18301196174993" y="688.7679521530002" type="line"/>
+      <point x="-50.375" y="684.0" type="line"/>
+      <point x="10.530973310681773" y="684.0" type="line"/>
+      <point x="175.94108260400589" y="829.2643304160235" type="line"/>
+      <point x="177.125" y="834.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
+    </dict>
+  </lib>
+</glyph>

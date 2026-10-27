@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>ascender</key>
+    <integer>707</integer>
+    <key>capHeight</key>
+    <integer>674</integer>
+    <key>copyright</key>
+    <string>Copyright 2015 The Hind Siliguri Project Authors (https://github.com/itfoundry/hind-siliguri)</string>
+    <key>descender</key>
+    <integer>-187</integer>
+    <key>familyName</key>
+    <string>Hind Siliguri</string>
+    <key>guidelines</key>
+    <array>
+      <dict>
+        <key>angle</key>
+        <integer>0</integer>
+        <key>x</key>
+        <integer>1016</integer>
+        <key>y</key>
+        <integer>671</integer>
+      </dict>
+      <dict>
+        <key>angle</key>
+        <integer>180</integer>
+        <key>x</key>
+        <integer>552</integer>
+        <key>y</key>
+        <integer>751</integer>
+      </dict>
+      <dict>
+        <key>angle</key>
+        <integer>0</integer>
+        <key>x</key>
+        <integer>128</integer>
+        <key>y</key>
+        <integer>447</integer>
+      </dict>
+      <dict>
+        <key>angle</key>
+        <integer>90</integer>
+        <key>x</key>
+        <integer>218</integer>
+        <key>y</key>
+        <integer>519</integer>
+      </dict>
+      <dict>
+        <key>angle</key>
+        <integer>90</integer>
+        <key>x</key>
+        <integer>809</integer>
+        <key>y</key>
+        <integer>559</integer>
+      </dict>
+    </array>
+    <key>italicAngle</key>
+    <real>-14.036</real>
+    <key>openTypeHeadCreated</key>
+    <string>2015/03/15 13:48:13</string>
+    <key>openTypeHheaAscender</key>
+    <integer>1116</integer>
+    <key>openTypeHheaDescender</key>
+    <integer>-501</integer>
+    <key>openTypeHheaLineGap</key>
+    <integer>0</integer>
+    <key>openTypeNameDesigner</key>
+    <string>Jyotish Sonowal</string>
+    <key>openTypeNameManufacturer</key>
+    <string>Indian Type Foundry</string>
+    <key>openTypeNameManufacturerURL</key>
+    <string>https://www.indiantypefoundry.com</string>
+    <key>openTypeOS2Type</key>
+    <array/>
+    <key>openTypeOS2TypoAscender</key>
+    <integer>1116</integer>
+    <key>openTypeOS2TypoDescender</key>
+    <integer>-501</integer>
+    <key>openTypeOS2TypoLineGap</key>
+    <integer>0</integer>
+    <key>openTypeOS2VendorID</key>
+    <string>ITFO</string>
+    <key>openTypeOS2WinAscent</key>
+    <integer>1116</integer>
+    <key>openTypeOS2WinDescent</key>
+    <integer>501</integer>
+    <key>postscriptFontName</key>
+    <string>HindSiliguri-BoldItalic</string>
+    <key>postscriptUnderlinePosition</key>
+    <integer>-100</integer>
+    <key>postscriptUnderlineThickness</key>
+    <integer>50</integer>
+    <key>styleMapStyleName</key>
+    <string>bold italic</string>
+    <key>styleName</key>
+    <string>Bold Italic</string>
+    <key>unitsPerEm</key>
+    <integer>1000</integer>
+    <key>versionMajor</key>
+    <integer>1</integer>
+    <key>versionMinor</key>
+    <integer>2</integer>
+    <key>xHeight</key>
+    <integer>507</integer>
+  </dict>
+</plist>

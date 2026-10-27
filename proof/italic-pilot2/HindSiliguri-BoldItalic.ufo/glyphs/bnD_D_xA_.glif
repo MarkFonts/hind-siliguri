@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnDDxA" format="2">
+  <advance width="678"/>
+  <unicode hex="09DC"/>
+  <anchor x="423.375" y="671" name="abvm.chandrabindu"/>
+  <anchor x="423.375" y="671" name="abvm.reph"/>
+  <anchor x="238.125" y="-238" name="blwm.u"/>
+  <outline>
+    <component base="bnDDA"/>
+    <component base="bnNukta" xOffset="629.5" yOffset="10"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+    </dict>
+  </lib>
+</glyph>

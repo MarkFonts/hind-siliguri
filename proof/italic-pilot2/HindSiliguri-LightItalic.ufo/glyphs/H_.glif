@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="H" format="2">
+  <advance width="632"/>
+  <unicode hex="0048"/>
+  <anchor x="252.625" y="0" name="bottom"/>
+  <anchor x="421.125" y="674" name="top"/>
+  <outline>
+    <contour>
+      <point x="426.625" y="0.0" type="line"/>
+      <point x="488.625" y="0.0" type="line"/>
+      <point x="657.125" y="674.0" type="line"/>
+      <point x="595.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="16.625" y="0.0" type="line"/>
+      <point x="78.625" y="0.0" type="line"/>
+      <point x="247.125" y="674.0" type="line"/>
+      <point x="185.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="143.375" y="315.0" type="line"/>
+      <point x="524.375" y="315.0" type="line"/>
+      <point x="538.625" y="372.0" type="line"/>
+      <point x="157.625" y="372.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

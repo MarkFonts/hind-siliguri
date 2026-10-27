@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnI" format="2">
+  <advance width="454"/>
+  <unicode hex="0987"/>
+  <anchor x="303.125" y="634" name="abvm.chandrabindu"/>
+  <anchor x="317.125" y="634" name="abvm.reph"/>
+  <anchor x="180.875" y="-19" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="418.625" y="628.0" type="curve"/>
+      <point x="475.625" y="628.0" type="line"/>
+      <point x="485.625" y="648.0"/>
+      <point x="496.125" y="678.0"/>
+      <point x="500.375" y="695.0" type="curve" smooth="yes"/>
+      <point x="515.2249671026754" y="754.3998684107012"/>
+      <point x="497.37030439348644" y="815.0"/>
+      <point x="405.375" y="815.0" type="curve"/>
+      <point x="346.375" y="815.0"/>
+      <point x="295.125" y="790.0"/>
+      <point x="250.125" y="790.0" type="curve" smooth="yes"/>
+      <point x="223.125" y="790.0"/>
+      <point x="201.625" y="796.0"/>
+      <point x="175.875" y="805.0" type="curve"/>
+      <point x="164.42876680104882" y="759.2150672041953" type="line"/>
+      <point x="183.35748213956714" y="745.847760398598"/>
+      <point x="206.23611183510792" y="736.8307281822139"/>
+      <point x="239.53307774482982" y="734.9912671366341" type="curve" smooth="yes"/>
+      <point x="292.0825010702432" y="732.0882213324951"/>
+      <point x="341.68952205881226" y="760.0"/>
+      <point x="392.625" y="760.0" type="curve" smooth="yes"/>
+      <point x="438.62588959763923" y="760.0"/>
+      <point x="452.3750253787738" y="735.0001015150953"/>
+      <point x="441.125" y="690.0" type="curve" smooth="yes"/>
+      <point x="436.625" y="672.0"/>
+      <point x="426.375" y="643.0"/>
+    </contour>
+    <component base="bnHA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+    </dict>
+  </lib>
+</glyph>

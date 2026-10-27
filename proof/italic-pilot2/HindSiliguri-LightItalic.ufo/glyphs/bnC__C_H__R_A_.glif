@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnC_CH_RA" format="2">
+  <advance width="879"/>
+  <anchor x="545.125" y="634" name="abvm.chandrabindu"/>
+  <anchor x="640.375" y="-109" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="197.73968915373155" y="120.0" type="curve" smooth="yes"/>
+      <point x="310.62038382148586" y="120.0"/>
+      <point x="405.8098933295282" y="225.12989515677262"/>
+      <point x="422.1687373234447" y="339.03485000740704" type="curve" smooth="yes"/>
+      <point x="435.1994771624161" y="429.76655657422634"/>
+      <point x="382.44197322517755" y="466.1498158614954"/>
+      <point x="293.5536595377174" y="493.94401645833244" type="curve" smooth="yes"/>
+      <point x="197.61100411458312" y="523.9440164583325" type="line"/>
+      <point x="182.1827295119998" y="462.23091804799924" type="line"/>
+      <point x="269.234707704141" y="436.23091804799924" type="line" smooth="yes"/>
+      <point x="336.7475872083225" y="416.06670232811814"/>
+      <point x="366.6953844799301" y="397.4319102423426"/>
+      <point x="357.04910288061734" y="338.29728747799464" type="curve"/>
+      <point x="342.1169843513835" y="246.7588861564245"/>
+      <point x="273.3252753033156" y="175.0"/>
+      <point x="205.88271366863694" y="175.0" type="curve" smooth="yes"/>
+      <point x="158.64261174061716" y="175.0"/>
+      <point x="130.25149010450787" y="198.54217995381345"/>
+      <point x="144.44911147270253" y="257.0" type="curve"/>
+      <point x="232.125" y="618.0" type="line"/>
+      <point x="171.125" y="618.0" type="line"/>
+      <point x="83.44911147270253" y="257.0" type="line"/>
+      <point x="59.625984092172516" y="158.90975958351746"/>
+      <point x="120.2698169395731" y="120.0"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="613.375" y="579.0" type="line"/>
+      <point x="627.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+    <component base="bnCH_RA" xOffset="309.0"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/11 16:53:53</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPC</string>
+    </dict>
+  </lib>
+</glyph>

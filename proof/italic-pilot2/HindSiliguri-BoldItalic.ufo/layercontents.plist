@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <array>
+    <array>
+      <string>public.default</string>
+      <string>glyphs</string>
+    </array>
+    <array>
+      <string>public.background</string>
+      <string>glyphs.public.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 12 15, 16:06</string>
+      <string>glyphs.B_old M_ar 12 15, 16_06</string>
+    </array>
+    <array>
+      <string>Bold Mar 12 15, 16:06.background</string>
+      <string>glyphs.B_old M_ar 12 15, 16_06.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 16 15, 16:02</string>
+      <string>glyphs.B_old M_ar 16 15, 16_02</string>
+    </array>
+    <array>
+      <string>Bold Mar 16 15, 16:02.background</string>
+      <string>glyphs.B_old M_ar 16 15, 16_02.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:20</string>
+      <string>glyphs.B_old M_ar 17 15, 13_20</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:20.background</string>
+      <string>glyphs.B_old M_ar 17 15, 13_20.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 16 15, 11:55</string>
+      <string>glyphs.B_old M_ar 16 15, 11_55</string>
+    </array>
+    <array>
+      <string>Bold Mar 16 15, 11:55.background</string>
+      <string>glyphs.B_old M_ar 16 15, 11_55.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 13 15, 16:29</string>
+      <string>glyphs.B_old M_ar 13 15, 16_29</string>
+    </array>
+    <array>
+      <string>Bold Mar 13 15, 16:29.background</string>
+      <string>glyphs.B_old M_ar 13 15, 16_29.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 16:54</string>
+      <string>glyphs.B_old M_ar 17 15, 16_54</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 16:54.background</string>
+      <string>glyphs.B_old M_ar 17 15, 16_54.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 10:53</string>
+      <string>glyphs.B_old M_ar 17 15, 10_53</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 10:53.background</string>
+      <string>glyphs.B_old M_ar 17 15, 10_53.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:33</string>
+      <string>glyphs.B_old M_ar 17 15, 13_33</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:33.background</string>
+      <string>glyphs.B_old M_ar 17 15, 13_33.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:33 (2)</string>
+      <string>glyphs.B_old M_ar 17 15, 13_33 _2_</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:33 (2).background</string>
+      <string>glyphs.B_old M_ar 17 15, 13_33 _2_.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 17:44</string>
+      <string>glyphs.B_old M_ar 17 15, 17_44</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 17:44.background</string>
+      <string>glyphs.B_old M_ar 17 15, 17_44.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 18:45</string>
+      <string>glyphs.B_old M_ar 17 15, 18_45</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 18:45.background</string>
+      <string>glyphs.B_old M_ar 17 15, 18_45.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:22</string>
+      <string>glyphs.B_old M_ar 17 15, 13_22</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:22.background</string>
+      <string>glyphs.B_old M_ar 17 15, 13_22.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 12:09</string>
+      <string>glyphs.B_old M_ar 17 15, 12_09</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 12:09.background</string>
+      <string>glyphs.B_old M_ar 17 15, 12_09.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 15:53</string>
+      <string>glyphs.B_old M_ar 17 15, 15_53</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 15:53.background</string>
+      <string>glyphs.B_old M_ar 17 15, 15_53.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:14</string>
+      <string>glyphs.B_old M_ar 17 15, 13_14</string>
+    </array>
+    <array>
+      <string>Bold Mar 17 15, 13:14.background</string>
+      <string>glyphs.B_old M_ar 17 15, 13_14.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 12 15, 18:12</string>
+      <string>glyphs.B_old M_ar 12 15, 18_12</string>
+    </array>
+    <array>
+      <string>Bold Mar 12 15, 18:12.background</string>
+      <string>glyphs.B_old M_ar 12 15, 18_12.background</string>
+    </array>
+    <array>
+      <string>Bold Mar 13 15, 16:57</string>
+      <string>glyphs.B_old M_ar 13 15, 16_57</string>
+    </array>
+    <array>
+      <string>Bold Mar 13 15, 16:57.background</string>
+      <string>glyphs.B_old M_ar 13 15, 16_57.background</string>
+    </array>
+    <array>
+      <string>Bold May 11 15, 23:11</string>
+      <string>glyphs.B_old M_ay 11 15, 23_11</string>
+    </array>
+    <array>
+      <string>Bold May 11 15, 23:11.background</string>
+      <string>glyphs.B_old M_ay 11 15, 23_11.background</string>
+    </array>
+    <array>
+      <string>Bold May 11 15, 23:30</string>
+      <string>glyphs.B_old M_ay 11 15, 23_30</string>
+    </array>
+    <array>
+      <string>Bold May 11 15, 23:30.background</string>
+      <string>glyphs.B_old M_ay 11 15, 23_30.background</string>
+    </array>
+    <array>
+      <string>Bold May 7 15, 16:06</string>
+      <string>glyphs.B_old M_ay 7 15, 16_06</string>
+    </array>
+    <array>
+      <string>Bold Jun 17 15, 15:15</string>
+      <string>glyphs.B_old J_un 17 15, 15_15</string>
+    </array>
+    <array>
+      <string>Bold Jun 17 15, 15:15.background</string>
+      <string>glyphs.B_old J_un 17 15, 15_15.background</string>
+    </array>
+  </array>
+</plist>

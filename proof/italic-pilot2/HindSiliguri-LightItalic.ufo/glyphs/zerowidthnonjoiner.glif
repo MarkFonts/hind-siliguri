@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="zerowidthnonjoiner" format="2">
+  <unicode hex="200C"/>
+  <outline>
+    <contour>
+      <point x="-143.875" y="-230.0" type="line"/>
+      <point x="-96.875" y="-230.0" type="line"/>
+      <point x="163.375" y="811.0" type="line"/>
+      <point x="116.375" y="811.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/10/16 10:28:39</string>
+      <key>public.markColor</key>
+      <string>0,0.67,0.91,1</string>
+    </dict>
+  </lib>
+</glyph>

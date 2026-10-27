@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnN" format="2">
+  <advance width="589"/>
+  <outline>
+    <contour>
+      <point x="438.8928286015921" y="-193.0" type="line"/>
+      <point x="569.375" y="-193.0" type="line"/>
+      <point x="570.125" y="-190.0" type="line"/>
+      <point x="450.0671470655044" y="-40.0" type="line"/>
+      <point x="318.625" y="-40.0" type="line"/>
+      <point x="317.875" y="-43.0" type="line"/>
+    </contour>
+    <component base="bnNA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 11:03:00</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PC</string>
+      <key>public.markColor</key>
+      <string>0.85,0.26,0.06,1</string>
+    </dict>
+  </lib>
+</glyph>

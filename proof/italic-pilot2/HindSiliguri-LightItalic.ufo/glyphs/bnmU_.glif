@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnmU" format="2">
+  <unicode hex="09C1"/>
+  <anchor x="-194.375" y="0" name="_blwm.u"/>
+  <anchor x="-14.625" y="719" name="abvm.chandrabindu"/>
+  <anchor x="-28.625" y="667" name="abvm.reph"/>
+  <outline>
+    <contour>
+      <point x="-261.74840647248146" y="-225.0" type="curve" smooth="yes"/>
+      <point x="-174.74840647248146" y="-225.0"/>
+      <point x="-107.6078971957134" y="-143.0"/>
+      <point x="-91.83878301596425" y="-50.0" type="curve"/>
+      <point x="-141.83878301596425" y="-50.0" type="line"/>
+      <point x="-152.7749539149896" y="-104.23977131817574"/>
+      <point x="-190.5304570259225" y="-176.0"/>
+      <point x="-254.49371190465664" y="-176.0" type="curve" smooth="yes"/>
+      <point x="-299.6075378023784" y="-176.0"/>
+      <point x="-322.29366886746783" y="-147.6318713492086"/>
+      <point x="-316.57402749559003" y="-109.0" type="curve" smooth="yes"/>
+      <point x="-309.66083774774097" y="-62.306607951908205"/>
+      <point x="-269.97920044396824" y="-41.344325255409835"/>
+      <point x="-223.50628809534336" y="-41.0" type="curve" smooth="yes"/>
+      <point x="-110.58085791916956" y="-40.163317390225345"/>
+      <point x="-32.94155115653533" y="-156.97823163129567"/>
+      <point x="1.8596637500133255" y="-210.7903873989599" type="curve"/>
+      <point x="16.949776613989542" y="-150.42993594305509" type="line"/>
+      <point x="-24.935142169707596" y="-81.11007331527266"/>
+      <point x="-103.88445319387456" y="3.950777792796899"/>
+      <point x="-210.86246864008535" y="7.840414848480998" type="curve" smooth="yes"/>
+      <point x="-296.5235893272981" y="10.954986266418183"/>
+      <point x="-361.6999374186477" y="-35.55370825212698"/>
+      <point x="-372.6156797351095" y="-109.28132951944062" type="curve" smooth="yes"/>
+      <point x="-382.5128018316687" y="-176.1289380848283"/>
+      <point x="-335.4077984039065" y="-225.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.category</key>
+      <string>Mark</string>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:30</string>
+      <key>com.schriftgestaltung.Glyphs.subCategory</key>
+      <string>Nonspacing</string>
+    </dict>
+  </lib>
+</glyph>

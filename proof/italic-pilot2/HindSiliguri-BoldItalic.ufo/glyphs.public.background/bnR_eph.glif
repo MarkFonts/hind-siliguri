@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnReph" format="2">
+  <outline>
+    <contour>
+      <point x="-67" y="837" type="line"/>
+      <point x="-191" y="715" type="line"/>
+      <point x="-191" y="711" type="line"/>
+      <point x="-53" y="711" type="line"/>
+      <point x="70" y="833" type="line"/>
+      <point x="70" y="837" type="line"/>
+    </contour>
+  </outline>
+</glyph>

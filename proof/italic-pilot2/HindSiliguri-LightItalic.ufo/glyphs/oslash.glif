@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="oslash" format="2">
+  <advance width="563"/>
+  <unicode hex="00F8"/>
+  <outline>
+    <contour>
+      <point x="253.41108402988095" y="-9.0" type="curve" smooth="yes"/>
+      <point x="405.41108402988095" y="-9.0"/>
+      <point x="509.59072202821244" y="106.0"/>
+      <point x="532.5233373062721" y="251.06618653346666" type="curve" smooth="yes"/>
+      <point x="555.4867889125791" y="396.32743623314025"/>
+      <point x="492.8709363064987" y="514.0"/>
+      <point x="336.088915970119" y="514.0" type="curve" smooth="yes"/>
+      <point x="196.08891597011905" y="514.0"/>
+      <point x="84.43502654574408" y="396.0"/>
+      <point x="61.512874286978274" y="251.0" type="curve" smooth="yes"/>
+      <point x="38.59072202821247" y="106.0"/>
+      <point x="107.41108402988095" y="-9.0"/>
+    </contour>
+    <contour>
+      <point x="254.27885629992903" y="46.0" type="curve" smooth="yes"/>
+      <point x="148.27885629992906" y="46.0"/>
+      <point x="101.09352843168116" y="142.0"/>
+      <point x="122.45602074794135" y="251.0" type="curve" smooth="yes"/>
+      <point x="143.81851306420157" y="360.0"/>
+      <point x="223.2211437000709" y="459.0"/>
+      <point x="335.2211437000709" y="459.0" type="curve" smooth="yes"/>
+      <point x="462.21665835530746" y="459.0"/>
+      <point x="492.8158122844403" y="359.986219538918"/>
+      <point x="471.45602074794124" y="251.0" type="curve" smooth="yes"/>
+      <point x="450.0935284316811" y="142.0"/>
+      <point x="372.27885629992903" y="46.0"/>
+    </contour>
+    <contour>
+      <point x="-6.908018463159721" y="-9.0" type="line"/>
+      <point x="70.65801846315972" y="-9.0" type="line"/>
+      <point x="601.4527563936139" y="514.0" type="line"/>
+      <point x="522.7972436063861" y="514.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

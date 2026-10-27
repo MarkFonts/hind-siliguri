@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lozenge" format="2">
+  <advance width="553"/>
+  <unicode hex="25CA"/>
+  <outline>
+    <contour>
+      <point x="78.875" y="337.0" type="line"/>
+      <point x="150.875" y="337.0" type="line"/>
+      <point x="223.625" y="432.0" type="line" smooth="yes"/>
+      <point x="320.125" y="558.0"/>
+      <point x="367.625" y="620.0"/>
+      <point x="367.625" y="620.0" type="curve"/>
+      <point x="367.625" y="620.0"/>
+      <point x="383.875" y="557.0"/>
+      <point x="418.625" y="432.0" type="curve" smooth="yes"/>
+      <point x="443.875" y="337.0" type="line"/>
+      <point x="515.875" y="337.0" type="line"/>
+      <point x="420.125" y="674.0" type="line"/>
+      <point x="338.125" y="674.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="169.625" y="0.0" type="line"/>
+      <point x="251.625" y="0.0" type="line"/>
+      <point x="515.875" y="337.0" type="line"/>
+      <point x="443.875" y="337.0" type="line"/>
+      <point x="371.125" y="242.0" type="line" smooth="yes"/>
+      <point x="273.875" y="117.0"/>
+      <point x="226.125" y="54.0"/>
+      <point x="226.125" y="54.0" type="curve"/>
+      <point x="226.125" y="54.0"/>
+      <point x="209.625" y="116.0"/>
+      <point x="176.125" y="242.0" type="curve" smooth="yes"/>
+      <point x="150.875" y="337.0" type="line"/>
+      <point x="78.875" y="337.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

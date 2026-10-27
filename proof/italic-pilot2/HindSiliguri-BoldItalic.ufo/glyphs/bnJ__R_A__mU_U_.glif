@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnJ_RA_mUU" format="2">
+  <advance width="1061"/>
+  <anchor x="519.375" y="671" name="abvm.chandrabindu"/>
+  <anchor x="589.125" y="-150" name="blwm.u"/>
+  <outline>
+    <contour>
+      <point x="728.875" y="185.0" type="line"/>
+      <point x="821.6635724215112" y="240.95316403820806"/>
+      <point x="889.7777100811892" y="272.0794491554527"/>
+      <point x="935.0078247538861" y="288.51514683795205" type="curve"/>
+      <point x="906.4895960345139" y="400.49498070851445" type="line"/>
+      <point x="862.7139945423748" y="384.98353489093955"/>
+      <point x="783.1361374299004" y="332.92678688557845"/>
+      <point x="696.375" y="279.0" type="curve"/>
+    </contour>
+    <contour>
+      <point x="822.625" y="60.0" type="line"/>
+      <point x="957.625" y="60.0" type="line"/>
+      <point x="1042.125" y="398.0" type="line"/>
+      <point x="907.125" y="398.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="897.375" y="559.0" type="line"/>
+      <point x="1157.375" y="559.0" type="line"/>
+      <point x="1185.375" y="671.0" type="line"/>
+      <point x="925.375" y="671.0" type="line"/>
+    </contour>
+    <component base="bnJ_RA"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 13:39:17</string>
+      <key>com.schriftgestaltung.Glyphs.shapeOrder</key>
+      <string>PPPC</string>
+    </dict>
+  </lib>
+</glyph>

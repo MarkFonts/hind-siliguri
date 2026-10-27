@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnNumeratorone" format="2">
+  <advance width="477"/>
+  <unicode hex="09F4"/>
+  <outline>
+    <contour>
+      <point x="-14.375" y="116.0" type="line"/>
+      <point x="266.46371381096105" y="116.0"/>
+      <point x="447.2598580348433" y="314.5394321393732"/>
+      <point x="508.375" y="559.0" type="curve"/>
+      <point x="447.375" y="559.0" type="line"/>
+      <point x="393.8843110843895" y="345.0372443375579"/>
+      <point x="229.61837899415195" y="175.0"/>
+      <point x="0.375" y="175.0" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/20 17:08:15</string>
+    </dict>
+  </lib>
+</glyph>

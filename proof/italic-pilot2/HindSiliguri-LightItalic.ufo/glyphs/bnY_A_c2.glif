@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bnYAc2" format="2">
+  <advance width="315"/>
+  <outline>
+    <contour>
+      <point x="39.029032837213876" y="0.0" type="curve"/>
+      <point x="109.22096716278611" y="0.0" type="line"/>
+      <point x="146.88962237053235" y="45.70649981363237"/>
+      <point x="181.61485042797742" y="101.99701202670434"/>
+      <point x="196.375" y="163.0" type="curve" smooth="yes"/>
+      <point x="217.18077078041875" y="248.9892495329985"/>
+      <point x="178.13848906905363" y="347.29819562424797"/>
+      <point x="199.125" y="430.0" type="curve" smooth="yes"/>
+      <point x="213.8812369782766" y="488.1500864014581"/>
+      <point x="258.50746924808226" y="544.3367784528081"/>
+      <point x="302.15204963146005" y="579.0" type="curve"/>
+      <point x="235.59795036853995" y="579.0" type="line"/>
+      <point x="192.5096902740963" y="542.6582639094341"/>
+      <point x="153.35010605664792" y="491.85739233513937"/>
+      <point x="138.125" y="430.0" type="curve" smooth="yes"/>
+      <point x="117.36841090543922" y="345.668996302269"/>
+      <point x="157.76565361228927" y="249.8673114798059"/>
+      <point x="135.375" y="163.0" type="curve" smooth="yes"/>
+      <point x="119.64005785709665" y="101.95434479437874"/>
+      <point x="75.31127416475837" y="42.29640127053433"/>
+    </contour>
+    <contour>
+      <point x="61.375" y="579.0" type="line"/>
+      <point x="417.375" y="579.0" type="line"/>
+      <point x="431.125" y="634.0" type="line"/>
+      <point x="75.125" y="634.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/07/03 10:49:31</string>
+    </dict>
+  </lib>
+</glyph>

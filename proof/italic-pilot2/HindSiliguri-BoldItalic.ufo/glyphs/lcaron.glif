@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lcaron" format="2">
+  <advance width="276"/>
+  <unicode hex="013E"/>
+  <outline>
+    <contour>
+      <point x="1.625" y="0.0" type="line"/>
+      <point x="147.625" y="0.0" type="line"/>
+      <point x="324.375" y="707.0" type="line"/>
+      <point x="178.375" y="707.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="326.0409777241199" y="498.0" type="line"/>
+      <point x="453.0801437011471" y="498.0" type="line"/>
+      <point x="613.7224662846796" y="709.0" type="line"/>
+      <point x="445.86481380038106" y="709.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tcaron" format="2">
+  <advance width="386"/>
+  <unicode hex="0165"/>
+  <outline>
+    <contour>
+      <point x="187.2744242816443" y="-5.0" type="curve" smooth="yes"/>
+      <point x="215.27442428164431" y="-5.0"/>
+      <point x="263.33207900804825" y="-1.0"/>
+      <point x="294.9009450036583" y="11.0" type="curve"/>
+      <point x="325.1509450036583" y="132.0" type="line"/>
+      <point x="298.98726800877995" y="118.0"/>
+      <point x="274.07086773884225" y="112.0"/>
+      <point x="251.07086773884225" y="112.0" type="curve" smooth="yes"/>
+      <point x="220.30945092790233" y="112.0"/>
+      <point x="200.00498081724396" y="128.73933505897858"/>
+      <point x="209.40158510936078" y="167.0" type="curve" smooth="yes"/>
+      <point x="322.375" y="627.0" type="line"/>
+      <point x="176.375" y="627.0" type="line"/>
+      <point x="63.67528785917786" y="168.0" type="line"/>
+      <point x="35.986546141117174" y="55.23012501833756"/>
+      <point x="72.00876091398709" y="-5.0"/>
+    </contour>
+    <contour>
+      <point x="46.625" y="400.0" type="line"/>
+      <point x="383.625" y="400.0" type="line"/>
+      <point x="410.375" y="507.0" type="line"/>
+      <point x="73.375" y="507.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="359.5409777241199" y="588.0" type="line"/>
+      <point x="486.5801437011471" y="588.0" type="line"/>
+      <point x="647.2224662846796" y="799.0" type="line"/>
+      <point x="479.36481380038106" y="799.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2015/08/06 15:39:19</string>
+      <key>public.markColor</key>
+      <string>0.97,1,0,1</string>
+    </dict>
+  </lib>
+</glyph>
