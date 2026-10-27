@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tbar" format="2">
+  <advance width="364"/>
+  <unicode hex="0167"/>
+  <anchor x="155.875" y="321" name="bar"/>
+  <anchor x="108.625" y="0" name="bottom"/>
+  <anchor x="234.125" y="634" name="top"/>
+  <outline>
+    <component base="t"/>
+    <component base="barcomb"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>barcomb</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:43:30</string>
+    </dict>
+  </lib>
+</glyph>

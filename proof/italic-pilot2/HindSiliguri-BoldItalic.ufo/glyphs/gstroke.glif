@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="gstroke" format="2">
+  <advance width="585"/>
+  <unicode hex="01E5"/>
+  <anchor x="462.875" y="253" name="bar"/>
+  <anchor x="221.625" y="0" name="bottom"/>
+  <anchor x="374.625" y="508" name="top"/>
+  <outline>
+    <component base="g"/>
+    <component base="barcomb" xOffset="268.0" yOffset="-68"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 05:42:06</string>
+    </dict>
+  </lib>
+</glyph>

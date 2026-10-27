@@ -61,8 +61,24 @@
     <integer>1116</integer>
     <key>openTypeOS2WinDescent</key>
     <integer>501</integer>
+    <key>postscriptBlueValues</key>
+    <array>
+      <integer>-12</integer>
+      <integer>0</integer>
+      <integer>507</integer>
+      <integer>519</integer>
+      <integer>674</integer>
+      <integer>686</integer>
+      <integer>707</integer>
+      <integer>719</integer>
+    </array>
     <key>postscriptFontName</key>
     <string>HindSiliguri-LightItalic</string>
+    <key>postscriptOtherBlues</key>
+    <array>
+      <integer>-212</integer>
+      <integer>-200</integer>
+    </array>
     <key>postscriptUnderlinePosition</key>
     <integer>-100</integer>
     <key>postscriptUnderlineThickness</key>

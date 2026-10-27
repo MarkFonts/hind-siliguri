@@ -6,6 +6,31 @@
   <anchor x="338.125" y="506" name="top"/>
   <outline>
     <component base="c"/>
-    <component base="dotaccent" xOffset="9.75" yOffset="-69"/>
+    <component base="dotaccent" xOffset="24.75" yOffset="-9"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>c</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>dotaccent</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:28:54</string>
+    </dict>
+  </lib>
 </glyph>

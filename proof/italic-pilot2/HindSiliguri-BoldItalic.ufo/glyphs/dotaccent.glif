@@ -4,24 +4,24 @@
   <unicode hex="02D9"/>
   <outline>
     <contour>
-      <point x="350.54628466873646" y="629.0" type="curve" smooth="yes"/>
-      <point x="397.54628466873646" y="629.0"/>
-      <point x="438.59945953898784" y="665.0"/>
-      <point x="446.3340718731979" y="711.0" type="curve" smooth="yes"/>
-      <point x="453.90054046101216" y="756.0"/>
-      <point x="424.95371533126354" y="792.0"/>
-      <point x="377.95371533126354" y="792.0" type="curve" smooth="yes"/>
-      <point x="329.95371533126354" y="792.0"/>
-      <point x="288.90054046101216" y="756.0"/>
-      <point x="281.3340718731979" y="711.0" type="curve" smooth="yes"/>
-      <point x="273.59945953898784" y="665.0"/>
-      <point x="302.54628466873646" y="629.0"/>
+      <point x="303.83278155635094" y="569.0" type="curve" smooth="yes"/>
+      <point x="351.83278155635094" y="569.0"/>
+      <point x="395.0541001729981" y="606.0"/>
+      <point x="403.125" y="654.0" type="curve" smooth="yes"/>
+      <point x="411.02775608060597" y="701.0"/>
+      <point x="380.41721844364906" y="739.0"/>
+      <point x="332.41721844364906" y="739.0" type="curve" smooth="yes"/>
+      <point x="283.41721844364906" y="739.0"/>
+      <point x="241.02775608060597" y="701.0"/>
+      <point x="233.125" y="654.0" type="curve" smooth="yes"/>
+      <point x="225.05410017299812" y="606.0"/>
+      <point x="254.83278155635094" y="569.0"/>
     </contour>
   </outline>
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2015/08/06 15:39:19</string>
+      <string>2026/10/27 04:34:51</string>
       <key>public.markColor</key>
       <string>0.97,1,0,1</string>
     </dict>

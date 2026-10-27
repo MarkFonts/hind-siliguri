@@ -960,8 +960,8 @@ feature pres {
 @COMBINING_BOTTOM = [cedillacomb commaaccentcomb ogonekcomb];
 
 lookup ccmp_dotless {
-  sub [i j iogonek]' @COMBINING_TOP by [dotlessi dotlessj iogonek.dotless];
-  sub [i j iogonek]' @COMBINING_BOTTOM @COMBINING_TOP by [dotlessi dotlessj iogonek.dotless];
+  sub [i j iogonek]' @COMBINING_TOP by [idotless jdotless iogonek.dotless];
+  sub [i j iogonek]' @COMBINING_BOTTOM @COMBINING_TOP by [idotless jdotless iogonek.dotless];
 } ccmp_dotless;
 
 feature ccmp {

@@ -62,6 +62,8 @@
     <string>E_grave.glif</string>
     <key>Emacron</key>
     <string>E_macron.glif</string>
+    <key>Eng</key>
+    <string>E_ng.glif</string>
     <key>Eogonek</key>
     <string>E_ogonek.glif</string>
     <key>Eth</key>
@@ -78,8 +80,14 @@
     <string>G_commaaccent.glif</string>
     <key>Gdotaccent</key>
     <string>G_dotaccent.glif</string>
+    <key>Germandbls</key>
+    <string>G_ermandbls.glif</string>
+    <key>Gstroke</key>
+    <string>G_stroke.glif</string>
     <key>H</key>
     <string>H_.glif</string>
+    <key>Hbar</key>
+    <string>H_bar.glif</string>
     <key>I</key>
     <string>I_.glif</string>
     <key>ITF</key>
@@ -172,6 +180,8 @@
     <string>S_commaaccent.glif</string>
     <key>T</key>
     <string>T_.glif</string>
+    <key>Tbar</key>
+    <string>T_bar.glif</string>
     <key>Tcaron</key>
     <string>T_caron.glif</string>
     <key>Tcedilla</key>
@@ -282,6 +292,8 @@
     <string>backslash.glif</string>
     <key>bar</key>
     <string>bar.glif</string>
+    <key>barcomb</key>
+    <string>barcomb.glif</string>
     <key>bnA</key>
     <string>bnA_.glif</string>
     <key>bnAA</key>
@@ -1318,10 +1330,6 @@
     <string>dotaccent.glif</string>
     <key>dotaccentcomb</key>
     <string>dotaccentcomb.glif</string>
-    <key>dotlessi</key>
-    <string>dotlessi.glif</string>
-    <key>dotlessj</key>
-    <string>dotlessj.glif</string>
     <key>dottedcircle</key>
     <string>dottedcircle.glif</string>
     <key>doubledanda</key>
@@ -1350,6 +1358,8 @@
     <string>emdash.glif</string>
     <key>endash</key>
     <string>endash.glif</string>
+    <key>eng</key>
+    <string>eng.glif</string>
     <key>eogonek</key>
     <string>eogonek.glif</string>
     <key>equal</key>
@@ -1392,6 +1402,8 @@
     <string>greater.glif</string>
     <key>greaterequal</key>
     <string>greaterequal.glif</string>
+    <key>gstroke</key>
+    <string>gstroke.glif</string>
     <key>guillemotleft</key>
     <string>guillemotleft.glif</string>
     <key>guillemotright</key>
@@ -1402,6 +1414,8 @@
     <string>guilsinglright.glif</string>
     <key>h</key>
     <string>h.glif</string>
+    <key>hbar</key>
+    <string>hbar.glif</string>
     <key>hungarumlaut</key>
     <string>hungarumlaut.glif</string>
     <key>hungarumlautcomb</key>
@@ -1416,6 +1430,8 @@
     <string>icircumflex.glif</string>
     <key>idieresis</key>
     <string>idieresis.glif</string>
+    <key>idotless</key>
+    <string>idotless.glif</string>
     <key>igrave</key>
     <string>igrave.glif</string>
     <key>imacron</key>
@@ -1432,6 +1448,8 @@
     <string>iogonek.dotless.glif</string>
     <key>j</key>
     <string>j.glif</string>
+    <key>jdotless</key>
+    <string>jdotless.glif</string>
     <key>k</key>
     <string>k.glif</string>
     <key>kcommaaccent</key>
@@ -1452,6 +1470,8 @@
     <string>litre.glif</string>
     <key>logicalnot</key>
     <string>logicalnot.glif</string>
+    <key>longs</key>
+    <string>longs.glif</string>
     <key>lozenge</key>
     <string>lozenge.glif</string>
     <key>lslash</key>
@@ -1620,6 +1640,8 @@
     <string>summation.glif</string>
     <key>t</key>
     <string>t.glif</string>
+    <key>tbar</key>
+    <string>tbar.glif</string>
     <key>tcaron</key>
     <string>tcaron.glif</string>
     <key>tcedilla</key>

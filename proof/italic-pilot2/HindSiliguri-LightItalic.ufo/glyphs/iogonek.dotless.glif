@@ -2,9 +2,35 @@
 <glyph name="iogonek.dotless" format="2">
   <advance width="221"/>
   <anchor x="46.625" y="0" name="bottom"/>
+  <anchor x="3.125" y="-10" name="ogonek"/>
   <anchor x="175.375" y="507" name="top"/>
   <outline>
-    <component base="dotlessi"/>
+    <component base="idotless"/>
     <component base="ogonek" xOffset="-133.5" yOffset="-10"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>idotless</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>ogonek</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:28:54</string>
+    </dict>
+  </lib>
 </glyph>

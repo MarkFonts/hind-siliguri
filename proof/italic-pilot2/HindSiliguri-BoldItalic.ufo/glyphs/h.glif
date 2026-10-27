@@ -2,26 +2,27 @@
 <glyph name="h" format="2">
   <advance width="580"/>
   <unicode hex="0068"/>
+  <anchor x="266.375" y="579" name="bar"/>
   <anchor x="228.625" y="0" name="bottom"/>
   <anchor x="246.375" y="707" name="top"/>
   <outline>
     <contour>
-      <point x="317.16509902043975" y="0.0" type="line"/>
-      <point x="459.59233195145146" y="0.0" type="line"/>
-      <point x="543.3422882964314" y="323.0" type="line" smooth="yes"/>
-      <point x="577.014938851291" y="452.8659319226212"/>
-      <point x="507.66920947589176" y="511.32730867002465"/>
+      <point x="315.625" y="0.0" type="line"/>
+      <point x="461.625" y="0.0" type="line"/>
+      <point x="545.37495634498" y="323.0" type="line" smooth="yes"/>
+      <point x="579.0924239364168" y="453.03877861348724"/>
+      <point x="508.2614280507464" y="512.0"/>
       <point x="416.4967469316451" y="512.0" type="curve" smooth="yes"/>
-      <point x="298.31549264253067" y="512.8719683872454"/>
-      <point x="233.14048718307544" y="430.9424933495678"/>
-      <point x="204.50216296514958" y="321.0" type="curve"/>
-      <point x="212.15519581491844" y="268.0" type="line"/>
-      <point x="239.87861040695827" y="377.93476723100935"/>
-      <point x="307.616642770974" y="390.5741076244603"/>
-      <point x="335.39876936972854" y="390.0697921406334" type="curve" smooth="yes"/>
-      <point x="381.0305573952492" y="389.2414604010103"/>
-      <point x="405.0948781152815" y="355.32189501084457"/>
-      <point x="390.43204875002806" y="296.0697921406334" type="curve" smooth="yes"/>
+      <point x="299.8628317890049" y="512.0"/>
+      <point x="232.88625727092972" y="431.4432347223515"/>
+      <point x="206.9605020455699" y="321.0" type="curve"/>
+      <point x="215.97784873054587" y="268.0" type="line"/>
+      <point x="240.83504679524833" y="378.64677472212094"/>
+      <point x="309.64902266132884" y="390.4759066629026"/>
+      <point x="337.16841362242945" y="390.4759066629026" type="curve" smooth="yes"/>
+      <point x="389.66529424473316" y="390.4759066629026"/>
+      <point x="407.77634914843827" y="351.1066461933344"/>
+      <point x="394.36291352075045" y="300.0" type="curve" smooth="yes"/>
     </contour>
     <contour>
       <point x="-3.375" y="0.0" type="line"/>
@@ -33,7 +34,7 @@
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2015/08/06 15:39:19</string>
+      <string>2026/10/27 04:46:02</string>
       <key>public.markColor</key>
       <string>0.97,1,0,1</string>
     </dict>

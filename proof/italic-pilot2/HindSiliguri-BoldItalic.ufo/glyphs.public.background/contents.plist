@@ -372,6 +372,12 @@
     <string>bnvL_.glif</string>
     <key>bnvR</key>
     <string>bnvR_.glif</string>
+    <key>dotaccent</key>
+    <string>dotaccent.glif</string>
+    <key>dotaccentcomb</key>
+    <string>dotaccentcomb.glif</string>
+    <key>i</key>
+    <string>i.glif</string>
     <key>tcedilla</key>
     <string>tcedilla.glif</string>
   </dict>

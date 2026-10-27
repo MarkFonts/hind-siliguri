@@ -2,6 +2,7 @@
 <glyph name="T" format="2">
   <advance width="544"/>
   <unicode hex="0054"/>
+  <anchor x="288.875" y="321" name="bar"/>
   <anchor x="208.625" y="0" name="bottom"/>
   <anchor x="377.125" y="674" name="top"/>
   <outline>
@@ -21,7 +22,7 @@
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2015/08/06 15:39:19</string>
+      <string>2026/10/27 04:44:14</string>
       <key>public.markColor</key>
       <string>0.97,1,0,1</string>
     </dict>

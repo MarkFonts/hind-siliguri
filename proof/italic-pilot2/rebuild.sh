@@ -4,7 +4,7 @@ set -e
 HERE=${0:A:h}
 PY=/usr/local/bin/python3                      # skia + numpy, for the solver
 GF=/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/gfvenv/bin
-ROMAN=/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/spec/HindSiliguri-Roman-VF.ttf
+ROMAN=${ROMAN:-/private/tmp/claude-502/-Users-Mark-Documents-Github/409ac272-e6e0-4109-afcb-acdd1a1f6929/scratchpad/spec/HindSiliguri-Roman-VF.ttf}
 cd $HERE/tools
 rm -f ../work/results*.json
 $PY run_all.py && $PY run_all.py --no-retension && $PY run_all.py --simple
@@ -18,7 +18,7 @@ names = lambda s: ",".join(cm["%04X" % ord(ch)] for ch in s if "%04X" % ord(ch) 
 sets = {"lc": "abcdefghijklmnopqrstuvwxyz", "uc": "ABCDEGKMOPQRSVWXZ0235689", "bn": "অআইউএওকখগঘঙচজঞটঠডতথদধনপফবভমযরলশষসহ০১২৩৫৬"}
 for m in ("Light", "Bold"):
     for k, v in sets.items():
-        for x in ("1", "4"):
+        for x in ("1",):
             subprocess.run(["python3", "tools/overlay_svg.py", m, names(v), "sheets/overlay_%s_%s%s.svg" % (k, m, "" if x == "1" else "_x4"),
                             "9" if k != "bn" else "10", x], check=True, capture_output=True)
 EOF

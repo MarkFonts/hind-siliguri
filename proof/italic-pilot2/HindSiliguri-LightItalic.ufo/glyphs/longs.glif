@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="longs" format="2">
+  <advance width="221"/>
+  <unicode hex="017F"/>
+  <outline>
+    <contour>
+      <point x="16.625" y="0.0" type="line"/>
+      <point x="77.625" y="0.0" type="line"/>
+      <point x="223.2901577954667" y="569.0" type="line" smooth="yes"/>
+      <point x="235.90120997608068" y="618.2615310302618"/>
+      <point x="259.06166868166434" y="643.0"/>
+      <point x="294.66138493826065" y="643.0" type="curve" smooth="yes"/>
+      <point x="314.071372446488" y="643.0"/>
+      <point x="336.1576527160754" y="638.3467006409269"/>
+      <point x="359.2341548147821" y="627.0" type="curve"/>
+      <point x="374.2341548147821" y="687.0" type="line"/>
+      <point x="352.642981940322" y="695.9682940033126"/>
+      <point x="332.5081651328816" y="701.0"/>
+      <point x="304.2485744267064" y="701.0" type="curve" smooth="yes"/>
+      <point x="227.88730453065352" y="701.0"/>
+      <point x="184.43223919320528" y="656.003190339792"/>
+      <point x="162.6882127866468" y="571.0" type="curve" smooth="yes"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:38:50</string>
+    </dict>
+  </lib>
+</glyph>

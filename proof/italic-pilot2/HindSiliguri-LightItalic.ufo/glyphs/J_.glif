@@ -6,28 +6,28 @@
   <anchor x="343.125" y="674" name="top"/>
   <outline>
     <contour>
-      <point x="53.3882523005382" y="0.0" type="curve" smooth="yes"/>
-      <point x="129.0233020135984" y="0.0"/>
-      <point x="217.12472206500968" y="32.80527328947562"/>
-      <point x="249.49337384973086" y="165.0" type="curve"/>
+      <point x="65.5858772099242" y="0.0" type="curve" smooth="yes"/>
+      <point x="141.6419726222011" y="0.0"/>
+      <point x="209.5360278865744" y="33.17153113143641"/>
+      <point x="243.3945613950379" y="165.0" type="curve" smooth="yes"/>
       <point x="374.125" y="674.0" type="line"/>
       <point x="312.125" y="674.0" type="line"/>
-      <point x="184.67599520127868" y="155.0" type="line" smooth="yes"/>
-      <point x="168.32348322313348" y="88.40902323983853"/>
-      <point x="125.28940412136862" y="59.0"/>
-      <point x="65.88332035227452" y="59.0" type="curve" smooth="yes"/>
-      <point x="34.88332035227451" y="59.0"/>
-      <point x="5.332067893620362" y="70.0"/>
-      <point x="-13.652320431332498" y="86.0" type="curve"/>
-      <point x="-29.402320431332498" y="23.0" type="line"/>
-      <point x="-9.104456376689186" y="8.0"/>
-      <point x="25.3882523005382" y="0.0"/>
+      <point x="179.31643274109393" y="155.0" type="line" smooth="yes"/>
+      <point x="163.7528640866665" y="94.17943474308382"/>
+      <point x="131.19878046211775" y="59.0"/>
+      <point x="69.35779532646325" y="59.0" type="curve" smooth="yes"/>
+      <point x="41.753583376127466" y="59.0"/>
+      <point x="13.668193046740015" y="68.62802720069736"/>
+      <point x="-9.512520462086329" y="86.0" type="curve"/>
+      <point x="-25.26252046208633" y="23.0" type="line"/>
+      <point x="-2.74690642391829" y="8.0"/>
+      <point x="37.585877209924206" y="0.0"/>
     </contour>
   </outline>
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2015/08/06 15:39:19</string>
+      <string>2026/10/27 05:34:55</string>
       <key>public.markColor</key>
       <string>0.97,1,0,1</string>
     </dict>

@@ -2,10 +2,36 @@
 <glyph name="Gdotaccent" format="2">
   <advance width="706"/>
   <unicode hex="0120"/>
+  <anchor x="541.375" y="191" name="bar"/>
   <anchor x="279.625" y="0" name="bottom"/>
   <anchor x="486.125" y="674" name="top"/>
   <outline>
     <component base="G"/>
-    <component base="dotaccent" xOffset="160.75" yOffset="99"/>
+    <component base="dotaccent" xOffset="175.75" yOffset="159"/>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>G</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>dotaccent</string>
+        </dict>
+      </array>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:28:54</string>
+    </dict>
+  </lib>
 </glyph>

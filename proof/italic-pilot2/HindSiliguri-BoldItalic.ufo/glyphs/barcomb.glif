@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="barcomb" format="2">
+  <advance width="357"/>
+  <anchor x="194.875" y="321" name="_bar"/>
+  <outline>
+    <contour>
+      <point x="16.875" y="281.0" type="line"/>
+      <point x="353.875" y="281.0" type="line"/>
+      <point x="378.375" y="379.0" type="line"/>
+      <point x="41.375" y="379.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:47:57</string>
+    </dict>
+  </lib>
+</glyph>

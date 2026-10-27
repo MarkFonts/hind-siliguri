@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Tbar" format="2">
+  <advance width="544"/>
+  <unicode hex="0166"/>
+  <anchor x="288.875" y="321" name="bar"/>
+  <anchor x="208.625" y="0" name="bottom"/>
+  <anchor x="377.125" y="674" name="top"/>
+  <outline>
+    <component base="T"/>
+    <component base="barcomb" xOffset="94.0"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:45:01</string>
+    </dict>
+  </lib>
+</glyph>

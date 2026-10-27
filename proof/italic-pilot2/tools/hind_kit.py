@@ -9,6 +9,7 @@
   - arches (an open part with no free terminal: n m h u shoulders) take the bowl beta, like p q (Mark)
   - counters of back-leaning rounds lean back less than their outside (COUNTER_DBETA) so I13's 45-degree thickness lands
   - Bangla keeps the kit's I13, no arch rule, no counter offset, and leans back only parts that close a counter
+  - a bowl drawn over its stem (b d p q) follows the stem at the joins and leans fully only at the far side
   - psi 1.20 (s spine with the slant 0.2 theta)
 
 Pilot 1's notes follow.
@@ -62,7 +63,8 @@ PSI = 1.20
 # counter lean offset (theta fractions): a backward-leaning round's counter leans back this much LESS than its outside, so
 # the thickness at the 45 deg places comes back to the roman's (I13 + re-tension alone recovered about half; Hind's o
 # measured: Light -0.15 -> 45/135/225/315 within 2 %, Bold -0.30 -> within 1 %). Only where the part leans back (beta > 0).
-COUNTER_DBETA = {"Light": -0.15, "Bold": -0.30}
+COUNTER_DBETA = {"Light": 0.0, "Bold": 0.0}   # was -0.15 / -0.30: the counters read as over-rotated (Mark, 2026-10-27);
+# Le Jeune changes top/bottom contrast slightly instead of rotating the counter
 I16_BN = False           # the rigid spine (I16) is an s/S convention measured on Latin only; on Bangla it fired on
                          # inflected strokes (the ১) and broke the comb gate, so Bangla strokes are not spines
 NU = 0.0
@@ -182,7 +184,9 @@ def part_beta(self, part_run):
                                  # "open round body" rule both put most Bangla glyphs on plain slant (pilot 2 run 2)
     if pi not in _terminal_parts(self):
         return bowl              # an arch: an open part with no free terminal (n m h u shoulders) leans back like p q
-    return arc
+    return closed                # an open arc (c C G, the a's hood) leans back like its class's o / O so the rounds share
+                                 # one axis. Frutiger's c -0.18 / C G -0.24..-0.51 are CHORD readings (terminal to
+                                 # terminal), not the bowl's lean; used as the bowl's lean they turned C against O (Mark)
 
 
 def run_map(self, ri, narrow=1.0):
@@ -226,6 +230,88 @@ def gate(cs, up_cs):
                 ok=(len(ev["snaps"]) == 0 and len(ev["spikes"]) == 0 and len(h) == 0))
 
 
+def _join_blend(cs, up_cs, Sk):
+    """a bowl drawn as its own closed contour overlapping a stem (Hind's b d p q) follows the stem where it meets it: each
+    on-curve node (with its handles) is blended from the plain shear at the stem side (w 0) to the bowl's full lean at
+    the far side (w 1), so the top and bottom joins keep the roman's relation to the stem (Mark: d's top and bottom joins
+    should look alike; a rigid lean swung the bottom into the stem and the top away from it). Affine along each handle
+    line, so smooth nodes stay smooth."""
+    if not JOIN_BLEND:
+        return cs
+    bowls = set()
+    for i, r in enumerate(Sk.runs):
+        if r["part"] == i and r.get("closed") and (r.get("beta") or 0) > 0:
+            mine = {q["ci"] for q in Sk.runs if q["part"] == i}
+            if len(mine) < len(up_cs):
+                bowls |= mine
+    if not bowls:
+        return cs
+    sl = sheared(up_cs)
+    xs_b = [n[0] for ci in bowls for n in up_cs[ci]["nodes"]]
+    others = [n[0] for ci, c in enumerate(up_cs) if ci not in bowls for n in c["nodes"]]
+    if not others:
+        return cs
+    x0, x1 = min(xs_b), max(xs_b)
+    stem_right = (sum(others) / len(others)) > (x0 + x1) / 2
+    out = [dict(c, nodes=[list(n) for n in c["nodes"]]) for c in cs]
+    for ci in bowls:
+        N = up_cs[ci]["nodes"]; L = len(N)
+        on = [i for i, n in enumerate(N) if n[2] != "o"]
+        owner = {}
+        for i in range(L):     # an off-curve takes the weight of the on-curve it belongs to (nearest along the contour)
+            if N[i][2] != "o":
+                owner[i] = i
+            else:
+                owner[i] = min(on, key=lambda j: min((i - j) % L, (j - i) % L))
+        for i in range(L):
+            u = (N[owner[i]][0] - x0) / max(x1 - x0, 1.0)
+            w = (1.0 - u) if stem_right else u
+            w = w * w * (3 - 2 * w)                     # smoothstep: no lean at the stem, full lean at the far side
+            a, b = sl[ci]["nodes"][i], cs[ci]["nodes"][i]
+            out[ci]["nodes"][i][0] = a[0] + w * (b[0] - a[0]); out[ci]["nodes"][i][1] = a[1] + w * (b[1] - a[1])
+    return out
+
+
+JOIN_BLEND = True
+# top/bottom hairline change on back-leaning rounds (Le Jeune: o thin-h +10.3 % Poster, +0.8 % Dek, +0.1 % Text; it
+# changes contrast there instead of turning the counter). Fraction of the roman thickness at that place; Latin only.
+HAIRLINE_TB = {"Light": 0.0, "Bold": 0.0}
+
+
+def _hairline_tb(cs, up_cs, Sk):
+    """move each counter's top and bottom extreme (a node with a horizontal tangent at the counter's top / bottom),
+    with its two handles, inward by HAIRLINE_TB x the roman thickness there: a translation, so smooth stays smooth"""
+    h = HAIRLINE_TB[STATE["master"]]
+    if not h or _cls(STATE["glyph"]) == "bn":
+        return cs
+    out = [dict(c, nodes=[list(n) for n in c["nodes"]]) for c in cs]
+    for i, r in enumerate(Sk.runs):
+        if not r["counter"] or (self_beta := (Sk.runs[r["part"]].get("beta") or 0)) <= 0:
+            continue
+        ci = r["ci"]; N = up_cs[ci]["nodes"]; L = len(N)
+        ys = [n[1] for n in N if n[2] != "o"]
+        if not ys:
+            continue
+        top, bot = max(ys), min(ys)
+        outer = [n for k, c in enumerate(up_cs) if k != ci for n in c["nodes"] if n[2] != "o"]
+        for j, n in enumerate(N):
+            if n[2] == "o" or n[1] not in (top, bot):
+                continue
+            prv, nxt = N[(j - 1) % L], N[(j + 1) % L]
+            if abs(prv[1] - n[1]) > 1 or abs(nxt[1] - n[1]) > 1:
+                continue              # not a horizontal-tangent extreme
+            sgn = -1 if n[1] == top else 1
+            # roman thickness there: the nearest outer node straight above / below
+            cand = [o for o in outer if abs(o[0] - n[0]) < 40 and (o[1] - n[1]) * (-sgn) > 0]
+            if not cand:
+                continue
+            t = min(abs(o[1] - n[1]) for o in cand)
+            dy = sgn * h * t
+            for k in (j - 1, j, j + 1):
+                out[ci]["nodes"][k % L][1] += dy
+    return out
+
+
 def same_structure(a, b):
     return len(a) == len(b) and all(len(x["nodes"]) == len(y["nodes"]) and [n[2] for n in x["nodes"]] == [n[2] for n in y["nodes"]] for x, y in zip(a, b))
 
@@ -245,6 +331,8 @@ def correct_glyph(g, master, quiet=True, retension=True, simple=False):
         out = round_p2.correct(gl, G, "1-6", serif="shear", side_handles="corners", hold_brackets=True, psi=PSI, nu_coef=NU,
                                i16=(not simple) and (I16_BN or STATE["cls"][gl] != "bn"), terminal="shear")
         cs = out["contours"]
+        cs = _join_blend(cs, up["contours"], out["skeleton"])
+        cs = _hairline_tb(cs, up["contours"], out["skeleton"])
         cs, rep = repair(cs, up["contours"], K)
     assert same_structure(cs, up["contours"])
     Sk = out["skeleton"]

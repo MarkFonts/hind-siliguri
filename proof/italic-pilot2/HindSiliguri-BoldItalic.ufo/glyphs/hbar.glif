@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="hbar" format="2">
+  <advance width="580"/>
+  <unicode hex="0127"/>
+  <anchor x="266.375" y="579" name="bar"/>
+  <anchor x="228.625" y="0" name="bottom"/>
+  <anchor x="246.375" y="707" name="top"/>
+  <outline>
+    <component base="h"/>
+    <component base="barcomb" xOffset="71.5" yOffset="258"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026/10/27 04:46:04</string>
+    </dict>
+  </lib>
+</glyph>

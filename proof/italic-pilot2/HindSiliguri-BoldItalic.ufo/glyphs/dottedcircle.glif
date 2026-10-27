@@ -5,9 +5,9 @@
   <anchor x="434.375" y="671" name="abvm.chandrabindu"/>
   <anchor x="434.375" y="671" name="abvm.reph"/>
   <anchor x="266.625" y="0" name="blwm.u"/>
+  <anchor x="266.625" y="0" name="bottom"/>
   <anchor x="266.625" y="0" name="ogonek"/>
   <anchor x="415.625" y="596" name="top"/>
-  <anchor x="266.625" y="0" name="bottom"/>
   <outline>
     <contour>
       <point x="192.51265851388447" y="44.0" type="curve" smooth="yes"/>

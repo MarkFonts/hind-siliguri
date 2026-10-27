@@ -6,12 +6,31 @@
   <anchor x="381.375" y="675" name="top"/>
   <outline>
     <component base="Z"/>
-    <component base="dotaccent" xOffset="102.0" yOffset="80"/>
+    <component base="dotaccent" xOffset="116.25" yOffset="137"/>
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Z</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>dotaccent</string>
+        </dict>
+      </array>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2015/08/06 15:39:19</string>
+      <string>2026/10/27 04:28:54</string>
       <key>public.markColor</key>
       <string>0.97,1,0,1</string>
     </dict>
