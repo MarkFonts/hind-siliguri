@@ -101,7 +101,7 @@ Both builds have the additions. In the hindkit build no existing glyph changed, 
 
 ### Matching the 2015 fonts
 
-This build is version 1.002. Google Fonts' 1.001 ([google/fonts#893](https://github.com/google/fonts/pull/893)) is the 2015 OTFs converted to TrueType, with ttfautohint and vertical metrics of 1116/−501/0. This build uses those metrics (win 1116/501) rather than the 2015 1200/−800/0, so line spacing on Google Fonts doesn't change. They are custom parameters in the `.glyphs` file.
+This build is version 1.500. Google Fonts' 1.001 ([google/fonts#893](https://github.com/google/fonts/pull/893)) is the 2015 OTFs converted to TrueType, with ttfautohint and vertical metrics of 1116/−501/0. This build uses those metrics (win 1116/501) rather than the 2015 1200/−800/0, so line spacing on Google Fonts doesn't change. They are custom parameters in the `.glyphs` file.
 
 Against the 2015 OTFs, all five weights have the same glyphs (plus the no-break space) and advance widths. They shape identically across 5,493 test strings: every consonant with every vowel sign, every consonant + hasanta + consonant pair, reph and ya-, ra-, and ba-phala forms, digits, and Latin. Outlines match to within 0.5% of area, apart from the fix below. The remaining differences come from overlap removal and are a few units at most. Getting there needed:
 
@@ -116,4 +116,4 @@ The digit ১ (`bnOne`) is malformed in the middle weights on Google Fonts ([goo
 
 The Bold contours are rotated to start where Light's do. Both masters draw exactly as before; only the instances change. `proof/index.html` shows Google Fonts and this build side by side.
 
-Name table records differ: hindkit's Google Fonts profile writes the version as `1.002`, the URL as indiantypefoundry.com, and a sample text, and drops the trademark line.
+Name table records differ: hindkit's Google Fonts profile writes the version as `1.500`, the URL as indiantypefoundry.com, and a sample text, and drops the trademark line.
