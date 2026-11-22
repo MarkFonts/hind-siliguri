@@ -1,0 +1,5 @@
+Bold
+m: 26
+n: 4@11,0 6@-22,-33 7@-20,-80
+# 2026-11-21: "i overshot the n, can you have it like m?" -> the n list above is dropped; Bold n points 4 5 6 7 8 take the Bold m's points 24 25 26 27 28, each at the m point's own distance from the plain slant
+# 2026-11-21: "match light n to hm" -> Light n points 4 5 6 7 take the Light h's points 4 5 6 7, each at the h point's own distance from the plain slant

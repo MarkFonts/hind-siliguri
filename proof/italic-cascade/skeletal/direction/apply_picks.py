@@ -58,5 +58,5 @@ for i, title in enumerate(("as drawn (the round solve with your notes)", "your p
     frames.append(Image.fromarray(sf.makeImageSnapshot().convert(alphaType=skia.kUnpremul_AlphaType, colorType=skia.kRGBA_8888_ColorType).toarray()[:, :, :3]))
 tag = os.path.splitext(os.path.basename(PICKS))[0]
 out = os.path.join(SK, "sheets", "hind-siliguri_%s_%s_as-drawn_vs_your-picks.gif" % (tag, "-".join(big))); frames[0].save(out, save_all=True, append_images=frames[1:], duration=1000, loop=0); print(out, W, H)
-D = os.environ.get("LOOK_DIR", os.path.join(SK, "work", "look"))      # working pictures for checking, not proofs; os.makedirs(D, exist_ok=True)
+D = os.environ.get("LOOK_DIR", os.path.join(SK, "work", "look")); os.makedirs(D, exist_ok=True)      # working pictures for checking, not proofs
 [fr.save(os.path.join(D, "picks_%s_%d.png" % (m, k))) for k, fr in enumerate(frames)]

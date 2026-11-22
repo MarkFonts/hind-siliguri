@@ -73,6 +73,9 @@ def _hit(P, L0, Ld, near):
 KEEP = float(os.environ.get("KEEP", "0"))       # 0: off (the evening slides points); 0.6: the o's own share, fixed
 FOOT_ONLY = set(os.environ.get("FOOT_ONLY", "").split())      # Mark 2026-11-21: "only apply the foot to d and g": the letters the foot rule may touch (empty: all it finds)
 FOOT = os.environ.get("FOOT", "0") == "1"      # Mark's picks on the Light a, 2026-11-20: the bowl's lower right beside a stem stays on the plain slant
+FOOT_COUNTER = os.environ.get("FOOT_COUNTER", "1") == "1"      # Mark 2026-11-21: "the foot doesnt might not need to touch the counter?" 0: only the outside's lower-right piece is held
+FOOT_DIRS = set(os.environ.get("FOOT_DIRS", "SE").split())      # Mark 2026-11-21: "can i see what pdqgb looks like what dg DID do". SE: the lower right beside a stem (d, g, q). NW: the same piece turned half round, the upper left beside a stem (b, p): a slanted b is a slanted q turned half round
+FOOT_POINT = os.environ.get("FOOT_POINT", "0") == "1"      # test, 2026-11-21 ("normalize both the top and bottom counter curves without having the part near the foot shrink away"): hold only the foot piece's end against the stem; its bottom (or top) point slides like the o's
 BAR = float(os.environ.get("BAR", "0"))         # ...and a bowl running into a short level bar takes this share of its own width from the bar (his a: about 0.07)
 
 
@@ -92,12 +95,15 @@ def foot_holds(g, info):
             if r["ci"] not in oth: oth[r["ci"]] = ST.sk([pts(c) for i, c in enumerate(cs) if i != r["ci"]], lambda q: (float(q[0]), float(q[1])))
             U = r["U"]
             buried = oth[r["ci"]].contains(float(U[0]), float(U[1])) and all(allink.contains(float(U[0] + dx), float(U[1] + dy)) for dx, dy in ((7, 0), (-7, 0), (0, 7), (0, -7)))
-        outside = not allink.contains(float(r["E"][0]), float(r["E"][1] - 7))      # white under its bottom point: the stroke's outside edge
+        up = 1 if r.get("dirn") == "NW" else -1
+        outside = not allink.contains(float(r["E"][0]), float(r["E"][1] + 7 * up))      # white under its bottom point (over its top point, for an upper-left piece): the stroke's outside edge
         if (r["crotch"] or buried) and outside: foots.append(r); hold.add((r["ci"], r["k"]))
+    if not FOOT_COUNTER: return hold
     for f in foots:
         for r in info:
             if (r["ci"], r["k"]) in hold: continue
-            dx = r["E"][0] - f["E"][0]; dy = r["E"][1] - f["E"][1]; mid = (r["E"] + f["E"]) / 2
+            if r.get("dirn") != f.get("dirn"): continue
+            dx = r["E"][0] - f["E"][0]; dy = (r["E"][1] - f["E"][1]) * (-1 if f.get("dirn") == "NW" else 1); mid = (r["E"] + f["E"]) / 2
             if abs(dx) <= .45 * max(f["w"], 60) and 0 < dy <= 260 and allink.contains(float(mid[0]), float(mid[1])): hold.add((r["ci"], r["k"]))
     return hold
 
@@ -233,17 +239,20 @@ def round_stored(g, table=None, g2=True, _hold=None, _collect=None, _reading=Non
             for k in range(n):
                 if S[k] is None: continue
                 d = Q[k] - (P[k][0] + P[k][3]) / 2
-                if not (d[0] > 0 and d[1] < 0): continue                    # lower right only
+                dirn = ("N" if d[1] > 0 else "S") + ("E" if d[0] > 0 else "W")
+                if dirn not in ("SE", "NW") or dirn not in FOOT_DIRS: continue      # lower right; and, when asked, upper left
                 lev = 0 if (_lev(t0[k]) and cut[k] != 0) else 3              # its level end (the bottom point); the other end is the upper one
                 up_joint = k if lev == 0 else (k - 1) % n; other = (k + 1) % n if lev == 0 else (k - 1) % n
                 crotch = cut[k] is not None and (not cur[other]) and inward[up_joint] and _upr(_u(P[other][-1] - P[other][0]))
-                _collect.append(dict(ci=ci, k=k, E=P[k][lev], U=P[k][3 - lev], crotch=bool(crotch), w=abs(P[k][3][0] - P[k][0][0])))
+                _collect.append(dict(ci=ci, k=k, E=P[k][lev], U=P[k][3 - lev], crotch=bool(crotch), w=abs(P[k][3][0] - P[k][0][0]), dirn=dirn))
             continue
         HJ = set()
         if _hold:
             for (ci_, k_) in _hold:
                 if ci_ != ci: continue
-                S[k_] = None; HJ |= {k_, (k_ - 1) % n}; log.append((ci, k_, "SE", "held on the plain slant (foot)", [0, 0]))
+                if FOOT_POINT:
+                    HJ.add((k_ - 1) % n if _upr(t0[k_]) else k_); log.append((ci, k_, "", "its end against the stem held (foot point)", [0, 0])); continue
+                S[k_] = None; HJ |= {k_, (k_ - 1) % n}; log.append((ci, k_, "", "held on the plain slant (foot)", [0, 0]))
         own = lambda k, pt: S[k] * (pt - Q[k])                         # what curve k asks of one of its points
         D = [np.zeros(2) for _ in range(n)]; recut = {}               # D[k]: the move of the point after curve k
         other_ink = None
